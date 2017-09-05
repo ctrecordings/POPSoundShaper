@@ -1,0 +1,9 @@
+{
+	"fileVersion": 1,
+	"versions": {
+		"ddsp": {"path":"../../../Ddsp"},
+		"dplug": {"path":"../.."},
+		"gfm": "6.2.10",
+		"pfft": "1.0.3"
+	}
+}

@@ -1,0 +1,175 @@
+<DProject>
+  <ProjectGuid>{ECA94222-F31B-42BC-8478-2C8D9F461A04}</ProjectGuid>
+  <Config name="debug" platform="Win32">
+    <symdebug>1</symdebug>
+    <optimize>0</optimize>
+    <useInline>0</useInline>
+    <release>0</release>
+    <lib>2</lib>
+    <exefile>D:\Google Drive\PROGRAMMING\Git Repos\dplug-4.4\examples\popss\popss.dll</exefile>
+    <imppath>".." "..\..\..\..\Ddsp\util" "..\..\..\..\Ddsp\effect" "..\..\..\..\Ddsp\filter" "..\..\..\..\Ddsp\osc" "..\..\..\core" "..\..\..\dsp" "C:\Users\Reker\AppData\Roaming\dub\packages\gfm-6.2.10\gfm\math" "C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft" "..\..\..\au" "..\..\..\carbon" "..\..\..\client" "..\..\..\cocoa" "..\..\..\flatwidgets" "..\..\..\graphics" "..\..\..\gui" "..\..\..\window" "..\..\..\x11" "..\..\..\pbrwidgets" "..\..\..\vst"</imppath>
+    <fileImppath>"..\gfx" "..\fonts" ".."</fileImppath>
+    <program>$(DMDInstallDir)windows\bin\dmd.exe</program>
+    <additionalOptions></additionalOptions>
+    <versionids>VST Have_popss Have_ddsp Have_dplug_core Have_dplug_dsp Have_gfm_math Have_pfft Have_dplug_au Have_dplug_carbon Have_dplug_client Have_dplug_cocoa Have_dplug_flat_widgets Have_dplug_graphics Have_dplug_gui Have_dplug_window Have_dplug_x11 Have_dplug_pbr_widgets Have_dplug_vst</versionids>
+    <libfiles>gdi32.lib user32.lib </libfiles>
+    <useUnitTests>0</useUnitTests>
+    <obj>0</obj>
+    <link>0</link>
+    <subsystem>0</subsystem>
+    <multiobj>0</multiobj>
+    <singleFileCompilation>2</singleFileCompilation>
+    <oneobj>0</oneobj>
+    <trace>0</trace>
+    <quiet>0</quiet>
+    <verbose>0</verbose>
+    <vtls>0</vtls>
+    <cpu>0</cpu>
+    <isX86_64>0</isX86_64>
+    <isLinux>0</isLinux>
+    <isOSX>0</isOSX>
+    <isWindows>0</isWindows>
+    <isFreeBSD>0</isFreeBSD>
+    <isSolaris>0</isSolaris>
+    <scheduler>0</scheduler>
+    <useDeprecated>0</useDeprecated>
+    <useAssert>0</useAssert>
+    <useInvariants>0</useInvariants>
+    <useIn>0</useIn>
+    <useOut>0</useOut>
+    <useArrayBounds>0</useArrayBounds>
+    <noboundscheck>0</noboundscheck>
+    <useSwitchError>0</useSwitchError>
+    <preservePaths>1</preservePaths>
+    <warnings>1</warnings>
+    <infowarnings>0</infowarnings>
+    <checkProperty>0</checkProperty>
+    <genStackFrame>0</genStackFrame>
+    <pic>0</pic>
+    <cov>0</cov>
+    <nofloat>0</nofloat>
+    <Dversion>2</Dversion>
+    <ignoreUnsupportedPragmas>0</ignoreUnsupportedPragmas>
+    <compiler>0</compiler>
+    <otherDMD>0</otherDMD>
+    <outdir>D:\Google Drive\PROGRAMMING\Git Repos\dplug-4.4\examples\popss\</outdir>
+    <objdir>obj/debug/dummy/popss</objdir>
+    <objname />
+    <libname />
+    <doDocComments>0</doDocComments>
+    <docdir />
+    <docname />
+    <modules_ddoc />
+    <ddocfiles />
+    <doHdrGeneration>0</doHdrGeneration>
+    <hdrdir />
+    <hdrname />
+    <doXGeneration>1</doXGeneration>
+    <xfilename>$(IntDir)\$(TargetName).json</xfilename>
+    <debuglevel>0</debuglevel>
+    <versionlevel>0</versionlevel>
+    <debugids />
+    <dump_source>0</dump_source>
+    <mapverbosity>0</mapverbosity>
+    <createImplib>0</createImplib>
+    <defaultlibname />
+    <debuglibname />
+    <moduleDepsFile />
+    <run>0</run>
+    <runargs />
+    <runCv2pdb>1</runCv2pdb>
+    <pathCv2pdb>$(VisualDInstallDir)cv2pdb\cv2pdb.exe</pathCv2pdb>
+    <cv2pdbPre2043>0</cv2pdbPre2043>
+    <cv2pdbNoDemangle>0</cv2pdbNoDemangle>
+    <cv2pdbEnumType>0</cv2pdbEnumType>
+    <cv2pdbOptions />
+    <objfiles />
+    <linkswitches />
+    <libpaths />
+    <deffile />
+    <resfile />
+    <debugworkingdir>..</debugworkingdir>
+    <preBuildCommand />
+    <postBuildCommand />
+    <filesToClean>*.obj;*.cmd;*.build;*.dep</filesToClean>
+  </Config>
+  <Folder name="popss">
+    <Folder name="popss">
+    <Folder name=".dub">
+    <Folder name="build">
+    <Folder name="VST-debug-windows-x86-dmd_2073-02EA0531DADC480F2BCC776EA4A53071">
+      <File tool="None" path="build\VST-debug-windows-x86-dmd_2073-02EA0531DADC480F2BCC776EA4A53071\popss.dll" />
+      <File tool="None" path="build\VST-debug-windows-x86-dmd_2073-02EA0531DADC480F2BCC776EA4A53071\popss.obj" />
+    </Folder>
+    <Folder name="VST-debug-windows-x86-dmd_2073-BCD20CC151B6037C17A2D229B290C656">
+      <File tool="None" path="build\VST-debug-windows-x86-dmd_2073-BCD20CC151B6037C17A2D229B290C656\distort.dll" />
+      <File tool="None" path="build\VST-debug-windows-x86-dmd_2073-BCD20CC151B6037C17A2D229B290C656\distort.obj" />
+    </Folder>
+    <Folder name="VST-debug-windows-x86_64-dmd_2073-167CC2980D35E112AD06A45D376E743C">
+      <File tool="None" path="build\VST-debug-windows-x86_64-dmd_2073-167CC2980D35E112AD06A45D376E743C\popss.exp" />
+      <File tool="None" path="build\VST-debug-windows-x86_64-dmd_2073-167CC2980D35E112AD06A45D376E743C\popss.ilk" />
+      <File tool="None" path="build\VST-debug-windows-x86_64-dmd_2073-167CC2980D35E112AD06A45D376E743C\popss.lib" />
+      <File tool="None" path="build\VST-debug-windows-x86_64-dmd_2073-167CC2980D35E112AD06A45D376E743C\popss.pdb" />
+    </Folder>
+    <Folder name="VST-debug-windows-x86_64-dmd_2073-6062F4F2CBAC0E7DE32F4CFEE5046B88">
+      <File tool="None" path="build\VST-debug-windows-x86_64-dmd_2073-6062F4F2CBAC0E7DE32F4CFEE5046B88\distort.exp" />
+      <File tool="None" path="build\VST-debug-windows-x86_64-dmd_2073-6062F4F2CBAC0E7DE32F4CFEE5046B88\distort.ilk" />
+      <File tool="None" path="build\VST-debug-windows-x86_64-dmd_2073-6062F4F2CBAC0E7DE32F4CFEE5046B88\distort.lib" />
+      <File tool="None" path="build\VST-debug-windows-x86_64-dmd_2073-6062F4F2CBAC0E7DE32F4CFEE5046B88\distort.pdb" />
+    </Folder>
+    </Folder>
+      <File tool="None" path="ddsp.visualdproj" />
+      <File tool="None" path="dplug_au.visualdproj" />
+      <File tool="None" path="dplug_carbon.visualdproj" />
+      <File tool="None" path="dplug_client.visualdproj" />
+      <File tool="None" path="dplug_cocoa.visualdproj" />
+      <File tool="None" path="dplug_core.visualdproj" />
+      <File tool="None" path="dplug_dsp.visualdproj" />
+      <File tool="None" path="dplug_flat-widgets.visualdproj" />
+      <File tool="None" path="dplug_graphics.visualdproj" />
+      <File tool="None" path="dplug_gui.visualdproj" />
+      <File tool="None" path="dplug_pbr-widgets.visualdproj" />
+      <File tool="None" path="dplug_vst.visualdproj" />
+      <File tool="None" path="dplug_window.visualdproj" />
+      <File tool="None" path="dplug_x11.visualdproj" />
+      <File tool="None" path="dub.json" />
+      <File tool="None" path="gfm_math.visualdproj" />
+      <File tool="None" path="pfft.visualdproj" />
+      <File tool="None" path="popss.visualdproj" />
+    </Folder>
+    <Folder name="UI">
+      <File tool="None" path="..\UI\Abletunes.knob" />
+      <File tool="None" path="..\UI\BlackAngle.knob" />
+      <File tool="None" path="..\UI\Minimal_Modern.knob" />
+      <File tool="None" path="..\UI\flstudio-style.knob" />
+    </Folder>
+    <Folder name="fonts">
+      <File tool="None" path="..\fonts\COPYRIGHT.TXT" />
+      <File tool="None" path="..\fonts\VeraBd.ttf" />
+    </Folder>
+    <Folder name="gfx">
+      <File tool="None" path="..\gfx\background.png" />
+      <File tool="None" path="..\gfx\basecolor.jpg" />
+      <File tool="None" path="..\gfx\depth.png" />
+      <File tool="None" path="..\gfx\emissive.png" />
+      <File tool="None" path="..\gfx\flstudio-style.png" />
+      <File tool="None" path="..\gfx\material.png" />
+      <File tool="None" path="..\gfx\physical.png" />
+      <File tool="None" path="..\gfx\skybox.jpg" />
+    </Folder>
+      <File tool="None" path="..\Design Specs.gdoc" />
+      <File tool="None" path="..\dub.json" />
+      <File tool="None" path="..\dub.selections.json" />
+      <File path="..\gui.d" />
+      <File tool="None" path="..\layout.xml" />
+      <File path="..\main.d" />
+      <File tool="None" path="..\module-au.lst" />
+      <File tool="None" path="..\module-vst.lst" />
+      <File tool="None" path="..\plugin.json" />
+      <File tool="None" path="..\popgui.psd" />
+      <File path="..\popmeter.d" />
+      <File tool="None" path="..\popss.sln" />
+      <File tool="None" path="..\processing-flowchart.gdraw" />
+    </Folder>
+  </Folder>
+</DProject>
