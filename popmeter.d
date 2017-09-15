@@ -22,8 +22,8 @@ class PopMeter : UIBufferedElement
         writeIndex = 0;
         foreach(index; 0..size)
         {
-            inBars[index] = 0.5;
-            outBars[index] = 0.4;
+            inBars[index] = 0.005;
+            outBars[index] = 0.005;
         }
 
         scale.initialize(RealRange(0.00001f, 1.0f), RealRange(0.00001f, 1.0f));
@@ -53,14 +53,14 @@ class PopMeter : UIBufferedElement
                 int inY = cast(int)(diffuseMap.h * (1 - inBarHeight));
                 int outY = cast(int)(diffuseMap.h * (1 - outBarHeight));
                 RGBA blended = RGBA(0, 0, 0,255);
-                ubyte alpha = 122;
+                ubyte alpha = 255;
                 if(j >= inY)
                 {
                     blended = RGBA.op!q{.blend(a, b, c)} (_inColor, blended, alpha);
                 }
                 if(j >= outY)
                 {
-                    blended = RGBA.op!q{.blend(a, b, c)} (_outColor, blended, alpha);
+                    blended = RGBA.op!q{.blend(a, b, c)} (_outColor, blended, cast(ubyte)(alpha/2));
                 }
                 output[i] = blended;
             }

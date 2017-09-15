@@ -1,5 +1,5 @@
 <DProject>
-  <ProjectGuid>{ECA94222-F31B-42BC-8478-2C8D9F461A04}</ProjectGuid>
+  <ProjectGuid>{05159AAF-1AF2-4DFE-8C06-58BF14ADF5C0}</ProjectGuid>
   <Config name="debug" platform="Win32">
     <symdebug>1</symdebug>
     <optimize>0</optimize>
@@ -136,12 +136,266 @@
       <File tool="None" path="gfm_math.visualdproj" />
       <File tool="None" path="pfft.visualdproj" />
       <File tool="None" path="popss.visualdproj" />
+      <File tool="None" path="version.json" />
+    </Folder>
+    <Folder name=".git">
+    <Folder name="hooks">
+      <File tool="None" path="..\.git\hooks\applypatch-msg.sample" />
+      <File tool="None" path="..\.git\hooks\commit-msg.sample" />
+      <File tool="None" path="..\.git\hooks\post-update.sample" />
+      <File tool="None" path="..\.git\hooks\pre-applypatch.sample" />
+      <File tool="None" path="..\.git\hooks\pre-commit.sample" />
+      <File tool="None" path="..\.git\hooks\pre-push.sample" />
+      <File tool="None" path="..\.git\hooks\pre-rebase.sample" />
+      <File tool="None" path="..\.git\hooks\pre-receive.sample" />
+      <File tool="None" path="..\.git\hooks\prepare-commit-msg.sample" />
+      <File tool="None" path="..\.git\hooks\update.sample" />
+    </Folder>
+    <Folder name="info">
+      <File tool="None" path="..\.git\info\exclude" />
+    </Folder>
+    <Folder name="logs">
+    <Folder name="refs">
+    <Folder name="heads">
+      <File tool="None" path="..\.git\logs\refs\heads\master" />
+    </Folder>
+    </Folder>
+    </Folder>
+    <Folder name="objects">
+    <Folder name="00">
+      <File tool="None" path="..\.git\objects\00\d449a19911f641d02855ad87e4858cabefa1fa" />
+    </Folder>
+    <Folder name="01">
+      <File tool="None" path="..\.git\objects\01\3b9a4f0149e08d66724b71f8dbe3caf547dabd" />
+    </Folder>
+    <Folder name="02">
+      <File tool="None" path="..\.git\objects\02\36606fdfdd6cedf2f65312fcad3cdb7b503ef7" />
+    </Folder>
+    <Folder name="04">
+      <File tool="None" path="..\.git\objects\04\c3ec102ed56d08ed3e17a856beee3bdd8bc1ae" />
+    </Folder>
+    <Folder name="0e">
+      <File tool="None" path="..\.git\objects\0e\5f7d97e9e7053e76779c6785e2ff7d096ff2b1" />
+      <File tool="None" path="..\.git\objects\0e\dd7f03102c5ff4d5b9616997ec5b1870e98071" />
+    </Folder>
+    <Folder name="14">
+      <File tool="None" path="..\.git\objects\14\282914291424b2cbc331e805e6d23e5ef5cb8e" />
+    </Folder>
+    <Folder name="16">
+      <File tool="None" path="..\.git\objects\16\dd0367ecce1865efcccb68350f6de9e19872ac" />
+    </Folder>
+    <Folder name="1a">
+      <File tool="None" path="..\.git\objects\1a\4a32a4e019514d6d3a580bac5d8f8af0e7f936" />
+      <File tool="None" path="..\.git\objects\1a\d202a85acffbabc40b13a8b480dad7edf2fdf5" />
+    </Folder>
+    <Folder name="1c">
+      <File tool="None" path="..\.git\objects\1c\5e3244e440d8084560334ee601e442f7933fc5" />
+    </Folder>
+    <Folder name="23">
+      <File tool="None" path="..\.git\objects\23\51497b34ab6ffc0ae303aa4bc89f227f67ca3c" />
+    </Folder>
+    <Folder name="28">
+      <File tool="None" path="..\.git\objects\28\21a1bbf5f61d58945eecd7286f461c56f26be1" />
+    </Folder>
+    <Folder name="2c">
+      <File tool="None" path="..\.git\objects\2c\01d75402e4da6fe1a232fa8b96e69499cb2323" />
+      <File tool="None" path="..\.git\objects\2c\6c4feafb92daa3ef127f2914bcffc3322b0370" />
+      <File tool="None" path="..\.git\objects\2c\c718d845d214854c9ad3dd698457631077e0f0" />
+    </Folder>
+    <Folder name="36">
+      <File tool="None" path="..\.git\objects\36\27da44951f3d5b29d4b99c4ab7dc8ad0875f01" />
+    </Folder>
+    <Folder name="43">
+      <File tool="None" path="..\.git\objects\43\2f8bf8696c04b867f810770a659a3dc09bb819" />
+    </Folder>
+    <Folder name="46">
+      <File tool="None" path="..\.git\objects\46\05917aeacca924f6ab68618080175b9a33e4da" />
+    </Folder>
+    <Folder name="47">
+      <File tool="None" path="..\.git\objects\47\7c8ac60d9703523c0ea86ef041d4b44742d00f" />
+    </Folder>
+    <Folder name="4e">
+      <File tool="None" path="..\.git\objects\4e\4f18ad7bf24a85e202c02e85dd38d269f976b4" />
+      <File tool="None" path="..\.git\objects\4e\d1d2b807ae80ff546c70b01d6c7831c257ee82" />
+    </Folder>
+    <Folder name="4f">
+      <File tool="None" path="..\.git\objects\4f\87274ed386c726969d5c9f5d2a8576c46609d4" />
+    </Folder>
+    <Folder name="50">
+      <File tool="None" path="..\.git\objects\50\513a068364fe32ae62d4c6319f8148c74b05f4" />
+    </Folder>
+    <Folder name="51">
+      <File tool="None" path="..\.git\objects\51\abc7bb99404259a0999427fe7ca6a3d2af5472" />
+      <File tool="None" path="..\.git\objects\51\d6111d722981a86766cc99c53f1956e5c0a229" />
+    </Folder>
+    <Folder name="52">
+      <File tool="None" path="..\.git\objects\52\e3463b0cf9710f5e4e4e471053d3a93c4cf852" />
+    </Folder>
+    <Folder name="5a">
+      <File tool="None" path="..\.git\objects\5a\8a6bcd6b1bd06c6377f058f3be9608eb94feb7" />
+    </Folder>
+    <Folder name="5c">
+      <File tool="None" path="..\.git\objects\5c\1947436fc48eff0eb127385723277f0f220ff9" />
+      <File tool="None" path="..\.git\objects\5c\924bcb22c59b2b721a98bc5092342fd3195528" />
+    </Folder>
+    <Folder name="62">
+      <File tool="None" path="..\.git\objects\62\9c65e121b91d8dd726a3e9e9b427f3a72613f7" />
+    </Folder>
+    <Folder name="63">
+      <File tool="None" path="..\.git\objects\63\1f1683c76bb0ebe01b344ade4a8557899d8747" />
+    </Folder>
+    <Folder name="68">
+      <File tool="None" path="..\.git\objects\68\f5b3c1effb2292d4b4fc8fc715f40036355ca8" />
+    </Folder>
+    <Folder name="69">
+      <File tool="None" path="..\.git\objects\69\a3b05f9e9d70ef6bdffa2eac3537413cc889b5" />
+    </Folder>
+    <Folder name="6c">
+      <File tool="None" path="..\.git\objects\6c\6f4d317ebb7250ea7664556d796a5657352559" />
+    </Folder>
+    <Folder name="6d">
+      <File tool="None" path="..\.git\objects\6d\3c13e28c3f8558bc336d4b849903c2dd8194bd" />
+    </Folder>
+    <Folder name="78">
+      <File tool="None" path="..\.git\objects\78\53bf11cd276634f4045997db1fb78fe17db760" />
+      <File tool="None" path="..\.git\objects\78\5e7a7e5d6f712cce18df0740b096cd1608d1ae" />
+    </Folder>
+    <Folder name="7a">
+      <File tool="None" path="..\.git\objects\7a\2194d723d88ba3bdc6f68c28765a14e37851ab" />
+    </Folder>
+    <Folder name="7e">
+      <File tool="None" path="..\.git\objects\7e\94c871d932499602303d03c7d610186e1ce452" />
+    </Folder>
+    <Folder name="7f">
+      <File tool="None" path="..\.git\objects\7f\46d0f4427c9b1698f20cf978c8c35821719fad" />
+    </Folder>
+    <Folder name="81">
+      <File tool="None" path="..\.git\objects\81\3cedf27e69e79178945e98912b4094548d3431" />
+    </Folder>
+    <Folder name="83">
+      <File tool="None" path="..\.git\objects\83\d69f9cfd52ea929b802352792b2f1622262ab5" />
+      <File tool="None" path="..\.git\objects\83\ff03cfeff2b9684ca7191521e40b8235375532" />
+    </Folder>
+    <Folder name="84">
+      <File tool="None" path="..\.git\objects\84\6ccc9b55fe1707d2977b1d1649bac2d76784da" />
+    </Folder>
+    <Folder name="87">
+      <File tool="None" path="..\.git\objects\87\9f44382f6e611f07c605af9d2505c3e76cfa5a" />
+    </Folder>
+    <Folder name="8e">
+      <File tool="None" path="..\.git\objects\8e\004e333e0ef6d2408ca578fc596593ca2b0911" />
+    </Folder>
+    <Folder name="8f">
+      <File tool="None" path="..\.git\objects\8f\eaa6b5440b4787d2e330e8a8810c3cf7c15d9f" />
+    </Folder>
+    <Folder name="90">
+      <File tool="None" path="..\.git\objects\90\c8a0b69b85403847f16b12aa1d3961e0f42c18" />
+    </Folder>
+    <Folder name="92">
+      <File tool="None" path="..\.git\objects\92\47cfb910a1670bdca94e333e5403e3c4cb9781" />
+    </Folder>
+    <Folder name="96">
+      <File tool="None" path="..\.git\objects\96\8e9307f03574758a2e5c1f2227578f61d16644" />
+    </Folder>
+    <Folder name="9c">
+      <File tool="None" path="..\.git\objects\9c\5a0dd8f0541174fa68f4d03d3735dd26267653" />
+      <File tool="None" path="..\.git\objects\9c\5de6c22bffe43ee61d08fb4cd45ae65a37a599" />
+    </Folder>
+    <Folder name="a0">
+      <File tool="None" path="..\.git\objects\a0\a9d708ca1402758b5ad305370848183e29e41d" />
+      <File tool="None" path="..\.git\objects\a0\c4cb7ccaa50c27a6edd78dc2f6c41d9099275a" />
+      <File tool="None" path="..\.git\objects\a0\f8a086b61c6057b52260471fd0a87c95015216" />
+    </Folder>
+    <Folder name="a2">
+      <File tool="None" path="..\.git\objects\a2\43173db8355a1335cdefcb30a7a353b21259e4" />
+      <File tool="None" path="..\.git\objects\a2\af4b50adcfa9966202f7a4d61544309b0f1557" />
+    </Folder>
+    <Folder name="a7">
+      <File tool="None" path="..\.git\objects\a7\040c587f5b8110326e2d4222a3f00ce730ea65" />
+    </Folder>
+    <Folder name="a8">
+      <File tool="None" path="..\.git\objects\a8\d2daeb70008004973ee6e59610f6846e9bc936" />
+    </Folder>
+    <Folder name="ab">
+      <File tool="None" path="..\.git\objects\ab\8774655fed28b02e3bc5ffd9b646ae2fc72ac2" />
+    </Folder>
+    <Folder name="ae">
+      <File tool="None" path="..\.git\objects\ae\60bc60c8cfe844b6cc6d83927acc2f5defdb0f" />
+    </Folder>
+    <Folder name="be">
+      <File tool="None" path="..\.git\objects\be\5161620ac863a8afda2def9c175b414480ab75" />
+      <File tool="None" path="..\.git\objects\be\dfdc19edecfdef4f89cf72cdd5917be5e9ad9d" />
+    </Folder>
+    <Folder name="c5">
+      <File tool="None" path="..\.git\objects\c5\dfb5a4c2dd0b1365304eabc7b884ea66bed762" />
+    </Folder>
+    <Folder name="d2">
+      <File tool="None" path="..\.git\objects\d2\a4642ce73dca0faa824e322371b31648061f41" />
+    </Folder>
+    <Folder name="d3">
+      <File tool="None" path="..\.git\objects\d3\d555e01f64b86be1376b53b74960fc00c8d000" />
+      <File tool="None" path="..\.git\objects\d3\fcc622ec89aeffa5a0cef04a9e51a9b689880a" />
+    </Folder>
+    <Folder name="d6">
+      <File tool="None" path="..\.git\objects\d6\94eeafc09f74aa8e3fc0a5bbb4f2703c07ce34" />
+    </Folder>
+    <Folder name="da">
+      <File tool="None" path="..\.git\objects\da\521cca836b9f4bb5e4da7310683ce3de3365fc" />
+    </Folder>
+    <Folder name="db">
+      <File tool="None" path="..\.git\objects\db\ea689f20c625fb37157fb4b35c0cb165c2582f" />
+    </Folder>
+    <Folder name="e1">
+      <File tool="None" path="..\.git\objects\e1\6f8c56c14aee6533979cd1c659d9afcc89a420" />
+      <File tool="None" path="..\.git\objects\e1\91675c8a6eaedf1115d039490922fdc686e7b9" />
+    </Folder>
+    <Folder name="e6">
+      <File tool="None" path="..\.git\objects\e6\51be1c4fe958e06fd7d7a2e79b3e7c2cb70a8e" />
+    </Folder>
+    <Folder name="e9">
+      <File tool="None" path="..\.git\objects\e9\8dd716df43dc9e783f26e07128c9be5e7c5635" />
+    </Folder>
+    <Folder name="f1">
+      <File tool="None" path="..\.git\objects\f1\a30bbb7b19c416c3d9a2aedbd932cdb835fda7" />
+    </Folder>
+    <Folder name="f2">
+      <File tool="None" path="..\.git\objects\f2\c4b92f23aba8f5cb5104def2ada6ba18f8f301" />
+    </Folder>
+    <Folder name="f4">
+      <File tool="None" path="..\.git\objects\f4\98aeba2ec4554be2b5554872629c06b74804da" />
+    </Folder>
+    <Folder name="f5">
+      <File tool="None" path="..\.git\objects\f5\acb4ee82e3e1e1ed96460f245ff3489cc03903" />
+    </Folder>
+    <Folder name="f6">
+      <File tool="None" path="..\.git\objects\f6\28dcf44a5f9fabc7aa1dcf78e0b80f16bf6ffd" />
+    </Folder>
+    <Folder name="f7">
+      <File tool="None" path="..\.git\objects\f7\cac9a1906db65b0c0fce0d44ceb8974935e12a" />
+    </Folder>
+    <Folder name="fc">
+      <File tool="None" path="..\.git\objects\fc\c3786b2aee44f419d21ff9184f88e910bb9797" />
+    </Folder>
+    <Folder name="fe">
+      <File tool="None" path="..\.git\objects\fe\47ea0cf67f9f3b4cbba3ebe34b0e9c73ffe0ca" />
+      <File tool="None" path="..\.git\objects\fe\704e88d02b82d4efb434175b70e5ef99a3a87c" />
+    </Folder>
+    </Folder>
+      <File tool="None" path="..\.git\FETCH_HEAD" />
+      <File tool="None" path="..\.git\HEAD" />
+      <File tool="None" path="..\.git\config" />
+      <File tool="None" path="..\.git\credential.log" />
+      <File tool="None" path="..\.git\description" />
+      <File tool="None" path="..\.git\index" />
+      <File tool="None" path="..\.git\packed-refs" />
     </Folder>
     <Folder name="UI">
       <File tool="None" path="..\UI\Abletunes.knob" />
       <File tool="None" path="..\UI\BlackAngle.knob" />
       <File tool="None" path="..\UI\Minimal_Modern.knob" />
+      <File tool="None" path="..\UI\bipolar.knob" />
       <File tool="None" path="..\UI\flstudio-style.knob" />
+      <File tool="None" path="..\UI\pop-v1.0.0.png" />
     </Folder>
     <Folder name="fonts">
       <File tool="None" path="..\fonts\COPYRIGHT.TXT" />
@@ -150,9 +404,10 @@
     <Folder name="gfx">
       <File tool="None" path="..\gfx\background.png" />
       <File tool="None" path="..\gfx\basecolor.jpg" />
+      <File tool="None" path="..\gfx\bipolar.png" />
       <File tool="None" path="..\gfx\depth.png" />
       <File tool="None" path="..\gfx\emissive.png" />
-      <File tool="None" path="..\gfx\flstudio-style.png" />
+      <File tool="None" path="..\gfx\knobOrange.png" />
       <File tool="None" path="..\gfx\material.png" />
       <File tool="None" path="..\gfx\physical.png" />
       <File tool="None" path="..\gfx\skybox.jpg" />

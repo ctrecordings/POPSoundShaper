@@ -1,5 +1,5 @@
 <DProject>
-  <ProjectGuid>{B0490DFE-786B-4063-AFE9-3F7E420C4062}</ProjectGuid>
+  <ProjectGuid>{2063C962-F70E-4102-922C-A954A32E3765}</ProjectGuid>
   <Config name="debug" platform="Win32">
     <symdebug>1</symdebug>
     <optimize>0</optimize>
@@ -98,7 +98,6 @@
     <Folder name="ddsp">
     <Folder name="effect">
       <File path="..\..\..\..\Ddsp\effect\ddsp\effect\aeffect.d" />
-      <File path="..\..\..\..\Ddsp\effect\ddsp\effect\comp.d" />
       <File path="..\..\..\..\Ddsp\effect\ddsp\effect\digitaldelay.d" />
       <File path="..\..\..\..\Ddsp\effect\ddsp\effect\package.d" />
     </Folder>
@@ -110,7 +109,6 @@
       <File path="..\..\..\..\Ddsp\filter\ddsp\filter\allpass.d" />
       <File path="..\..\..\..\Ddsp\filter\ddsp\filter\biquad.d" />
       <File path="..\..\..\..\Ddsp\filter\ddsp\filter\highpass.d" />
-      <File path="..\..\..\..\Ddsp\filter\ddsp\filter\linkwitzriley.d" />
       <File path="..\..\..\..\Ddsp\filter\ddsp\filter\lowpass.d" />
       <File path="..\..\..\..\Ddsp\filter\ddsp\filter\package.d" />
     </Folder>

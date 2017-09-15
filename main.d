@@ -6,12 +6,21 @@
 module main;
 
 import std.math;
+import std.algorithm;
 
 import dplug.core,
        dplug.client,
        dplug.dsp;
 
 import gui;
+
+import ddsp.util.functions;
+//import ddsp.effect.comp;
+import ddsp.util.envelope;
+import ddsp.filter.lowpass;
+import ddsp.filter.highpass;
+import ddsp.filter.shelf;
+import ddsp.effect.compressor;
 
 mixin(DLLEntryPoint!());
 
@@ -29,12 +38,14 @@ version(AU)
 
 enum : int
 {
+    paramGainIn,
     paramPop,
     paramThreshold,
     paramClip,
     paramSustain,
     paramAir,
-    paramMix
+    paramMix,
+    paramGainOut
 }
 
 
@@ -47,6 +58,28 @@ nothrow:
 
     this()
     {
+        _inputDetector = makeVec!EnvelopeDetector;
+        _outputDetector = makeVec!EnvelopeDetector;
+
+        _lowpass = makeVec!LinkwitzRileyLP;
+        _highpass = makeVec!LinkwitzRileyHP;
+        _lowshelf = makeVec!LowShelf;
+
+        _popComp = makeVec!Compressor;
+        _sustainer = makeVec!Compressor;
+
+        foreach(channel; 0..2)
+        {
+            _inputDetector.pushBack(mallocNew!EnvelopeDetector());
+            _outputDetector.pushBack(mallocNew!EnvelopeDetector());
+
+            _lowpass.pushBack(mallocNew!LinkwitzRileyLP);
+            _highpass.pushBack(mallocNew!LinkwitzRileyHP());
+            _lowshelf.pushBack(mallocNew!LowShelf());
+
+            _popComp.pushBack(mallocNew!Compressor());
+            _sustainer.pushBack(mallocNew!Compressor());
+        }
     }
 
     override PluginInfo buildPluginInfo()
@@ -59,12 +92,14 @@ nothrow:
     override Parameter[] buildParameters()
     {
         auto params = makeVec!Parameter();
-        params.pushBack( mallocNew!LinearFloatParameter(paramPop, "amount", "%", 0.0f, 1.0f, 0.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramGainIn, "input gain", "dB", -12.0f, 12.0f, 0.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramPop, "amount", "%", 0.0f, 100.0f, 0.0f));
         params.pushBack( mallocNew!LinearFloatParameter(paramThreshold, "threshold", "dB", -96.0f, 0.0f, 0.0f));
-        params.pushBack( mallocNew!LinearFloatParameter(paramClip, "clip", "dB", -96.0f, 0.0f, 0.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramClip, "clip", "%", 0.0f, 100.0f, 0.0f));
         params.pushBack( mallocNew!LinearFloatParameter(paramSustain, "sustain", "%", 0.0f, 100.0f, 0.0f));
         params.pushBack( mallocNew!LinearFloatParameter(paramAir, "air", "%", 0.0f, 100.0f, 0.0f));
-        params.pushBack( mallocNew!LinearFloatParameter(paramMix, "mix", "%", 0.0f, 100.0f, 0.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramMix, "mix", "%", 0.0f, 100.0f, 100.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramGainOut, "output gain", "dB", -12.0f, 12.0f, 0.0f));
         return params.releaseData();
     }
 
@@ -95,8 +130,16 @@ nothrow:
 
         foreach(channel; 0..2)
         {
-            _inputRMS[channel].initialize(sampleRate);
-            _outputRMS[channel].initialize(sampleRate);
+            _inputDetector[channel].setSampleRate(sampleRate);
+            _outputDetector[channel].setSampleRate(sampleRate);
+            _lowpass[channel].setSampleRate(sampleRate);
+            _lowpass[channel].setFrequency(300);
+            _highpass[channel].setSampleRate(sampleRate);
+            _highpass[channel].setFrequency(300);
+            _lowshelf[channel].setSampleRate(sampleRate);
+            _lowshelf[channel].setFrequency(150);
+            _popComp[channel].setSampleRate(sampleRate);
+            _sustainer[channel].setSampleRate(sampleRate);
         }
     }
 
@@ -110,6 +153,29 @@ nothrow:
 
         int minChan = numInputs > numOutputs ? numOutputs : numInputs;
 
+        float inputGain = dedibelToFloat(readFloatParamValue(paramGainIn));
+        float outputGain = dedibelToFloat(readFloatParamValue(paramGainOut));
+        float popAmount = (readFloatParamValue(paramPop) / 10.0f) + 1;
+        float mix = readFloatParamValue(paramMix) / 100.0f;
+        float threshold = readFloatParamValue(paramThreshold);
+        float clipAmount = readFloatParamValue(paramClip) / 3;
+        float clipInv = 1 / clipAmount;
+
+        float air = clamp(readFloatParamValue(paramAir) / 100.0f, 0, 0.99);
+        float k = 2 * air / (1 - air);
+
+        float sustain = readFloatParamValue(paramSustain) / 16.0f;
+
+
+        foreach(channel; 0..2)
+        {
+            _inputDetector[channel].setEnvelope(5, 20);
+            _outputDetector[channel].setEnvelope(5,20);
+            _popComp[channel].setParams(100.0f, 200.0f, threshold, popAmount, 1.0f);
+            _sustainer[channel].setParams(0.1f, 400.0f, threshold, sustain, 1.0f);
+            _lowshelf[channel].setGain(sustain);
+        }
+
         bool enabled = true;
 
         float[2] RMS = 0;
@@ -120,17 +186,43 @@ nothrow:
             {
                 for (int f = 0; f < frames; ++f)
                 {
-                    float inputSample = inputs[chan][f];
+                    /// Apply input gain
+                    float inputSample = inputGain * inputs[chan][f];
+                    _inputDetector[chan].detect(inputSample);
 
-                    // Feed the input RMS computation
-                    _inputRMS[chan].nextSample(inputSample);
+                    /// Apply first compressor for pop
+                    float outputSample = _popComp[chan].getNextSample(inputSample);
 
-                    float outputSample = 0.5f * inputSample;
-                    
+                    /// Clip the signal
+                    if(clipAmount > 0)
+                        outputSample = clipInv * atan( outputSample * clipAmount);
+
+                    /// apply low boost
+                    outputSample = _lowshelf[chan].getNextSample(outputSample);
+
+                    /// Apply the second compressor for sustain
+                   // outputSample = _sustainer[chan].getNextSample(outputSample);
+
+                    /// Split the signal into two bands
+                    float lowband = _lowpass[chan].getNextSample(outputSample);
+                    float highband = _highpass[chan].getNextSample(outputSample);
+
+                    /// apply distortion to high band
+                    highband = (1 + k) * highband / ( 1 + k * abs(highband));
+
+                    /// Sum the bands back together;
+                    outputSample = lowband - highband;
+
+                    /// Apply the mix
+                    outputSample = outputSample * (mix) + inputSample * (1 - mix);
+
+
+                    /// apply output gain
+                    outputSample *= outputGain;
                     outputs[chan][f] =  outputSample;
 
-                    // Feed the output RMS computation
-                    _outputRMS[chan].nextSample(outputSample);
+                    /// Feed the output RMS computation
+                    _outputDetector[chan].detect(outputSample);
                 }
             }
         }
@@ -140,8 +232,8 @@ nothrow:
             for (int chan = 0; chan < minChan; ++chan)
             {
                 outputs[chan][0..frames] = inputs[chan][0..frames];
-                _outputRMS[chan].nextSample(0);
-                _inputRMS[chan].nextSample(0);
+                _outputDetector[chan].detect(0);
+                _inputDetector[chan].detect(0);
             }
         }
 
@@ -149,8 +241,8 @@ nothrow:
         for (int chan = minChan; chan < numOutputs; ++chan)
         {
             outputs[chan][0..frames] = 0; // D has array slices assignments and operations
-            _outputRMS[chan].nextSample(0);
-            _inputRMS[chan].nextSample(0);
+            //_outputDetector[chan].detect(0);
+            //_inputDetector[chan].detect(0);
         }
 
         // Update RMS meters from the audio callback
@@ -158,8 +250,8 @@ nothrow:
         // disappear under your feet
         if (PopGUI gui = cast(PopGUI) graphicsAcquire())
         {
-            gui.meterLeft.pushBackValues(_inputRMS[0].RMS(), _outputRMS[0].RMS());
-            gui.meterRight.pushBackValues(_inputRMS[1].RMS(), _outputRMS[1].RMS());
+            gui.meterLeft.pushBackValues(_inputDetector[0].getEnvelope(), _outputDetector[0].getEnvelope());
+            gui.meterRight.pushBackValues(_inputDetector[1].getEnvelope(), _outputDetector[1].getEnvelope());
             graphicsRelease();
         }
     }
@@ -170,7 +262,16 @@ nothrow:
     }
 
 private:
-    CoarseRMS!float[2] _inputRMS;
-    CoarseRMS!float[2] _outputRMS;
+
+    Vec!EnvelopeDetector _inputDetector;
+    Vec!EnvelopeDetector _outputDetector;
+
+    Vec!LinkwitzRileyLP _lowpass;
+    Vec!LinkwitzRileyHP _highpass;
+    Vec!LowShelf _lowshelf;
+
+    Vec!Compressor _popComp;
+    Vec!Compressor _sustainer;
+
 }
 

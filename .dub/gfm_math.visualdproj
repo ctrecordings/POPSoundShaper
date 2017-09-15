@@ -1,5 +1,5 @@
 <DProject>
-  <ProjectGuid>{E1B39EAC-AC47-42C4-B477-D1AD06777DCF}</ProjectGuid>
+  <ProjectGuid>{3E8BBA7F-2987-426A-8AF5-1C2DD95D8E80}</ProjectGuid>
   <Config name="debug" platform="Win32">
     <symdebug>1</symdebug>
     <optimize>0</optimize>
