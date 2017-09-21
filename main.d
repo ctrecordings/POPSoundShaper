@@ -200,18 +200,15 @@ nothrow:
                     /// apply low boost
                     outputSample = _lowshelf[chan].getNextSample(outputSample);
 
-                    /// Apply the second compressor for sustain
-                   // outputSample = _sustainer[chan].getNextSample(outputSample);
-
                     /// Split the signal into two bands
-                    float lowband = _lowpass[chan].getNextSample(outputSample);
-                    float highband = _highpass[chan].getNextSample(outputSample);
+                    //float lowband = _lowpass[chan].getNextSample(outputSample);
+                    //float highband = _highpass[chan].getNextSample(outputSample);
 
                     /// apply distortion to high band
-                    highband = (1 + k) * highband / ( 1 + k * abs(highband));
+                    ///highband = (1 + k) * highband / ( 1 + k * abs(highband));
 
                     /// Sum the bands back together;
-                    outputSample = lowband - highband;
+                    ///outputSample = lowband - highband;
 
                     /// Apply the mix
                     outputSample = outputSample * (mix) + inputSample * (1 - mix);

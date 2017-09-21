@@ -1,12 +1,12 @@
 {
 	"dub": {
-		"lastUpgrade": "2017-09-13T00:03:39.9719774",
+		"lastUpgrade": "2017-09-20T13:02:44.0738626",
 		"cachedUpgrades": {
 			"dplug": {
-				"path": "D:/Google Drive/PROGRAMMING/Git Repos/dplug-4.4"
+				"path": "C:/Users/Reker/Documents/PluginDev/Dplug"
 			},
 			"ddsp": {
-				"path": "D:/Google Drive/PROGRAMMING/Git Repos/Ddsp"
+				"path": "C:/Users/Reker/Documents/PluginDev/Ddsp"
 			},
 			"pfft": "1.0.3",
 			"gfm": "6.2.10"
