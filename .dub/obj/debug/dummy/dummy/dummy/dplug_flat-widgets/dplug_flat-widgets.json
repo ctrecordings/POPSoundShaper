@@ -1,0 +1,2100 @@
+[
+ {
+  "name" : "dplug.flatwidgets.flatbackgroundgui",
+  "kind" : "module",
+  "file" : "..\\..\\..\\flatwidgets\\dplug\\flatwidgets\\flatbackgroundgui.d",
+  "members" : [
+   {
+    "name" : "gfm.math.box",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.file",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.color",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.image",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.view",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.drawex",
+    "kind" : "import",
+    "line" : 15,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 17,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.graphics",
+    "kind" : "import",
+    "line" : 18,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 23,
+    "char" : 1,
+    "name" : "FlatBackgroundGUI",
+    "parameters" : [
+     {
+      "name" : "backgroundPath",
+      "kind" : "value",
+      "deco" : "Aya"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "FlatBackgroundGUI",
+      "kind" : "class",
+      "line" : 23,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "this",
+        "kind" : "constructor",
+        "line" : 29,
+        "char" : 5,
+        "type" : "(int width, int height)",
+        "parameters" : [
+         {
+          "name" : "width",
+          "deco" : "i"
+         },
+         {
+          "name" : "height",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 33,
+        "endchar" : 5
+       },
+       {
+        "name" : "~this",
+        "kind" : "destructor",
+        "line" : 35,
+        "char" : 5,
+        "endline" : 39,
+        "endchar" : 5
+       },
+       {
+        "name" : "reflow",
+        "kind" : "function",
+        "line" : 41,
+        "char" : 19,
+        "storageClass" : [
+         "override"
+        ],
+        "type" : "void(box2i availableSpace)",
+        "parameters" : [
+         {
+          "name" : "availableSpace",
+          "type" : "box2i"
+         }
+        ],
+        "endline" : 44,
+        "endchar" : 5
+       },
+       {
+        "name" : "onDraw",
+        "kind" : "function",
+        "line" : 46,
+        "char" : 19,
+        "storageClass" : [
+         "override"
+        ],
+        "type" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, box2i[] dirtyRects)",
+        "parameters" : [
+         {
+          "name" : "diffuseMap",
+          "type" : "ImageRef!RGBA"
+         },
+         {
+          "name" : "depthMap",
+          "type" : "ImageRef!L16"
+         },
+         {
+          "name" : "materialMap",
+          "type" : "ImageRef!RGBA"
+         },
+         {
+          "name" : "dirtyRects",
+          "type" : "box2i[]"
+         }
+        ],
+        "endline" : 63,
+        "endchar" : 5
+       },
+       {
+        "name" : "_backgroundImage",
+        "kind" : "variable",
+        "line" : 66,
+        "char" : 21,
+        "type" : "OwnedImage!RGBA"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "_arraySliceComSliceAssign_k",
+    "kind" : "function",
+    "deco" : "UNaNbNiNeAkxAkZAk",
+    "originalType" : "pure nothrow @nogc @trusted extern (C) uint[](uint[] p1, const const(uint)[] p0)",
+    "parameters" : [
+     {
+      "name" : "p1",
+      "deco" : "Ak"
+     },
+     {
+      "name" : "p0",
+      "deco" : "xAk"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.flatwidgets.flatknob",
+  "kind" : "module",
+  "file" : "..\\..\\..\\flatwidgets\\dplug\\flatwidgets\\flatknob.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.algorithm.comparison",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.drawex",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.element",
+    "kind" : "import",
+    "line" : 15,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.params",
+    "kind" : "import",
+    "line" : 17,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "UIFilmstripKnob",
+    "kind" : "class",
+    "line" : 22,
+    "char" : 1,
+    "base" : "dplug.gui.element.UIElement",
+    "interfaces" : [
+     "dplug.client.params.IParameterListener"
+    ],
+    "members" : [
+     {
+      "name" : "defaultSensivity",
+      "kind" : "variable",
+      "line" : 30,
+      "char" : 10,
+      "storageClass" : [
+       "enum",
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.25F"
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 32,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug3gui7context9UIContextC5dplug6client6params14FloatParameterC5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImageifZC5dplug11flatwidgets8flatknob15UIFilmstripKnob",
+      "originalType" : "nothrow @nogc (UIContext context, FloatParameter param, OwnedImage!RGBA mipmap, int numFrames, float sensitivity = 0.25)",
+      "parameters" : [
+       {
+        "name" : "context",
+        "deco" : "C5dplug3gui7context9UIContext"
+       },
+       {
+        "name" : "param",
+        "deco" : "C5dplug6client6params14FloatParameter"
+       },
+       {
+        "name" : "mipmap",
+        "deco" : "C5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImage"
+       },
+       {
+        "name" : "numFrames",
+        "deco" : "i"
+       },
+       {
+        "name" : "sensitivity",
+        "deco" : "f",
+        "default" : "0.25F"
+       }
+      ],
+      "endline" : 44,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 46,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 49,
+      "endchar" : 5
+     },
+     {
+      "name" : "sensivity",
+      "kind" : "function",
+      "line" : 52,
+      "char" : 11,
+      "deco" : "FNbNiZf",
+      "endline" : 55,
+      "endchar" : 5
+     },
+     {
+      "name" : "sensivity",
+      "kind" : "function",
+      "line" : 58,
+      "char" : 11,
+      "deco" : "FNbNifZf",
+      "parameters" : [
+       {
+        "name" : "sensitivity",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 61,
+      "endchar" : 5
+     },
+     {
+      "name" : "disable",
+      "kind" : "function",
+      "line" : 63,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 66,
+      "endchar" : 5
+     },
+     {
+      "name" : "onDraw",
+      "kind" : "function",
+      "line" : 68,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefAS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, box2i[] dirtyRects)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "dirtyRects",
+        "deco" : "AS3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 95,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onDraw"
+      ]
+     },
+     {
+      "name" : "distance",
+      "kind" : "function",
+      "line" : 97,
+      "char" : 11,
+      "deco" : "FNbNiffffZf",
+      "parameters" : [
+       {
+        "name" : "x1",
+        "deco" : "f"
+       },
+       {
+        "name" : "x2",
+        "deco" : "f"
+       },
+       {
+        "name" : "y1",
+        "deco" : "f"
+       },
+       {
+        "name" : "y2",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 100,
+      "endchar" : 5
+     },
+     {
+      "name" : "setCurrentImage",
+      "kind" : "function",
+      "line" : 102,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 115,
+      "endchar" : 5
+     },
+     {
+      "name" : "onMouseClick",
+      "kind" : "function",
+      "line" : 117,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiibS5dplug6window6window10MouseStateZb",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "button",
+        "deco" : "i"
+       },
+       {
+        "name" : "isDoubleClick",
+        "deco" : "b"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 131,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseClick"
+      ]
+     },
+     {
+      "name" : "onMouseDrag",
+      "kind" : "function",
+      "line" : 134,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiiiS5dplug6window6window10MouseStateZv",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "dx",
+        "deco" : "i"
+       },
+       {
+        "name" : "dy",
+        "deco" : "i"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 174,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseDrag"
+      ]
+     },
+     {
+      "name" : "onBeginDrag",
+      "kind" : "function",
+      "line" : 177,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 181,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onBeginDrag"
+      ]
+     },
+     {
+      "name" : "onStopDrag",
+      "kind" : "function",
+      "line" : 183,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 188,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onStopDrag"
+      ]
+     },
+     {
+      "name" : "onMouseMove",
+      "kind" : "function",
+      "line" : 190,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiiiS5dplug6window6window10MouseStateZv",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "dx",
+        "deco" : "i"
+       },
+       {
+        "name" : "dy",
+        "deco" : "i"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 193,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseMove"
+      ]
+     },
+     {
+      "name" : "onMouseExit",
+      "kind" : "function",
+      "line" : 195,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 198,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseExit"
+      ]
+     },
+     {
+      "name" : "onParameterChanged",
+      "kind" : "function",
+      "line" : 200,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 203,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onParameterChanged"
+      ]
+     },
+     {
+      "name" : "onBeginParameterEdit",
+      "kind" : "function",
+      "line" : 205,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 207,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onBeginParameterEdit"
+      ]
+     },
+     {
+      "name" : "onEndParameterEdit",
+      "kind" : "function",
+      "line" : 209,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 211,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onEndParameterEdit"
+      ]
+     },
+     {
+      "name" : "_param",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 216,
+      "char" : 20,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug6client6params14FloatParameter",
+      "originalType" : "FloatParameter",
+      "offset" : 96
+     },
+     {
+      "name" : "_filmstrip",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 218,
+      "char" : 21,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImage",
+      "originalType" : "OwnedImage!RGBA",
+      "offset" : 100
+     },
+     {
+      "name" : "_faderFilmstrip",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 219,
+      "char" : 21,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImage",
+      "originalType" : "OwnedImage!RGBA",
+      "offset" : 104
+     },
+     {
+      "name" : "_knobGreenFilmstrip",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 220,
+      "char" : 21,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImage",
+      "originalType" : "OwnedImage!RGBA",
+      "offset" : 108
+     },
+     {
+      "name" : "_currentImage",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 221,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef",
+      "originalType" : "ImageRef!RGBA",
+      "offset" : 112
+     },
+     {
+      "name" : "_numFrames",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 223,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 128
+     },
+     {
+      "name" : "_imageX1",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 224,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 132
+     },
+     {
+      "name" : "_imageX2",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 224,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 136
+     },
+     {
+      "name" : "_imageY1",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 224,
+      "char" : 29,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 140
+     },
+     {
+      "name" : "_imageY2",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 224,
+      "char" : 39,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 144
+     },
+     {
+      "name" : "currentFrame",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 225,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 148
+     },
+     {
+      "name" : "_knobWidth",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 227,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 152
+     },
+     {
+      "name" : "_knobHeight",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 228,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 156
+     },
+     {
+      "name" : "_pushedAnimation",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 230,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 160
+     },
+     {
+      "name" : "_sensitivity",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 234,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 164
+     },
+     {
+      "name" : "_mousePosOnLast0Cross",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 236,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 168
+     },
+     {
+      "name" : "_mousePosOnLast1Cross",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 237,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 172
+     },
+     {
+      "name" : "_disabled",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 239,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "b",
+      "offset" : 176
+     },
+     {
+      "name" : "clearCrosspoints",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 241,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 245,
+      "endchar" : 5
+     },
+     {
+      "name" : "containsPoint",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 247,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiiZb",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 251,
+      "endchar" : 5
+     },
+     {
+      "name" : "getSubsquare",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 254,
+      "char" : 17,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZS3gfm4math3box14__T3BoxTiVii2Z3Box",
+      "originalType" : "const pure nothrow @nogc box2i()",
+      "endline" : 271,
+      "endchar" : 5
+     },
+     {
+      "name" : "getRadius",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 273,
+      "char" : 17,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZf",
+      "endline" : 277,
+      "endchar" : 5
+     },
+     {
+      "name" : "getCenter",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 279,
+      "char" : 17,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZS3gfm4math6vector17__T6VectorTfVii2Z6Vector",
+      "originalType" : "const pure nothrow @nogc vec2f()",
+      "endline" : 285,
+      "endchar" : 5
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.flatwidgets.flatslider",
+  "kind" : "module",
+  "file" : "..\\..\\..\\flatwidgets\\dplug\\flatwidgets\\flatslider.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.algorithm.comparison",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.drawex",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.bufferedelement",
+    "kind" : "import",
+    "line" : 15,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.params",
+    "kind" : "import",
+    "line" : 16,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "UIFilmstripSlider",
+    "kind" : "class",
+    "line" : 18,
+    "char" : 1,
+    "base" : "dplug.gui.element.UIElement",
+    "interfaces" : [
+     "dplug.client.params.IParameterListener"
+    ],
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 24,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug3gui7context9UIContextC5dplug6client6params14FloatParameterC5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImageifZC5dplug11flatwidgets10flatslider17UIFilmstripSlider",
+      "originalType" : "nothrow @nogc (UIContext context, FloatParameter param, OwnedImage!RGBA mipmap, int numFrames, float sensitivity = 0.25)",
+      "parameters" : [
+       {
+        "name" : "context",
+        "deco" : "C5dplug3gui7context9UIContext"
+       },
+       {
+        "name" : "param",
+        "deco" : "C5dplug6client6params14FloatParameter"
+       },
+       {
+        "name" : "mipmap",
+        "deco" : "C5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImage"
+       },
+       {
+        "name" : "numFrames",
+        "deco" : "i"
+       },
+       {
+        "name" : "sensitivity",
+        "deco" : "f",
+        "default" : "0.25F"
+       }
+      ],
+      "endline" : 34,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 36,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 39,
+      "endchar" : 5
+     },
+     {
+      "name" : "sensivity",
+      "kind" : "function",
+      "line" : 42,
+      "char" : 11,
+      "deco" : "FNbNiZf",
+      "endline" : 45,
+      "endchar" : 5
+     },
+     {
+      "name" : "sensivity",
+      "kind" : "function",
+      "line" : 48,
+      "char" : 11,
+      "deco" : "FNbNifZf",
+      "parameters" : [
+       {
+        "name" : "sensivity",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 51,
+      "endchar" : 5
+     },
+     {
+      "name" : "onAnimate",
+      "kind" : "function",
+      "line" : 53,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiddZv",
+      "parameters" : [
+       {
+        "name" : "dt",
+        "deco" : "d"
+       },
+       {
+        "name" : "time",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 62,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onAnimate"
+      ]
+     },
+     {
+      "name" : "onDraw",
+      "kind" : "function",
+      "line" : 64,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefAS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, box2i[] dirtyRects)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "dirtyRects",
+        "deco" : "AS3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 91,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onDraw"
+      ]
+     },
+     {
+      "name" : "setCurrentImage",
+      "kind" : "function",
+      "line" : 93,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 107,
+      "endchar" : 5
+     },
+     {
+      "name" : "onMouseClick",
+      "kind" : "function",
+      "line" : 109,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiibS5dplug6window6window10MouseStateZb",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "button",
+        "deco" : "i"
+       },
+       {
+        "name" : "isDoubleClick",
+        "deco" : "b"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 125,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseClick"
+      ]
+     },
+     {
+      "name" : "onMouseDrag",
+      "kind" : "function",
+      "line" : 128,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiiiS5dplug6window6window10MouseStateZv",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "dx",
+        "deco" : "i"
+       },
+       {
+        "name" : "dy",
+        "deco" : "i"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 180,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseDrag"
+      ]
+     },
+     {
+      "name" : "onBeginDrag",
+      "kind" : "function",
+      "line" : 183,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 187,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onBeginDrag"
+      ]
+     },
+     {
+      "name" : "onStopDrag",
+      "kind" : "function",
+      "line" : 189,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 194,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onStopDrag"
+      ]
+     },
+     {
+      "name" : "onMouseEnter",
+      "kind" : "function",
+      "line" : 196,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 198,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseEnter"
+      ]
+     },
+     {
+      "name" : "onMouseExit",
+      "kind" : "function",
+      "line" : 200,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 202,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseExit"
+      ]
+     },
+     {
+      "name" : "onParameterChanged",
+      "kind" : "function",
+      "line" : 204,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 207,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onParameterChanged"
+      ]
+     },
+     {
+      "name" : "onBeginParameterEdit",
+      "kind" : "function",
+      "line" : 209,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 211,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onBeginParameterEdit"
+      ]
+     },
+     {
+      "name" : "onEndParameterEdit",
+      "kind" : "function",
+      "line" : 213,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 215,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onEndParameterEdit"
+      ]
+     },
+     {
+      "name" : "disable",
+      "kind" : "function",
+      "line" : 217,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 220,
+      "endchar" : 5
+     },
+     {
+      "name" : "_param",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 225,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug6client6params9Parameter",
+      "originalType" : "Parameter",
+      "offset" : 96
+     },
+     {
+      "name" : "_filmstrip",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 227,
+      "char" : 21,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImage",
+      "originalType" : "OwnedImage!RGBA",
+      "offset" : 100
+     },
+     {
+      "name" : "_numFrames",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 228,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 104
+     },
+     {
+      "name" : "_imageX1",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 229,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 108
+     },
+     {
+      "name" : "_imageX2",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 229,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 112
+     },
+     {
+      "name" : "_imageY1",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 229,
+      "char" : 29,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 116
+     },
+     {
+      "name" : "_imageY2",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 229,
+      "char" : 39,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 120
+     },
+     {
+      "name" : "currentFrame",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 230,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 124
+     },
+     {
+      "name" : "_knobWidth",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 232,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 128
+     },
+     {
+      "name" : "_knobHeight",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 233,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 132
+     },
+     {
+      "name" : "_sensivity",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 237,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 136
+     },
+     {
+      "name" : "_pushedAnimation",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 239,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 140
+     },
+     {
+      "name" : "_mousePosOnLast0Cross",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 241,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 144
+     },
+     {
+      "name" : "_mousePosOnLast1Cross",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 242,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 148
+     },
+     {
+      "name" : "_draggingDebt",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 246,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.000000F",
+      "offset" : 152
+     },
+     {
+      "name" : "_disabled",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 248,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "b",
+      "offset" : 156
+     },
+     {
+      "name" : "clearCrosspoints",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 250,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 254,
+      "endchar" : 5
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.flatwidgets.flatswitch",
+  "kind" : "module",
+  "file" : "..\\..\\..\\flatwidgets\\dplug\\flatwidgets\\flatswitch.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.drawex",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.element",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.params",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "UIImageSwitch",
+    "kind" : "class",
+    "line" : 14,
+    "char" : 1,
+    "base" : "dplug.gui.element.UIElement",
+    "interfaces" : [
+     "dplug.client.params.IParameterListener"
+    ],
+    "members" : [
+     {
+      "name" : "Orientation",
+      "kind" : "enum",
+      "line" : 20,
+      "char" : 5,
+      "baseDeco" : "i",
+      "members" : [
+       {
+        "name" : "vertical",
+        "kind" : "enum member",
+        "value" : "0",
+        "line" : 22,
+        "char" : 9
+       },
+       {
+        "name" : "horizontal",
+        "kind" : "enum member",
+        "value" : "1",
+        "line" : 23,
+        "char" : 9
+       }
+      ]
+     },
+     {
+      "name" : "orientation",
+      "kind" : "variable",
+      "line" : 26,
+      "char" : 17,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "E5dplug11flatwidgets10flatswitch13UIImageSwitch11Orientation",
+      "init" : "cast(Orientation)0",
+      "offset" : 96
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 28,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug3gui7context9UIContextC5dplug6client6params13BoolParameterC5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImageC5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImageZC5dplug11flatwidgets10flatswitch13UIImageSwitch",
+      "originalType" : "nothrow @nogc (UIContext context, BoolParameter param, OwnedImage!RGBA onImage, OwnedImage!RGBA offImage)",
+      "parameters" : [
+       {
+        "name" : "context",
+        "deco" : "C5dplug3gui7context9UIContext"
+       },
+       {
+        "name" : "param",
+        "deco" : "C5dplug6client6params13BoolParameter"
+       },
+       {
+        "name" : "onImage",
+        "deco" : "C5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImage"
+       },
+       {
+        "name" : "offImage",
+        "deco" : "C5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImage"
+       }
+      ],
+      "endline" : 41,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 43,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 46,
+      "endchar" : 5
+     },
+     {
+      "name" : "getState",
+      "kind" : "function",
+      "line" : 48,
+      "char" : 10,
+      "deco" : "FNbNiZb",
+      "endline" : 50,
+      "endchar" : 5
+     },
+     {
+      "name" : "onDraw",
+      "kind" : "function",
+      "line" : 52,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefAS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, box2i[] dirtyRects)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "dirtyRects",
+        "deco" : "AS3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 78,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onDraw"
+      ]
+     },
+     {
+      "name" : "onMouseClick",
+      "kind" : "function",
+      "line" : 80,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiibS5dplug6window6window10MouseStateZb",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "button",
+        "deco" : "i"
+       },
+       {
+        "name" : "isDoubleClick",
+        "deco" : "b"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 87,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseClick"
+      ]
+     },
+     {
+      "name" : "onMouseEnter",
+      "kind" : "function",
+      "line" : 89,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 92,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseEnter"
+      ]
+     },
+     {
+      "name" : "onMouseMove",
+      "kind" : "function",
+      "line" : 94,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiiiS5dplug6window6window10MouseStateZv",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "dx",
+        "deco" : "i"
+       },
+       {
+        "name" : "dy",
+        "deco" : "i"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 97,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseMove"
+      ]
+     },
+     {
+      "name" : "onMouseExit",
+      "kind" : "function",
+      "line" : 99,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 102,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseExit"
+      ]
+     },
+     {
+      "name" : "onBeginDrag",
+      "kind" : "function",
+      "line" : 104,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 107,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onBeginDrag"
+      ]
+     },
+     {
+      "name" : "onStopDrag",
+      "kind" : "function",
+      "line" : 109,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 112,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onStopDrag"
+      ]
+     },
+     {
+      "name" : "onMouseDrag",
+      "kind" : "function",
+      "line" : 114,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiiiS5dplug6window6window10MouseStateZv",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "dx",
+        "deco" : "i"
+       },
+       {
+        "name" : "dy",
+        "deco" : "i"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 118,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseDrag"
+      ]
+     },
+     {
+      "name" : "onParameterChanged",
+      "kind" : "function",
+      "line" : 120,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 123,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onParameterChanged"
+      ]
+     },
+     {
+      "name" : "onBeginParameterEdit",
+      "kind" : "function",
+      "line" : 125,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 127,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onBeginParameterEdit"
+      ]
+     },
+     {
+      "name" : "onEndParameterEdit",
+      "kind" : "function",
+      "line" : 129,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 131,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onEndParameterEdit"
+      ]
+     },
+     {
+      "name" : "_param",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 135,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug6client6params13BoolParameter",
+      "originalType" : "BoolParameter",
+      "offset" : 100
+     },
+     {
+      "name" : "_state",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 136,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "b",
+      "offset" : 104
+     },
+     {
+      "name" : "_onImage",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 137,
+      "char" : 21,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImage",
+      "originalType" : "OwnedImage!RGBA",
+      "offset" : 108
+     },
+     {
+      "name" : "_offImage",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 138,
+      "char" : 21,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImage",
+      "originalType" : "OwnedImage!RGBA",
+      "offset" : 112
+     },
+     {
+      "name" : "_width",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 139,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 116
+     },
+     {
+      "name" : "_height",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 140,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 120
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.flatwidgets",
+  "kind" : "module",
+  "file" : "..\\..\\..\\flatwidgets\\dplug\\flatwidgets\\package.d",
+  "members" : [
+   {
+    "name" : "dplug.gui.element",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.flatwidgets.flatknob",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.flatwidgets.flatslider",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.flatwidgets.flatswitch",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.flatwidgets.flatbackgroundgui",
+    "kind" : "import",
+    "line" : 15,
+    "char" : 15
+   }
+  ]
+ }
+]

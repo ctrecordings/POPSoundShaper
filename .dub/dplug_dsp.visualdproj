@@ -1,5 +1,5 @@
 <DProject>
-  <ProjectGuid>{38D2319C-01E1-47F4-B3BC-69E778EE16EE}</ProjectGuid>
+  <ProjectGuid>{D06F5B83-FCF9-4187-A3A8-6A059C378955}</ProjectGuid>
   <Config name="debug" platform="Win32">
     <symdebug>1</symdebug>
     <optimize>0</optimize>
@@ -7,7 +7,7 @@
     <release>0</release>
     <lib>1</lib>
     <exefile>lib\dplug_dsp.lib</exefile>
-    <imppath>"..\..\..\dsp" "..\..\..\core" "C:\Users\Reker\AppData\Roaming\dub\packages\gfm-6.2.10\gfm\math" "C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft"</imppath>
+    <imppath>"..\..\..\dsp" "..\..\..\core" "..\..\..\..\..\..\AppData\Roaming\dub\packages\gfm-6.2.10\gfm\math" "..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft"</imppath>
     <fileImppath></fileImppath>
     <program>$(DMDInstallDir)windows\bin\dmd.exe</program>
     <additionalOptions></additionalOptions>
@@ -18,7 +18,7 @@
     <subsystem>0</subsystem>
     <multiobj>0</multiobj>
     <singleFileCompilation>2</singleFileCompilation>
-    <oneobj>0</oneobj>
+    <mscoff>0</mscoff>    <oneobj>0</oneobj>
     <trace>0</trace>
     <quiet>0</quiet>
     <verbose>0</verbose>

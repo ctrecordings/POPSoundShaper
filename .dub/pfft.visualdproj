@@ -1,5 +1,5 @@
 <DProject>
-  <ProjectGuid>{7DBA3050-8141-4E63-A7E3-BB53B71A3313}</ProjectGuid>
+  <ProjectGuid>{092C9F0C-A316-477D-8ECE-F93BDA6E5EC2}</ProjectGuid>
   <Config name="debug" platform="Win32">
     <symdebug>1</symdebug>
     <optimize>0</optimize>
@@ -7,7 +7,7 @@
     <release>0</release>
     <lib>1</lib>
     <exefile>lib\pfft.lib</exefile>
-    <imppath>"C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft"</imppath>
+    <imppath>"..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft"</imppath>
     <fileImppath></fileImppath>
     <program>$(DMDInstallDir)windows\bin\dmd.exe</program>
     <additionalOptions></additionalOptions>
@@ -18,7 +18,7 @@
     <subsystem>0</subsystem>
     <multiobj>0</multiobj>
     <singleFileCompilation>2</singleFileCompilation>
-    <oneobj>0</oneobj>
+    <mscoff>0</mscoff>    <oneobj>0</oneobj>
     <trace>0</trace>
     <quiet>0</quiet>
     <verbose>0</verbose>
@@ -52,7 +52,7 @@
     <compiler>0</compiler>
     <otherDMD>0</otherDMD>
     <outdir>lib\</outdir>
-    <objdir>obj/debug/pfft</objdir>
+    <objdir>obj/debug/dummy/dummy/dummy/dummy/dummy/dummy/pfft</objdir>
     <objname />
     <libname />
     <doDocComments>0</doDocComments>
@@ -96,50 +96,50 @@
     <Folder name="pfft">
     <Folder name="doc">
     <Folder name="ddoc">
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\doc\ddoc\clib.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\doc\ddoc\clib.d" />
     </Folder>
     </Folder>
     <Folder name="examples">
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\examples\pfft_example.d" />
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\examples\pfft_real_example.d" />
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\examples\std_example.d" />
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\examples\std_real_example.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\examples\pfft_example.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\examples\pfft_real_example.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\examples\std_example.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\examples\std_real_example.d" />
     </Folder>
     <Folder name="pfft">
     <Folder name="di">
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\di\impl_double.di" />
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\di\impl_float.di" />
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\di\impl_real.di" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\di\impl_double.di" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\di\impl_float.di" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\di\impl_real.di" />
     </Folder>
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\avx_double.d" />
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\avx_float.d" />
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\clib.d" />
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\detect_avx.d" />
-      <File path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\dmd32_compat.d" />
-      <File path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\fft_impl.d" />
-      <File path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\impl_double.d" />
-      <File path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\impl_float.d" />
-      <File path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\impl_real.d" />
-      <File path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\ldc_compat.d" />
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\neon_float.d" />
-      <File path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\pfft.d" />
-      <File path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\scalar_double.d" />
-      <File path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\scalar_float.d" />
-      <File path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\scalar_real.d" />
-      <File path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\shuffle.d" />
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\shufps.di" />
-      <File path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\sse_double.d" />
-      <File path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\sse_float.d" />
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\stdapi.d" />
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\stdsimd.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\avx_double.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\avx_float.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\clib.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\detect_avx.d" />
+      <File path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\dmd32_compat.d" />
+      <File path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\fft_impl.d" />
+      <File path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\impl_double.d" />
+      <File path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\impl_float.d" />
+      <File path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\impl_real.d" />
+      <File path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\ldc_compat.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\neon_float.d" />
+      <File path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\pfft.d" />
+      <File path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\scalar_double.d" />
+      <File path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\scalar_float.d" />
+      <File path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\scalar_real.d" />
+      <File path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\shuffle.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\shufps.di" />
+      <File path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\sse_double.d" />
+      <File path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\sse_float.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\stdapi.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\pfft\stdsimd.d" />
     </Folder>
     <Folder name="test">
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\test\accuracy.d" />
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\test\benchmarks.d" />
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\test\test.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\test\accuracy.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\test\benchmarks.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\test\test.d" />
     </Folder>
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\build.d" />
-      <File tool="None" path="C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\dub.json" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\build.d" />
+      <File tool="None" path="..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft\dub.json" />
     </Folder>
   </Folder>
 </DProject>

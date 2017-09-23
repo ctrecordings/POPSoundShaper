@@ -1,0 +1,11 @@
+obj/debug/dummy/dummy/dummy/dplug_graphics\..\..\..\graphics\dplug\graphics\color.obj 
+obj/debug/dummy/dummy/dummy/dplug_graphics\..\..\..\graphics\dplug\graphics\draw.obj 
+obj/debug/dummy/dummy/dummy/dplug_graphics\..\..\..\graphics\dplug\graphics\drawex.obj 
+obj/debug/dummy/dummy/dummy/dplug_graphics\..\..\..\graphics\dplug\graphics\font.obj 
+obj/debug/dummy/dummy/dummy/dplug_graphics\..\..\..\graphics\dplug\graphics\image.obj 
+obj/debug/dummy/dummy/dummy/dplug_graphics\..\..\..\graphics\dplug\graphics\jpegload.obj 
+obj/debug/dummy/dummy/dummy/dplug_graphics\..\..\..\graphics\dplug\graphics\mipmap.obj 
+obj/debug/dummy/dummy/dummy/dplug_graphics\..\..\..\graphics\dplug\graphics\package.obj 
+obj/debug/dummy/dummy/dummy/dplug_graphics\..\..\..\graphics\dplug\graphics\pngload.obj 
+obj/debug/dummy/dummy/dummy/dplug_graphics\..\..\..\graphics\dplug\graphics\stb_truetype.obj 
+obj/debug/dummy/dummy/dummy/dplug_graphics\..\..\..\graphics\dplug\graphics\view.obj 

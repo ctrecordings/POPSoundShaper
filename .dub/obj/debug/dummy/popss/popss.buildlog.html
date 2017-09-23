@@ -1,0 +1,92 @@
+<html><head><META HTTP-EQUIV="Content-Type" content="text/html">
+</head><body><pre>
+<table width=100% bgcolor=#CFCFE5><tr><td>
+	<font face=arial size=+3>Build Log</font>
+</table>
+<table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Building C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\popss.dll
+</font></table>
+<table width=100% bgcolor=#EFEFE5><tr><td><font face=arial size=+1>
+Command Line
+</font></table>
+set PATH=.\bin;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE;C:\Program Files (x86)\Windows Kits\8.1\bin\x86;.\windows\bin;%PATH%
+
+echo ..\gui.d &gt;obj\debug\dummy\popss\popss.build.rsp
+echo ..\main.d &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo ..\popmeter.d &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\ddsp.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_au.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_dsp.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\pfft.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_flat-widgets.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_pbr-widgets.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_gui.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_window.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_carbon.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_cocoa.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_graphics.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\gfm_math.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_x11.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_vst.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_client.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_core.lib &gt;&gt;obj\debug\dummy\popss\popss.build.rsp
+
+dmd -g -debug -w -op -X -Xf&quot;obj\debug\dummy\popss\popss.json&quot; -I&quot;..&quot; -I&quot;..\..\..\..\Ddsp\util&quot; -I&quot;..\..\..\..\Ddsp\effect&quot; -I&quot;..\..\..\..\Ddsp\filter&quot; -I&quot;..\..\..\..\Ddsp\osc&quot; -I&quot;..\..\..\core&quot; -I&quot;..\..\..\au&quot; -I&quot;..\..\..\carbon&quot; -I&quot;..\..\..\client&quot; -I&quot;..\..\..\cocoa&quot; -I&quot;..\..\..\dsp&quot; -I&quot;..\..\..\..\..\..\AppData\Roaming\dub\packages\gfm-6.2.10\gfm\math&quot; -I&quot;..\..\..\..\..\..\AppData\Roaming\dub\packages\pfft-1.0.3\pfft&quot; -I&quot;..\..\..\flatwidgets&quot; -I&quot;..\..\..\graphics&quot; -I&quot;..\..\..\gui&quot; -I&quot;..\..\..\window&quot; -I&quot;..\..\..\x11&quot; -I&quot;..\..\..\pbrwidgets&quot; -I&quot;..\..\..\vst&quot; -J&quot;..\gfx&quot; -J&quot;..\fonts&quot; -J&quot;..&quot; -version=VST -version=Have_popss -version=Have_ddsp -version=Have_dplug_core -version=Have_dplug_au -version=Have_dplug_carbon -version=Have_dplug_client -version=Have_dplug_cocoa -version=Have_dplug_dsp -version=Have_gfm_math -version=Have_pfft -version=Have_dplug_flat_widgets -version=Have_dplug_graphics -version=Have_dplug_gui -version=Have_dplug_window -version=Have_dplug_x11 -version=Have_dplug_pbr_widgets -version=Have_dplug_vst -deps=&quot;obj\debug\dummy\popss\popss.dep&quot; -c -odobj/debug/dummy/popss @obj\debug\dummy\popss\popss.build.rsp
+if errorlevel 1 goto reportError
+
+set LIB=
+echo. &gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo obj\debug\dummy\popss\..\gui.obj+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo obj\debug\dummy\popss\..\main.obj+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo obj\debug\dummy\popss\..\popmeter.obj,C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\popss.dll,&quot;obj\debug\dummy\popss\popss.map&quot;,C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\ddsp.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_au.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_dsp.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\pfft.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_flat-widgets.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_pbr-widgets.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_gui.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_window.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_carbon.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_cocoa.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_graphics.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\gfm_math.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_x11.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_vst.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_client.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\lib\dplug_core.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo gdi32.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo user32.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo user32.lib+ &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+echo kernel32.lib/NOMAP/CO/NOI/DELEXE &gt;&gt; C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+
+&quot;C:\Program Files (x86)\VisualD\pipedmd.exe&quot; -deps obj\debug\dummy\popss\popss.lnkdep link.exe @C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\.dub\obj\debug\dummy\popss\popss.build.lnkarg
+if errorlevel 1 goto reportError
+if not exist C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\popss.dll (echo C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\popss.dll not created! &amp;&amp; goto reportError)
+
+goto noError
+
+:reportError
+echo Building C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\popss.dll failed!
+
+:noError
+<table width=100% bgcolor=#EFEFE5><tr><td><font face=arial size=+1>
+Output
+</font></table>
+object.Error@(0): Access Violation
+----------------
+0x005BEDEE
+0x005D7FD6
+0x005A38D0
+0x005B3676
+0x0053479E
+0x005ACE2F
+0x005AF442
+0x00579BA6
+0x005A77F4
+0x004EFDDB
+0x004ECE29
+0x77A0F756 in RtlReAllocateHeap
+0x77A0F673 in RtlReAllocateHeap
+0x005D7141
+Building C:\Users\Reker\Documents\PluginDev\Dplug\examples\popss\popss.dll failed!
+</body></html>

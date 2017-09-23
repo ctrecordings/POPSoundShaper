@@ -1,0 +1,9 @@
+..\..\..\client\dplug\client\binrange.d 
+..\..\..\client\dplug\client\client.d 
+..\..\..\client\dplug\client\daw.d 
+..\..\..\client\dplug\client\dllmain.d 
+..\..\..\client\dplug\client\graphics.d 
+..\..\..\client\dplug\client\midi.d 
+..\..\..\client\dplug\client\package.d 
+..\..\..\client\dplug\client\params.d 
+..\..\..\client\dplug\client\preset.d 

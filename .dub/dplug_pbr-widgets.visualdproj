@@ -1,5 +1,5 @@
 <DProject>
-  <ProjectGuid>{DFEEF3E9-B232-4B11-872C-96FADBB36A9F}</ProjectGuid>
+  <ProjectGuid>{60521621-D564-4D63-8A33-B4B86F65D5CE}</ProjectGuid>
   <Config name="debug" platform="Win32">
     <symdebug>1</symdebug>
     <optimize>0</optimize>
@@ -7,7 +7,7 @@
     <release>0</release>
     <lib>1</lib>
     <exefile>lib\dplug_pbr-widgets.lib</exefile>
-    <imppath>"..\..\..\pbrwidgets" "..\..\..\client" "..\..\..\core" "..\..\..\graphics" "C:\Users\Reker\AppData\Roaming\dub\packages\gfm-6.2.10\gfm\math" "..\..\..\gui" "..\..\..\window" "..\..\..\carbon" "..\..\..\cocoa" "..\..\..\x11"</imppath>
+    <imppath>"..\..\..\pbrwidgets" "..\..\..\client" "..\..\..\core" "..\..\..\graphics" "..\..\..\..\..\..\AppData\Roaming\dub\packages\gfm-6.2.10\gfm\math" "..\..\..\gui" "..\..\..\window" "..\..\..\carbon" "..\..\..\cocoa" "..\..\..\x11"</imppath>
     <fileImppath></fileImppath>
     <program>$(DMDInstallDir)windows\bin\dmd.exe</program>
     <additionalOptions></additionalOptions>
@@ -18,7 +18,7 @@
     <subsystem>0</subsystem>
     <multiobj>0</multiobj>
     <singleFileCompilation>2</singleFileCompilation>
-    <oneobj>0</oneobj>
+    <mscoff>0</mscoff>    <oneobj>0</oneobj>
     <trace>0</trace>
     <quiet>0</quiet>
     <verbose>0</verbose>

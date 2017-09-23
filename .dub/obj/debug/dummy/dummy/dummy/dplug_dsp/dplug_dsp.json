@@ -1,0 +1,5575 @@
+[
+ {
+  "name" : "dplug.dsp.delayline",
+  "kind" : "module",
+  "file" : "..\\..\\..\\dsp\\dplug\\dsp\\delayline.d",
+  "members" : [
+   {
+    "name" : "core.stdc.string",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 15,
+    "char" : 1,
+    "name" : "Delayline",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "Delayline",
+      "kind" : "struct",
+      "line" : 15,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 20,
+        "char" : 10,
+        "type" : "nothrow @nogc void(int numSamples)",
+        "parameters" : [
+         {
+          "name" : "numSamples",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 23,
+        "endchar" : 5
+       },
+       {
+        "name" : "~this",
+        "kind" : "destructor",
+        "line" : 25,
+        "char" : 5,
+        "storageClass" : [
+         "nothrow",
+         "@nogc"
+        ],
+        "endline" : 28,
+        "endchar" : 5
+       },
+       {
+        "name" : "resize",
+        "kind" : "function",
+        "line" : 34,
+        "char" : 10,
+        "type" : "nothrow @nogc void(int numSamples)",
+        "parameters" : [
+         {
+          "name" : "numSamples",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 48,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 52,
+        "char" : 7,
+        "type" : "nothrow @nogc T(T incoming)",
+        "parameters" : [
+         {
+          "name" : "incoming",
+          "type" : "T"
+         }
+        ],
+        "endline" : 56,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 60,
+        "char" : 10,
+        "type" : "nothrow @nogc void(const(T)* input, T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "const(T)*"
+         },
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 64,
+        "endchar" : 5
+       },
+       {
+        "name" : "feedSample",
+        "kind" : "function",
+        "line" : 67,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T incoming)",
+        "parameters" : [
+         {
+          "name" : "incoming",
+          "type" : "T"
+         }
+        ],
+        "endline" : 71,
+        "endchar" : 5
+       },
+       {
+        "name" : "feedBuffer",
+        "kind" : "function",
+        "line" : 74,
+        "char" : 10,
+        "type" : "nothrow @nogc void(const(T)[] incoming)",
+        "parameters" : [
+         {
+          "name" : "incoming",
+          "type" : "const(T)[]"
+         }
+        ],
+        "endline" : 97,
+        "endchar" : 5
+       },
+       {
+        "name" : "sampleFull",
+        "kind" : "function",
+        "line" : 101,
+        "char" : 7,
+        "type" : "nothrow @nogc T(int delay)",
+        "parameters" : [
+         {
+          "name" : "delay",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 105,
+        "endchar" : 5
+       },
+       {
+        "name" : "_data",
+        "kind" : "variable",
+        "line" : 195,
+        "char" : 9,
+        "type" : "T[]"
+       },
+       {
+        "name" : "_index",
+        "kind" : "variable",
+        "line" : 196,
+        "char" : 9,
+        "deco" : "i"
+       },
+       {
+        "name" : "_indexMask",
+        "kind" : "variable",
+        "line" : 197,
+        "char" : 9,
+        "deco" : "i"
+       },
+       {
+        "name" : "_numSamples",
+        "kind" : "variable",
+        "line" : 198,
+        "char" : 9,
+        "deco" : "i"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL201_1",
+    "kind" : "function",
+    "line" : 201,
+    "char" : 1,
+    "endline" : 214,
+    "endchar" : 2
+   }
+  ]
+ },
+ {
+  "name" : "dplug.dsp.envelope",
+  "kind" : "module",
+  "file" : "..\\..\\..\\dsp\\dplug\\dsp\\envelope.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.dsp.iir",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.dsp.smooth",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 16,
+    "char" : 1,
+    "name" : "EnvelopeFollower",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "EnvelopeFollower",
+      "kind" : "struct",
+      "line" : 16,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 21,
+        "char" : 10,
+        "type" : "nothrow @nogc void(float cutoffInHz, float samplerate)",
+        "parameters" : [
+         {
+          "name" : "cutoffInHz",
+          "deco" : "f"
+         },
+         {
+          "name" : "samplerate",
+          "deco" : "f"
+         }
+        ],
+        "endline" : 26,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 29,
+        "char" : 7,
+        "type" : "nothrow @nogc T(T x)",
+        "parameters" : [
+         {
+          "name" : "x",
+          "type" : "T"
+         }
+        ],
+        "endline" : 35,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 37,
+        "char" : 10,
+        "type" : "nothrow @nogc void(const(T)* input, T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "const(T)*"
+         },
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 44,
+        "endchar" : 5
+       },
+       {
+        "name" : "_coeff",
+        "kind" : "variable",
+        "line" : 47,
+        "char" : 19,
+        "type" : "BiquadCoeff!T"
+       },
+       {
+        "name" : "_delay0",
+        "kind" : "variable",
+        "line" : 48,
+        "char" : 19,
+        "type" : "BiquadDelay!T"
+       },
+       {
+        "name" : "_delay1",
+        "kind" : "variable",
+        "line" : 49,
+        "char" : 19,
+        "type" : "BiquadDelay!T"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL52_2",
+    "kind" : "function",
+    "line" : 52,
+    "char" : 1,
+    "endline" : 61,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 61,
+    "char" : 1,
+    "name" : "AnalyticSignal",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "AnalyticSignal",
+      "kind" : "struct",
+      "line" : 61,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 64,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T samplerate)",
+        "parameters" : [
+         {
+          "name" : "samplerate",
+          "type" : "T"
+         }
+        ],
+        "endline" : 67,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 69,
+        "char" : 7,
+        "type" : "nothrow @nogc T(T input)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "T"
+         }
+        ],
+        "endline" : 74,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 76,
+        "char" : 10,
+        "type" : "nothrow @nogc void(const(T)* input, T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "const(T)*"
+         },
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 81,
+        "endchar" : 5
+       },
+       {
+        "name" : "_hilbert",
+        "kind" : "variable",
+        "line" : 84,
+        "char" : 26,
+        "type" : "HilbertTransformer!T"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL87_3",
+    "kind" : "function",
+    "line" : 87,
+    "char" : 1,
+    "endline" : 108,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 108,
+    "char" : 1,
+    "name" : "HilbertTransformer",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "HilbertTransformer",
+      "kind" : "struct",
+      "line" : 108,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 111,
+        "char" : 10,
+        "type" : "nothrow @nogc void(float sampleRate)",
+        "parameters" : [
+         {
+          "name" : "sampleRate",
+          "deco" : "f"
+         }
+        ],
+        "endline" : 136,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 138,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T input, out T out1, out T out2)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "T"
+         },
+         {
+          "name" : "out1",
+          "type" : "T",
+          "storageClass" : [
+           "out"
+          ]
+         },
+         {
+          "name" : "out2",
+          "type" : "T",
+          "storageClass" : [
+           "out"
+          ]
+         }
+        ],
+        "endline" : 171,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 173,
+        "char" : 10,
+        "type" : "nothrow @nogc void(const(T)* input, T* output1, T* output2, int frames)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "const(T)*"
+         },
+         {
+          "name" : "output1",
+          "type" : "T*"
+         },
+         {
+          "name" : "output2",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 222,
+        "endchar" : 5
+       },
+       {
+        "name" : "_coef",
+        "kind" : "variable",
+        "line" : 225,
+        "char" : 11,
+        "type" : "T[12]"
+       },
+       {
+        "name" : "_xnm1",
+        "kind" : "variable",
+        "line" : 226,
+        "char" : 11,
+        "type" : "T[12]"
+       },
+       {
+        "name" : "_ynm1",
+        "kind" : "variable",
+        "line" : 227,
+        "char" : 11,
+        "type" : "T[12]"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL230_4",
+    "kind" : "function",
+    "line" : 230,
+    "char" : 1,
+    "endline" : 238,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 238,
+    "char" : 1,
+    "name" : "CoarseRMS",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "CoarseRMS",
+      "kind" : "struct",
+      "line" : 238,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 241,
+        "char" : 10,
+        "type" : "nothrow @nogc void(double sampleRate)",
+        "parameters" : [
+         {
+          "name" : "sampleRate",
+          "deco" : "d"
+         }
+        ],
+        "endline" : 247,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 250,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T input)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "T"
+         }
+        ],
+        "endline" : 253,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 255,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T* input, int frames)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 264,
+        "endchar" : 5
+       },
+       {
+        "name" : "RMS",
+        "kind" : "function",
+        "line" : 266,
+        "char" : 7,
+        "type" : "nothrow @nogc T()",
+        "endline" : 269,
+        "endchar" : 5
+       },
+       {
+        "name" : "_envelope",
+        "kind" : "variable",
+        "line" : 272,
+        "char" : 24,
+        "type" : "EnvelopeFollower!T"
+       },
+       {
+        "name" : "_last",
+        "kind" : "variable",
+        "line" : 273,
+        "char" : 7,
+        "type" : "T"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL276_5",
+    "kind" : "function",
+    "line" : 276,
+    "char" : 1,
+    "endline" : 281,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "dplug.dsp.fft",
+  "kind" : "module",
+  "file" : "..\\..\\..\\dsp\\dplug\\dsp\\fft.d",
+  "members" : [
+   {
+    "name" : "core.stdc.string",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.dsp.window",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.complex",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 15,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "pfft.pfft",
+    "kind" : "import",
+    "line" : 16,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "FFTDirection",
+    "kind" : "enum",
+    "line" : 19,
+    "char" : 1,
+    "baseDeco" : "i",
+    "members" : [
+     {
+      "name" : "FORWARD",
+      "kind" : "enum member",
+      "value" : "0",
+      "line" : 21,
+      "char" : 5
+     },
+     {
+      "name" : "REVERSE",
+      "kind" : "enum member",
+      "value" : "1",
+      "line" : 22,
+      "char" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 27,
+    "char" : 6,
+    "name" : "forwardFFT",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "forwardFFT",
+      "kind" : "function",
+      "line" : 27,
+      "char" : 6,
+      "type" : "nothrow @nogc void(BuiltinComplex!T[] buffer)",
+      "parameters" : [
+       {
+        "name" : "buffer",
+        "type" : "BuiltinComplex!T[]"
+       }
+      ],
+      "endline" : 30,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 34,
+    "char" : 6,
+    "name" : "inverseFFT",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "inverseFFT",
+      "kind" : "function",
+      "line" : 34,
+      "char" : 6,
+      "type" : "nothrow @nogc void(BuiltinComplex!T[] buffer)",
+      "parameters" : [
+       {
+        "name" : "buffer",
+        "type" : "BuiltinComplex!T[]"
+       }
+      ],
+      "endline" : 37,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 40,
+    "char" : 14,
+    "name" : "FFT_internal",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "direction",
+      "kind" : "value",
+      "deco" : "E5dplug3dsp3fft12FFTDirection"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "FFT_internal",
+      "kind" : "function",
+      "line" : 40,
+      "char" : 14,
+      "type" : "pure nothrow @nogc void(BuiltinComplex!T[] buffer)",
+      "parameters" : [
+       {
+        "name" : "buffer",
+        "type" : "BuiltinComplex!T[]"
+       }
+      ],
+      "endline" : 107,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL111_6",
+    "kind" : "function",
+    "line" : 111,
+    "char" : 1,
+    "endline" : 153,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 153,
+    "char" : 1,
+    "name" : "Segmenter",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "Segmenter",
+      "kind" : "struct",
+      "line" : 153,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "segmentSize",
+        "kind" : "function",
+        "line" : 158,
+        "char" : 9,
+        "type" : "const pure int()",
+        "endline" : 161,
+        "endchar" : 5
+       },
+       {
+        "name" : "analysisPeriod",
+        "kind" : "function",
+        "line" : 163,
+        "char" : 9,
+        "type" : "const pure int()",
+        "endline" : 166,
+        "endchar" : 5
+       },
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 171,
+        "char" : 10,
+        "type" : "void(int segmentSize, int analysisPeriod)",
+        "parameters" : [
+         {
+          "name" : "segmentSize",
+          "deco" : "i"
+         },
+         {
+          "name" : "analysisPeriod",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 186,
+        "endchar" : 5
+       },
+       {
+        "name" : "~this",
+        "kind" : "destructor",
+        "line" : 188,
+        "char" : 5,
+        "endline" : 191,
+        "endchar" : 5
+       },
+       {
+        "name" : "feed",
+        "kind" : "function",
+        "line" : 196,
+        "char" : 10,
+        "type" : "bool(T x, scope void delegate(T[] segment) nothrow @nogc processSegment = null)",
+        "parameters" : [
+         {
+          "name" : "x",
+          "type" : "T"
+         },
+         {
+          "name" : "processSegment",
+          "type" : "void delegate(T[] segment) nothrow @nogc",
+          "storageClass" : [
+           "scope"
+          ],
+          "default" : "null"
+         }
+        ],
+        "endline" : 221,
+        "endchar" : 5
+       },
+       {
+        "name" : "buffer",
+        "kind" : "function",
+        "line" : 224,
+        "char" : 9,
+        "type" : "T[]()",
+        "endline" : 227,
+        "endchar" : 5
+       },
+       {
+        "name" : "_buffer",
+        "kind" : "variable",
+        "line" : 230,
+        "char" : 9,
+        "type" : "T[]"
+       },
+       {
+        "name" : "_segmentSize",
+        "kind" : "variable",
+        "line" : 231,
+        "char" : 9,
+        "deco" : "i"
+       },
+       {
+        "name" : "_analysisPeriod",
+        "kind" : "variable",
+        "line" : 232,
+        "char" : 9,
+        "deco" : "i"
+       },
+       {
+        "name" : "_index",
+        "kind" : "variable",
+        "line" : 233,
+        "char" : 9,
+        "deco" : "i"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "ShortTermReconstruction",
+    "kind" : "struct",
+    "line" : 239,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "initialize",
+      "kind" : "function",
+      "line" : 245,
+      "char" : 10,
+      "deco" : "FNbNiiiZv",
+      "parameters" : [
+       {
+        "name" : "maxSimultSegments",
+        "deco" : "i"
+       },
+       {
+        "name" : "maxSegmentLength",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 258,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 260,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 266,
+      "endchar" : 5
+     },
+     {
+      "name" : "startSegment",
+      "kind" : "function",
+      "line" : 272,
+      "char" : 10,
+      "deco" : "FNbNiAfiZv",
+      "parameters" : [
+       {
+        "name" : "newSegment",
+        "deco" : "Af"
+       },
+       {
+        "name" : "delay",
+        "deco" : "i",
+        "default" : "0"
+       }
+      ],
+      "endline" : 280,
+      "endchar" : 5
+     },
+     {
+      "name" : "startSegmentSplitted",
+      "kind" : "function",
+      "line" : 284,
+      "char" : 10,
+      "deco" : "FNbNiAfAfiZv",
+      "parameters" : [
+       {
+        "name" : "segmentA",
+        "deco" : "Af"
+       },
+       {
+        "name" : "segmentB",
+        "deco" : "Af"
+       },
+       {
+        "name" : "delay",
+        "deco" : "i",
+        "default" : "0"
+       }
+      ],
+      "endline" : 295,
+      "endchar" : 5
+     },
+     {
+      "name" : "nextSample",
+      "kind" : "function",
+      "line" : 297,
+      "char" : 11,
+      "deco" : "FNbNiZf",
+      "endline" : 310,
+      "endchar" : 5
+     },
+     {
+      "name" : "nextBuffer",
+      "kind" : "function",
+      "line" : 312,
+      "char" : 10,
+      "deco" : "FNbNiPfiZv",
+      "parameters" : [
+       {
+        "name" : "outAudio",
+        "deco" : "Pf"
+       },
+       {
+        "name" : "frames",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 351,
+      "endchar" : 5
+     },
+     {
+      "name" : "SegmentDesc",
+      "kind" : "struct",
+      "protection" : "private",
+      "line" : 355,
+      "char" : 5,
+      "members" : [
+       {
+        "name" : "playOffset",
+        "kind" : "variable",
+        "line" : 357,
+        "char" : 13,
+        "deco" : "i",
+        "offset" : 0
+       },
+       {
+        "name" : "length",
+        "kind" : "variable",
+        "line" : 358,
+        "char" : 13,
+        "deco" : "i",
+        "offset" : 4
+       },
+       {
+        "name" : "buffer",
+        "kind" : "variable",
+        "line" : 359,
+        "char" : 17,
+        "deco" : "Af",
+        "offset" : 8
+       },
+       {
+        "name" : "active",
+        "kind" : "function",
+        "line" : 361,
+        "char" : 14,
+        "deco" : "xFNaNbNiZb",
+        "endline" : 364,
+        "endchar" : 9
+       }
+      ]
+     },
+     {
+      "name" : "_maxSimultSegments",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 366,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 0
+     },
+     {
+      "name" : "_maxSegmentLength",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 367,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 4
+     },
+     {
+      "name" : "_desc",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 368,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "AS5dplug3dsp3fft23ShortTermReconstruction11SegmentDesc",
+      "offset" : 8
+     },
+     {
+      "name" : "allocSegmentSlot",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 370,
+      "char" : 9,
+      "deco" : "FNbNiZi",
+      "endline" : 376,
+      "endchar" : 5
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     },
+     {
+      "name" : "__xpostblit",
+      "kind" : "alias"
+     },
+     {
+      "name" : "opAssign",
+      "kind" : "generated function",
+      "line" : 239,
+      "char" : 1,
+      "deco" : "FNbNcNiNjS5dplug3dsp3fft23ShortTermReconstructionZS5dplug3dsp3fft23ShortTermReconstruction",
+      "originalType" : "nothrow @nogc ref return ShortTermReconstruction(ShortTermReconstruction p)",
+      "parameters" : [
+       {
+        "name" : "p",
+        "deco" : "S5dplug3dsp3fft23ShortTermReconstruction"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 385,
+    "char" : 1,
+    "name" : "FFTAnalyzer",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "FFTAnalyzer",
+      "kind" : "struct",
+      "line" : 385,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 396,
+        "char" : 10,
+        "type" : "nothrow @nogc void(int windowSize, int fftSize, int analysisPeriod, WindowDesc windowDesc, bool zeroPhaseWindowing)",
+        "parameters" : [
+         {
+          "name" : "windowSize",
+          "deco" : "i"
+         },
+         {
+          "name" : "fftSize",
+          "deco" : "i"
+         },
+         {
+          "name" : "analysisPeriod",
+          "deco" : "i"
+         },
+         {
+          "name" : "windowDesc",
+          "type" : "WindowDesc"
+         },
+         {
+          "name" : "zeroPhaseWindowing",
+          "deco" : "b"
+         }
+        ],
+        "endline" : 421,
+        "endchar" : 5
+       },
+       {
+        "name" : "~this",
+        "kind" : "destructor",
+        "line" : 423,
+        "char" : 5,
+        "endline" : 429,
+        "endchar" : 5
+       },
+       {
+        "name" : "feed",
+        "kind" : "function",
+        "line" : 440,
+        "char" : 10,
+        "type" : "nothrow @nogc bool(float x, BuiltinComplex!T[] fftData)",
+        "parameters" : [
+         {
+          "name" : "x",
+          "deco" : "f"
+         },
+         {
+          "name" : "fftData",
+          "type" : "BuiltinComplex!T[]"
+         }
+        ],
+        "endline" : 545,
+        "endchar" : 5
+       },
+       {
+        "name" : "_segmenter",
+        "kind" : "variable",
+        "line" : 548,
+        "char" : 17,
+        "type" : "Segmenter!T"
+       },
+       {
+        "name" : "_zeroPhaseWindowing",
+        "kind" : "variable",
+        "line" : 549,
+        "char" : 10,
+        "deco" : "b"
+       },
+       {
+        "name" : "_fftSize",
+        "kind" : "variable",
+        "line" : 550,
+        "char" : 9,
+        "deco" : "i"
+       },
+       {
+        "name" : "_window",
+        "kind" : "variable",
+        "line" : 552,
+        "char" : 14,
+        "type" : "Window!T"
+       },
+       {
+        "name" : "_windowSize",
+        "kind" : "variable",
+        "line" : 553,
+        "char" : 9,
+        "deco" : "i"
+       },
+       {
+        "name" : "_scaleFactor",
+        "kind" : "variable",
+        "line" : 555,
+        "char" : 7,
+        "type" : "T"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL564_7",
+    "kind" : "function",
+    "line" : 564,
+    "char" : 1,
+    "endline" : 579,
+    "endchar" : 1
+   },
+   {
+    "name" : "convertNormalizedFrequencyToFFTBin",
+    "kind" : "function",
+    "line" : 579,
+    "char" : 7,
+    "deco" : "FNbNifiZf",
+    "parameters" : [
+     {
+      "name" : "normalizedFrequency",
+      "deco" : "f"
+     },
+     {
+      "name" : "fftSize",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 582,
+    "endchar" : 1
+   },
+   {
+    "name" : "convertFrequencyToFFTBin",
+    "kind" : "function",
+    "line" : 586,
+    "char" : 7,
+    "deco" : "FNbNiffiZf",
+    "parameters" : [
+     {
+      "name" : "frequencyHz",
+      "deco" : "f"
+     },
+     {
+      "name" : "samplingRate",
+      "deco" : "f"
+     },
+     {
+      "name" : "fftSize",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 589,
+    "endchar" : 1
+   },
+   {
+    "name" : "convertFrequencyToFFTBinInv",
+    "kind" : "function",
+    "line" : 593,
+    "char" : 7,
+    "deco" : "FNbNiffiZf",
+    "parameters" : [
+     {
+      "name" : "frequencyHz",
+      "deco" : "f"
+     },
+     {
+      "name" : "invSamplingRate",
+      "deco" : "f"
+     },
+     {
+      "name" : "fftSize",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 596,
+    "endchar" : 1
+   },
+   {
+    "name" : "convertFFTBinToFrequency",
+    "kind" : "function",
+    "line" : 600,
+    "char" : 7,
+    "deco" : "FNbNififZf",
+    "parameters" : [
+     {
+      "name" : "fftBin",
+      "deco" : "f"
+     },
+     {
+      "name" : "fftSize",
+      "deco" : "i"
+     },
+     {
+      "name" : "samplingRate",
+      "deco" : "f"
+     }
+    ],
+    "endline" : 603,
+    "endchar" : 1
+   },
+   {
+    "name" : "convertFFTBinToFrequencyInv",
+    "kind" : "function",
+    "line" : 607,
+    "char" : 7,
+    "deco" : "FNbNifffZf",
+    "parameters" : [
+     {
+      "name" : "fftBin",
+      "deco" : "f"
+     },
+     {
+      "name" : "invFFTSize",
+      "deco" : "f"
+     },
+     {
+      "name" : "samplingRate",
+      "deco" : "f"
+     }
+    ],
+    "endline" : 610,
+    "endchar" : 1
+   },
+   {
+    "name" : "convertFFTBinToNormalizedFrequency",
+    "kind" : "function",
+    "line" : 617,
+    "char" : 7,
+    "deco" : "FNbNifiZf",
+    "parameters" : [
+     {
+      "name" : "fftBin",
+      "deco" : "f"
+     },
+     {
+      "name" : "fftSize",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 620,
+    "endchar" : 1
+   },
+   {
+    "name" : "convertFFTBinToNormalizedFrequencyInv",
+    "kind" : "function",
+    "line" : 628,
+    "char" : 7,
+    "deco" : "FNbNiffZf",
+    "parameters" : [
+     {
+      "name" : "fftBin",
+      "deco" : "f"
+     },
+     {
+      "name" : "invFFTSize",
+      "deco" : "f"
+     }
+    ],
+    "endline" : 631,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 634,
+    "char" : 1,
+    "name" : "RFFT",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "RFFT",
+      "kind" : "struct",
+      "line" : 634,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 640,
+        "char" : 10,
+        "type" : "void(int length)",
+        "parameters" : [
+         {
+          "name" : "length",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 647,
+        "endchar" : 5
+       },
+       {
+        "name" : "~this",
+        "kind" : "destructor",
+        "line" : 649,
+        "char" : 5,
+        "endline" : 653,
+        "endchar" : 5
+       },
+       {
+        "name" : "forwardTransform",
+        "kind" : "function",
+        "line" : 657,
+        "char" : 10,
+        "type" : "void(const(T)[] timeData, BuiltinComplex!T[] outputBins)",
+        "parameters" : [
+         {
+          "name" : "timeData",
+          "type" : "const(T)[]"
+         },
+         {
+          "name" : "outputBins",
+          "type" : "BuiltinComplex!T[]"
+         }
+        ],
+        "endline" : 675,
+        "endchar" : 5
+       },
+       {
+        "name" : "reverseTransform",
+        "kind" : "function",
+        "line" : 688,
+        "char" : 10,
+        "type" : "void(BuiltinComplex!T[] inputBins, T[] timeData)",
+        "parameters" : [
+         {
+          "name" : "inputBins",
+          "type" : "BuiltinComplex!T[]"
+         },
+         {
+          "name" : "timeData",
+          "type" : "T[]"
+         }
+        ],
+        "endline" : 708,
+        "endchar" : 5
+       },
+       {
+        "name" : "_alignment",
+        "kind" : "variable",
+        "line" : 712,
+        "char" : 9,
+        "deco" : "i"
+       },
+       {
+        "name" : "_internal",
+        "kind" : "variable",
+        "line" : 715,
+        "char" : 12,
+        "type" : "Rfft!T"
+       },
+       {
+        "name" : "_length",
+        "kind" : "variable",
+        "line" : 718,
+        "char" : 9,
+        "deco" : "i"
+       },
+       {
+        "name" : "_buffer",
+        "kind" : "variable",
+        "line" : 721,
+        "char" : 9,
+        "type" : "T[]"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.dsp.fir",
+  "kind" : "module",
+  "file" : "..\\..\\..\\dsp\\dplug\\dsp\\fir.d",
+  "members" : [
+   {
+    "name" : "std.range",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.complex",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.dsp.fft",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.dsp.delayline",
+    "kind" : "import",
+    "line" : 15,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.dsp.window",
+    "kind" : "import",
+    "line" : 16,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 24,
+    "char" : 6,
+    "name" : "generateLowpassImpulse",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "generateLowpassImpulse",
+      "kind" : "function",
+      "line" : 24,
+      "char" : 6,
+      "type" : "nothrow @nogc void(T[] output, double cutoff, double samplerate)",
+      "parameters" : [
+       {
+        "name" : "output",
+        "type" : "T[]"
+       },
+       {
+        "name" : "cutoff",
+        "deco" : "d"
+       },
+       {
+        "name" : "samplerate",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 40,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 42,
+    "char" : 6,
+    "name" : "generateHighpassImpulse",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "generateHighpassImpulse",
+      "kind" : "function",
+      "line" : 42,
+      "char" : 6,
+      "type" : "nothrow @nogc void(T[] output, double cutoff, double samplerate)",
+      "parameters" : [
+       {
+        "name" : "output",
+        "type" : "T[]"
+       },
+       {
+        "name" : "cutoff",
+        "deco" : "d"
+       },
+       {
+        "name" : "samplerate",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 58,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 60,
+    "char" : 6,
+    "name" : "generateHilbertTransformer",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "generateHilbertTransformer",
+      "kind" : "function",
+      "line" : 60,
+      "char" : 6,
+      "type" : "nothrow @nogc void(T[] outImpulse, WindowDesc windowDesc, double samplerate)",
+      "parameters" : [
+       {
+        "name" : "outImpulse",
+        "type" : "T[]"
+       },
+       {
+        "name" : "windowDesc",
+        "type" : "WindowDesc"
+       },
+       {
+        "name" : "samplerate",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 86,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 91,
+    "char" : 6,
+    "name" : "normalizeImpulse",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "normalizeImpulse",
+      "kind" : "function",
+      "line" : 91,
+      "char" : 6,
+      "type" : "nothrow @nogc void(T[] inoutImpulse)",
+      "parameters" : [
+       {
+        "name" : "inoutImpulse",
+        "type" : "T[]"
+       }
+      ],
+      "endline" : 101,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 104,
+    "char" : 5,
+    "name" : "tempBufferSizeForMinPhase",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "tempBufferSizeForMinPhase",
+      "kind" : "function",
+      "line" : 104,
+      "char" : 5,
+      "type" : "nothrow @nogc int(T[] inputImpulse)",
+      "parameters" : [
+       {
+        "name" : "inputImpulse",
+        "type" : "T[]"
+       }
+      ],
+      "endline" : 107,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 113,
+    "char" : 6,
+    "name" : "minimumPhaseImpulse",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "minimumPhaseImpulse",
+      "kind" : "function",
+      "line" : 113,
+      "char" : 6,
+      "type" : "nothrow @nogc void(T[] inoutImpulse, BuiltinComplex!T[] tempStorage)",
+      "parameters" : [
+       {
+        "name" : "inoutImpulse",
+        "type" : "T[]"
+       },
+       {
+        "name" : "tempStorage",
+        "type" : "BuiltinComplex!T[]"
+       }
+      ],
+      "endline" : 155,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 157,
+    "char" : 26,
+    "name" : "complexExp",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "complexExp",
+      "kind" : "function",
+      "line" : 157,
+      "char" : 26,
+      "type" : "nothrow @nogc BuiltinComplex!T(BuiltinComplex!T z)",
+      "parameters" : [
+       {
+        "name" : "z",
+        "type" : "BuiltinComplex!T"
+       }
+      ],
+      "endline" : 161,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "checkFilterParams",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 164,
+    "char" : 21,
+    "storageClass" : [
+     "static"
+    ],
+    "deco" : "FNbNikddZv",
+    "originalType" : "nothrow @nogc void(size_t length, double cutoff, double sampleRate)",
+    "parameters" : [
+     {
+      "name" : "length",
+      "deco" : "k"
+     },
+     {
+      "name" : "cutoff",
+      "deco" : "d"
+     },
+     {
+      "name" : "sampleRate",
+      "deco" : "d"
+     }
+    ],
+    "endline" : 168,
+    "endchar" : 1
+   },
+   {
+    "name" : "__unittestL171_8",
+    "kind" : "function",
+    "line" : 171,
+    "char" : 1,
+    "endline" : 187,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 187,
+    "char" : 1,
+    "name" : "FIR",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "FIR",
+      "kind" : "struct",
+      "line" : 187,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 190,
+        "char" : 10,
+        "type" : "nothrow @nogc void(int sizeOfImpulse)",
+        "parameters" : [
+         {
+          "name" : "sizeOfImpulse",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 196,
+        "endchar" : 5
+       },
+       {
+        "name" : "~this",
+        "kind" : "destructor",
+        "line" : 198,
+        "char" : 5,
+        "storageClass" : [
+         "nothrow",
+         "@nogc"
+        ],
+        "endline" : 203,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 208,
+        "char" : 7,
+        "type" : "nothrow @nogc T(T input)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "T"
+         }
+        ],
+        "endline" : 216,
+        "endchar" : 5
+       },
+       {
+        "name" : "impulse",
+        "kind" : "function",
+        "line" : 219,
+        "char" : 16,
+        "type" : "inout nothrow @nogc inout(T)[]()",
+        "endline" : 222,
+        "endchar" : 5
+       },
+       {
+        "name" : "makeMinimumPhase",
+        "kind" : "function",
+        "line" : 224,
+        "char" : 10,
+        "type" : "nothrow @nogc void()",
+        "endline" : 229,
+        "endchar" : 5
+       },
+       {
+        "name" : "applyWindow",
+        "kind" : "function",
+        "line" : 231,
+        "char" : 10,
+        "type" : "nothrow @nogc void(WindowDesc windowDesc)",
+        "parameters" : [
+         {
+          "name" : "windowDesc",
+          "type" : "WindowDesc"
+         }
+        ],
+        "endline" : 239,
+        "endchar" : 5
+       },
+       {
+        "name" : "_impulse",
+        "kind" : "variable",
+        "line" : 242,
+        "char" : 9,
+        "type" : "T[]"
+       },
+       {
+        "name" : "_delayline",
+        "kind" : "variable",
+        "line" : 244,
+        "char" : 17,
+        "type" : "Delayline!T"
+       },
+       {
+        "name" : "_tempBuffer",
+        "kind" : "variable",
+        "line" : 245,
+        "char" : 24,
+        "type" : "BuiltinComplex!T[]"
+       },
+       {
+        "name" : "_windowBuffer",
+        "kind" : "variable",
+        "line" : 246,
+        "char" : 9,
+        "type" : "T[]"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL249_9",
+    "kind" : "function",
+    "line" : 249,
+    "char" : 1,
+    "endline" : 257,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "dplug.dsp.iir",
+  "kind" : "module",
+  "file" : "..\\..\\..\\dsp\\dplug\\dsp\\iir.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.vector",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 15
+   },
+   {
+    "kind" : "template",
+    "line" : 17,
+    "char" : 5,
+    "name" : "IIRDelay",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "order",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "IIRDelay",
+      "kind" : "struct",
+      "line" : 17,
+      "char" : 5,
+      "members" : [
+       {
+        "name" : "delay_t",
+        "kind" : "alias",
+        "line" : 19,
+        "char" : 38,
+        "type" : "Vector!(double, order)"
+       },
+       {
+        "name" : "coeff_t",
+        "kind" : "alias",
+        "line" : 21,
+        "char" : 41,
+        "type" : "Vector!(T, order * 2 + 1)"
+       },
+       {
+        "name" : "x",
+        "kind" : "variable",
+        "line" : 23,
+        "char" : 17,
+        "type" : "delay_t"
+       },
+       {
+        "name" : "y",
+        "kind" : "variable",
+        "line" : 24,
+        "char" : 17,
+        "type" : "delay_t"
+       },
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 26,
+        "char" : 14,
+        "type" : "nothrow @nogc void()",
+        "endline" : 33,
+        "endchar" : 9
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 262,
+    "char" : 5,
+    "name" : "BiquadCoeff",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "BiquadCoeff",
+      "kind" : "alias",
+      "line" : 264,
+      "char" : 29,
+      "type" : "Vector!(T, 5)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 267,
+    "char" : 5,
+    "name" : "BiquadDelay",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "BiquadDelay",
+      "kind" : "alias",
+      "line" : 269,
+      "char" : 31,
+      "type" : "IIRDelay!(T, 2)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 275,
+    "char" : 19,
+    "name" : "lowpassFilter1Pole",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "lowpassFilter1Pole",
+      "kind" : "function",
+      "line" : 275,
+      "char" : 19,
+      "type" : "nothrow @nogc BiquadCoeff!T(double frequency, double samplerate)",
+      "parameters" : [
+       {
+        "name" : "frequency",
+        "deco" : "d"
+       },
+       {
+        "name" : "samplerate",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 291,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 294,
+    "char" : 19,
+    "name" : "highpassFilter1Pole",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "highpassFilter1Pole",
+      "kind" : "function",
+      "line" : 294,
+      "char" : 19,
+      "type" : "nothrow @nogc BiquadCoeff!T(double frequency, double samplerate)",
+      "parameters" : [
+       {
+        "name" : "frequency",
+        "deco" : "d"
+       },
+       {
+        "name" : "samplerate",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 310,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 317,
+    "char" : 19,
+    "name" : "allpassThiran1stOrder",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "allpassThiran1stOrder",
+      "kind" : "function",
+      "line" : 317,
+      "char" : 19,
+      "type" : "nothrow @nogc BiquadCoeff!T(double fractionalDelay)",
+      "parameters" : [
+       {
+        "name" : "fractionalDelay",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 329,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 334,
+    "char" : 19,
+    "name" : "allpassThiran2ndOrder",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "allpassThiran2ndOrder",
+      "kind" : "function",
+      "line" : 334,
+      "char" : 19,
+      "type" : "nothrow @nogc BiquadCoeff!T(double fractionalDelay)",
+      "parameters" : [
+       {
+        "name" : "fractionalDelay",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 349,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 354,
+    "char" : 19,
+    "name" : "lowpassFilterRBJ",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "lowpassFilterRBJ",
+      "kind" : "function",
+      "line" : 354,
+      "char" : 19,
+      "type" : "nothrow @nogc BiquadCoeff!T(double frequency, double samplerate, double Q = SQRT1_2)",
+      "parameters" : [
+       {
+        "name" : "frequency",
+        "deco" : "d"
+       },
+       {
+        "name" : "samplerate",
+        "deco" : "d"
+       },
+       {
+        "name" : "Q",
+        "deco" : "d",
+        "default" : "SQRT1_2"
+       }
+      ],
+      "endline" : 357,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 359,
+    "char" : 19,
+    "name" : "highpassFilterRBJ",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "highpassFilterRBJ",
+      "kind" : "function",
+      "line" : 359,
+      "char" : 19,
+      "type" : "nothrow @nogc BiquadCoeff!T(double frequency, double samplerate, double Q = SQRT1_2)",
+      "parameters" : [
+       {
+        "name" : "frequency",
+        "deco" : "d"
+       },
+       {
+        "name" : "samplerate",
+        "deco" : "d"
+       },
+       {
+        "name" : "Q",
+        "deco" : "d",
+        "default" : "SQRT1_2"
+       }
+      ],
+      "endline" : 362,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 364,
+    "char" : 19,
+    "name" : "bandpassFilterRBJ",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "bandpassFilterRBJ",
+      "kind" : "function",
+      "line" : 364,
+      "char" : 19,
+      "type" : "nothrow @nogc BiquadCoeff!T(double frequency, double samplerate, double Q = SQRT1_2)",
+      "parameters" : [
+       {
+        "name" : "frequency",
+        "deco" : "d"
+       },
+       {
+        "name" : "samplerate",
+        "deco" : "d"
+       },
+       {
+        "name" : "Q",
+        "deco" : "d",
+        "default" : "SQRT1_2"
+       }
+      ],
+      "endline" : 367,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 369,
+    "char" : 19,
+    "name" : "notchFilterRBJ",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "notchFilterRBJ",
+      "kind" : "function",
+      "line" : 369,
+      "char" : 19,
+      "type" : "nothrow @nogc BiquadCoeff!T(double frequency, double samplerate, double Q = SQRT1_2)",
+      "parameters" : [
+       {
+        "name" : "frequency",
+        "deco" : "d"
+       },
+       {
+        "name" : "samplerate",
+        "deco" : "d"
+       },
+       {
+        "name" : "Q",
+        "deco" : "d",
+        "default" : "SQRT1_2"
+       }
+      ],
+      "endline" : 372,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 374,
+    "char" : 19,
+    "name" : "peakFilterRBJ",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "peakFilterRBJ",
+      "kind" : "function",
+      "line" : 374,
+      "char" : 19,
+      "type" : "nothrow @nogc BiquadCoeff!T(double frequency, double samplerate, double gain, double Q = SQRT1_2)",
+      "parameters" : [
+       {
+        "name" : "frequency",
+        "deco" : "d"
+       },
+       {
+        "name" : "samplerate",
+        "deco" : "d"
+       },
+       {
+        "name" : "gain",
+        "deco" : "d"
+       },
+       {
+        "name" : "Q",
+        "deco" : "d",
+        "default" : "SQRT1_2"
+       }
+      ],
+      "endline" : 377,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 379,
+    "char" : 19,
+    "name" : "lowShelfFilterRBJ",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "lowShelfFilterRBJ",
+      "kind" : "function",
+      "line" : 379,
+      "char" : 19,
+      "type" : "nothrow @nogc BiquadCoeff!T(double frequency, double samplerate, double gain, double Q = SQRT1_2)",
+      "parameters" : [
+       {
+        "name" : "frequency",
+        "deco" : "d"
+       },
+       {
+        "name" : "samplerate",
+        "deco" : "d"
+       },
+       {
+        "name" : "gain",
+        "deco" : "d"
+       },
+       {
+        "name" : "Q",
+        "deco" : "d",
+        "default" : "SQRT1_2"
+       }
+      ],
+      "endline" : 382,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 384,
+    "char" : 19,
+    "name" : "highShelfFilterRBJ",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "highShelfFilterRBJ",
+      "kind" : "function",
+      "line" : 384,
+      "char" : 19,
+      "type" : "nothrow @nogc BiquadCoeff!T(double frequency, double samplerate, double gain, double Q = SQRT1_2)",
+      "parameters" : [
+       {
+        "name" : "frequency",
+        "deco" : "d"
+       },
+       {
+        "name" : "samplerate",
+        "deco" : "d"
+       },
+       {
+        "name" : "gain",
+        "deco" : "d"
+       },
+       {
+        "name" : "Q",
+        "deco" : "d",
+        "default" : "SQRT1_2"
+       }
+      ],
+      "endline" : 387,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 390,
+    "char" : 19,
+    "name" : "bypassFilter",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "bypassFilter",
+      "kind" : "function",
+      "line" : 390,
+      "char" : 19,
+      "type" : "nothrow @nogc BiquadCoeff!T()",
+      "endline" : 399,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 401,
+    "char" : 19,
+    "name" : "zeroFilter",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "zeroFilter",
+      "kind" : "function",
+      "line" : 401,
+      "char" : 19,
+      "type" : "nothrow @nogc BiquadCoeff!T()",
+      "endline" : 410,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "name" : "BiquadType",
+    "kind" : "enum",
+    "protection" : "private",
+    "line" : 415,
+    "char" : 5,
+    "baseDeco" : "i",
+    "members" : [
+     {
+      "name" : "LOW_PASS_FILTER",
+      "kind" : "enum member",
+      "value" : "0",
+      "line" : 417,
+      "char" : 9
+     },
+     {
+      "name" : "HIGH_PASS_FILTER",
+      "kind" : "enum member",
+      "value" : "1",
+      "line" : 418,
+      "char" : 9
+     },
+     {
+      "name" : "BAND_PASS_FILTER",
+      "kind" : "enum member",
+      "value" : "2",
+      "line" : 419,
+      "char" : 9
+     },
+     {
+      "name" : "NOTCH_FILTER",
+      "kind" : "enum member",
+      "value" : "3",
+      "line" : 420,
+      "char" : 9
+     },
+     {
+      "name" : "PEAK_FILTER",
+      "kind" : "enum member",
+      "value" : "4",
+      "line" : 421,
+      "char" : 9
+     },
+     {
+      "name" : "LOW_SHELF",
+      "kind" : "enum member",
+      "value" : "5",
+      "line" : 422,
+      "char" : 9
+     },
+     {
+      "name" : "HIGH_SHELF",
+      "kind" : "enum member",
+      "value" : "6",
+      "line" : 423,
+      "char" : 9
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 427,
+    "char" : 19,
+    "name" : "generateBiquad",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "generateBiquad",
+      "kind" : "function",
+      "line" : 427,
+      "char" : 19,
+      "type" : "nothrow @nogc BiquadCoeff!T(BiquadType type, double frequency, double samplerate, double gaindB, double Q)",
+      "parameters" : [
+       {
+        "name" : "type",
+        "type" : "BiquadType"
+       },
+       {
+        "name" : "frequency",
+        "deco" : "d"
+       },
+       {
+        "name" : "samplerate",
+        "deco" : "d"
+       },
+       {
+        "name" : "gaindB",
+        "deco" : "d"
+       },
+       {
+        "name" : "Q",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 526,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL529_10",
+    "kind" : "function",
+    "line" : 529,
+    "char" : 1,
+    "endline" : 547,
+    "endchar" : 1
+   },
+   {
+    "name" : "D_InlineAsm_Any",
+    "kind" : "variable",
+    "protection" : "private",
+    "line" : 548,
+    "char" : 18,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "b",
+    "init" : "true"
+   },
+   {
+    "name" : "_arraySliceComSliceAssign_k",
+    "kind" : "function",
+    "deco" : "UNaNbNiNeAkxAkZAk",
+    "originalType" : "pure nothrow @nogc @trusted extern (C) uint[](uint[] p1, const const(uint)[] p0)",
+    "parameters" : [
+     {
+      "name" : "p1",
+      "deco" : "Ak"
+     },
+     {
+      "name" : "p0",
+      "deco" : "xAk"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.dsp.noise",
+  "kind" : "module",
+  "file" : "..\\..\\..\\dsp\\dplug\\dsp\\noise.d",
+  "members" : [
+   {
+    "name" : "std.random",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.random",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 15,
+    "char" : 1,
+    "name" : "WhiteNoise",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "WhiteNoise",
+      "kind" : "struct",
+      "line" : 15,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 18,
+        "char" : 10,
+        "type" : "nothrow @nogc void()",
+        "endline" : 21,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 23,
+        "char" : 7,
+        "type" : "nothrow @nogc T()",
+        "endline" : 26,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 28,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 32,
+        "endchar" : 5
+       },
+       {
+        "name" : "_rng",
+        "kind" : "variable",
+        "line" : 35,
+        "char" : 16,
+        "type" : "Xorshift32"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL38_11",
+    "kind" : "function",
+    "line" : 38,
+    "char" : 1,
+    "endline" : 47,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 47,
+    "char" : 1,
+    "name" : "DemoNoise",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "DemoNoise",
+      "kind" : "struct",
+      "line" : 47,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "PERIOD",
+        "kind" : "variable",
+        "line" : 50,
+        "char" : 14,
+        "storageClass" : [
+         "enum"
+        ],
+        "deco" : "i",
+        "init" : "30"
+       },
+       {
+        "name" : "NOISE_DURATION",
+        "kind" : "variable",
+        "line" : 51,
+        "char" : 14,
+        "storageClass" : [
+         "enum"
+        ],
+        "deco" : "i",
+        "init" : "2"
+       },
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 53,
+        "char" : 10,
+        "type" : "nothrow @nogc void(float sampleRate)",
+        "parameters" : [
+         {
+          "name" : "sampleRate",
+          "deco" : "f"
+         }
+        ],
+        "endline" : 58,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 60,
+        "char" : 7,
+        "type" : "nothrow @nogc T()",
+        "endline" : 70,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 72,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 76,
+        "endchar" : 5
+       },
+       {
+        "name" : "_counter",
+        "kind" : "variable",
+        "line" : 79,
+        "char" : 11,
+        "deco" : "f"
+       },
+       {
+        "name" : "_increment",
+        "kind" : "variable",
+        "line" : 80,
+        "char" : 11,
+        "deco" : "f"
+       },
+       {
+        "name" : "_noise",
+        "kind" : "variable",
+        "line" : 81,
+        "char" : 18,
+        "type" : "WhiteNoise!T"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL84_12",
+    "kind" : "function",
+    "line" : 84,
+    "char" : 1,
+    "endline" : 92,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 92,
+    "char" : 1,
+    "name" : "Perlin1D",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "Perlin1D",
+      "kind" : "struct",
+      "line" : 92,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 95,
+        "char" : 10,
+        "type" : "nothrow @nogc void(double frequency, double samplerate)",
+        "parameters" : [
+         {
+          "name" : "frequency",
+          "deco" : "d"
+         },
+         {
+          "name" : "samplerate",
+          "deco" : "d"
+         }
+        ],
+        "endline" : 102,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 104,
+        "char" : 7,
+        "type" : "nothrow @nogc T()",
+        "endline" : 115,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 117,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 121,
+        "endchar" : 5
+       },
+       {
+        "kind" : "template",
+        "line" : 124,
+        "char" : 14,
+        "name" : "smootherstep",
+        "parameters" : [
+         {
+          "name" : "T",
+          "kind" : "type"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "smootherstep",
+          "kind" : "function",
+          "line" : 124,
+          "char" : 14,
+          "type" : "nothrow @nogc T(T x)",
+          "parameters" : [
+           {
+            "name" : "x",
+            "type" : "T"
+           }
+          ],
+          "endline" : 127,
+          "endchar" : 5
+         }
+        ]
+       },
+       {
+        "name" : "newGoal",
+        "kind" : "function",
+        "line" : 129,
+        "char" : 10,
+        "type" : "nothrow @nogc void()",
+        "endline" : 132,
+        "endchar" : 5
+       },
+       {
+        "name" : "_current",
+        "kind" : "variable",
+        "line" : 134,
+        "char" : 11,
+        "deco" : "f"
+       },
+       {
+        "name" : "_phase",
+        "kind" : "variable",
+        "line" : 135,
+        "char" : 11,
+        "deco" : "f"
+       },
+       {
+        "name" : "_phaseInc",
+        "kind" : "variable",
+        "line" : 136,
+        "char" : 11,
+        "deco" : "f"
+       },
+       {
+        "name" : "_goal",
+        "kind" : "variable",
+        "line" : 137,
+        "char" : 11,
+        "deco" : "f"
+       },
+       {
+        "name" : "_newGoal",
+        "kind" : "function",
+        "line" : 138,
+        "char" : 10,
+        "type" : "void()"
+       },
+       {
+        "name" : "_rng",
+        "kind" : "variable",
+        "line" : 140,
+        "char" : 16,
+        "type" : "Xorshift32"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL143_13",
+    "kind" : "function",
+    "line" : 143,
+    "char" : 1,
+    "endline" : 154,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 154,
+    "char" : 1,
+    "name" : "PinkNoise",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "PinkNoise",
+      "kind" : "struct",
+      "line" : 154,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 157,
+        "char" : 10,
+        "type" : "nothrow @nogc void()",
+        "endline" : 162,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 164,
+        "char" : 11,
+        "type" : "nothrow @nogc float()",
+        "endline" : 181,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 183,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 187,
+        "endchar" : 5
+       },
+       {
+        "name" : "_contrib",
+        "kind" : "variable",
+        "line" : 191,
+        "char" : 12,
+        "type" : "int[5]"
+       },
+       {
+        "name" : "_accum",
+        "kind" : "variable",
+        "line" : 192,
+        "char" : 9,
+        "deco" : "i"
+       },
+       {
+        "name" : "_rng",
+        "kind" : "variable",
+        "line" : 193,
+        "char" : 16,
+        "type" : "Xorshift32"
+       },
+       {
+        "name" : "pA",
+        "kind" : "variable",
+        "line" : 195,
+        "char" : 29,
+        "storageClass" : [
+         "static",
+         "immutable"
+        ],
+        "type" : "int[5]",
+        "init" : "[14055, 12759, 10733, 12273, 15716]"
+       },
+       {
+        "name" : "pPSUM",
+        "kind" : "variable",
+        "line" : 196,
+        "char" : 29,
+        "storageClass" : [
+         "static",
+         "immutable"
+        ],
+        "type" : "int[5]",
+        "init" : "[22347, 27917, 29523, 29942, 30007]"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL199_14",
+    "kind" : "function",
+    "line" : 199,
+    "char" : 1,
+    "endline" : 205,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 209,
+    "char" : 11,
+    "name" : "randNormal",
+    "parameters" : [
+     {
+      "name" : "RNG",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "randNormal",
+      "kind" : "function",
+      "line" : 209,
+      "char" : 11,
+      "type" : "nothrow @nogc float(ref RNG rng, float mean = 0.000000, float standardDeviation = 1.00000)",
+      "parameters" : [
+       {
+        "name" : "rng",
+        "type" : "RNG",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "mean",
+        "deco" : "f",
+        "default" : "0.000000"
+       },
+       {
+        "name" : "standardDeviation",
+        "deco" : "f",
+        "default" : "1.00000"
+       }
+      ],
+      "endline" : 222,
+      "endchar" : 5
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.dsp",
+  "kind" : "module",
+  "file" : "..\\..\\..\\dsp\\dplug\\dsp\\package.d",
+  "members" : [
+   {
+    "name" : "dplug.dsp.fir",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.dsp.iir",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.dsp.noise",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.dsp.window",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.dsp.smooth",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.dsp.envelope",
+    "kind" : "import",
+    "line" : 15,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.dsp.wavetable",
+    "kind" : "import",
+    "line" : 16,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.dsp.fft",
+    "kind" : "import",
+    "line" : 17,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.dsp.delayline",
+    "kind" : "import",
+    "line" : 18,
+    "char" : 12
+   }
+  ]
+ },
+ {
+  "name" : "dplug.dsp.smooth",
+  "kind" : "module",
+  "file" : "..\\..\\..\\dsp\\dplug\\dsp\\smooth.d",
+  "members" : [
+   {
+    "name" : "std.algorithm.comparison",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.ringbuf",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 18,
+    "char" : 1,
+    "name" : "ExpSmoother",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "ExpSmoother",
+      "kind" : "struct",
+      "line" : 18,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 23,
+        "char" : 10,
+        "type" : "nothrow @nogc void(float samplerate, float timeAttackRelease, T initialValue)",
+        "parameters" : [
+         {
+          "name" : "samplerate",
+          "deco" : "f"
+         },
+         {
+          "name" : "timeAttackRelease",
+          "deco" : "f"
+         },
+         {
+          "name" : "initialValue",
+          "type" : "T"
+         }
+        ],
+        "endline" : 33,
+        "endchar" : 5
+       },
+       {
+        "name" : "setAttackReleaseTime",
+        "kind" : "function",
+        "line" : 36,
+        "char" : 10,
+        "type" : "nothrow @nogc void(float timeAttackRelease)",
+        "parameters" : [
+         {
+          "name" : "timeAttackRelease",
+          "deco" : "f"
+         }
+        ],
+        "endline" : 39,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 43,
+        "char" : 7,
+        "type" : "nothrow @nogc T(T target)",
+        "parameters" : [
+         {
+          "name" : "target",
+          "type" : "T"
+         }
+        ],
+        "endline" : 60,
+        "endchar" : 5
+       },
+       {
+        "name" : "hasConverged",
+        "kind" : "function",
+        "line" : 62,
+        "char" : 10,
+        "type" : "nothrow @nogc bool(T target)",
+        "parameters" : [
+         {
+          "name" : "target",
+          "type" : "T"
+         }
+        ],
+        "endline" : 65,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 67,
+        "char" : 10,
+        "type" : "nothrow @nogc void(const(T)* input, T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "const(T)*"
+         },
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 73,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 75,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T input, T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "T"
+         },
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 81,
+        "endchar" : 5
+       },
+       {
+        "name" : "_current",
+        "kind" : "variable",
+        "line" : 84,
+        "char" : 7,
+        "type" : "T"
+       },
+       {
+        "name" : "_expFactor",
+        "kind" : "variable",
+        "line" : 85,
+        "char" : 7,
+        "type" : "T"
+       },
+       {
+        "name" : "_sampleRate",
+        "kind" : "variable",
+        "line" : 86,
+        "char" : 11,
+        "deco" : "f"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL89_15",
+    "kind" : "function",
+    "line" : 89,
+    "char" : 1,
+    "endline" : 96,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 96,
+    "char" : 1,
+    "name" : "AttackReleaseSmoother",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "AttackReleaseSmoother",
+      "kind" : "struct",
+      "line" : 96,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 101,
+        "char" : 10,
+        "type" : "nothrow @nogc void(float sampleRate, float timeAttackSecs, float timeReleaseSecs, T initialValue)",
+        "parameters" : [
+         {
+          "name" : "sampleRate",
+          "deco" : "f"
+         },
+         {
+          "name" : "timeAttackSecs",
+          "deco" : "f"
+         },
+         {
+          "name" : "timeReleaseSecs",
+          "deco" : "f"
+         },
+         {
+          "name" : "initialValue",
+          "type" : "T"
+         }
+        ],
+        "endline" : 108,
+        "endchar" : 5
+       },
+       {
+        "name" : "setAttackTime",
+        "kind" : "function",
+        "line" : 111,
+        "char" : 10,
+        "type" : "nothrow @nogc void(float timeAttackSecs)",
+        "parameters" : [
+         {
+          "name" : "timeAttackSecs",
+          "deco" : "f"
+         }
+        ],
+        "endline" : 114,
+        "endchar" : 5
+       },
+       {
+        "name" : "setReleaseTime",
+        "kind" : "function",
+        "line" : 117,
+        "char" : 10,
+        "type" : "nothrow @nogc void(float timeReleaseSecs)",
+        "parameters" : [
+         {
+          "name" : "timeReleaseSecs",
+          "deco" : "f"
+         }
+        ],
+        "endline" : 120,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 124,
+        "char" : 7,
+        "type" : "nothrow @nogc T(T target)",
+        "parameters" : [
+         {
+          "name" : "target",
+          "type" : "T"
+         }
+        ],
+        "endline" : 142,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 144,
+        "char" : 10,
+        "type" : "void(const(T)* input, T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "const(T)*"
+         },
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 150,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 152,
+        "char" : 10,
+        "type" : "void(T input, T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "T"
+         },
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 158,
+        "endchar" : 5
+       },
+       {
+        "name" : "_current",
+        "kind" : "variable",
+        "line" : 161,
+        "char" : 7,
+        "type" : "T"
+       },
+       {
+        "name" : "_expFactorAttack",
+        "kind" : "variable",
+        "line" : 162,
+        "char" : 7,
+        "type" : "T"
+       },
+       {
+        "name" : "_expFactorRelease",
+        "kind" : "variable",
+        "line" : 163,
+        "char" : 7,
+        "type" : "T"
+       },
+       {
+        "name" : "_sampleRate",
+        "kind" : "variable",
+        "line" : 164,
+        "char" : 11,
+        "deco" : "f"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL167_16",
+    "kind" : "function",
+    "line" : 167,
+    "char" : 1,
+    "endline" : 176,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 176,
+    "char" : 1,
+    "name" : "AbsSmoother",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "AbsSmoother",
+      "kind" : "struct",
+      "line" : 176,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 182,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T initialValue, T maxAbsDiff)",
+        "parameters" : [
+         {
+          "name" : "initialValue",
+          "type" : "T"
+         },
+         {
+          "name" : "maxAbsDiff",
+          "type" : "T"
+         }
+        ],
+        "endline" : 187,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 189,
+        "char" : 7,
+        "type" : "nothrow @nogc T(T input)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "T"
+         }
+        ],
+        "endline" : 197,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 199,
+        "char" : 10,
+        "type" : "nothrow @nogc void(const(T)* input, T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "const(T)*"
+         },
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 203,
+        "endchar" : 5
+       },
+       {
+        "name" : "_current",
+        "kind" : "variable",
+        "line" : 206,
+        "char" : 7,
+        "type" : "T"
+       },
+       {
+        "name" : "_maxAbsDiff",
+        "kind" : "variable",
+        "line" : 207,
+        "char" : 7,
+        "type" : "T"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL210_17",
+    "kind" : "function",
+    "line" : 210,
+    "char" : 1,
+    "endline" : 219,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 219,
+    "char" : 1,
+    "name" : "LinearSmoother",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "LinearSmoother",
+      "kind" : "struct",
+      "line" : 219,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 224,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T initialValue, float periodSecs, float sampleRate)",
+        "parameters" : [
+         {
+          "name" : "initialValue",
+          "type" : "T"
+         },
+         {
+          "name" : "periodSecs",
+          "deco" : "f"
+         },
+         {
+          "name" : "sampleRate",
+          "deco" : "f"
+         }
+        ],
+        "endline" : 234,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 237,
+        "char" : 7,
+        "type" : "nothrow @nogc T(T input)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "T"
+         }
+        ],
+        "endline" : 248,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 250,
+        "char" : 10,
+        "type" : "nothrow @nogc void(const(T)* input, T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "const(T)*"
+         },
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 254,
+        "endchar" : 5
+       },
+       {
+        "name" : "_current",
+        "kind" : "variable",
+        "line" : 257,
+        "char" : 7,
+        "type" : "T"
+       },
+       {
+        "name" : "_increment",
+        "kind" : "variable",
+        "line" : 258,
+        "char" : 7,
+        "type" : "T"
+       },
+       {
+        "name" : "_period",
+        "kind" : "variable",
+        "line" : 259,
+        "char" : 11,
+        "deco" : "f"
+       },
+       {
+        "name" : "_periodInv",
+        "kind" : "variable",
+        "line" : 260,
+        "char" : 11,
+        "deco" : "f"
+       },
+       {
+        "name" : "_sampleRateInv",
+        "kind" : "variable",
+        "line" : 261,
+        "char" : 11,
+        "deco" : "f"
+       },
+       {
+        "name" : "_phase",
+        "kind" : "variable",
+        "line" : 262,
+        "char" : 11,
+        "deco" : "f"
+       },
+       {
+        "name" : "_firstNextAfterInit",
+        "kind" : "variable",
+        "line" : 263,
+        "char" : 10,
+        "deco" : "b"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL266_18",
+    "kind" : "function",
+    "line" : 266,
+    "char" : 1,
+    "endline" : 274,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 274,
+    "char" : 1,
+    "name" : "MedianFilter",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "MedianFilter",
+      "kind" : "struct",
+      "line" : 274,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 278,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T initialValue, int samples)",
+        "parameters" : [
+         {
+          "name" : "initialValue",
+          "type" : "T"
+         },
+         {
+          "name" : "samples",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 288,
+        "endchar" : 5
+       },
+       {
+        "name" : "~this",
+        "kind" : "destructor",
+        "line" : 290,
+        "char" : 5,
+        "endline" : 294,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 296,
+        "char" : 7,
+        "type" : "nothrow @nogc T(T input)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "T"
+         }
+        ],
+        "endline" : 320,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 322,
+        "char" : 10,
+        "type" : "nothrow @nogc void(const(T)* input, T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "const(T)*"
+         },
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 326,
+        "endchar" : 5
+       },
+       {
+        "name" : "_delay",
+        "kind" : "variable",
+        "line" : 329,
+        "char" : 9,
+        "type" : "T[]"
+       },
+       {
+        "name" : "_arr",
+        "kind" : "variable",
+        "line" : 330,
+        "char" : 9,
+        "type" : "T[]"
+       },
+       {
+        "name" : "_N",
+        "kind" : "variable",
+        "line" : 331,
+        "char" : 9,
+        "deco" : "i"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL334_21",
+    "kind" : "function",
+    "line" : 334,
+    "char" : 1,
+    "endline" : 351,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 351,
+    "char" : 1,
+    "name" : "UnstableMeanFilter",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "UnstableMeanFilter",
+      "kind" : "struct",
+      "line" : 351,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 355,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T initialValue, int samples)",
+        "parameters" : [
+         {
+          "name" : "initialValue",
+          "type" : "T"
+         },
+         {
+          "name" : "samples",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 365,
+        "endchar" : 5
+       },
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 368,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T initialValue, double cutoffHz, double samplerate)",
+        "parameters" : [
+         {
+          "name" : "initialValue",
+          "type" : "T"
+         },
+         {
+          "name" : "cutoffHz",
+          "deco" : "d"
+         },
+         {
+          "name" : "samplerate",
+          "deco" : "d"
+         }
+        ],
+        "endline" : 376,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 379,
+        "char" : 7,
+        "type" : "nothrow @nogc T(T x)",
+        "parameters" : [
+         {
+          "name" : "x",
+          "type" : "T"
+         }
+        ],
+        "endline" : 385,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 387,
+        "char" : 10,
+        "type" : "nothrow @nogc void(const(T)* input, T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "const(T)*"
+         },
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 391,
+        "endchar" : 5
+       },
+       {
+        "name" : "_delay",
+        "kind" : "variable",
+        "line" : 394,
+        "char" : 22,
+        "type" : "RingBufferNoGC!T"
+       },
+       {
+        "name" : "_sum",
+        "kind" : "variable",
+        "line" : 395,
+        "char" : 12,
+        "deco" : "d"
+       },
+       {
+        "name" : "_invNFactor",
+        "kind" : "variable",
+        "line" : 396,
+        "char" : 7,
+        "type" : "T"
+       },
+       {
+        "name" : "_factor",
+        "kind" : "variable",
+        "line" : 397,
+        "char" : 7,
+        "type" : "T"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 404,
+    "char" : 1,
+    "name" : "MeanFilter",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "MeanFilter",
+      "kind" : "struct",
+      "line" : 404,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 408,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T initialValue, int samples, T maxExpectedValue)",
+        "parameters" : [
+         {
+          "name" : "initialValue",
+          "type" : "T"
+         },
+         {
+          "name" : "samples",
+          "deco" : "i"
+         },
+         {
+          "name" : "maxExpectedValue",
+          "type" : "T"
+         }
+        ],
+        "endline" : 423,
+        "endchar" : 5
+       },
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 426,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T initialValue, double cutoffHz, double samplerate, T maxExpectedValue)",
+        "parameters" : [
+         {
+          "name" : "initialValue",
+          "type" : "T"
+         },
+         {
+          "name" : "cutoffHz",
+          "deco" : "d"
+         },
+         {
+          "name" : "samplerate",
+          "deco" : "d"
+         },
+         {
+          "name" : "maxExpectedValue",
+          "type" : "T"
+         }
+        ],
+        "endline" : 434,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 437,
+        "char" : 7,
+        "type" : "nothrow @nogc T(T x)",
+        "parameters" : [
+         {
+          "name" : "x",
+          "type" : "T"
+         }
+        ],
+        "endline" : 445,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 447,
+        "char" : 10,
+        "type" : "nothrow @nogc void(const(T)* input, T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "const(T)*"
+         },
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 451,
+        "endchar" : 5
+       },
+       {
+        "name" : "toIntDomain",
+        "kind" : "function",
+        "line" : 455,
+        "char" : 10,
+        "type" : "const pure nothrow @nogc long(T x)",
+        "parameters" : [
+         {
+          "name" : "x",
+          "type" : "T"
+         }
+        ],
+        "endline" : 458,
+        "endchar" : 5
+       },
+       {
+        "name" : "_delay",
+        "kind" : "variable",
+        "line" : 460,
+        "char" : 25,
+        "type" : "RingBufferNoGC!long"
+       },
+       {
+        "name" : "_sum",
+        "kind" : "variable",
+        "line" : 461,
+        "char" : 10,
+        "deco" : "l"
+       },
+       {
+        "name" : "_invNFactor",
+        "kind" : "variable",
+        "line" : 462,
+        "char" : 7,
+        "type" : "T"
+       },
+       {
+        "name" : "_factor",
+        "kind" : "variable",
+        "line" : 463,
+        "char" : 7,
+        "type" : "T"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL466_22",
+    "kind" : "function",
+    "line" : 466,
+    "char" : 1,
+    "endline" : 536,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 536,
+    "char" : 1,
+    "name" : "GammaEnv",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "GammaEnv",
+      "kind" : "struct",
+      "line" : 536,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 546,
+        "char" : 10,
+        "type" : "nothrow @nogc void(double sampleRate, double Attack, double Release, double AttackDelay, double ReleaseDelay, bool isInverse)",
+        "parameters" : [
+         {
+          "name" : "sampleRate",
+          "deco" : "d"
+         },
+         {
+          "name" : "Attack",
+          "deco" : "d"
+         },
+         {
+          "name" : "Release",
+          "deco" : "d"
+         },
+         {
+          "name" : "AttackDelay",
+          "deco" : "d"
+         },
+         {
+          "name" : "ReleaseDelay",
+          "deco" : "d"
+         },
+         {
+          "name" : "isInverse",
+          "deco" : "b"
+         }
+        ],
+        "endline" : 577,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSample",
+        "kind" : "function",
+        "line" : 579,
+        "char" : 12,
+        "type" : "nothrow @nogc double(double v)",
+        "parameters" : [
+         {
+          "name" : "v",
+          "deco" : "d"
+         }
+        ],
+        "endline" : 619,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextBuffer",
+        "kind" : "function",
+        "line" : 621,
+        "char" : 10,
+        "type" : "nothrow @nogc void(const(T)* input, T* output, int frames)",
+        "parameters" : [
+         {
+          "name" : "input",
+          "type" : "const(T)*"
+         },
+         {
+          "name" : "output",
+          "type" : "T*"
+         },
+         {
+          "name" : "frames",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 627,
+        "endchar" : 5
+       },
+       {
+        "name" : "envcount",
+        "kind" : "variable",
+        "line" : 630,
+        "char" : 14,
+        "storageClass" : [
+         "enum"
+        ],
+        "deco" : "i",
+        "init" : "4"
+       },
+       {
+        "name" : "envcount4",
+        "kind" : "variable",
+        "line" : 631,
+        "char" : 14,
+        "storageClass" : [
+         "enum"
+        ],
+        "deco" : "i",
+        "init" : "envcount * 4"
+       },
+       {
+        "name" : "env",
+        "kind" : "variable",
+        "line" : 632,
+        "char" : 25,
+        "type" : "double[envcount4]"
+       },
+       {
+        "name" : "enva",
+        "kind" : "variable",
+        "line" : 633,
+        "char" : 17,
+        "type" : "double[4]"
+       },
+       {
+        "name" : "envb",
+        "kind" : "variable",
+        "line" : 634,
+        "char" : 17,
+        "type" : "double[4]"
+       },
+       {
+        "name" : "envr",
+        "kind" : "variable",
+        "line" : 635,
+        "char" : 25,
+        "type" : "double[envcount4]"
+       },
+       {
+        "name" : "env5",
+        "kind" : "variable",
+        "line" : 636,
+        "char" : 12,
+        "deco" : "d"
+       },
+       {
+        "name" : "enva5",
+        "kind" : "variable",
+        "line" : 637,
+        "char" : 12,
+        "deco" : "d"
+       },
+       {
+        "name" : "envb5",
+        "kind" : "variable",
+        "line" : 638,
+        "char" : 12,
+        "deco" : "d"
+       },
+       {
+        "name" : "envr5",
+        "kind" : "variable",
+        "line" : 639,
+        "char" : 12,
+        "deco" : "d"
+       },
+       {
+        "name" : "prevr",
+        "kind" : "variable",
+        "line" : 640,
+        "char" : 12,
+        "deco" : "d"
+       },
+       {
+        "name" : "_isInverse",
+        "kind" : "variable",
+        "line" : 641,
+        "char" : 10,
+        "deco" : "b"
+       },
+       {
+        "name" : "clearState",
+        "kind" : "function",
+        "line" : 649,
+        "char" : 10,
+        "type" : "nothrow @nogc void(const double initv)",
+        "parameters" : [
+         {
+          "name" : "initv",
+          "deco" : "d",
+          "storageClass" : [
+           "const"
+          ]
+         }
+        ],
+        "endline" : 668,
+        "endchar" : 5
+       },
+       {
+        "name" : "nextSampleSymmetric",
+        "kind" : "function",
+        "line" : 675,
+        "char" : 12,
+        "type" : "nothrow @nogc double(double v)",
+        "parameters" : [
+         {
+          "name" : "v",
+          "deco" : "d"
+         }
+        ],
+        "endline" : 694,
+        "endchar" : 5
+       },
+       {
+        "name" : "calcMults",
+        "kind" : "function",
+        "line" : 697,
+        "char" : 17,
+        "storageClass" : [
+         "static"
+        ],
+        "type" : "nothrow @nogc void(const double SampleRate, const double Time, const double o, double* envs, ref double envs5)",
+        "parameters" : [
+         {
+          "name" : "SampleRate",
+          "deco" : "d",
+          "storageClass" : [
+           "const"
+          ]
+         },
+         {
+          "name" : "Time",
+          "deco" : "d",
+          "storageClass" : [
+           "const"
+          ]
+         },
+         {
+          "name" : "o",
+          "deco" : "d",
+          "storageClass" : [
+           "const"
+          ]
+         },
+         {
+          "name" : "envs",
+          "type" : "double*"
+         },
+         {
+          "name" : "envs5",
+          "deco" : "d",
+          "storageClass" : [
+           "ref"
+          ]
+         }
+        ],
+        "endline" : 758,
+        "endchar" : 5
+       },
+       {
+        "name" : "calcLP1Coeff",
+        "kind" : "function",
+        "line" : 771,
+        "char" : 19,
+        "storageClass" : [
+         "static"
+        ],
+        "type" : "nothrow @nogc double(const double theta)",
+        "parameters" : [
+         {
+          "name" : "theta",
+          "deco" : "d",
+          "storageClass" : [
+           "const"
+          ]
+         }
+        ],
+        "endline" : 775,
+        "endchar" : 5
+       },
+       {
+        "name" : "calcLP1CoeffLim",
+        "kind" : "function",
+        "line" : 783,
+        "char" : 19,
+        "storageClass" : [
+         "static"
+        ],
+        "type" : "nothrow @nogc double(const double theta)",
+        "parameters" : [
+         {
+          "name" : "theta",
+          "deco" : "d",
+          "storageClass" : [
+           "const"
+          ]
+         }
+        ],
+        "endline" : 786,
+        "endchar" : 5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL789_23",
+    "kind" : "function",
+    "line" : 789,
+    "char" : 1,
+    "endline" : 793,
+    "endchar" : 2
+   }
+  ]
+ },
+ {
+  "name" : "dplug.dsp.wavetable",
+  "kind" : "module",
+  "file" : "..\\..\\..\\dsp\\dplug\\dsp\\wavetable.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 17,
+    "char" : 1,
+    "name" : "SineGenerator",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "SineGenerator",
+      "kind" : "struct",
+      "line" : 17,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 19,
+        "char" : 10,
+        "type" : "nothrow @nogc void(T initPhase, T frequency, T samplerate)",
+        "parameters" : [
+         {
+          "name" : "initPhase",
+          "type" : "T"
+         },
+         {
+          "name" : "frequency",
+          "type" : "T"
+         },
+         {
+          "name" : "samplerate",
+          "type" : "T"
+         }
+        ],
+        "endline" : 25,
+        "endchar" : 5
+       },
+       {
+        "name" : "next",
+        "kind" : "function",
+        "line" : 27,
+        "char" : 7,
+        "type" : "nothrow @nogc T()",
+        "endline" : 33,
+        "endchar" : 5
+       },
+       {
+        "name" : "_y1",
+        "kind" : "variable",
+        "line" : 35,
+        "char" : 7,
+        "type" : "T"
+       },
+       {
+        "name" : "_y2",
+        "kind" : "variable",
+        "line" : 35,
+        "char" : 12,
+        "type" : "T"
+       },
+       {
+        "name" : "_b1",
+        "kind" : "variable",
+        "line" : 36,
+        "char" : 7,
+        "type" : "T"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "WaveformType",
+    "kind" : "enum",
+    "line" : 39,
+    "char" : 1,
+    "baseDeco" : "i",
+    "members" : [
+     {
+      "name" : "SINE",
+      "kind" : "enum member",
+      "value" : "0",
+      "line" : 41,
+      "char" : 5
+     },
+     {
+      "name" : "SAWTOOTH",
+      "kind" : "enum member",
+      "value" : "1",
+      "line" : 42,
+      "char" : 5
+     },
+     {
+      "name" : "SQUARE",
+      "kind" : "enum member",
+      "value" : "2",
+      "line" : 43,
+      "char" : 5
+     },
+     {
+      "name" : "TRIANGLE",
+      "kind" : "enum member",
+      "value" : "3",
+      "line" : 44,
+      "char" : 5
+     }
+    ]
+   },
+   {
+    "name" : "Wavetable",
+    "kind" : "struct",
+    "line" : 52,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "initialize",
+      "kind" : "function",
+      "line" : 57,
+      "char" : 10,
+      "deco" : "FNbNiiE5dplug3dsp9wavetable12WaveformTypeZv",
+      "parameters" : [
+       {
+        "name" : "largestSize",
+        "deco" : "i"
+       },
+       {
+        "name" : "waveform",
+        "deco" : "E5dplug3dsp9wavetable12WaveformType"
+       }
+      ],
+      "endline" : 61,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 63,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 67,
+      "endchar" : 5
+     },
+     {
+      "name" : "lookupLinear",
+      "kind" : "function",
+      "line" : 71,
+      "char" : 11,
+      "deco" : "FNbNikfiZf",
+      "parameters" : [
+       {
+        "name" : "phaseIntPart",
+        "deco" : "k"
+       },
+       {
+        "name" : "phaseFractional",
+        "deco" : "f"
+       },
+       {
+        "name" : "level",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 78,
+      "endchar" : 5
+     },
+     {
+      "name" : "lookupCatmullRom",
+      "kind" : "function",
+      "line" : 80,
+      "char" : 11,
+      "deco" : "FNbNikfiZf",
+      "parameters" : [
+       {
+        "name" : "phaseIntPart",
+        "deco" : "k"
+       },
+       {
+        "name" : "phaseFractional",
+        "deco" : "f"
+       },
+       {
+        "name" : "level",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 94,
+      "endchar" : 5
+     },
+     {
+      "name" : "lookupCatmullRomMipmap",
+      "kind" : "function",
+      "line" : 96,
+      "char" : 11,
+      "deco" : "FNbNikffZf",
+      "parameters" : [
+       {
+        "name" : "phaseIntPart",
+        "deco" : "k"
+       },
+       {
+        "name" : "phaseFractional",
+        "deco" : "f"
+       },
+       {
+        "name" : "phaseIncrementSamples",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 132,
+      "endchar" : 5
+     },
+     {
+      "name" : "numMipmaps",
+      "kind" : "function",
+      "line" : 135,
+      "char" : 9,
+      "deco" : "xFNbNiZi",
+      "endline" : 138,
+      "endchar" : 5
+     },
+     {
+      "name" : "sizeOfMipmap",
+      "kind" : "function",
+      "line" : 140,
+      "char" : 9,
+      "deco" : "xFNbNiiZi",
+      "parameters" : [
+       {
+        "name" : "level",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 143,
+      "endchar" : 5
+     },
+     {
+      "name" : "mipmapData",
+      "kind" : "function",
+      "line" : 145,
+      "char" : 12,
+      "deco" : "FNbNiiZPf",
+      "parameters" : [
+       {
+        "name" : "level",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 148,
+      "endchar" : 5
+     },
+     {
+      "name" : "_largestSize",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 152,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 0
+     },
+     {
+      "name" : "_mast",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 153,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 4
+     },
+     {
+      "name" : "_numTables",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 154,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 8
+     },
+     {
+      "name" : "_mipmapData",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 156,
+      "char" : 14,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "APf",
+      "offset" : 12
+     },
+     {
+      "name" : "_wholeBuffer",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 157,
+      "char" : 13,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Af",
+      "offset" : 20
+     },
+     {
+      "name" : "rolloffHarmonic",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 162,
+      "char" : 19,
+      "storageClass" : [
+       "static"
+      ],
+      "deco" : "FNaNbNidZd",
+      "parameters" : [
+       {
+        "name" : "normalizedFrequency",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 166,
+      "endchar" : 5
+     },
+     {
+      "name" : "resize",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 168,
+      "char" : 10,
+      "deco" : "FNbNiiZv",
+      "parameters" : [
+       {
+        "name" : "largestSize",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 196,
+      "endchar" : 5
+     },
+     {
+      "name" : "generate",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 199,
+      "char" : 10,
+      "deco" : "FNbNiE5dplug3dsp9wavetable12WaveformTypeZv",
+      "parameters" : [
+       {
+        "name" : "waveform",
+        "deco" : "E5dplug3dsp9wavetable12WaveformType"
+       }
+      ],
+      "endline" : 233,
+      "endchar" : 5
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     },
+     {
+      "name" : "__xpostblit",
+      "kind" : "alias"
+     },
+     {
+      "name" : "opAssign",
+      "kind" : "generated function",
+      "line" : 52,
+      "char" : 1,
+      "deco" : "FNbNcNiNjS5dplug3dsp9wavetable9WavetableZS5dplug3dsp9wavetable9Wavetable",
+      "originalType" : "nothrow @nogc ref return Wavetable(Wavetable p)",
+      "parameters" : [
+       {
+        "name" : "p",
+        "deco" : "S5dplug3dsp9wavetable9Wavetable"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "WavetableOsc",
+    "kind" : "struct",
+    "line" : 237,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "initialize",
+      "kind" : "function",
+      "line" : 240,
+      "char" : 10,
+      "deco" : "FNbNiPS5dplug3dsp9wavetable9WavetablefZv",
+      "parameters" : [
+       {
+        "name" : "wavetable",
+        "deco" : "PS5dplug3dsp9wavetable9Wavetable"
+       },
+       {
+        "name" : "sampleRate",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 246,
+      "endchar" : 5
+     },
+     {
+      "name" : "resetPhase",
+      "kind" : "function",
+      "line" : 249,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 253,
+      "endchar" : 5
+     },
+     {
+      "name" : "next",
+      "kind" : "alias",
+      "line" : 255,
+      "char" : 16,
+      "storageClass" : [
+       "deprecated"
+      ]
+     },
+     {
+      "name" : "nextSample",
+      "kind" : "function",
+      "line" : 258,
+      "char" : 11,
+      "deco" : "FNbNifZf",
+      "parameters" : [
+       {
+        "name" : "frequencyHz",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 283,
+      "endchar" : 5
+     },
+     {
+      "name" : "_phaseIntPart",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 286,
+      "char" : 10,
+      "deco" : "k",
+      "offset" : 0
+     },
+     {
+      "name" : "_phaseFractional",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 287,
+      "char" : 11,
+      "deco" : "f",
+      "offset" : 4
+     },
+     {
+      "name" : "_wavetable",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 288,
+      "char" : 16,
+      "deco" : "PS5dplug3dsp9wavetable9Wavetable",
+      "offset" : 8
+     },
+     {
+      "name" : "_phaseFactor",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 289,
+      "char" : 11,
+      "deco" : "f",
+      "offset" : 12
+     }
+    ]
+   },
+   {
+    "name" : "getWaveHarmonicAmplitude",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 295,
+    "char" : 8,
+    "deco" : "FNbNiE5dplug3dsp9wavetable12WaveformTypeiZd",
+    "parameters" : [
+     {
+      "name" : "waveform",
+      "deco" : "E5dplug3dsp9wavetable12WaveformType"
+     },
+     {
+      "name" : "n",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 334,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "dplug.dsp.window",
+  "kind" : "module",
+  "file" : "..\\..\\..\\dsp\\dplug\\dsp\\window.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "WindowType",
+    "kind" : "enum",
+    "line" : 16,
+    "char" : 1,
+    "baseDeco" : "i",
+    "members" : [
+     {
+      "name" : "RECT",
+      "kind" : "enum member",
+      "value" : "0",
+      "line" : 18,
+      "char" : 5
+     },
+     {
+      "name" : "BARTLETT",
+      "kind" : "enum member",
+      "value" : "1",
+      "line" : 19,
+      "char" : 5
+     },
+     {
+      "name" : "HANN",
+      "kind" : "enum member",
+      "value" : "2",
+      "line" : 20,
+      "char" : 5
+     },
+     {
+      "name" : "HAMMING",
+      "kind" : "enum member",
+      "value" : "3",
+      "line" : 21,
+      "char" : 5
+     },
+     {
+      "name" : "NUTTALL",
+      "kind" : "enum member",
+      "value" : "4",
+      "line" : 22,
+      "char" : 5
+     },
+     {
+      "name" : "BLACKMANN_NUTTALL",
+      "kind" : "enum member",
+      "value" : "5",
+      "line" : 23,
+      "char" : 5
+     },
+     {
+      "name" : "BLACKMANN_HARRIS",
+      "kind" : "enum member",
+      "value" : "6",
+      "line" : 24,
+      "char" : 5
+     },
+     {
+      "name" : "FLATTOP_SR785",
+      "kind" : "enum member",
+      "value" : "7",
+      "line" : 25,
+      "char" : 5
+     },
+     {
+      "name" : "KAISER_BESSEL",
+      "kind" : "enum member",
+      "value" : "8",
+      "line" : 26,
+      "char" : 5
+     }
+    ]
+   },
+   {
+    "name" : "WindowDesc",
+    "kind" : "struct",
+    "line" : 29,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "type",
+      "kind" : "variable",
+      "line" : 31,
+      "char" : 16,
+      "deco" : "E5dplug3dsp6window10WindowType",
+      "offset" : 0
+     },
+     {
+      "name" : "param",
+      "kind" : "variable",
+      "line" : 32,
+      "char" : 11,
+      "deco" : "f",
+      "offset" : 4
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 35,
+    "char" : 6,
+    "name" : "generateWindow",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "generateWindow",
+      "kind" : "function",
+      "line" : 35,
+      "char" : 6,
+      "type" : "pure nothrow @nogc void(WindowDesc desc, T[] output)",
+      "parameters" : [
+       {
+        "name" : "desc",
+        "type" : "WindowDesc"
+       },
+       {
+        "name" : "output",
+        "type" : "T[]"
+       }
+      ],
+      "endline" : 42,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 44,
+    "char" : 6,
+    "name" : "generateNormalizedWindow",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "generateNormalizedWindow",
+      "kind" : "function",
+      "line" : 44,
+      "char" : 6,
+      "type" : "pure nothrow @nogc void(WindowDesc desc, T[] output)",
+      "parameters" : [
+       {
+        "name" : "desc",
+        "type" : "WindowDesc"
+       },
+       {
+        "name" : "output",
+        "type" : "T[]"
+       }
+      ],
+      "endline" : 56,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "secondaryLobeAttenuationInDb",
+    "kind" : "function",
+    "line" : 58,
+    "char" : 49,
+    "storageClass" : [
+     "deprecated"
+    ],
+    "deco" : "FNaNbNiE5dplug3dsp6window10WindowTypeZd",
+    "parameters" : [
+     {
+      "name" : "type",
+      "deco" : "E5dplug3dsp6window10WindowType"
+     }
+    ],
+    "endline" : 61,
+    "endchar" : 1
+   },
+   {
+    "name" : "evalWindow",
+    "kind" : "function",
+    "line" : 63,
+    "char" : 8,
+    "deco" : "FNaNbNiS5dplug3dsp6window10WindowDesciiZd",
+    "parameters" : [
+     {
+      "name" : "desc",
+      "deco" : "S5dplug3dsp6window10WindowDesc"
+     },
+     {
+      "name" : "n",
+      "deco" : "i"
+     },
+     {
+      "name" : "N",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 139,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 141,
+    "char" : 1,
+    "name" : "Window",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == float) || is(T == double)",
+    "members" : [
+     {
+      "name" : "Window",
+      "kind" : "struct",
+      "line" : 141,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "initialize",
+        "kind" : "function",
+        "line" : 143,
+        "char" : 10,
+        "type" : "nothrow @nogc void(WindowDesc desc, int lengthInSamples)",
+        "parameters" : [
+         {
+          "name" : "desc",
+          "type" : "WindowDesc"
+         },
+         {
+          "name" : "lengthInSamples",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 148,
+        "endchar" : 5
+       },
+       {
+        "name" : "~this",
+        "kind" : "destructor",
+        "line" : 150,
+        "char" : 5,
+        "storageClass" : [
+         "nothrow",
+         "@nogc"
+        ],
+        "endline" : 153,
+        "endchar" : 5
+       },
+       {
+        "name" : "sumOfWindowSamples",
+        "kind" : "function",
+        "line" : 155,
+        "char" : 12,
+        "type" : "const pure nothrow @nogc double()",
+        "endline" : 161,
+        "endchar" : 5
+       },
+       {
+        "name" : "_window",
+        "kind" : "variable",
+        "line" : 165,
+        "char" : 9,
+        "type" : "T[]",
+        "init" : "null"
+       },
+       {
+        "name" : "_lengthInSamples",
+        "kind" : "variable",
+        "line" : 166,
+        "char" : 9,
+        "deco" : "i"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

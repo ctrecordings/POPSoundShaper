@@ -1,0 +1,7841 @@
+[
+ {
+  "name" : "gfm.math.box",
+  "kind" : "module",
+  "file" : "..\\..\\..\\..\\..\\..\\AppData\\Roaming\\dub\\packages\\gfm-6.2.10\\gfm\\math\\gfm\\math\\box.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 6,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.traits",
+    "kind" : "import",
+    "line" : 7,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.conv",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.string",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.vector",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.funcs",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 15,
+    "char" : 1,
+    "name" : "Box",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "N",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "Box",
+      "kind" : "struct",
+      "line" : 15,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "bound_t",
+        "kind" : "alias",
+        "line" : 21,
+        "char" : 29,
+        "type" : "Vector!(T, N)"
+       },
+       {
+        "name" : "min",
+        "kind" : "variable",
+        "line" : 23,
+        "char" : 17,
+        "type" : "bound_t"
+       },
+       {
+        "name" : "max",
+        "kind" : "variable",
+        "line" : 24,
+        "char" : 17,
+        "type" : "bound_t"
+       },
+       {
+        "name" : "this",
+        "kind" : "constructor",
+        "line" : 28,
+        "char" : 15,
+        "type" : "pure nothrow @nogc (bound_t min_, bound_t max_)",
+        "parameters" : [
+         {
+          "name" : "min_",
+          "type" : "bound_t"
+         },
+         {
+          "name" : "max_",
+          "type" : "bound_t"
+         }
+        ],
+        "endline" : 32,
+        "endchar" : 9
+       },
+       {
+        "name" : "size",
+        "kind" : "function",
+        "line" : 65,
+        "char" : 27,
+        "type" : "const pure nothrow @nogc bound_t()",
+        "endline" : 68,
+        "endchar" : 13
+       },
+       {
+        "name" : "center",
+        "kind" : "function",
+        "line" : 71,
+        "char" : 27,
+        "type" : "const pure nothrow @nogc bound_t()",
+        "endline" : 74,
+        "endchar" : 13
+       },
+       {
+        "name" : "volume",
+        "kind" : "function",
+        "line" : 98,
+        "char" : 21,
+        "type" : "const pure nothrow @nogc T()",
+        "endline" : 105,
+        "endchar" : 13
+       },
+       {
+        "name" : "empty",
+        "kind" : "function",
+        "line" : 108,
+        "char" : 24,
+        "type" : "const pure nothrow @nogc bool()",
+        "endline" : 113,
+        "endchar" : 13
+       },
+       {
+        "name" : "contains",
+        "kind" : "function",
+        "line" : 117,
+        "char" : 20,
+        "type" : "const pure nothrow @nogc bool(bound_t point)",
+        "parameters" : [
+         {
+          "name" : "point",
+          "type" : "bound_t"
+         }
+        ],
+        "endline" : 125,
+        "endchar" : 9
+       },
+       {
+        "name" : "contains",
+        "kind" : "function",
+        "line" : 128,
+        "char" : 20,
+        "type" : "const pure nothrow @nogc bool(Box other)",
+        "parameters" : [
+         {
+          "name" : "other",
+          "type" : "Box"
+         }
+        ],
+        "endline" : 135,
+        "endchar" : 9
+       },
+       {
+        "name" : "squaredDistance",
+        "kind" : "function",
+        "line" : 139,
+        "char" : 20,
+        "type" : "const pure nothrow @nogc real(bound_t point)",
+        "parameters" : [
+         {
+          "name" : "point",
+          "type" : "bound_t"
+         }
+        ],
+        "endline" : 152,
+        "endchar" : 9
+       },
+       {
+        "name" : "distance",
+        "kind" : "function",
+        "line" : 156,
+        "char" : 20,
+        "type" : "const pure nothrow @nogc real(bound_t point)",
+        "parameters" : [
+         {
+          "name" : "point",
+          "type" : "bound_t"
+         }
+        ],
+        "endline" : 159,
+        "endchar" : 9
+       },
+       {
+        "name" : "squaredDistance",
+        "kind" : "function",
+        "line" : 163,
+        "char" : 20,
+        "type" : "const pure nothrow @nogc real(Box o)",
+        "parameters" : [
+         {
+          "name" : "o",
+          "type" : "Box"
+         }
+        ],
+        "endline" : 177,
+        "endchar" : 9
+       },
+       {
+        "name" : "distance",
+        "kind" : "function",
+        "line" : 181,
+        "char" : 20,
+        "type" : "const pure nothrow @nogc real(Box o)",
+        "parameters" : [
+         {
+          "name" : "o",
+          "type" : "Box"
+         }
+        ],
+        "endline" : 184,
+        "endchar" : 9
+       },
+       {
+        "name" : "intersection",
+        "kind" : "function",
+        "line" : 189,
+        "char" : 19,
+        "type" : "const pure nothrow @nogc Box(Box o)",
+        "parameters" : [
+         {
+          "name" : "o",
+          "type" : "Box"
+         }
+        ],
+        "endline" : 210,
+        "endchar" : 9
+       },
+       {
+        "name" : "intersects",
+        "kind" : "function",
+        "line" : 215,
+        "char" : 20,
+        "type" : "const pure nothrow @nogc bool(Box other)",
+        "parameters" : [
+         {
+          "name" : "other",
+          "type" : "Box"
+         }
+        ],
+        "endline" : 219,
+        "endchar" : 9
+       },
+       {
+        "name" : "grow",
+        "kind" : "function",
+        "line" : 222,
+        "char" : 19,
+        "type" : "const pure nothrow @nogc Box(bound_t space)",
+        "parameters" : [
+         {
+          "name" : "space",
+          "type" : "bound_t"
+         }
+        ],
+        "endline" : 228,
+        "endchar" : 9
+       },
+       {
+        "name" : "shrink",
+        "kind" : "function",
+        "line" : 231,
+        "char" : 19,
+        "type" : "const pure nothrow @nogc Box(bound_t space)",
+        "parameters" : [
+         {
+          "name" : "space",
+          "type" : "bound_t"
+         }
+        ],
+        "endline" : 234,
+        "endchar" : 9
+       },
+       {
+        "name" : "grow",
+        "kind" : "function",
+        "line" : 237,
+        "char" : 19,
+        "type" : "const pure nothrow @nogc Box(T space)",
+        "parameters" : [
+         {
+          "name" : "space",
+          "type" : "T"
+         }
+        ],
+        "endline" : 240,
+        "endchar" : 9
+       },
+       {
+        "name" : "translate",
+        "kind" : "function",
+        "line" : 243,
+        "char" : 19,
+        "type" : "const pure nothrow @nogc Box(bound_t offset)",
+        "parameters" : [
+         {
+          "name" : "offset",
+          "type" : "bound_t"
+         }
+        ],
+        "endline" : 246,
+        "endchar" : 9
+       },
+       {
+        "name" : "shrink",
+        "kind" : "function",
+        "line" : 250,
+        "char" : 19,
+        "type" : "const pure nothrow @nogc Box(T space)",
+        "parameters" : [
+         {
+          "name" : "space",
+          "type" : "T"
+         }
+        ],
+        "endline" : 253,
+        "endchar" : 9
+       },
+       {
+        "name" : "expand",
+        "kind" : "function",
+        "line" : 257,
+        "char" : 19,
+        "type" : "const pure nothrow @nogc Box(bound_t point)",
+        "parameters" : [
+         {
+          "name" : "point",
+          "type" : "bound_t"
+         }
+        ],
+        "endline" : 261,
+        "endchar" : 9
+       },
+       {
+        "name" : "expand",
+        "kind" : "function",
+        "line" : 266,
+        "char" : 19,
+        "type" : "const pure nothrow @nogc Box(Box other)",
+        "parameters" : [
+         {
+          "name" : "other",
+          "type" : "Box"
+         }
+        ],
+        "endline" : 286,
+        "endchar" : 9
+       },
+       {
+        "name" : "isSorted",
+        "kind" : "function",
+        "line" : 289,
+        "char" : 20,
+        "type" : "const pure nothrow @nogc bool()",
+        "endline" : 297,
+        "endchar" : 9
+       },
+       {
+        "kind" : "template",
+        "line" : 300,
+        "char" : 23,
+        "name" : "opAssign",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isBox!U",
+        "members" : [
+         {
+          "name" : "opAssign",
+          "kind" : "function",
+          "line" : 300,
+          "char" : 23,
+          "type" : "nothrow @nogc ref Box(U x)",
+          "parameters" : [
+           {
+            "name" : "x",
+            "type" : "U"
+           }
+          ],
+          "endline" : 319,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 322,
+        "char" : 20,
+        "name" : "opEquals",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "is(U : Box)",
+        "members" : [
+         {
+          "name" : "opEquals",
+          "kind" : "function",
+          "line" : 322,
+          "char" : 20,
+          "type" : "const pure nothrow @nogc bool(U other)",
+          "parameters" : [
+           {
+            "name" : "other",
+            "type" : "U"
+           }
+          ],
+          "endline" : 325,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 328,
+        "char" : 17,
+        "name" : "opCast",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isBox!U",
+        "members" : [
+         {
+          "name" : "opCast",
+          "kind" : "function",
+          "line" : 328,
+          "char" : 17,
+          "type" : "const pure nothrow @nogc U()",
+          "endline" : 337,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "name" : "_size",
+        "kind" : "variable",
+        "line" : 351,
+        "char" : 14,
+        "storageClass" : [
+         "enum"
+        ],
+        "init" : "N"
+       },
+       {
+        "name" : "element_t",
+        "kind" : "alias",
+        "line" : 352,
+        "char" : 17,
+        "type" : "T"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 357,
+    "char" : 1,
+    "name" : "box2",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "box2",
+      "kind" : "alias",
+      "line" : 359,
+      "char" : 22,
+      "type" : "Box!(T, 2)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 363,
+    "char" : 1,
+    "name" : "box3",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "box3",
+      "kind" : "alias",
+      "line" : 365,
+      "char" : 22,
+      "type" : "Box!(T, 3)"
+     }
+    ]
+   },
+   {
+    "name" : "box2i",
+    "kind" : "alias",
+    "line" : 369,
+    "char" : 16,
+    "deco" : "S3gfm4math3box14__T3BoxTiVii2Z3Box"
+   },
+   {
+    "name" : "box3i",
+    "kind" : "alias",
+    "line" : 370,
+    "char" : 16,
+    "deco" : "S3gfm4math3box14__T3BoxTiVii3Z3Box"
+   },
+   {
+    "name" : "box2f",
+    "kind" : "alias",
+    "line" : 371,
+    "char" : 18,
+    "deco" : "S3gfm4math3box14__T3BoxTfVii2Z3Box"
+   },
+   {
+    "name" : "box3f",
+    "kind" : "alias",
+    "line" : 372,
+    "char" : 18,
+    "deco" : "S3gfm4math3box14__T3BoxTfVii3Z3Box"
+   },
+   {
+    "name" : "box2d",
+    "kind" : "alias",
+    "line" : 373,
+    "char" : 19,
+    "deco" : "S3gfm4math3box14__T3BoxTdVii2Z3Box"
+   },
+   {
+    "name" : "box3d",
+    "kind" : "alias",
+    "line" : 374,
+    "char" : 19,
+    "deco" : "S3gfm4math3box14__T3BoxTdVii3Z3Box"
+   },
+   {
+    "name" : "__unittestL376_1",
+    "kind" : "function",
+    "line" : 376,
+    "char" : 1,
+    "endline" : 416,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 416,
+    "char" : 6,
+    "name" : "isBox",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isBox",
+      "kind" : "variable",
+      "line" : 416,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Box!U, U...)"
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL418_2",
+    "kind" : "function",
+    "line" : 418,
+    "char" : 1,
+    "endline" : 427,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 427,
+    "char" : 1,
+    "name" : "DimensionType",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type",
+      "type" : "Box!U"
+     },
+     {
+      "name" : "U",
+      "kind" : "tuple"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "DimensionType",
+      "kind" : "alias",
+      "line" : 427,
+      "char" : 1,
+      "type" : "U[0]"
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL430_3",
+    "kind" : "function",
+    "line" : 430,
+    "char" : 1,
+    "endline" : 436,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 438,
+    "char" : 19,
+    "name" : "generateLoopCode",
+    "parameters" : [
+     {
+      "name" : "formatString",
+      "kind" : "value",
+      "deco" : "Aya"
+     },
+     {
+      "name" : "N",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "generateLoopCode",
+      "kind" : "function",
+      "line" : 438,
+      "char" : 19,
+      "type" : "pure nothrow string()",
+      "endline" : 448,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "name" : "ctIntToString",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 451,
+    "char" : 19,
+    "storageClass" : [
+     "static"
+    ],
+    "deco" : "FNaNbiZAya",
+    "parameters" : [
+     {
+      "name" : "n",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 458,
+    "endchar" : 5
+   },
+   {
+    "name" : "_arraySliceComSliceAssign_k",
+    "kind" : "function",
+    "deco" : "UNaNbNiNeAkxAkZAk",
+    "originalType" : "pure nothrow @nogc @trusted extern (C) uint[](uint[] p1, const const(uint)[] p0)",
+    "parameters" : [
+     {
+      "name" : "p1",
+      "deco" : "Ak"
+     },
+     {
+      "name" : "p0",
+      "deco" : "xAk"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "gfm.math.funcs",
+  "kind" : "module",
+  "file" : "..\\..\\..\\..\\..\\..\\AppData\\Roaming\\dub\\packages\\gfm-6.2.10\\gfm\\math\\gfm\\math\\funcs.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.traits",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.range",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 23,
+    "char" : 9,
+    "name" : "degrees",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "!isIntegral!T",
+    "members" : [
+     {
+      "name" : "degrees",
+      "kind" : "function",
+      "line" : 23,
+      "char" : 9,
+      "type" : "pure nothrow @nogc T(T x)",
+      "parameters" : [
+       {
+        "name" : "x",
+        "type" : "T"
+       }
+      ],
+      "endline" : 26,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 29,
+    "char" : 9,
+    "name" : "radians",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "!isIntegral!T",
+    "members" : [
+     {
+      "name" : "radians",
+      "kind" : "function",
+      "line" : 29,
+      "char" : 9,
+      "type" : "pure nothrow @nogc T(T x)",
+      "parameters" : [
+       {
+        "name" : "x",
+        "type" : "T"
+       }
+      ],
+      "endline" : 32,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 35,
+    "char" : 9,
+    "name" : "lerp",
+    "parameters" : [
+     {
+      "name" : "S",
+      "kind" : "type"
+     },
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(typeof(t * b + (1 - t) * a) : S)",
+    "members" : [
+     {
+      "name" : "lerp",
+      "kind" : "function",
+      "line" : 35,
+      "char" : 9,
+      "type" : "pure nothrow @nogc S(S a, S b, T t)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "S"
+       },
+       {
+        "name" : "b",
+        "type" : "S"
+       },
+       {
+        "name" : "t",
+        "type" : "T"
+       }
+      ],
+      "endline" : 39,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 42,
+    "char" : 9,
+    "name" : "clamp",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "clamp",
+      "kind" : "function",
+      "line" : 42,
+      "char" : 9,
+      "type" : "pure nothrow @nogc T(T x, T min, T max)",
+      "parameters" : [
+       {
+        "name" : "x",
+        "type" : "T"
+       },
+       {
+        "name" : "min",
+        "type" : "T"
+       },
+       {
+        "name" : "max",
+        "type" : "T"
+       }
+      ],
+      "endline" : 50,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "ltrunc",
+    "kind" : "function",
+    "line" : 53,
+    "char" : 12,
+    "deco" : "FNbNieZl",
+    "parameters" : [
+     {
+      "name" : "x",
+      "deco" : "e"
+     }
+    ],
+    "endline" : 56,
+    "endchar" : 1
+   },
+   {
+    "name" : "lfloor",
+    "kind" : "function",
+    "line" : 59,
+    "char" : 12,
+    "deco" : "FNbNieZl",
+    "parameters" : [
+     {
+      "name" : "x",
+      "deco" : "e"
+     }
+    ],
+    "endline" : 62,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 65,
+    "char" : 9,
+    "name" : "fract",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "fract",
+      "kind" : "function",
+      "line" : 65,
+      "char" : 9,
+      "type" : "nothrow @nogc T(real x)",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "e"
+       }
+      ],
+      "endline" : 68,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 71,
+    "char" : 9,
+    "name" : "safeAsin",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "safeAsin",
+      "kind" : "function",
+      "line" : 71,
+      "char" : 9,
+      "type" : "pure nothrow @nogc T(T x)",
+      "parameters" : [
+       {
+        "name" : "x",
+        "type" : "T"
+       }
+      ],
+      "endline" : 74,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 77,
+    "char" : 9,
+    "name" : "safeAcos",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "safeAcos",
+      "kind" : "function",
+      "line" : 77,
+      "char" : 9,
+      "type" : "pure nothrow @nogc T(T x)",
+      "parameters" : [
+       {
+        "name" : "x",
+        "type" : "T"
+       }
+      ],
+      "endline" : 80,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 84,
+    "char" : 9,
+    "name" : "step",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "step",
+      "kind" : "function",
+      "line" : 84,
+      "char" : 9,
+      "type" : "pure nothrow @nogc T(T edge, T x)",
+      "parameters" : [
+       {
+        "name" : "edge",
+        "type" : "T"
+       },
+       {
+        "name" : "x",
+        "type" : "T"
+       }
+      ],
+      "endline" : 87,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 91,
+    "char" : 9,
+    "name" : "smoothStep",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "smoothStep",
+      "kind" : "function",
+      "line" : 91,
+      "char" : 9,
+      "type" : "pure nothrow @nogc T(T a, T b, T t)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "T"
+       },
+       {
+        "name" : "b",
+        "type" : "T"
+       },
+       {
+        "name" : "t",
+        "type" : "T"
+       }
+      ],
+      "endline" : 102,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 105,
+    "char" : 12,
+    "name" : "isPowerOf2",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isIntegral!T",
+    "members" : [
+     {
+      "name" : "isPowerOf2",
+      "kind" : "function",
+      "line" : 105,
+      "char" : 12,
+      "type" : "pure nothrow @nogc bool(T i)",
+      "parameters" : [
+       {
+        "name" : "i",
+        "type" : "T"
+       }
+      ],
+      "endline" : 109,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 113,
+    "char" : 11,
+    "name" : "ilog2",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isIntegral!T",
+    "members" : [
+     {
+      "name" : "ilog2",
+      "kind" : "function",
+      "line" : 113,
+      "char" : 11,
+      "type" : "nothrow @nogc int(T i)",
+      "parameters" : [
+       {
+        "name" : "i",
+        "type" : "T"
+       }
+      ],
+      "endline" : 124,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "nextPowerOf2",
+    "kind" : "function",
+    "line" : 127,
+    "char" : 11,
+    "deco" : "FNaNbNiiZi",
+    "parameters" : [
+     {
+      "name" : "i",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 138,
+    "endchar" : 1
+   },
+   {
+    "name" : "nextPowerOf2",
+    "kind" : "function",
+    "line" : 141,
+    "char" : 12,
+    "deco" : "FNaNbNilZl",
+    "parameters" : [
+     {
+      "name" : "i",
+      "deco" : "l"
+     }
+    ],
+    "endline" : 153,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 157,
+    "char" : 9,
+    "name" : "sinOverX",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "sinOverX",
+      "kind" : "function",
+      "line" : 157,
+      "char" : 9,
+      "type" : "pure nothrow @nogc T(T x)",
+      "parameters" : [
+       {
+        "name" : "x",
+        "type" : "T"
+       }
+      ],
+      "endline" : 163,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 168,
+    "char" : 9,
+    "name" : "moduloWrap",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isSigned!T",
+    "members" : [
+     {
+      "name" : "moduloWrap",
+      "kind" : "function",
+      "line" : 168,
+      "char" : 9,
+      "type" : "pure nothrow @nogc T(T a, T b)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "T"
+       },
+       {
+        "name" : "b",
+        "type" : "T"
+       }
+      ],
+      "endline" : 185,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL187_4",
+    "kind" : "function",
+    "line" : 187,
+    "char" : 1,
+    "endline" : 196,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 196,
+    "char" : 11,
+    "name" : "solveLinear",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isFloatingPoint!T",
+    "members" : [
+     {
+      "name" : "solveLinear",
+      "kind" : "function",
+      "line" : 196,
+      "char" : 11,
+      "type" : "pure nothrow @nogc int(T a, T b, out T root)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "T"
+       },
+       {
+        "name" : "b",
+        "type" : "T"
+       },
+       {
+        "name" : "root",
+        "type" : "T",
+        "storageClass" : [
+         "out"
+        ]
+       }
+      ],
+      "endline" : 207,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 216,
+    "char" : 11,
+    "name" : "solveQuadratic",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isFloatingPoint!T",
+    "members" : [
+     {
+      "name" : "solveQuadratic",
+      "kind" : "function",
+      "line" : 216,
+      "char" : 11,
+      "type" : "pure nothrow @nogc int(T a, T b, T c, T[] outRoots)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "T"
+       },
+       {
+        "name" : "b",
+        "type" : "T"
+       },
+       {
+        "name" : "c",
+        "type" : "T"
+       },
+       {
+        "name" : "outRoots",
+        "type" : "T[]"
+       }
+      ],
+      "endline" : 232,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 242,
+    "char" : 11,
+    "name" : "solveCubic",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isFloatingPoint!T",
+    "members" : [
+     {
+      "name" : "solveCubic",
+      "kind" : "function",
+      "line" : 242,
+      "char" : 11,
+      "type" : "pure nothrow @nogc int(T a, T b, T c, T d, T[] outRoots)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "T"
+       },
+       {
+        "name" : "b",
+        "type" : "T"
+       },
+       {
+        "name" : "c",
+        "type" : "T"
+       },
+       {
+        "name" : "d",
+        "type" : "T"
+       },
+       {
+        "name" : "outRoots",
+        "type" : "T[]"
+       }
+      ],
+      "endline" : 284,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 293,
+    "char" : 11,
+    "name" : "solveQuartic",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isFloatingPoint!T",
+    "members" : [
+     {
+      "name" : "solveQuartic",
+      "kind" : "function",
+      "line" : 293,
+      "char" : 11,
+      "type" : "pure nothrow @nogc int(T a, T b, T c, T d, T e, T[] roots)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "T"
+       },
+       {
+        "name" : "b",
+        "type" : "T"
+       },
+       {
+        "name" : "c",
+        "type" : "T"
+       },
+       {
+        "name" : "d",
+        "type" : "T"
+       },
+       {
+        "name" : "e",
+        "type" : "T"
+       },
+       {
+        "name" : "roots",
+        "type" : "T[]"
+       }
+      ],
+      "endline" : 353,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL356_5",
+    "kind" : "function",
+    "line" : 356,
+    "char" : 1,
+    "endline" : 390,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 390,
+    "char" : 8,
+    "name" : "average",
+    "parameters" : [
+     {
+      "name" : "R",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isInputRange!R",
+    "members" : [
+     {
+      "name" : "average",
+      "kind" : "function",
+      "line" : 390,
+      "char" : 8,
+      "type" : "double(R r)",
+      "parameters" : [
+       {
+        "name" : "r",
+        "type" : "R"
+       }
+      ],
+      "endline" : 403,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 406,
+    "char" : 8,
+    "name" : "minElement",
+    "parameters" : [
+     {
+      "name" : "R",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isInputRange!R",
+    "members" : [
+     {
+      "name" : "minElement",
+      "kind" : "function",
+      "line" : 406,
+      "char" : 8,
+      "type" : "double(R r)",
+      "parameters" : [
+       {
+        "name" : "r",
+        "type" : "R"
+       }
+      ],
+      "endline" : 413,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 416,
+    "char" : 8,
+    "name" : "maxElement",
+    "parameters" : [
+     {
+      "name" : "R",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isInputRange!R",
+    "members" : [
+     {
+      "name" : "maxElement",
+      "kind" : "function",
+      "line" : 416,
+      "char" : 8,
+      "type" : "double(R r)",
+      "parameters" : [
+       {
+        "name" : "r",
+        "type" : "R"
+       }
+      ],
+      "endline" : 423,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 426,
+    "char" : 8,
+    "name" : "variance",
+    "parameters" : [
+     {
+      "name" : "R",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isForwardRange!R",
+    "members" : [
+     {
+      "name" : "variance",
+      "kind" : "function",
+      "line" : 426,
+      "char" : 8,
+      "type" : "double(R r)",
+      "parameters" : [
+       {
+        "name" : "r",
+        "type" : "R"
+       }
+      ],
+      "endline" : 444,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 447,
+    "char" : 8,
+    "name" : "standardDeviation",
+    "parameters" : [
+     {
+      "name" : "R",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isForwardRange!R",
+    "members" : [
+     {
+      "name" : "standardDeviation",
+      "kind" : "function",
+      "line" : 447,
+      "char" : 8,
+      "type" : "double(R r)",
+      "parameters" : [
+       {
+        "name" : "r",
+        "type" : "R"
+       }
+      ],
+      "endline" : 450,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 454,
+    "char" : 23,
+    "name" : "minmax",
+    "parameters" : [
+     {
+      "name" : "op",
+      "kind" : "value",
+      "deco" : "Aya"
+     },
+     {
+      "name" : "R",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isInputRange!R",
+    "members" : [
+     {
+      "name" : "minmax",
+      "kind" : "function",
+      "line" : 454,
+      "char" : 23,
+      "type" : "typeof(R.front())(R r)",
+      "parameters" : [
+       {
+        "name" : "r",
+        "type" : "R"
+       }
+      ],
+      "endline" : 464,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 468,
+    "char" : 9,
+    "name" : "inverseSqrt",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isFloatingPoint!T",
+    "members" : [
+     {
+      "name" : "inverseSqrt",
+      "kind" : "function",
+      "line" : 468,
+      "char" : 9,
+      "type" : "pure nothrow @nogc T(T x)",
+      "parameters" : [
+       {
+        "name" : "x",
+        "type" : "T"
+       }
+      ],
+      "endline" : 489,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL491_6",
+    "kind" : "function",
+    "line" : 491,
+    "char" : 1,
+    "endline" : 495,
+    "endchar" : 2
+   }
+  ]
+ },
+ {
+  "name" : "gfm.math.matrix",
+  "kind" : "module",
+  "file" : "..\\..\\..\\..\\..\\..\\AppData\\Roaming\\dub\\packages\\gfm-6.2.10\\gfm\\math\\gfm\\math\\matrix.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 3,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.typetuple",
+    "kind" : "import",
+    "line" : 4,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.traits",
+    "kind" : "import",
+    "line" : 5,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.string",
+    "kind" : "import",
+    "line" : 6,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.typecons",
+    "kind" : "import",
+    "line" : 7,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.conv",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.vector",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.shapes",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.quaternion",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 21,
+    "char" : 1,
+    "name" : "Matrix",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "R",
+      "kind" : "value",
+      "deco" : "i"
+     },
+     {
+      "name" : "C",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "Matrix",
+      "kind" : "struct",
+      "line" : 21,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "row_t",
+        "kind" : "alias",
+        "line" : 27,
+        "char" : 29,
+        "type" : "Vector!(T, C)"
+       },
+       {
+        "name" : "column_t",
+        "kind" : "alias",
+        "line" : 28,
+        "char" : 29,
+        "type" : "Vector!(T, R)"
+       },
+       {
+        "name" : "isSquare",
+        "kind" : "variable",
+        "line" : 30,
+        "char" : 19,
+        "storageClass" : [
+         "enum"
+        ],
+        "deco" : "b",
+        "init" : "R == C"
+       },
+       {
+        "name" : "v",
+        "kind" : "variable",
+        "line" : 35,
+        "char" : 20,
+        "type" : "T[C * R]"
+       },
+       {
+        "name" : "rows",
+        "kind" : "variable",
+        "line" : 36,
+        "char" : 22,
+        "type" : "row_t[R]"
+       },
+       {
+        "name" : "c",
+        "kind" : "variable",
+        "line" : 37,
+        "char" : 21,
+        "type" : "T[C][R]"
+       },
+       {
+        "kind" : "template",
+        "line" : 40,
+        "char" : 15,
+        "name" : "this",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "tuple"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "this",
+          "kind" : "constructor",
+          "line" : 40,
+          "char" : 15,
+          "type" : "pure nothrow @nogc (U values)",
+          "parameters" : [
+           {
+            "name" : "values",
+            "type" : "U"
+           }
+          ],
+          "endline" : 54,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "name" : "fromColumns",
+        "kind" : "function",
+        "line" : 57,
+        "char" : 29,
+        "storageClass" : [
+         "static"
+        ],
+        "type" : "pure nothrow @nogc Matrix(column_t[] columns)",
+        "parameters" : [
+         {
+          "name" : "columns",
+          "type" : "column_t[]"
+         }
+        ],
+        "endline" : 67,
+        "endchar" : 9
+       },
+       {
+        "name" : "fromRows",
+        "kind" : "function",
+        "line" : 70,
+        "char" : 29,
+        "storageClass" : [
+         "static"
+        ],
+        "type" : "pure nothrow @nogc Matrix(row_t[] rows)",
+        "parameters" : [
+         {
+          "name" : "rows",
+          "type" : "row_t[]"
+         }
+        ],
+        "endline" : 76,
+        "endchar" : 9
+       },
+       {
+        "kind" : "template",
+        "line" : 79,
+        "char" : 15,
+        "name" : "this",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "this",
+          "kind" : "constructor",
+          "line" : 79,
+          "char" : 15,
+          "type" : "pure nothrow @nogc (T x)",
+          "parameters" : [
+           {
+            "name" : "x",
+            "type" : "T"
+           }
+          ],
+          "endline" : 83,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 86,
+        "char" : 26,
+        "name" : "opAssign",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type",
+          "type" : "Matrix"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "opAssign",
+          "kind" : "function",
+          "line" : 86,
+          "char" : 26,
+          "type" : "pure nothrow @nogc ref Matrix(U x)",
+          "parameters" : [
+           {
+            "name" : "x",
+            "type" : "U"
+           }
+          ],
+          "endline" : 91,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 94,
+        "char" : 26,
+        "name" : "opAssign",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isMatrixInstantiation!U && is(U._T : _T) && !is(U : Matrix) && U._R == R && U._C == C",
+        "members" : [
+         {
+          "name" : "opAssign",
+          "kind" : "function",
+          "line" : 94,
+          "char" : 26,
+          "type" : "pure nothrow @nogc ref Matrix(U x)",
+          "parameters" : [
+           {
+            "name" : "x",
+            "type" : "U"
+           }
+          ],
+          "endline" : 103,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 106,
+        "char" : 26,
+        "name" : "opAssign",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isStaticArray!U && is(typeof(x[0]) : T) && U.length == R * C",
+        "members" : [
+         {
+          "name" : "opAssign",
+          "kind" : "function",
+          "line" : 106,
+          "char" : 26,
+          "type" : "pure nothrow @nogc ref Matrix(U x)",
+          "parameters" : [
+           {
+            "name" : "x",
+            "type" : "U"
+           }
+          ],
+          "endline" : 114,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 117,
+        "char" : 26,
+        "name" : "opAssign",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isDynamicArray!U && is(typeof(x[0]) : T)",
+        "members" : [
+         {
+          "name" : "opAssign",
+          "kind" : "function",
+          "line" : 117,
+          "char" : 26,
+          "type" : "pure nothrow @nogc ref Matrix(U x)",
+          "parameters" : [
+           {
+            "name" : "x",
+            "type" : "U"
+           }
+          ],
+          "endline" : 125,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "name" : "ptr",
+        "kind" : "function",
+        "line" : 128,
+        "char" : 25,
+        "type" : "inout pure nothrow @nogc @property inout(T)*()",
+        "endline" : 131,
+        "endchar" : 9
+       },
+       {
+        "name" : "column",
+        "kind" : "function",
+        "line" : 134,
+        "char" : 24,
+        "type" : "const pure nothrow @nogc column_t(int j)",
+        "parameters" : [
+         {
+          "name" : "j",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 140,
+        "endchar" : 9
+       },
+       {
+        "name" : "row",
+        "kind" : "function",
+        "line" : 143,
+        "char" : 21,
+        "type" : "const pure nothrow @nogc row_t(int i)",
+        "parameters" : [
+         {
+          "name" : "i",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 146,
+        "endchar" : 9
+       },
+       {
+        "name" : "toString",
+        "kind" : "function",
+        "line" : 149,
+        "char" : 16,
+        "type" : "const nothrow string()",
+        "endline" : 155,
+        "endchar" : 9
+       },
+       {
+        "kind" : "template",
+        "line" : 158,
+        "char" : 22,
+        "name" : "opBinary",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         }
+        ],
+        "constraint" : "op == \"*\"",
+        "members" : [
+         {
+          "name" : "opBinary",
+          "kind" : "function",
+          "line" : 158,
+          "char" : 22,
+          "type" : "const pure nothrow @nogc Matrix(T factor)",
+          "parameters" : [
+           {
+            "name" : "factor",
+            "type" : "T"
+           }
+          ],
+          "endline" : 170,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 173,
+        "char" : 24,
+        "name" : "opBinary",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         }
+        ],
+        "constraint" : "op == \"*\"",
+        "members" : [
+         {
+          "name" : "opBinary",
+          "kind" : "function",
+          "line" : 173,
+          "char" : 24,
+          "type" : "const pure nothrow @nogc column_t(row_t x)",
+          "parameters" : [
+           {
+            "name" : "x",
+            "type" : "row_t"
+           }
+          ],
+          "endline" : 186,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 189,
+        "char" : 20,
+        "name" : "opBinary",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         },
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isMatrixInstantiation!U && U._R == C && op == \"*\"",
+        "members" : [
+         {
+          "name" : "opBinary",
+          "kind" : "function",
+          "line" : 189,
+          "char" : 20,
+          "storageClass" : [
+           "auto"
+          ],
+          "type" : "const pure nothrow @nogc (U x)",
+          "parameters" : [
+           {
+            "name" : "x",
+            "type" : "U"
+           }
+          ],
+          "endline" : 205,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 208,
+        "char" : 22,
+        "name" : "opBinary",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         },
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "is(U : Matrix) && (op == \"+\" || op == \"-\")",
+        "members" : [
+         {
+          "name" : "opBinary",
+          "kind" : "function",
+          "line" : 208,
+          "char" : 22,
+          "type" : "const pure nothrow @nogc Matrix(U other)",
+          "parameters" : [
+           {
+            "name" : "other",
+            "type" : "U"
+           }
+          ],
+          "endline" : 221,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 224,
+        "char" : 26,
+        "name" : "opOpAssign",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         },
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "is(U : Matrix)",
+        "members" : [
+         {
+          "name" : "opOpAssign",
+          "kind" : "function",
+          "line" : 224,
+          "char" : 26,
+          "type" : "pure nothrow @nogc ref Matrix(U operand)",
+          "parameters" : [
+           {
+            "name" : "operand",
+            "type" : "U"
+           }
+          ],
+          "endline" : 228,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 231,
+        "char" : 26,
+        "name" : "opOpAssign",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         },
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isConvertible!U",
+        "members" : [
+         {
+          "name" : "opOpAssign",
+          "kind" : "function",
+          "line" : 231,
+          "char" : 26,
+          "type" : "pure nothrow @nogc ref Matrix(U operand)",
+          "parameters" : [
+           {
+            "name" : "operand",
+            "type" : "U"
+           }
+          ],
+          "endline" : 235,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 240,
+        "char" : 17,
+        "name" : "opCast",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isMatrixInstantiation!U",
+        "members" : [
+         {
+          "name" : "opCast",
+          "kind" : "function",
+          "line" : 240,
+          "char" : 17,
+          "type" : "const pure nothrow @nogc U()",
+          "endline" : 251,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 253,
+        "char" : 20,
+        "name" : "opEquals",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "is(U : Matrix)",
+        "members" : [
+         {
+          "name" : "opEquals",
+          "kind" : "function",
+          "line" : 253,
+          "char" : 20,
+          "type" : "const pure nothrow @nogc bool(U other)",
+          "parameters" : [
+           {
+            "name" : "other",
+            "type" : "U"
+           }
+          ],
+          "endline" : 259,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 261,
+        "char" : 20,
+        "name" : "opEquals",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isAssignable!U && !is(U : Matrix)",
+        "members" : [
+         {
+          "name" : "opEquals",
+          "kind" : "function",
+          "line" : 261,
+          "char" : 20,
+          "type" : "const pure nothrow @nogc bool(U other)",
+          "parameters" : [
+           {
+            "name" : "other",
+            "type" : "U"
+           }
+          ],
+          "endline" : 266,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 269,
+        "char" : 22,
+        "name" : "opUnary",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         }
+        ],
+        "constraint" : "op == \"+\" || op == \"-\" || op == \"~\" || op == \"!\"",
+        "members" : [
+         {
+          "name" : "opUnary",
+          "kind" : "function",
+          "line" : 269,
+          "char" : 22,
+          "type" : "const pure nothrow @nogc Matrix()",
+          "endline" : 275,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 279,
+        "char" : 17,
+        "name" : "opCast",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isQuaternionInstantiation!U && is(U._T : _T) && _R == 3 && _C == 3",
+        "members" : [
+         {
+          "name" : "opCast",
+          "kind" : "function",
+          "line" : 279,
+          "char" : 17,
+          "type" : "const pure nothrow @nogc U()",
+          "endline" : 345,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 348,
+        "char" : 17,
+        "name" : "opCast",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isQuaternionInstantiation!U && is(U._T : _T) && _R == 4 && _C == 4",
+        "members" : [
+         {
+          "name" : "opCast",
+          "kind" : "function",
+          "line" : 348,
+          "char" : 17,
+          "type" : "const pure nothrow @nogc U()",
+          "endline" : 354,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "name" : "transposed",
+        "kind" : "function",
+        "line" : 475,
+        "char" : 32,
+        "type" : "const pure nothrow @nogc Matrix!(T, C, R)()",
+        "endline" : 482,
+        "endchar" : 9
+       },
+       {
+        "name" : "_T",
+        "kind" : "alias",
+        "line" : 642,
+        "char" : 17,
+        "type" : "T"
+       },
+       {
+        "name" : "_R",
+        "kind" : "variable",
+        "line" : 643,
+        "char" : 14,
+        "storageClass" : [
+         "enum"
+        ],
+        "init" : "R"
+       },
+       {
+        "name" : "_C",
+        "kind" : "variable",
+        "line" : 644,
+        "char" : 14,
+        "storageClass" : [
+         "enum"
+        ],
+        "init" : "C"
+       },
+       {
+        "kind" : "template",
+        "line" : 649,
+        "char" : 9,
+        "name" : "isAssignable",
+        "parameters" : [
+         {
+          "name" : "T",
+          "kind" : "type"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "isAssignable",
+          "kind" : "variable",
+          "line" : 651,
+          "char" : 23,
+          "storageClass" : [
+           "enum"
+          ],
+          "deco" : "b",
+          "init" : "std.traits.isAssignable!(Matrix, T)"
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 654,
+        "char" : 9,
+        "name" : "isConvertible",
+        "parameters" : [
+         {
+          "name" : "T",
+          "kind" : "type"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "isConvertible",
+          "kind" : "variable",
+          "line" : 656,
+          "char" : 23,
+          "storageClass" : [
+           "enum"
+          ],
+          "deco" : "b",
+          "init" : "!is(T : Matrix) && isAssignable!T"
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 659,
+        "char" : 9,
+        "name" : "isTAssignable",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "isTAssignable",
+          "kind" : "variable",
+          "line" : 661,
+          "char" : 23,
+          "storageClass" : [
+           "enum"
+          ],
+          "deco" : "b",
+          "init" : "std.traits.isAssignable!(T, U)"
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 664,
+        "char" : 9,
+        "name" : "isRowConvertible",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "isRowConvertible",
+          "kind" : "variable",
+          "line" : 666,
+          "char" : 23,
+          "storageClass" : [
+           "enum"
+          ],
+          "deco" : "b",
+          "init" : "is(U : row_t)"
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 669,
+        "char" : 9,
+        "name" : "isColumnConvertible",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "isColumnConvertible",
+          "kind" : "variable",
+          "line" : 671,
+          "char" : 23,
+          "storageClass" : [
+           "enum"
+          ],
+          "deco" : "b",
+          "init" : "is(U : column_t)"
+         }
+        ]
+       },
+       {
+        "name" : "identity",
+        "kind" : "function",
+        "line" : 680,
+        "char" : 29,
+        "storageClass" : [
+         "static"
+        ],
+        "type" : "pure nothrow @nogc Matrix()",
+        "endline" : 687,
+        "endchar" : 9
+       },
+       {
+        "kind" : "template",
+        "line" : 690,
+        "char" : 29,
+        "name" : "constant",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "constant",
+          "kind" : "function",
+          "line" : 690,
+          "char" : 29,
+          "type" : "pure nothrow @nogc Matrix(U x)",
+          "parameters" : [
+           {
+            "name" : "x",
+            "type" : "U"
+           }
+          ],
+          "endline" : 697,
+          "endchar" : 9
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 701,
+    "char" : 1,
+    "name" : "isMatrixInstantiation",
+    "parameters" : [
+     {
+      "name" : "U",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "kind" : "template",
+      "line" : 703,
+      "char" : 25,
+      "name" : "isMatrix",
+      "parameters" : [
+       {
+        "name" : "T",
+        "kind" : "type"
+       },
+       {
+        "name" : "R",
+        "kind" : "value",
+        "deco" : "i"
+       },
+       {
+        "name" : "C",
+        "kind" : "value",
+        "deco" : "i"
+       }
+      ],
+      "members" : [
+       {
+        "name" : "isMatrix",
+        "kind" : "function",
+        "line" : 703,
+        "char" : 25,
+        "type" : "void(Matrix!(T, R, C) x)",
+        "parameters" : [
+         {
+          "name" : "x",
+          "type" : "Matrix!(T, R, C)"
+         }
+        ],
+        "endline" : 705,
+        "endchar" : 5
+       }
+      ]
+     },
+     {
+      "name" : "isMatrixInstantiation",
+      "kind" : "variable",
+      "line" : 707,
+      "char" : 15,
+      "storageClass" : [
+       "enum"
+      ],
+      "deco" : "b",
+      "init" : "is(typeof(isMatrix(U.init)))"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 712,
+    "char" : 1,
+    "name" : "mat2x2",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "mat2x2",
+      "kind" : "alias",
+      "line" : 712,
+      "char" : 45,
+      "type" : "Matrix!(T, 2, 2)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 713,
+    "char" : 1,
+    "name" : "mat3x3",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "mat3x3",
+      "kind" : "alias",
+      "line" : 713,
+      "char" : 45,
+      "type" : "Matrix!(T, 3, 3)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 714,
+    "char" : 1,
+    "name" : "mat4x4",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "mat4x4",
+      "kind" : "alias",
+      "line" : 714,
+      "char" : 45,
+      "type" : "Matrix!(T, 4, 4)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 719,
+    "char" : 1,
+    "name" : "mat2x3",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "mat2x3",
+      "kind" : "alias",
+      "line" : 719,
+      "char" : 45,
+      "type" : "Matrix!(T, 2, 3)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 720,
+    "char" : 1,
+    "name" : "mat2x4",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "mat2x4",
+      "kind" : "alias",
+      "line" : 720,
+      "char" : 45,
+      "type" : "Matrix!(T, 2, 4)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 721,
+    "char" : 1,
+    "name" : "mat3x2",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "mat3x2",
+      "kind" : "alias",
+      "line" : 721,
+      "char" : 45,
+      "type" : "Matrix!(T, 3, 2)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 722,
+    "char" : 1,
+    "name" : "mat3x4",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "mat3x4",
+      "kind" : "alias",
+      "line" : 722,
+      "char" : 45,
+      "type" : "Matrix!(T, 3, 4)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 723,
+    "char" : 1,
+    "name" : "mat4x2",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "mat4x2",
+      "kind" : "alias",
+      "line" : 723,
+      "char" : 45,
+      "type" : "Matrix!(T, 4, 2)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 724,
+    "char" : 1,
+    "name" : "mat4x3",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "mat4x3",
+      "kind" : "alias",
+      "line" : 724,
+      "char" : 45,
+      "type" : "Matrix!(T, 4, 3)"
+     }
+    ]
+   },
+   {
+    "name" : "mat2",
+    "kind" : "alias",
+    "line" : 726,
+    "char" : 14
+   },
+   {
+    "name" : "mat3",
+    "kind" : "alias",
+    "line" : 727,
+    "char" : 14
+   },
+   {
+    "name" : "mat4",
+    "kind" : "alias",
+    "line" : 728,
+    "char" : 14
+   },
+   {
+    "name" : "mat2b",
+    "kind" : "alias",
+    "line" : 733,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTgVii2Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat2s",
+    "kind" : "alias",
+    "line" : 734,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTsVii2Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat2i",
+    "kind" : "alias",
+    "line" : 735,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTiVii2Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat2l",
+    "kind" : "alias",
+    "line" : 736,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTlVii2Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat2f",
+    "kind" : "alias",
+    "line" : 737,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTfVii2Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat2d",
+    "kind" : "alias",
+    "line" : 738,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTdVii2Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat3b",
+    "kind" : "alias",
+    "line" : 740,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTgVii3Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat3s",
+    "kind" : "alias",
+    "line" : 741,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTsVii3Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat3i",
+    "kind" : "alias",
+    "line" : 742,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTiVii3Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat3l",
+    "kind" : "alias",
+    "line" : 743,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTlVii3Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat3f",
+    "kind" : "alias",
+    "line" : 744,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTfVii3Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat3d",
+    "kind" : "alias",
+    "line" : 745,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTdVii3Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat4b",
+    "kind" : "alias",
+    "line" : 747,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTgVii4Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat4s",
+    "kind" : "alias",
+    "line" : 748,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTsVii4Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat4i",
+    "kind" : "alias",
+    "line" : 749,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTiVii4Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat4l",
+    "kind" : "alias",
+    "line" : 750,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTlVii4Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat4f",
+    "kind" : "alias",
+    "line" : 751,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTfVii4Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat4d",
+    "kind" : "alias",
+    "line" : 752,
+    "char" : 19,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTdVii4Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat2x2b",
+    "kind" : "alias",
+    "line" : 754,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTgVii2Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat2x2s",
+    "kind" : "alias",
+    "line" : 755,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTsVii2Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat2x2i",
+    "kind" : "alias",
+    "line" : 756,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTiVii2Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat2x2l",
+    "kind" : "alias",
+    "line" : 757,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTlVii2Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat2x2f",
+    "kind" : "alias",
+    "line" : 758,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTfVii2Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat2x2d",
+    "kind" : "alias",
+    "line" : 759,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTdVii2Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat2x3b",
+    "kind" : "alias",
+    "line" : 761,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTgVii2Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat2x3s",
+    "kind" : "alias",
+    "line" : 762,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTsVii2Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat2x3i",
+    "kind" : "alias",
+    "line" : 763,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTiVii2Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat2x3l",
+    "kind" : "alias",
+    "line" : 764,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTlVii2Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat2x3f",
+    "kind" : "alias",
+    "line" : 765,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTfVii2Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat2x3d",
+    "kind" : "alias",
+    "line" : 766,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTdVii2Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat2x4b",
+    "kind" : "alias",
+    "line" : 768,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTgVii2Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat2x4s",
+    "kind" : "alias",
+    "line" : 769,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTsVii2Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat2x4i",
+    "kind" : "alias",
+    "line" : 770,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTiVii2Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat2x4l",
+    "kind" : "alias",
+    "line" : 771,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTlVii2Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat2x4f",
+    "kind" : "alias",
+    "line" : 772,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTfVii2Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat2x4d",
+    "kind" : "alias",
+    "line" : 773,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTdVii2Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat3x2b",
+    "kind" : "alias",
+    "line" : 775,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTgVii3Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat3x2s",
+    "kind" : "alias",
+    "line" : 776,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTsVii3Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat3x2i",
+    "kind" : "alias",
+    "line" : 777,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTiVii3Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat3x2l",
+    "kind" : "alias",
+    "line" : 778,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTlVii3Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat3x2f",
+    "kind" : "alias",
+    "line" : 779,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTfVii3Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat3x2d",
+    "kind" : "alias",
+    "line" : 780,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTdVii3Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat3x3b",
+    "kind" : "alias",
+    "line" : 782,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTgVii3Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat3x3s",
+    "kind" : "alias",
+    "line" : 783,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTsVii3Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat3x3i",
+    "kind" : "alias",
+    "line" : 784,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTiVii3Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat3x3l",
+    "kind" : "alias",
+    "line" : 785,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTlVii3Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat3x3f",
+    "kind" : "alias",
+    "line" : 786,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTfVii3Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat3x3d",
+    "kind" : "alias",
+    "line" : 787,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTdVii3Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat3x4b",
+    "kind" : "alias",
+    "line" : 789,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTgVii3Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat3x4s",
+    "kind" : "alias",
+    "line" : 790,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTsVii3Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat3x4i",
+    "kind" : "alias",
+    "line" : 791,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTiVii3Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat3x4l",
+    "kind" : "alias",
+    "line" : 792,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTlVii3Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat3x4f",
+    "kind" : "alias",
+    "line" : 793,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTfVii3Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat3x4d",
+    "kind" : "alias",
+    "line" : 794,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTdVii3Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat4x2b",
+    "kind" : "alias",
+    "line" : 796,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTgVii4Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat4x2s",
+    "kind" : "alias",
+    "line" : 797,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTsVii4Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat4x2i",
+    "kind" : "alias",
+    "line" : 798,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTiVii4Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat4x2l",
+    "kind" : "alias",
+    "line" : 799,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTlVii4Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat4x2f",
+    "kind" : "alias",
+    "line" : 800,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTfVii4Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat4x2d",
+    "kind" : "alias",
+    "line" : 801,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTdVii4Vii2Z6Matrix"
+   },
+   {
+    "name" : "mat4x3b",
+    "kind" : "alias",
+    "line" : 803,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTgVii4Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat4x3s",
+    "kind" : "alias",
+    "line" : 804,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTsVii4Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat4x3i",
+    "kind" : "alias",
+    "line" : 805,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTiVii4Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat4x3l",
+    "kind" : "alias",
+    "line" : 806,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTlVii4Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat4x3f",
+    "kind" : "alias",
+    "line" : 807,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTfVii4Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat4x3d",
+    "kind" : "alias",
+    "line" : 808,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTdVii4Vii3Z6Matrix"
+   },
+   {
+    "name" : "mat4x4b",
+    "kind" : "alias",
+    "line" : 810,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTgVii4Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat4x4s",
+    "kind" : "alias",
+    "line" : 811,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTsVii4Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat4x4i",
+    "kind" : "alias",
+    "line" : 812,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTiVii4Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat4x4l",
+    "kind" : "alias",
+    "line" : 813,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTlVii4Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat4x4f",
+    "kind" : "alias",
+    "line" : 814,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTfVii4Vii4Z6Matrix"
+   },
+   {
+    "name" : "mat4x4d",
+    "kind" : "alias",
+    "line" : 815,
+    "char" : 21,
+    "deco" : "S3gfm4math6matrix21__T6MatrixTdVii4Vii4Z6Matrix"
+   },
+   {
+    "name" : "__unittestL817_7",
+    "kind" : "function",
+    "line" : 817,
+    "char" : 1,
+    "endline" : 852,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "gfm.math",
+  "kind" : "module",
+  "file" : "..\\..\\..\\..\\..\\..\\AppData\\Roaming\\dub\\packages\\gfm-6.2.10\\gfm\\math\\gfm\\math\\package.d",
+  "members" : [
+   {
+    "name" : "gfm.math.funcs",
+    "kind" : "import",
+    "line" : 3,
+    "char" : 15
+   },
+   {
+    "name" : "gfm.math.vector",
+    "kind" : "import",
+    "line" : 4,
+    "char" : 15
+   },
+   {
+    "name" : "gfm.math.box",
+    "kind" : "import",
+    "line" : 5,
+    "char" : 15
+   },
+   {
+    "name" : "gfm.math.matrix",
+    "kind" : "import",
+    "line" : 6,
+    "char" : 15
+   },
+   {
+    "name" : "gfm.math.quaternion",
+    "kind" : "import",
+    "line" : 7,
+    "char" : 15
+   },
+   {
+    "name" : "gfm.math.shapes",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 15
+   },
+   {
+    "name" : "gfm.math.simplerng",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 15
+   }
+  ]
+ },
+ {
+  "name" : "gfm.math.quaternion",
+  "kind" : "module",
+  "file" : "..\\..\\..\\..\\..\\..\\AppData\\Roaming\\dub\\packages\\gfm-6.2.10\\gfm\\math\\gfm\\math\\quaternion.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 3,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.string",
+    "kind" : "import",
+    "line" : 4,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.vector",
+    "kind" : "import",
+    "line" : 6,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.matrix",
+    "kind" : "import",
+    "line" : 7,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.funcs",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 16,
+    "protection" : "private",
+    "alias" : "funcs"
+   },
+   {
+    "kind" : "template",
+    "line" : 12,
+    "char" : 1,
+    "name" : "Quaternion",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "Quaternion",
+      "kind" : "struct",
+      "line" : 12,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "v",
+        "kind" : "variable",
+        "line" : 18,
+        "char" : 28,
+        "type" : "Vector!(T, 4u)"
+       },
+       {
+        "name" : "x",
+        "kind" : "variable",
+        "line" : 21,
+        "char" : 19,
+        "type" : "T"
+       },
+       {
+        "name" : "y",
+        "kind" : "variable",
+        "line" : 21,
+        "char" : 22,
+        "type" : "T"
+       },
+       {
+        "name" : "z",
+        "kind" : "variable",
+        "line" : 21,
+        "char" : 25,
+        "type" : "T"
+       },
+       {
+        "name" : "w",
+        "kind" : "variable",
+        "line" : 21,
+        "char" : 28,
+        "type" : "T"
+       },
+       {
+        "kind" : "template",
+        "line" : 26,
+        "char" : 15,
+        "name" : "this",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isAssignable!U",
+        "members" : [
+         {
+          "name" : "this",
+          "kind" : "constructor",
+          "line" : 26,
+          "char" : 15,
+          "type" : "pure nothrow @nogc (U x)",
+          "parameters" : [
+           {
+            "name" : "x",
+            "type" : "U"
+           }
+          ],
+          "endline" : 29,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "name" : "this",
+        "kind" : "constructor",
+        "line" : 33,
+        "char" : 15,
+        "type" : "pure nothrow @nogc (T qw, T qx, T qy, T qz)",
+        "parameters" : [
+         {
+          "name" : "qw",
+          "type" : "T"
+         },
+         {
+          "name" : "qx",
+          "type" : "T"
+         },
+         {
+          "name" : "qy",
+          "type" : "T"
+         },
+         {
+          "name" : "qz",
+          "type" : "T"
+         }
+        ],
+        "endline" : 39,
+        "endchar" : 9
+       },
+       {
+        "name" : "fromAxis",
+        "kind" : "function",
+        "line" : 42,
+        "char" : 33,
+        "storageClass" : [
+         "static"
+        ],
+        "type" : "pure nothrow @nogc Quaternion(Vector!(T, 3) axis, T angle)",
+        "parameters" : [
+         {
+          "name" : "axis",
+          "type" : "Vector!(T, 3)"
+         },
+         {
+          "name" : "angle",
+          "type" : "T"
+         }
+        ],
+        "endline" : 53,
+        "endchar" : 9
+       },
+       {
+        "name" : "fromEulerAngles",
+        "kind" : "function",
+        "line" : 59,
+        "char" : 33,
+        "storageClass" : [
+         "static"
+        ],
+        "type" : "pure nothrow @nogc Quaternion(T roll, T pitch, T yaw)",
+        "parameters" : [
+         {
+          "name" : "roll",
+          "type" : "T"
+         },
+         {
+          "name" : "pitch",
+          "type" : "T"
+         },
+         {
+          "name" : "yaw",
+          "type" : "T"
+         }
+        ],
+        "endline" : 75,
+        "endchar" : 9
+       },
+       {
+        "name" : "toEulerAngles",
+        "kind" : "function",
+        "line" : 80,
+        "char" : 22,
+        "type" : "const pure nothrow @nogc vec3!T()",
+        "endline" : 99,
+        "endchar" : 9
+       },
+       {
+        "kind" : "template",
+        "line" : 102,
+        "char" : 30,
+        "name" : "opAssign",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isQuaternionInstantiation!U && is(U._T : T)",
+        "members" : [
+         {
+          "name" : "opAssign",
+          "kind" : "function",
+          "line" : 102,
+          "char" : 30,
+          "type" : "pure nothrow @nogc ref Quaternion(U u)",
+          "parameters" : [
+           {
+            "name" : "u",
+            "type" : "U"
+           }
+          ],
+          "endline" : 106,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 109,
+        "char" : 30,
+        "name" : "opAssign",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "is(U : Vector!(T, 4u))",
+        "members" : [
+         {
+          "name" : "opAssign",
+          "kind" : "function",
+          "line" : 109,
+          "char" : 30,
+          "type" : "pure nothrow @nogc ref Quaternion(U u)",
+          "parameters" : [
+           {
+            "name" : "u",
+            "type" : "U"
+           }
+          ],
+          "endline" : 113,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "name" : "toString",
+        "kind" : "function",
+        "line" : 116,
+        "char" : 16,
+        "type" : "const nothrow string()",
+        "endline" : 122,
+        "endchar" : 9
+       },
+       {
+        "name" : "normalize",
+        "kind" : "function",
+        "line" : 125,
+        "char" : 20,
+        "type" : "pure nothrow @nogc void()",
+        "endline" : 128,
+        "endchar" : 9
+       },
+       {
+        "name" : "normalized",
+        "kind" : "function",
+        "line" : 131,
+        "char" : 26,
+        "type" : "const pure nothrow @nogc Quaternion()",
+        "endline" : 136,
+        "endchar" : 9
+       },
+       {
+        "name" : "inverse",
+        "kind" : "function",
+        "line" : 139,
+        "char" : 20,
+        "type" : "pure nothrow @nogc void()",
+        "endline" : 144,
+        "endchar" : 9
+       },
+       {
+        "name" : "inversed",
+        "kind" : "function",
+        "line" : 147,
+        "char" : 26,
+        "type" : "const pure nothrow @nogc Quaternion()",
+        "endline" : 153,
+        "endchar" : 9
+       },
+       {
+        "kind" : "template",
+        "line" : 155,
+        "char" : 30,
+        "name" : "opOpAssign",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         },
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "is(U : Quaternion) && op == \"*\"",
+        "members" : [
+         {
+          "name" : "opOpAssign",
+          "kind" : "function",
+          "line" : 155,
+          "char" : 30,
+          "type" : "pure nothrow @nogc ref Quaternion(U q)",
+          "parameters" : [
+           {
+            "name" : "q",
+            "type" : "U"
+           }
+          ],
+          "endline" : 167,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 169,
+        "char" : 30,
+        "name" : "opOpAssign",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         },
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isConvertible!U",
+        "members" : [
+         {
+          "name" : "opOpAssign",
+          "kind" : "function",
+          "line" : 169,
+          "char" : 30,
+          "type" : "pure nothrow @nogc ref Quaternion(U operand)",
+          "parameters" : [
+           {
+            "name" : "operand",
+            "type" : "U"
+           }
+          ],
+          "endline" : 173,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 175,
+        "char" : 26,
+        "name" : "opBinary",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         },
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "is(U : Quaternion) || isConvertible!U",
+        "members" : [
+         {
+          "name" : "opBinary",
+          "kind" : "function",
+          "line" : 175,
+          "char" : 26,
+          "type" : "const pure nothrow @nogc Quaternion(U operand)",
+          "parameters" : [
+           {
+            "name" : "operand",
+            "type" : "U"
+           }
+          ],
+          "endline" : 180,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 183,
+        "char" : 14,
+        "name" : "opEquals",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "is(U : Quaternion)",
+        "members" : [
+         {
+          "name" : "opEquals",
+          "kind" : "function",
+          "line" : 183,
+          "char" : 14,
+          "type" : "const pure bool(U other)",
+          "parameters" : [
+           {
+            "name" : "other",
+            "type" : "U"
+           }
+          ],
+          "endline" : 186,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 189,
+        "char" : 14,
+        "name" : "opEquals",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isConvertible!U",
+        "members" : [
+         {
+          "name" : "opEquals",
+          "kind" : "function",
+          "line" : 189,
+          "char" : 14,
+          "type" : "const pure nothrow bool(U other)",
+          "parameters" : [
+           {
+            "name" : "other",
+            "type" : "U"
+           }
+          ],
+          "endline" : 193,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 197,
+        "char" : 17,
+        "name" : "opCast",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isMatrixInstantiation!U && is(U._T : _T) && U._R == 3 && U._C == 3",
+        "members" : [
+         {
+          "name" : "opCast",
+          "kind" : "function",
+          "line" : 197,
+          "char" : 17,
+          "type" : "const pure nothrow @nogc U()",
+          "endline" : 214,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 218,
+        "char" : 17,
+        "name" : "opCast",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isMatrixInstantiation!U && is(U._T : _T) && U._R == 4 && U._C == 4",
+        "members" : [
+         {
+          "name" : "opCast",
+          "kind" : "function",
+          "line" : 218,
+          "char" : 17,
+          "type" : "const pure nothrow @nogc U()",
+          "endline" : 224,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "name" : "identity",
+        "kind" : "function",
+        "line" : 227,
+        "char" : 33,
+        "storageClass" : [
+         "static"
+        ],
+        "type" : "pure nothrow @nogc @property Quaternion()",
+        "endline" : 233,
+        "endchar" : 9
+       },
+       {
+        "name" : "_T",
+        "kind" : "alias",
+        "line" : 238,
+        "char" : 17,
+        "type" : "T"
+       },
+       {
+        "kind" : "template",
+        "line" : 240,
+        "char" : 9,
+        "name" : "isAssignable",
+        "parameters" : [
+         {
+          "name" : "T",
+          "kind" : "type"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "isAssignable",
+          "kind" : "variable",
+          "line" : 242,
+          "char" : 23,
+          "storageClass" : [
+           "enum"
+          ],
+          "deco" : "b",
+          "init" : "is(typeof(()\r\n{\r\nT x;\r\nQuaternion v = x;\r\n}\r\n()))"
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 251,
+        "char" : 9,
+        "name" : "isConvertible",
+        "parameters" : [
+         {
+          "name" : "T",
+          "kind" : "type"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "isConvertible",
+          "kind" : "variable",
+          "line" : 253,
+          "char" : 23,
+          "storageClass" : [
+           "enum"
+          ],
+          "deco" : "b",
+          "init" : "!is(T : Quaternion) && isAssignable!T"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 258,
+    "char" : 1,
+    "name" : "isQuaternionInstantiation",
+    "parameters" : [
+     {
+      "name" : "U",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "kind" : "template",
+      "line" : 260,
+      "char" : 25,
+      "name" : "isQuaternion",
+      "parameters" : [
+       {
+        "name" : "T",
+        "kind" : "type"
+       }
+      ],
+      "members" : [
+       {
+        "name" : "isQuaternion",
+        "kind" : "function",
+        "line" : 260,
+        "char" : 25,
+        "type" : "void(Quaternion!T x)",
+        "parameters" : [
+         {
+          "name" : "x",
+          "type" : "Quaternion!T"
+         }
+        ],
+        "endline" : 262,
+        "endchar" : 5
+       }
+      ]
+     },
+     {
+      "name" : "isQuaternionInstantiation",
+      "kind" : "variable",
+      "line" : 264,
+      "char" : 15,
+      "storageClass" : [
+       "enum"
+      ],
+      "deco" : "b",
+      "init" : "is(typeof(isQuaternion(U.init)))"
+     }
+    ]
+   },
+   {
+    "name" : "quatf",
+    "kind" : "alias",
+    "line" : 267,
+    "char" : 24,
+    "deco" : "S3gfm4math10quaternion18__T10QuaternionTfZ10Quaternion"
+   },
+   {
+    "name" : "quatd",
+    "kind" : "alias",
+    "line" : 268,
+    "char" : 25,
+    "deco" : "S3gfm4math10quaternion18__T10QuaternionTdZ10Quaternion"
+   },
+   {
+    "kind" : "template",
+    "line" : 271,
+    "char" : 20,
+    "name" : "lerp",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "lerp",
+      "kind" : "function",
+      "line" : 271,
+      "char" : 20,
+      "type" : "pure nothrow @nogc Quaternion!T(Quaternion!T a, Quaternion!T b, float t)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "Quaternion!T"
+       },
+       {
+        "name" : "b",
+        "type" : "Quaternion!T"
+       },
+       {
+        "name" : "t",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 276,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 281,
+    "char" : 20,
+    "name" : "Nlerp",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "Nlerp",
+      "kind" : "function",
+      "line" : 281,
+      "char" : 20,
+      "type" : "pure nothrow @nogc Quaternion!T(Quaternion!T a, Quaternion!T b, float t)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "Quaternion!T"
+       },
+       {
+        "name" : "b",
+        "type" : "Quaternion!T"
+       },
+       {
+        "name" : "t",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 288,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 292,
+    "char" : 20,
+    "name" : "slerp",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "slerp",
+      "kind" : "function",
+      "line" : 292,
+      "char" : 20,
+      "type" : "pure nothrow @nogc Quaternion!T(Quaternion!T a, Quaternion!T b, T t)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "Quaternion!T"
+       },
+       {
+        "name" : "b",
+        "type" : "Quaternion!T"
+       },
+       {
+        "name" : "t",
+        "type" : "T"
+       }
+      ],
+      "endline" : 323,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL325_8",
+    "kind" : "function",
+    "line" : 325,
+    "char" : 1,
+    "endline" : 338,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "gfm.math.shapes",
+  "kind" : "module",
+  "file" : "..\\..\\..\\..\\..\\..\\AppData\\Roaming\\dub\\packages\\gfm-6.2.10\\gfm\\math\\gfm\\math\\shapes.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.traits",
+    "kind" : "import",
+    "line" : 15,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.vector",
+    "kind" : "import",
+    "line" : 17,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.box",
+    "kind" : "import",
+    "line" : 18,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 22,
+    "char" : 1,
+    "name" : "Segment",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "N",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "Segment",
+      "kind" : "struct",
+      "line" : 22,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "point_t",
+        "kind" : "alias",
+        "line" : 26,
+        "char" : 29,
+        "type" : "Vector!(T, N)"
+       },
+       {
+        "name" : "a",
+        "kind" : "variable",
+        "line" : 27,
+        "char" : 17,
+        "type" : "point_t"
+       },
+       {
+        "name" : "b",
+        "kind" : "variable",
+        "line" : 27,
+        "char" : 20,
+        "type" : "point_t"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "seg2f",
+    "kind" : "alias",
+    "line" : 65,
+    "char" : 26,
+    "deco" : "S3gfm4math6shapes18__T7SegmentTfVii2Z7Segment"
+   },
+   {
+    "name" : "seg3f",
+    "kind" : "alias",
+    "line" : 66,
+    "char" : 26,
+    "deco" : "S3gfm4math6shapes18__T7SegmentTfVii3Z7Segment"
+   },
+   {
+    "name" : "seg2d",
+    "kind" : "alias",
+    "line" : 67,
+    "char" : 27,
+    "deco" : "S3gfm4math6shapes18__T7SegmentTdVii2Z7Segment"
+   },
+   {
+    "name" : "seg3d",
+    "kind" : "alias",
+    "line" : 68,
+    "char" : 27,
+    "deco" : "S3gfm4math6shapes18__T7SegmentTdVii3Z7Segment"
+   },
+   {
+    "name" : "seg2i",
+    "kind" : "alias",
+    "line" : 69,
+    "char" : 24,
+    "deco" : "S3gfm4math6shapes18__T7SegmentTiVii2Z7Segment"
+   },
+   {
+    "name" : "seg3i",
+    "kind" : "alias",
+    "line" : 70,
+    "char" : 24,
+    "deco" : "S3gfm4math6shapes18__T7SegmentTiVii3Z7Segment"
+   },
+   {
+    "kind" : "template",
+    "line" : 73,
+    "char" : 1,
+    "name" : "Triangle",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "N",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "Triangle",
+      "kind" : "struct",
+      "line" : 73,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "point_t",
+        "kind" : "alias",
+        "line" : 77,
+        "char" : 29,
+        "type" : "Vector!(T, N)"
+       },
+       {
+        "name" : "a",
+        "kind" : "variable",
+        "line" : 78,
+        "char" : 17,
+        "type" : "point_t"
+       },
+       {
+        "name" : "b",
+        "kind" : "variable",
+        "line" : 78,
+        "char" : 20,
+        "type" : "point_t"
+       },
+       {
+        "name" : "c",
+        "kind" : "variable",
+        "line" : 78,
+        "char" : 23,
+        "type" : "point_t"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "triangle2f",
+    "kind" : "alias",
+    "line" : 108,
+    "char" : 27,
+    "deco" : "S3gfm4math6shapes19__T8TriangleTfVii2Z8Triangle"
+   },
+   {
+    "name" : "triangle3f",
+    "kind" : "alias",
+    "line" : 109,
+    "char" : 27,
+    "deco" : "S3gfm4math6shapes19__T8TriangleTfVii3Z8Triangle"
+   },
+   {
+    "name" : "triangle2d",
+    "kind" : "alias",
+    "line" : 110,
+    "char" : 28,
+    "deco" : "S3gfm4math6shapes19__T8TriangleTdVii2Z8Triangle"
+   },
+   {
+    "name" : "triangle3d",
+    "kind" : "alias",
+    "line" : 111,
+    "char" : 28,
+    "deco" : "S3gfm4math6shapes19__T8TriangleTdVii3Z8Triangle"
+   },
+   {
+    "kind" : "template",
+    "line" : 114,
+    "char" : 1,
+    "name" : "Sphere",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "N",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "Sphere",
+      "kind" : "struct",
+      "line" : 114,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "point_t",
+        "kind" : "alias",
+        "line" : 118,
+        "char" : 29,
+        "type" : "Vector!(T, N)"
+       },
+       {
+        "name" : "center",
+        "kind" : "variable",
+        "line" : 119,
+        "char" : 17,
+        "type" : "point_t"
+       },
+       {
+        "name" : "radius",
+        "kind" : "variable",
+        "line" : 120,
+        "char" : 11,
+        "type" : "T"
+       },
+       {
+        "name" : "this",
+        "kind" : "constructor",
+        "line" : 123,
+        "char" : 15,
+        "type" : "pure nothrow @nogc (in point_t center_, T radius_)",
+        "parameters" : [
+         {
+          "name" : "center_",
+          "type" : "point_t",
+          "storageClass" : [
+           "in"
+          ]
+         },
+         {
+          "name" : "radius_",
+          "type" : "T"
+         }
+        ],
+        "endline" : 127,
+        "endchar" : 9
+       },
+       {
+        "name" : "contains",
+        "kind" : "function",
+        "line" : 131,
+        "char" : 20,
+        "type" : "const pure nothrow @nogc bool(in Sphere s)",
+        "parameters" : [
+         {
+          "name" : "s",
+          "type" : "Sphere",
+          "storageClass" : [
+           "in"
+          ]
+         }
+        ],
+        "endline" : 138,
+        "endchar" : 9
+       },
+       {
+        "name" : "squaredDistanceTo",
+        "kind" : "function",
+        "line" : 141,
+        "char" : 17,
+        "type" : "const pure nothrow @nogc T(point_t p)",
+        "parameters" : [
+         {
+          "name" : "p",
+          "type" : "point_t"
+         }
+        ],
+        "endline" : 144,
+        "endchar" : 9
+       },
+       {
+        "name" : "intersects",
+        "kind" : "function",
+        "line" : 148,
+        "char" : 20,
+        "type" : "const pure nothrow @nogc bool(Sphere s)",
+        "parameters" : [
+         {
+          "name" : "s",
+          "type" : "Sphere"
+         }
+        ],
+        "endline" : 152,
+        "endchar" : 9
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "sphere2f",
+    "kind" : "alias",
+    "line" : 174,
+    "char" : 25,
+    "deco" : "S3gfm4math6shapes17__T6SphereTfVii2Z6Sphere"
+   },
+   {
+    "name" : "sphere3f",
+    "kind" : "alias",
+    "line" : 175,
+    "char" : 25,
+    "deco" : "S3gfm4math6shapes17__T6SphereTfVii3Z6Sphere"
+   },
+   {
+    "name" : "sphere2d",
+    "kind" : "alias",
+    "line" : 176,
+    "char" : 26,
+    "deco" : "S3gfm4math6shapes17__T6SphereTdVii2Z6Sphere"
+   },
+   {
+    "name" : "sphere3d",
+    "kind" : "alias",
+    "line" : 177,
+    "char" : 26,
+    "deco" : "S3gfm4math6shapes17__T6SphereTdVii3Z6Sphere"
+   },
+   {
+    "kind" : "template",
+    "line" : 181,
+    "char" : 1,
+    "name" : "Ray",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "N",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "Ray",
+      "kind" : "struct",
+      "line" : 181,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "point_t",
+        "kind" : "alias",
+        "line" : 186,
+        "char" : 29,
+        "type" : "Vector!(T, N)"
+       },
+       {
+        "name" : "orig",
+        "kind" : "variable",
+        "line" : 187,
+        "char" : 17,
+        "type" : "point_t"
+       },
+       {
+        "name" : "dir",
+        "kind" : "variable",
+        "line" : 188,
+        "char" : 17,
+        "type" : "point_t"
+       },
+       {
+        "name" : "progress",
+        "kind" : "function",
+        "line" : 191,
+        "char" : 23,
+        "type" : "const pure nothrow @nogc point_t(T t)",
+        "parameters" : [
+         {
+          "name" : "t",
+          "type" : "T"
+         }
+        ],
+        "endline" : 194,
+        "endchar" : 9
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "ray2f",
+    "kind" : "alias",
+    "line" : 262,
+    "char" : 22,
+    "deco" : "S3gfm4math6shapes14__T3RayTfVii2Z3Ray"
+   },
+   {
+    "name" : "ray3f",
+    "kind" : "alias",
+    "line" : 263,
+    "char" : 22,
+    "deco" : "S3gfm4math6shapes14__T3RayTfVii3Z3Ray"
+   },
+   {
+    "name" : "ray2d",
+    "kind" : "alias",
+    "line" : 264,
+    "char" : 23,
+    "deco" : "S3gfm4math6shapes14__T3RayTdVii2Z3Ray"
+   },
+   {
+    "name" : "ray3d",
+    "kind" : "alias",
+    "line" : 265,
+    "char" : 23,
+    "deco" : "S3gfm4math6shapes14__T3RayTdVii3Z3Ray"
+   },
+   {
+    "kind" : "template",
+    "line" : 270,
+    "char" : 1,
+    "name" : "Plane",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isFloatingPoint!T",
+    "members" : [
+     {
+      "name" : "Plane",
+      "kind" : "struct",
+      "line" : 270,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "n",
+        "kind" : "variable",
+        "line" : 274,
+        "char" : 16,
+        "type" : "vec3!T"
+       },
+       {
+        "name" : "d",
+        "kind" : "variable",
+        "line" : 275,
+        "char" : 11,
+        "type" : "T"
+       },
+       {
+        "name" : "this",
+        "kind" : "constructor",
+        "line" : 278,
+        "char" : 15,
+        "type" : "pure nothrow @nogc (vec4!T abcd)",
+        "parameters" : [
+         {
+          "name" : "abcd",
+          "type" : "vec4!T"
+         }
+        ],
+        "endline" : 282,
+        "endchar" : 9
+       },
+       {
+        "name" : "this",
+        "kind" : "constructor",
+        "line" : 285,
+        "char" : 15,
+        "type" : "pure nothrow @nogc (vec3!T origin, vec3!T normal)",
+        "parameters" : [
+         {
+          "name" : "origin",
+          "type" : "vec3!T"
+         },
+         {
+          "name" : "normal",
+          "type" : "vec3!T"
+         }
+        ],
+        "endline" : 289,
+        "endchar" : 9
+       },
+       {
+        "name" : "this",
+        "kind" : "constructor",
+        "line" : 292,
+        "char" : 15,
+        "type" : "pure nothrow @nogc (vec3!T A, vec3!T B, vec3!T C)",
+        "parameters" : [
+         {
+          "name" : "A",
+          "type" : "vec3!T"
+         },
+         {
+          "name" : "B",
+          "type" : "vec3!T"
+         },
+         {
+          "name" : "C",
+          "type" : "vec3!T"
+         }
+        ],
+        "endline" : 295,
+        "endchar" : 9
+       },
+       {
+        "name" : "opAssign",
+        "kind" : "function",
+        "line" : 298,
+        "char" : 25,
+        "type" : "pure nothrow @nogc ref Plane(Plane other)",
+        "parameters" : [
+         {
+          "name" : "other",
+          "type" : "Plane"
+         }
+        ],
+        "endline" : 303,
+        "endchar" : 9
+       },
+       {
+        "name" : "signedDistanceTo",
+        "kind" : "function",
+        "line" : 306,
+        "char" : 17,
+        "type" : "const pure nothrow @nogc T(vec3!T point)",
+        "parameters" : [
+         {
+          "name" : "point",
+          "type" : "vec3!T"
+         }
+        ],
+        "endline" : 309,
+        "endchar" : 9
+       },
+       {
+        "name" : "distanceTo",
+        "kind" : "function",
+        "line" : 312,
+        "char" : 17,
+        "type" : "const pure nothrow @nogc T(vec3!T point)",
+        "parameters" : [
+         {
+          "name" : "point",
+          "type" : "vec3!T"
+         }
+        ],
+        "endline" : 315,
+        "endchar" : 9
+       },
+       {
+        "name" : "isFront",
+        "kind" : "function",
+        "line" : 318,
+        "char" : 20,
+        "type" : "const pure nothrow @nogc bool(vec3!T point)",
+        "parameters" : [
+         {
+          "name" : "point",
+          "type" : "vec3!T"
+         }
+        ],
+        "endline" : 321,
+        "endchar" : 9
+       },
+       {
+        "name" : "isBack",
+        "kind" : "function",
+        "line" : 324,
+        "char" : 20,
+        "type" : "const pure nothrow @nogc bool(vec3!T point)",
+        "parameters" : [
+         {
+          "name" : "point",
+          "type" : "vec3!T"
+         }
+        ],
+        "endline" : 327,
+        "endchar" : 9
+       },
+       {
+        "name" : "isOn",
+        "kind" : "function",
+        "line" : 330,
+        "char" : 20,
+        "type" : "const pure nothrow @nogc bool(vec3!T point, T epsilon)",
+        "parameters" : [
+         {
+          "name" : "point",
+          "type" : "vec3!T"
+         },
+         {
+          "name" : "epsilon",
+          "type" : "T"
+         }
+        ],
+        "endline" : 334,
+        "endchar" : 9
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "planef",
+    "kind" : "alias",
+    "line" : 338,
+    "char" : 19,
+    "deco" : "S3gfm4math6shapes12__T5PlaneTfZ5Plane"
+   },
+   {
+    "name" : "planed",
+    "kind" : "alias",
+    "line" : 339,
+    "char" : 20,
+    "deco" : "S3gfm4math6shapes12__T5PlaneTdZ5Plane"
+   },
+   {
+    "name" : "__unittestL341_9",
+    "kind" : "function",
+    "line" : 341,
+    "char" : 1,
+    "endline" : 354,
+    "endchar" : 1
+   },
+   {
+    "name" : "__unittestL354_10",
+    "kind" : "function",
+    "line" : 354,
+    "char" : 20,
+    "endline" : 400,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 400,
+    "char" : 1,
+    "name" : "Frustum",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isFloatingPoint!T",
+    "members" : [
+     {
+      "name" : "Frustum",
+      "kind" : "struct",
+      "line" : 400,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "LEFT",
+        "kind" : "variable",
+        "line" : 404,
+        "char" : 18,
+        "storageClass" : [
+         "enum"
+        ],
+        "deco" : "i",
+        "init" : "0"
+       },
+       {
+        "name" : "RIGHT",
+        "kind" : "variable",
+        "line" : 405,
+        "char" : 18,
+        "storageClass" : [
+         "enum"
+        ],
+        "deco" : "i",
+        "init" : "1"
+       },
+       {
+        "name" : "TOP",
+        "kind" : "variable",
+        "line" : 406,
+        "char" : 18,
+        "storageClass" : [
+         "enum"
+        ],
+        "deco" : "i",
+        "init" : "2"
+       },
+       {
+        "name" : "BOTTOM",
+        "kind" : "variable",
+        "line" : 407,
+        "char" : 18,
+        "storageClass" : [
+         "enum"
+        ],
+        "deco" : "i",
+        "init" : "3"
+       },
+       {
+        "name" : "NEAR",
+        "kind" : "variable",
+        "line" : 408,
+        "char" : 18,
+        "storageClass" : [
+         "enum"
+        ],
+        "deco" : "i",
+        "init" : "4"
+       },
+       {
+        "name" : "FAR",
+        "kind" : "variable",
+        "line" : 409,
+        "char" : 18,
+        "storageClass" : [
+         "enum"
+        ],
+        "deco" : "i",
+        "init" : "5"
+       },
+       {
+        "name" : "planes",
+        "kind" : "variable",
+        "line" : 411,
+        "char" : 20,
+        "type" : "Plane!T[6]"
+       },
+       {
+        "name" : "this",
+        "kind" : "constructor",
+        "line" : 414,
+        "char" : 15,
+        "type" : "pure nothrow @nogc (Plane!T left, Plane!T right, Plane!T top, Plane!T bottom, Plane!T near, Plane!T far)",
+        "parameters" : [
+         {
+          "name" : "left",
+          "type" : "Plane!T"
+         },
+         {
+          "name" : "right",
+          "type" : "Plane!T"
+         },
+         {
+          "name" : "top",
+          "type" : "Plane!T"
+         },
+         {
+          "name" : "bottom",
+          "type" : "Plane!T"
+         },
+         {
+          "name" : "near",
+          "type" : "Plane!T"
+         },
+         {
+          "name" : "far",
+          "type" : "Plane!T"
+         }
+        ],
+        "endline" : 422,
+        "endchar" : 9
+       },
+       {
+        "name" : "OUTSIDE",
+        "kind" : "enum member",
+        "line" : 426,
+        "char" : 13
+       },
+       {
+        "name" : "INTERSECT",
+        "kind" : "enum member",
+        "line" : 427,
+        "char" : 13
+       },
+       {
+        "name" : "INSIDE",
+        "kind" : "enum member",
+        "line" : 428,
+        "char" : 13
+       },
+       {
+        "name" : "contains",
+        "kind" : "function",
+        "line" : 432,
+        "char" : 20,
+        "type" : "const pure nothrow @nogc bool(vec3!T point)",
+        "parameters" : [
+         {
+          "name" : "point",
+          "type" : "vec3!T"
+         }
+        ],
+        "endline" : 442,
+        "endchar" : 9
+       },
+       {
+        "name" : "contains",
+        "kind" : "function",
+        "line" : 446,
+        "char" : 19,
+        "type" : "const pure nothrow @nogc int(Sphere!(T, 3) sphere)",
+        "parameters" : [
+         {
+          "name" : "sphere",
+          "type" : "Sphere!(T, 3)"
+         }
+        ],
+        "endline" : 463,
+        "endchar" : 9
+       },
+       {
+        "name" : "contains",
+        "kind" : "function",
+        "line" : 467,
+        "char" : 19,
+        "type" : "const pure nothrow @nogc int(box3!T box)",
+        "parameters" : [
+         {
+          "name" : "box",
+          "type" : "box3!T"
+         }
+        ],
+        "endline" : 514,
+        "endchar" : 9
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL519_11",
+    "kind" : "function",
+    "line" : 519,
+    "char" : 1,
+    "endline" : 528,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 528,
+    "char" : 6,
+    "name" : "isSegment",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isSegment",
+      "kind" : "variable",
+      "line" : 528,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Segment!U, U...)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 531,
+    "char" : 6,
+    "name" : "isTriangle",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isTriangle",
+      "kind" : "variable",
+      "line" : 531,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Triangle!U, U...)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 534,
+    "char" : 6,
+    "name" : "isSphere",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isSphere",
+      "kind" : "variable",
+      "line" : 534,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Sphere!U, U...)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 537,
+    "char" : 6,
+    "name" : "isRay",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isRay",
+      "kind" : "variable",
+      "line" : 537,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Ray!U, U...)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 540,
+    "char" : 6,
+    "name" : "isPlane",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isPlane",
+      "kind" : "variable",
+      "line" : 540,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Plane!U, U)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 543,
+    "char" : 6,
+    "name" : "isFrustum",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isFrustum",
+      "kind" : "variable",
+      "line" : 543,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Frustum!U, U)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 546,
+    "char" : 6,
+    "name" : "isSegment2D",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isSegment2D",
+      "kind" : "variable",
+      "line" : 546,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Segment!(U, 2), U)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 549,
+    "char" : 6,
+    "name" : "isTriangle2D",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isTriangle2D",
+      "kind" : "variable",
+      "line" : 549,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Triangle!(U, 2), U)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 552,
+    "char" : 6,
+    "name" : "isSphere2D",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isSphere2D",
+      "kind" : "variable",
+      "line" : 552,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Sphere!(U, 2), U)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 555,
+    "char" : 6,
+    "name" : "isRay2D",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isRay2D",
+      "kind" : "variable",
+      "line" : 555,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Ray!(U, 2), U)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 558,
+    "char" : 6,
+    "name" : "isSegment3D",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isSegment3D",
+      "kind" : "variable",
+      "line" : 558,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Segment!(U, 3), U)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 561,
+    "char" : 6,
+    "name" : "isTriangle3D",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isTriangle3D",
+      "kind" : "variable",
+      "line" : 561,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Triangle!(U, 3), U)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 564,
+    "char" : 6,
+    "name" : "isSphere3D",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isSphere3D",
+      "kind" : "variable",
+      "line" : 564,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Sphere!(U, 3), U)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 567,
+    "char" : 6,
+    "name" : "isRay3D",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isRay3D",
+      "kind" : "variable",
+      "line" : 567,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Ray!(U, 3), U)"
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL569_12",
+    "kind" : "function",
+    "line" : 569,
+    "char" : 1,
+    "endline" : 622,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 622,
+    "char" : 1,
+    "name" : "DimensionType",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type",
+      "type" : "Segment!U"
+     },
+     {
+      "name" : "U",
+      "kind" : "tuple"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "DimensionType",
+      "kind" : "alias",
+      "line" : 622,
+      "char" : 1,
+      "type" : "U[0]"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 624,
+    "char" : 1,
+    "name" : "DimensionType",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type",
+      "type" : "Triangle!U"
+     },
+     {
+      "name" : "U",
+      "kind" : "tuple"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "DimensionType",
+      "kind" : "alias",
+      "line" : 624,
+      "char" : 1,
+      "type" : "U[0]"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 626,
+    "char" : 1,
+    "name" : "DimensionType",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type",
+      "type" : "Sphere!U"
+     },
+     {
+      "name" : "U",
+      "kind" : "tuple"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "DimensionType",
+      "kind" : "alias",
+      "line" : 626,
+      "char" : 1,
+      "type" : "U[0]"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 628,
+    "char" : 1,
+    "name" : "DimensionType",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type",
+      "type" : "Ray!U"
+     },
+     {
+      "name" : "U",
+      "kind" : "tuple"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "DimensionType",
+      "kind" : "alias",
+      "line" : 628,
+      "char" : 1,
+      "type" : "U[0]"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 630,
+    "char" : 1,
+    "name" : "DimensionType",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type",
+      "type" : "Plane!U"
+     },
+     {
+      "name" : "U",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "DimensionType",
+      "kind" : "alias",
+      "line" : 630,
+      "char" : 1,
+      "type" : "U"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 632,
+    "char" : 1,
+    "name" : "DimensionType",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type",
+      "type" : "Frustum!U"
+     },
+     {
+      "name" : "U",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "DimensionType",
+      "kind" : "alias",
+      "line" : 632,
+      "char" : 1,
+      "type" : "U"
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL635_13",
+    "kind" : "function",
+    "line" : 635,
+    "char" : 1,
+    "endline" : 644,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "gfm.math.simplerng",
+  "kind" : "module",
+  "file" : "..\\..\\..\\..\\..\\..\\AppData\\Roaming\\dub\\packages\\gfm-6.2.10\\gfm\\math\\gfm\\math\\simplerng.d",
+  "members" : [
+   {
+    "name" : "std.random",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 15
+   },
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 16,
+    "char" : 8,
+    "name" : "randNormal",
+    "parameters" : [
+     {
+      "name" : "RNG",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "randNormal",
+      "kind" : "function",
+      "line" : 16,
+      "char" : 8,
+      "type" : "double(ref RNG rng, double mean = 0.000000, double standardDeviation = 1.00000)",
+      "parameters" : [
+       {
+        "name" : "rng",
+        "type" : "RNG",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "mean",
+        "deco" : "d",
+        "default" : "0.000000"
+       },
+       {
+        "name" : "standardDeviation",
+        "deco" : "d",
+        "default" : "1.00000"
+       }
+      ],
+      "endline" : 29,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 32,
+    "char" : 8,
+    "name" : "randExponential",
+    "parameters" : [
+     {
+      "name" : "RNG",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "randExponential",
+      "kind" : "function",
+      "line" : 32,
+      "char" : 8,
+      "type" : "double(ref RNG rng, double mean = 1.00000)",
+      "parameters" : [
+       {
+        "name" : "rng",
+        "type" : "RNG",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "mean",
+        "deco" : "d",
+        "default" : "1.00000"
+       }
+      ],
+      "endline" : 36,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 42,
+    "char" : 8,
+    "name" : "randGamma",
+    "parameters" : [
+     {
+      "name" : "RNG",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "randGamma",
+      "kind" : "function",
+      "line" : 42,
+      "char" : 8,
+      "type" : "double(ref RNG rng, double shape, double scale)",
+      "parameters" : [
+       {
+        "name" : "rng",
+        "type" : "RNG",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "shape",
+        "deco" : "d"
+       },
+       {
+        "name" : "scale",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 72,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 75,
+    "char" : 8,
+    "name" : "randChiSquare",
+    "parameters" : [
+     {
+      "name" : "RNG",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "randChiSquare",
+      "kind" : "function",
+      "line" : 75,
+      "char" : 8,
+      "type" : "double(ref RNG rng, double degreesOfFreedom)",
+      "parameters" : [
+       {
+        "name" : "rng",
+        "type" : "RNG",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "degreesOfFreedom",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 80,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 83,
+    "char" : 8,
+    "name" : "randInverseGamma",
+    "parameters" : [
+     {
+      "name" : "RNG",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "randInverseGamma",
+      "kind" : "function",
+      "line" : 83,
+      "char" : 8,
+      "type" : "double(ref RNG rng, double shape, double scale)",
+      "parameters" : [
+       {
+        "name" : "rng",
+        "type" : "RNG",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "shape",
+        "deco" : "d"
+       },
+       {
+        "name" : "scale",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 88,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 91,
+    "char" : 8,
+    "name" : "randWeibull",
+    "parameters" : [
+     {
+      "name" : "RNG",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "randWeibull",
+      "kind" : "function",
+      "line" : 91,
+      "char" : 8,
+      "type" : "double(ref RNG rng, double shape, double scale)",
+      "parameters" : [
+       {
+        "name" : "rng",
+        "type" : "RNG",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "shape",
+        "deco" : "d"
+       },
+       {
+        "name" : "scale",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 95,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 98,
+    "char" : 8,
+    "name" : "randCauchy",
+    "parameters" : [
+     {
+      "name" : "RNG",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "randCauchy",
+      "kind" : "function",
+      "line" : 98,
+      "char" : 8,
+      "type" : "double(ref RNG rng, double median, double scale)",
+      "parameters" : [
+       {
+        "name" : "rng",
+        "type" : "RNG",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "median",
+        "deco" : "d"
+       },
+       {
+        "name" : "scale",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 105,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 109,
+    "char" : 8,
+    "name" : "randStudentT",
+    "parameters" : [
+     {
+      "name" : "RNG",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "randStudentT",
+      "kind" : "function",
+      "line" : 109,
+      "char" : 8,
+      "type" : "double(ref RNG rng, double degreesOfFreedom)",
+      "parameters" : [
+       {
+        "name" : "rng",
+        "type" : "RNG",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "degreesOfFreedom",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 117,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 120,
+    "char" : 8,
+    "name" : "randLaplace",
+    "parameters" : [
+     {
+      "name" : "RNG",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "randLaplace",
+      "kind" : "function",
+      "line" : 120,
+      "char" : 8,
+      "type" : "double(ref RNG rng, double mean, double scale)",
+      "parameters" : [
+       {
+        "name" : "rng",
+        "type" : "RNG",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "mean",
+        "deco" : "d"
+       },
+       {
+        "name" : "scale",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 125,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 128,
+    "char" : 8,
+    "name" : "randLogNormal",
+    "parameters" : [
+     {
+      "name" : "RNG",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "randLogNormal",
+      "kind" : "function",
+      "line" : 128,
+      "char" : 8,
+      "type" : "double(ref RNG rng, double mu, double sigma)",
+      "parameters" : [
+       {
+        "name" : "rng",
+        "type" : "RNG",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "mu",
+        "deco" : "d"
+       },
+       {
+        "name" : "sigma",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 131,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 134,
+    "char" : 8,
+    "name" : "randBeta",
+    "parameters" : [
+     {
+      "name" : "RNG",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "randBeta",
+      "kind" : "function",
+      "line" : 134,
+      "char" : 8,
+      "type" : "double(ref RNG rng, double a, double b)",
+      "parameters" : [
+       {
+        "name" : "rng",
+        "type" : "RNG",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "a",
+        "deco" : "d"
+       },
+       {
+        "name" : "b",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 146,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 149,
+    "char" : 5,
+    "name" : "randPoisson",
+    "parameters" : [
+     {
+      "name" : "RNG",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "randPoisson",
+      "kind" : "function",
+      "line" : 149,
+      "char" : 5,
+      "type" : "int(ref RNG rng, double lambda)",
+      "parameters" : [
+       {
+        "name" : "rng",
+        "type" : "RNG",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "lambda",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 152,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 156,
+    "char" : 9,
+    "name" : "poissonSmall",
+    "parameters" : [
+     {
+      "name" : "RNG",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "poissonSmall",
+      "kind" : "function",
+      "line" : 156,
+      "char" : 9,
+      "type" : "int(ref RNG rng, double lambda)",
+      "parameters" : [
+       {
+        "name" : "rng",
+        "type" : "RNG",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "lambda",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 168,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 170,
+    "char" : 9,
+    "name" : "poissonLarge",
+    "parameters" : [
+     {
+      "name" : "RNG",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "poissonLarge",
+      "kind" : "function",
+      "line" : 170,
+      "char" : 9,
+      "type" : "int(ref RNG rng, double lambda)",
+      "parameters" : [
+       {
+        "name" : "rng",
+        "type" : "RNG",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "lambda",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 196,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "name" : "logFactorial",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 198,
+    "char" : 12,
+    "deco" : "FNbiZd",
+    "parameters" : [
+     {
+      "name" : "n",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 210,
+    "endchar" : 5
+   },
+   {
+    "name" : "LOG_FACTORIAL",
+    "kind" : "variable",
+    "protection" : "private",
+    "line" : 213,
+    "char" : 38,
+    "storageClass" : [
+     "static",
+     "immutable"
+    ],
+    "deco" : "yG255d",
+    "originalType" : "double[255]",
+    "init" : "[0.000000, 0.000000, 0.693147, 1.79176, 3.17805, 4.78749, 6.57925, 8.52516, 10.6046, 12.8018, 15.1044, 17.5023, 19.9872, 22.5522, 25.1912, 27.8993, 30.6719, 33.5051, 36.3954, 39.3399, 42.3356, 45.3801, 48.4712, 51.6067, 54.7847, 58.0036, 61.2617, 64.5575, 67.8897, 71.257, 74.6582, 78.0922, 81.558, 85.0545, 88.5808, 92.1362, 95.7197, 99.3306, 102.968, 106.632, 110.321, 114.034, 117.772, 121.533, 125.317, 129.124, 132.953, 136.803, 140.674, 144.566, 148.478, 152.41, 156.361, 160.331, 164.32, 168.327, 172.353, 176.396, 180.456, 184.534, 188.628, 192.739, 196.866, 201.009, 205.168, 209.343, 213.532, 217.737, 221.956, 226.191, 230.439, 234.702, 238.978, 243.269, 247.573, 251.89, 256.221, 260.565, 264.922, 269.291, 273.673, 278.068, 282.474, 286.893, 291.324, 295.767, 300.221, 304.687, 309.164, 313.653, 318.153, 322.663, 327.185, 331.718, 336.261, 340.815, 345.379, 349.954, 354.539, 359.134, 363.739, 368.354, 372.979, 377.614, 382.259, 386.913, 391.576, 396.249, 400.931, 405.622, 410.323, 415.032, 419.751, 424.478, 429.214, 433.959, 438.713, 443.475, 448.246, 453.025, 457.812, 462.608, 467.412, 472.224, 477.045, 481.873, 486.709, 491.553, 496.405, 501.265, 506.133, 511.008, 515.891, 520.781, 525.679, 530.584, 535.497, 540.417, 545.344, 550.279, 555.22, 560.169, 565.125, 570.088, 575.058, 580.034, 585.018, 590.008, 595.006, 600.009, 605.02, 610.037, 615.061, 620.092, 625.129, 630.172, 635.222, 640.278, 645.341, 650.41, 655.485, 660.566, 665.654, 670.748, 675.847, 680.953, 686.065, 691.183, 696.307, 701.437, 706.573, 711.715, 716.862, 722.016, 727.175, 732.339, 737.51, 742.686, 747.868, 753.055, 758.248, 763.447, 768.651, 773.86, 779.075, 784.295, 789.521, 794.752, 799.989, 805.23, 810.477, 815.73, 820.987, 826.25, 831.518, 836.791, 842.069, 847.352, 852.64, 857.934, 863.232, 868.535, 873.844, 879.157, 884.475, 889.798, 895.126, 900.458, 905.796, 911.138, 916.485, 921.837, 927.194, 932.555, 937.921, 943.292, 948.667, 954.047, 959.431, 964.821, 970.214, 975.612, 981.015, 986.422, 991.834, 997.25, 1002.67, 1008.1, 1013.52, 1018.96, 1024.4, 1029.84, 1035.29, 1040.74, 1046.19, 1051.65, 1057.12, 1062.58, 1068.06, 1073.53, 1079.01, 1084.5, 1089.99, 1095.48, 1100.98, 1106.48, 1111.98, 1117.49, 1123.01, 1128.52, 1134.05, 1139.57, 1145.1, 1150.63, 1156.17]"
+   },
+   {
+    "name" : "__unittestL472_14",
+    "kind" : "function",
+    "line" : 472,
+    "char" : 1,
+    "endline" : 486,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "gfm.math.vector",
+  "kind" : "module",
+  "file" : "..\\..\\..\\..\\..\\..\\AppData\\Roaming\\dub\\packages\\gfm-6.2.10\\gfm\\math\\gfm\\math\\vector.d",
+  "members" : [
+   {
+    "name" : "std.traits",
+    "kind" : "import",
+    "line" : 3,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 4,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.conv",
+    "kind" : "import",
+    "line" : 5,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.array",
+    "kind" : "import",
+    "line" : 6,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.string",
+    "kind" : "import",
+    "line" : 7,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.funcs",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 17,
+    "char" : 1,
+    "name" : "Vector",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "N",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "Vector",
+      "kind" : "struct",
+      "line" : 17,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "v",
+        "kind" : "variable",
+        "line" : 27,
+        "char" : 18,
+        "type" : "T[N]"
+       },
+       {
+        "kind" : "template",
+        "line" : 53,
+        "char" : 15,
+        "name" : "this",
+        "parameters" : [
+         {
+          "name" : "Args",
+          "kind" : "tuple"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "this",
+          "kind" : "constructor",
+          "line" : 53,
+          "char" : 15,
+          "type" : "pure nothrow @nogc (Args args)",
+          "parameters" : [
+           {
+            "name" : "args",
+            "type" : "Args"
+           }
+          ],
+          "endline" : 92,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 95,
+        "char" : 26,
+        "name" : "opAssign",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isAssignable!(T, U)",
+        "members" : [
+         {
+          "name" : "opAssign",
+          "kind" : "function",
+          "line" : 95,
+          "char" : 26,
+          "type" : "pure nothrow @nogc ref Vector(U x)",
+          "parameters" : [
+           {
+            "name" : "x",
+            "type" : "U"
+           }
+          ],
+          "endline" : 99,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 102,
+        "char" : 26,
+        "name" : "opAssign",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isStaticArray!U && isAssignable!(T, typeof(arr[0])) && arr.length == N",
+        "members" : [
+         {
+          "name" : "opAssign",
+          "kind" : "function",
+          "line" : 102,
+          "char" : 26,
+          "type" : "pure nothrow @nogc ref Vector(U arr)",
+          "parameters" : [
+           {
+            "name" : "arr",
+            "type" : "U"
+           }
+          ],
+          "endline" : 106,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 110,
+        "char" : 26,
+        "name" : "opAssign",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isDynamicArray!U && isAssignable!(T, typeof(arr[0]))",
+        "members" : [
+         {
+          "name" : "opAssign",
+          "kind" : "function",
+          "line" : 110,
+          "char" : 26,
+          "type" : "pure nothrow @nogc ref Vector(U arr)",
+          "parameters" : [
+           {
+            "name" : "arr",
+            "type" : "U"
+           }
+          ],
+          "endline" : 115,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 118,
+        "char" : 26,
+        "name" : "opAssign",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "is(U : Vector)",
+        "members" : [
+         {
+          "name" : "opAssign",
+          "kind" : "function",
+          "line" : 118,
+          "char" : 26,
+          "type" : "pure nothrow @nogc ref Vector(U u)",
+          "parameters" : [
+           {
+            "name" : "u",
+            "type" : "U"
+           }
+          ],
+          "endline" : 122,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 125,
+        "char" : 26,
+        "name" : "opAssign",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isVector!U && isAssignable!(T, U._T) && !is(U : Vector) && U._N == _N",
+        "members" : [
+         {
+          "name" : "opAssign",
+          "kind" : "function",
+          "line" : 125,
+          "char" : 26,
+          "type" : "pure nothrow @nogc ref Vector(U x)",
+          "parameters" : [
+           {
+            "name" : "x",
+            "type" : "U"
+           }
+          ],
+          "endline" : 132,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "name" : "ptr",
+        "kind" : "function",
+        "line" : 135,
+        "char" : 25,
+        "type" : "inout pure nothrow @nogc @property inout(T)*()",
+        "endline" : 138,
+        "endchar" : 9
+       },
+       {
+        "name" : "toString",
+        "kind" : "function",
+        "line" : 141,
+        "char" : 16,
+        "type" : "const nothrow string()",
+        "endline" : 147,
+        "endchar" : 9
+       },
+       {
+        "kind" : "template",
+        "line" : 149,
+        "char" : 20,
+        "name" : "opEquals",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "is(U : Vector)",
+        "members" : [
+         {
+          "name" : "opEquals",
+          "kind" : "function",
+          "line" : 149,
+          "char" : 20,
+          "type" : "const pure nothrow @nogc bool(U other)",
+          "parameters" : [
+           {
+            "name" : "other",
+            "type" : "U"
+           }
+          ],
+          "endline" : 160,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 162,
+        "char" : 20,
+        "name" : "opEquals",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isConvertible!U",
+        "members" : [
+         {
+          "name" : "opEquals",
+          "kind" : "function",
+          "line" : 162,
+          "char" : 20,
+          "type" : "const pure nothrow @nogc bool(U other)",
+          "parameters" : [
+           {
+            "name" : "other",
+            "type" : "U"
+           }
+          ],
+          "endline" : 167,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 169,
+        "char" : 22,
+        "name" : "opUnary",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         }
+        ],
+        "constraint" : "op == \"+\" || op == \"-\" || op == \"~\" || op == \"!\"",
+        "members" : [
+         {
+          "name" : "opUnary",
+          "kind" : "function",
+          "line" : 169,
+          "char" : 22,
+          "type" : "const pure nothrow @nogc Vector()",
+          "endline" : 175,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 177,
+        "char" : 26,
+        "name" : "opOpAssign",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         },
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "is(U : Vector)",
+        "members" : [
+         {
+          "name" : "opOpAssign",
+          "kind" : "function",
+          "line" : 177,
+          "char" : 26,
+          "type" : "pure nothrow @nogc ref Vector(U operand)",
+          "parameters" : [
+           {
+            "name" : "operand",
+            "type" : "U"
+           }
+          ],
+          "endline" : 182,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 184,
+        "char" : 26,
+        "name" : "opOpAssign",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         },
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isConvertible!U",
+        "members" : [
+         {
+          "name" : "opOpAssign",
+          "kind" : "function",
+          "line" : 184,
+          "char" : 26,
+          "type" : "pure nothrow @nogc ref Vector(U operand)",
+          "parameters" : [
+           {
+            "name" : "operand",
+            "type" : "U"
+           }
+          ],
+          "endline" : 188,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 190,
+        "char" : 22,
+        "name" : "opBinary",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         },
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "is(U : Vector) || isConvertible!U",
+        "members" : [
+         {
+          "name" : "opBinary",
+          "kind" : "function",
+          "line" : 190,
+          "char" : 22,
+          "type" : "const pure nothrow @nogc Vector(U operand)",
+          "parameters" : [
+           {
+            "name" : "operand",
+            "type" : "U"
+           }
+          ],
+          "endline" : 202,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 204,
+        "char" : 22,
+        "name" : "opBinaryRight",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         },
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isConvertible!U",
+        "members" : [
+         {
+          "name" : "opBinaryRight",
+          "kind" : "function",
+          "line" : 204,
+          "char" : 22,
+          "type" : "const pure nothrow @nogc Vector(U operand)",
+          "parameters" : [
+           {
+            "name" : "operand",
+            "type" : "U"
+           }
+          ],
+          "endline" : 215,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "name" : "opIndex",
+        "kind" : "function",
+        "line" : 217,
+        "char" : 21,
+        "type" : "pure nothrow @nogc ref T(size_t i)",
+        "parameters" : [
+         {
+          "name" : "i",
+          "type" : "size_t"
+         }
+        ],
+        "endline" : 220,
+        "endchar" : 9
+       },
+       {
+        "name" : "opIndex",
+        "kind" : "function",
+        "line" : 222,
+        "char" : 28,
+        "type" : "const pure nothrow @nogc ref const(T)(size_t i)",
+        "parameters" : [
+         {
+          "name" : "i",
+          "type" : "size_t"
+         }
+        ],
+        "endline" : 225,
+        "endchar" : 9
+       },
+       {
+        "kind" : "template",
+        "line" : 227,
+        "char" : 17,
+        "name" : "opIndexAssign",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type",
+          "type" : "T"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "opIndexAssign",
+          "kind" : "function",
+          "line" : 227,
+          "char" : 17,
+          "type" : "pure nothrow @nogc T(U x, size_t i)",
+          "parameters" : [
+           {
+            "name" : "x",
+            "type" : "U"
+           },
+           {
+            "name" : "i",
+            "type" : "size_t"
+           }
+          ],
+          "endline" : 230,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 240,
+        "char" : 30,
+        "name" : "opDispatch",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         },
+         {
+          "name" : "U",
+          "kind" : "type",
+          "defaultDeco" : "v"
+         }
+        ],
+        "constraint" : "isValidSwizzle!op",
+        "members" : [
+         {
+          "name" : "opDispatch",
+          "kind" : "function",
+          "line" : 240,
+          "char" : 30,
+          "storageClass" : [
+           "auto"
+          ],
+          "type" : "const pure nothrow @nogc @property ()",
+          "endline" : 248,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 258,
+        "char" : 30,
+        "name" : "opDispatch",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         },
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "op.length >= 2 && isValidSwizzleUnique!op && is(typeof(Vector!(T, op.length)(x)))",
+        "members" : [
+         {
+          "name" : "opDispatch",
+          "kind" : "function",
+          "line" : 258,
+          "char" : 30,
+          "type" : "pure @nogc @property void(U x)",
+          "parameters" : [
+           {
+            "name" : "x",
+            "type" : "U"
+           }
+          ],
+          "endline" : 267,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 275,
+        "char" : 17,
+        "name" : "opCast",
+        "parameters" : [
+         {
+          "name" : "U",
+          "kind" : "type"
+         }
+        ],
+        "constraint" : "isVector!U && U._N == _N",
+        "members" : [
+         {
+          "name" : "opCast",
+          "kind" : "function",
+          "line" : 275,
+          "char" : 17,
+          "type" : "const pure nothrow @nogc U()",
+          "endline" : 280,
+          "endchar" : 9
+         }
+        ]
+       },
+       {
+        "name" : "opDollar",
+        "kind" : "function",
+        "line" : 285,
+        "char" : 19,
+        "type" : "const pure nothrow @nogc int()",
+        "endline" : 288,
+        "endchar" : 9
+       },
+       {
+        "name" : "opSlice",
+        "kind" : "function",
+        "line" : 291,
+        "char" : 19,
+        "type" : "pure nothrow @nogc T[]()",
+        "endline" : 294,
+        "endchar" : 9
+       },
+       {
+        "name" : "opSlice",
+        "kind" : "function",
+        "line" : 297,
+        "char" : 19,
+        "type" : "pure nothrow @nogc T[](int a, int b)",
+        "parameters" : [
+         {
+          "name" : "a",
+          "deco" : "i"
+         },
+         {
+          "name" : "b",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 300,
+        "endchar" : 9
+       },
+       {
+        "name" : "squaredLength",
+        "kind" : "function",
+        "line" : 303,
+        "char" : 17,
+        "type" : "const pure nothrow @nogc T()",
+        "endline" : 308,
+        "endchar" : 9
+       },
+       {
+        "name" : "squaredDistanceTo",
+        "kind" : "function",
+        "line" : 311,
+        "char" : 17,
+        "type" : "const pure nothrow @nogc T(Vector v)",
+        "parameters" : [
+         {
+          "name" : "v",
+          "type" : "Vector"
+         }
+        ],
+        "endline" : 314,
+        "endchar" : 9
+       },
+       {
+        "name" : "_N",
+        "kind" : "variable",
+        "line" : 390,
+        "char" : 14,
+        "storageClass" : [
+         "enum"
+        ],
+        "init" : "N"
+       },
+       {
+        "name" : "_T",
+        "kind" : "alias",
+        "line" : 391,
+        "char" : 17,
+        "type" : "T"
+       },
+       {
+        "kind" : "template",
+        "line" : 394,
+        "char" : 9,
+        "name" : "isConvertible",
+        "parameters" : [
+         {
+          "name" : "T",
+          "kind" : "type"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "isConvertible",
+          "kind" : "variable",
+          "line" : 396,
+          "char" : 23,
+          "storageClass" : [
+           "enum"
+          ],
+          "deco" : "b",
+          "init" : "!is(T : Vector) && is(typeof(()\r\n{\r\nT x;\r\nVector v = x;\r\n}\r\n()))"
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 405,
+        "char" : 9,
+        "name" : "isForeign",
+        "parameters" : [
+         {
+          "name" : "T",
+          "kind" : "type"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "isForeign",
+          "kind" : "variable",
+          "line" : 407,
+          "char" : 23,
+          "storageClass" : [
+           "enum"
+          ],
+          "deco" : "b",
+          "init" : "!isConvertible!T && !is(T : Vector)"
+         }
+        ]
+       },
+       {
+        "kind" : "template",
+        "line" : 410,
+        "char" : 9,
+        "name" : "isValidSwizzle",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         },
+         {
+          "name" : "lastSwizzleClass",
+          "kind" : "value",
+          "deco" : "i",
+          "defaultValue" : "-1"
+         }
+        ],
+        "members" : []
+       },
+       {
+        "kind" : "template",
+        "line" : 425,
+        "char" : 9,
+        "name" : "searchElement",
+        "parameters" : [
+         {
+          "name" : "c",
+          "kind" : "value",
+          "deco" : "a"
+         },
+         {
+          "name" : "s",
+          "kind" : "value",
+          "type" : "string"
+         }
+        ],
+        "members" : []
+       },
+       {
+        "kind" : "template",
+        "line" : 438,
+        "char" : 9,
+        "name" : "hasNoDuplicates",
+        "parameters" : [
+         {
+          "name" : "s",
+          "kind" : "value",
+          "type" : "string"
+         }
+        ],
+        "members" : []
+       },
+       {
+        "kind" : "template",
+        "line" : 452,
+        "char" : 9,
+        "name" : "isValidSwizzleUnique",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         }
+        ],
+        "members" : []
+       },
+       {
+        "kind" : "template",
+        "line" : 460,
+        "char" : 9,
+        "name" : "swizzleIndex",
+        "parameters" : [
+         {
+          "name" : "c",
+          "kind" : "value",
+          "deco" : "a"
+         }
+        ],
+        "members" : []
+       },
+       {
+        "kind" : "template",
+        "line" : 474,
+        "char" : 9,
+        "name" : "swizzleClassify",
+        "parameters" : [
+         {
+          "name" : "c",
+          "kind" : "value",
+          "deco" : "a"
+         }
+        ],
+        "members" : []
+       },
+       {
+        "kind" : "template",
+        "line" : 484,
+        "char" : 9,
+        "name" : "swizzleTuple",
+        "parameters" : [
+         {
+          "name" : "op",
+          "kind" : "value",
+          "type" : "string"
+         }
+        ],
+        "members" : [
+         {
+          "name" : "opLength",
+          "kind" : "variable",
+          "line" : 486,
+          "char" : 18,
+          "storageClass" : [
+           "enum"
+          ],
+          "init" : "op.length"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 496,
+    "char" : 6,
+    "name" : "isVector",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isVector",
+      "kind" : "variable",
+      "line" : 496,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(T : Vector!U, U...)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 499,
+    "char" : 36,
+    "name" : "isVectorInstantiation",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isVectorInstantiation",
+      "kind" : "alias",
+      "line" : 499,
+      "char" : 36,
+      "type" : "isVector!T"
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL502_15",
+    "kind" : "function",
+    "line" : 502,
+    "char" : 1,
+    "endline" : 511,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 511,
+    "char" : 1,
+    "name" : "DimensionType",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type",
+      "type" : "Vector!U"
+     },
+     {
+      "name" : "U",
+      "kind" : "tuple"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "DimensionType",
+      "kind" : "alias",
+      "line" : 511,
+      "char" : 1,
+      "type" : "U[0]"
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL514_16",
+    "kind" : "function",
+    "line" : 514,
+    "char" : 1,
+    "endline" : 520,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 520,
+    "char" : 1,
+    "name" : "vec2",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "vec2",
+      "kind" : "alias",
+      "line" : 520,
+      "char" : 40,
+      "type" : "Vector!(T, 2)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 521,
+    "char" : 1,
+    "name" : "vec3",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "vec3",
+      "kind" : "alias",
+      "line" : 521,
+      "char" : 40,
+      "type" : "Vector!(T, 3)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 522,
+    "char" : 1,
+    "name" : "vec4",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "vec4",
+      "kind" : "alias",
+      "line" : 522,
+      "char" : 40,
+      "type" : "Vector!(T, 4)"
+     }
+    ]
+   },
+   {
+    "name" : "vec2b",
+    "kind" : "alias",
+    "line" : 524,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTgVii2Z6Vector"
+   },
+   {
+    "name" : "vec2ub",
+    "kind" : "alias",
+    "line" : 525,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorThVii2Z6Vector"
+   },
+   {
+    "name" : "vec2s",
+    "kind" : "alias",
+    "line" : 526,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTsVii2Z6Vector"
+   },
+   {
+    "name" : "vec2us",
+    "kind" : "alias",
+    "line" : 527,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTtVii2Z6Vector"
+   },
+   {
+    "name" : "vec2i",
+    "kind" : "alias",
+    "line" : 528,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTiVii2Z6Vector"
+   },
+   {
+    "name" : "vec2ui",
+    "kind" : "alias",
+    "line" : 529,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTkVii2Z6Vector"
+   },
+   {
+    "name" : "vec2l",
+    "kind" : "alias",
+    "line" : 530,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTlVii2Z6Vector"
+   },
+   {
+    "name" : "vec2ul",
+    "kind" : "alias",
+    "line" : 531,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTmVii2Z6Vector"
+   },
+   {
+    "name" : "vec2f",
+    "kind" : "alias",
+    "line" : 532,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTfVii2Z6Vector"
+   },
+   {
+    "name" : "vec2d",
+    "kind" : "alias",
+    "line" : 533,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTdVii2Z6Vector"
+   },
+   {
+    "name" : "vec3b",
+    "kind" : "alias",
+    "line" : 535,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTgVii3Z6Vector"
+   },
+   {
+    "name" : "vec3ub",
+    "kind" : "alias",
+    "line" : 536,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorThVii3Z6Vector"
+   },
+   {
+    "name" : "vec3s",
+    "kind" : "alias",
+    "line" : 537,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTsVii3Z6Vector"
+   },
+   {
+    "name" : "vec3us",
+    "kind" : "alias",
+    "line" : 538,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTtVii3Z6Vector"
+   },
+   {
+    "name" : "vec3i",
+    "kind" : "alias",
+    "line" : 539,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTiVii3Z6Vector"
+   },
+   {
+    "name" : "vec3ui",
+    "kind" : "alias",
+    "line" : 540,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTkVii3Z6Vector"
+   },
+   {
+    "name" : "vec3l",
+    "kind" : "alias",
+    "line" : 541,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTlVii3Z6Vector"
+   },
+   {
+    "name" : "vec3ul",
+    "kind" : "alias",
+    "line" : 542,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTmVii3Z6Vector"
+   },
+   {
+    "name" : "vec3f",
+    "kind" : "alias",
+    "line" : 543,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTfVii3Z6Vector"
+   },
+   {
+    "name" : "vec3d",
+    "kind" : "alias",
+    "line" : 544,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTdVii3Z6Vector"
+   },
+   {
+    "name" : "vec4b",
+    "kind" : "alias",
+    "line" : 546,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTgVii4Z6Vector"
+   },
+   {
+    "name" : "vec4ub",
+    "kind" : "alias",
+    "line" : 547,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorThVii4Z6Vector"
+   },
+   {
+    "name" : "vec4s",
+    "kind" : "alias",
+    "line" : 548,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTsVii4Z6Vector"
+   },
+   {
+    "name" : "vec4us",
+    "kind" : "alias",
+    "line" : 549,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTtVii4Z6Vector"
+   },
+   {
+    "name" : "vec4i",
+    "kind" : "alias",
+    "line" : 550,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTiVii4Z6Vector"
+   },
+   {
+    "name" : "vec4ui",
+    "kind" : "alias",
+    "line" : 551,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTkVii4Z6Vector"
+   },
+   {
+    "name" : "vec4l",
+    "kind" : "alias",
+    "line" : 552,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTlVii4Z6Vector"
+   },
+   {
+    "name" : "vec4ul",
+    "kind" : "alias",
+    "line" : 553,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTmVii4Z6Vector"
+   },
+   {
+    "name" : "vec4f",
+    "kind" : "alias",
+    "line" : 554,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTfVii4Z6Vector"
+   },
+   {
+    "name" : "vec4d",
+    "kind" : "alias",
+    "line" : 555,
+    "char" : 19,
+    "deco" : "S3gfm4math6vector17__T6VectorTdVii4Z6Vector"
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 559,
+    "char" : 19,
+    "name" : "generateLoopCode",
+    "parameters" : [
+     {
+      "name" : "formatString",
+      "kind" : "value",
+      "deco" : "Aya"
+     },
+     {
+      "name" : "N",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "generateLoopCode",
+      "kind" : "function",
+      "line" : 559,
+      "char" : 19,
+      "type" : "pure nothrow string()",
+      "endline" : 569,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "name" : "ctIntToString",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 572,
+    "char" : 19,
+    "storageClass" : [
+     "static"
+    ],
+    "deco" : "FNaNbiZAya",
+    "parameters" : [
+     {
+      "name" : "n",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 579,
+    "endchar" : 5
+   },
+   {
+    "kind" : "template",
+    "line" : 584,
+    "char" : 21,
+    "name" : "minByElem",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "N",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "minByElem",
+      "kind" : "function",
+      "line" : 584,
+      "char" : 21,
+      "type" : "pure nothrow @nogc Vector!(T, N)(const Vector!(T, N) a, const Vector!(T, N) b)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "Vector!(T, N)",
+        "storageClass" : [
+         "const"
+        ]
+       },
+       {
+        "name" : "b",
+        "type" : "Vector!(T, N)",
+        "storageClass" : [
+         "const"
+        ]
+       }
+      ],
+      "endline" : 590,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 593,
+    "char" : 21,
+    "name" : "maxByElem",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "N",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "maxByElem",
+      "kind" : "function",
+      "line" : 593,
+      "char" : 21,
+      "type" : "pure nothrow @nogc Vector!(T, N)(const Vector!(T, N) a, const Vector!(T, N) b)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "Vector!(T, N)",
+        "storageClass" : [
+         "const"
+        ]
+       },
+       {
+        "name" : "b",
+        "type" : "Vector!(T, N)",
+        "storageClass" : [
+         "const"
+        ]
+       }
+      ],
+      "endline" : 599,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 602,
+    "char" : 21,
+    "name" : "absByElem",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "N",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "absByElem",
+      "kind" : "function",
+      "line" : 602,
+      "char" : 21,
+      "type" : "pure nothrow @nogc Vector!(T, N)(const Vector!(T, N) a)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "Vector!(T, N)",
+        "storageClass" : [
+         "const"
+        ]
+       }
+      ],
+      "endline" : 607,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 610,
+    "char" : 9,
+    "name" : "dot",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "N",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "dot",
+      "kind" : "function",
+      "line" : 610,
+      "char" : 9,
+      "type" : "pure nothrow @nogc T(const Vector!(T, N) a, const Vector!(T, N) b)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "Vector!(T, N)",
+        "storageClass" : [
+         "const"
+        ]
+       },
+       {
+        "name" : "b",
+        "type" : "Vector!(T, N)",
+        "storageClass" : [
+         "const"
+        ]
+       }
+      ],
+      "endline" : 615,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 619,
+    "char" : 21,
+    "name" : "cross",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "cross",
+      "kind" : "function",
+      "line" : 619,
+      "char" : 21,
+      "type" : "pure nothrow @nogc Vector!(T, 3)(const Vector!(T, 3) a, const Vector!(T, 3) b)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "Vector!(T, 3)",
+        "storageClass" : [
+         "const"
+        ]
+       },
+       {
+        "name" : "b",
+        "type" : "Vector!(T, 3)",
+        "storageClass" : [
+         "const"
+        ]
+       }
+      ],
+      "endline" : 624,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 628,
+    "char" : 21,
+    "name" : "reflect",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "N",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "reflect",
+      "kind" : "function",
+      "line" : 628,
+      "char" : 21,
+      "type" : "pure nothrow @nogc Vector!(T, N)(const Vector!(T, N) a, const Vector!(T, N) b)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "Vector!(T, N)",
+        "storageClass" : [
+         "const"
+        ]
+       },
+       {
+        "name" : "b",
+        "type" : "Vector!(T, N)",
+        "storageClass" : [
+         "const"
+        ]
+       }
+      ],
+      "endline" : 631,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL634_17",
+    "kind" : "function",
+    "line" : 634,
+    "char" : 7,
+    "endline" : 650,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 650,
+    "char" : 9,
+    "name" : "angleBetween",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "N",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "angleBetween",
+      "kind" : "function",
+      "line" : 650,
+      "char" : 9,
+      "type" : "pure nothrow @nogc T(const Vector!(T, N) a, const Vector!(T, N) b)",
+      "parameters" : [
+       {
+        "name" : "a",
+        "type" : "Vector!(T, N)",
+        "storageClass" : [
+         "const"
+        ]
+       },
+       {
+        "name" : "b",
+        "type" : "Vector!(T, N)",
+        "storageClass" : [
+         "const"
+        ]
+       }
+      ],
+      "endline" : 660,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL667_18",
+    "kind" : "function",
+    "line" : 667,
+    "char" : 1,
+    "endline" : 763,
+    "endchar" : 1
+   }
+  ]
+ }
+]

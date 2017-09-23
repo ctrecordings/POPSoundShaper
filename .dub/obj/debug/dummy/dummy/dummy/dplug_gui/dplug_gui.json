@@ -1,0 +1,3706 @@
+[
+ {
+  "name" : "dplug.gui.boxlist",
+  "kind" : "module",
+  "file" : "..\\..\\..\\gui\\dplug\\gui\\boxlist.d",
+  "members" : [
+   {
+    "name" : "std.algorithm.comparison",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.box",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "boundingBox",
+    "kind" : "function",
+    "line" : 16,
+    "char" : 7,
+    "deco" : "FNaNbNiAS3gfm4math3box14__T3BoxTiVii2Z3BoxZS3gfm4math3box14__T3BoxTiVii2Z3Box",
+    "originalType" : "pure nothrow @nogc box2i(box2i[] boxes)",
+    "parameters" : [
+     {
+      "name" : "boxes",
+      "deco" : "AS3gfm4math3box14__T3BoxTiVii2Z3Box"
+     }
+    ],
+    "endline" : 28,
+    "endchar" : 1
+   },
+   {
+    "name" : "boxSubtraction",
+    "kind" : "function",
+    "line" : 42,
+    "char" : 6,
+    "deco" : "FNaNbNixS3gfm4math3box14__T3BoxTiVii2Z3BoxxS3gfm4math3box14__T3BoxTiVii2Z3BoxJS3gfm4math3box14__T3BoxTiVii2Z3BoxJS3gfm4math3box14__T3BoxTiVii2Z3BoxJS3gfm4math3box14__T3BoxTiVii2Z3BoxJS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+    "originalType" : "pure nothrow @nogc void(in box2i A, in box2i C, out box2i D, out box2i E, out box2i F, out box2i G)",
+    "parameters" : [
+     {
+      "name" : "A",
+      "deco" : "xS3gfm4math3box14__T3BoxTiVii2Z3Box"
+     },
+     {
+      "name" : "C",
+      "deco" : "xS3gfm4math3box14__T3BoxTiVii2Z3Box"
+     },
+     {
+      "name" : "D",
+      "deco" : "S3gfm4math3box14__T3BoxTiVii2Z3Box",
+      "storageClass" : [
+       "out"
+      ]
+     },
+     {
+      "name" : "E",
+      "deco" : "S3gfm4math3box14__T3BoxTiVii2Z3Box",
+      "storageClass" : [
+       "out"
+      ]
+     },
+     {
+      "name" : "F",
+      "deco" : "S3gfm4math3box14__T3BoxTiVii2Z3Box",
+      "storageClass" : [
+       "out"
+      ]
+     },
+     {
+      "name" : "G",
+      "deco" : "S3gfm4math3box14__T3BoxTiVii2Z3Box",
+      "storageClass" : [
+       "out"
+      ]
+     }
+    ],
+    "endline" : 48,
+    "endchar" : 1
+   },
+   {
+    "name" : "removeOverlappingAreas",
+    "kind" : "function",
+    "line" : 54,
+    "char" : 6,
+    "deco" : "FNbNiKS5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3VecKS5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3VecZv",
+    "originalType" : "nothrow @nogc void(ref Vec!box2i boxes, ref Vec!box2i filtered)",
+    "parameters" : [
+     {
+      "name" : "boxes",
+      "deco" : "S5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3Vec",
+      "storageClass" : [
+       "ref"
+      ]
+     },
+     {
+      "name" : "filtered",
+      "deco" : "S5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3Vec",
+      "storageClass" : [
+       "ref"
+      ]
+     }
+    ],
+    "endline" : 118,
+    "endchar" : 1
+   },
+   {
+    "name" : "__unittestL120_1",
+    "kind" : "function",
+    "line" : 120,
+    "char" : 1,
+    "endline" : 139,
+    "endchar" : 1
+   },
+   {
+    "name" : "tileAreas",
+    "kind" : "function",
+    "line" : 139,
+    "char" : 6,
+    "deco" : "FNbNixAS3gfm4math3box14__T3BoxTiVii2Z3BoxiiKS5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3VecZv",
+    "originalType" : "nothrow @nogc void(in box2i[] areas, int maxWidth, int maxHeight, ref Vec!box2i splitted)",
+    "parameters" : [
+     {
+      "name" : "areas",
+      "deco" : "xAS3gfm4math3box14__T3BoxTiVii2Z3Box"
+     },
+     {
+      "name" : "maxWidth",
+      "deco" : "i"
+     },
+     {
+      "name" : "maxHeight",
+      "deco" : "i"
+     },
+     {
+      "name" : "splitted",
+      "deco" : "S5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3Vec",
+      "storageClass" : [
+       "ref"
+      ]
+     }
+    ],
+    "endline" : 163,
+    "endchar" : 1
+   },
+   {
+    "name" : "haveNoOverlap",
+    "kind" : "function",
+    "line" : 167,
+    "char" : 6,
+    "deco" : "FNbNixAS3gfm4math3box14__T3BoxTiVii2Z3BoxZb",
+    "originalType" : "nothrow @nogc bool(in box2i[] areas)",
+    "parameters" : [
+     {
+      "name" : "areas",
+      "deco" : "xAS3gfm4math3box14__T3BoxTiVii2Z3Box"
+     }
+    ],
+    "endline" : 182,
+    "endchar" : 1
+   },
+   {
+    "name" : "__unittestL184_2",
+    "kind" : "function",
+    "line" : 184,
+    "char" : 1,
+    "endline" : 189,
+    "endchar" : 1
+   },
+   {
+    "name" : "_arraySliceComSliceAssign_k",
+    "kind" : "function",
+    "deco" : "UNaNbNiNeAkxAkZAk",
+    "originalType" : "pure nothrow @nogc @trusted extern (C) uint[](uint[] p1, const const(uint)[] p0)",
+    "parameters" : [
+     {
+      "name" : "p1",
+      "deco" : "Ak"
+     },
+     {
+      "name" : "p0",
+      "deco" : "xAk"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.gui.bufferedelement",
+  "kind" : "module",
+  "file" : "..\\..\\..\\gui\\dplug\\gui\\bufferedelement.d",
+  "members" : [
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.element",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 15
+   },
+   {
+    "name" : "opacityFullyOpaque",
+    "kind" : "variable",
+    "line" : 12,
+    "char" : 9,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "S5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5Color",
+    "originalType" : "L8",
+    "init" : "Color(cast(ubyte)255u)"
+   },
+   {
+    "name" : "opacityFullyTransparent",
+    "kind" : "variable",
+    "line" : 13,
+    "char" : 9,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "S5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5Color",
+    "originalType" : "L8",
+    "init" : "Color(cast(ubyte)0u)"
+   },
+   {
+    "name" : "UIBufferedElement",
+    "kind" : "class",
+    "line" : 23,
+    "char" : 1,
+    "base" : "dplug.gui.element.UIElement",
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 29,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug3gui7context9UIContextZC5dplug3gui15bufferedelement17UIBufferedElement",
+      "originalType" : "nothrow @nogc (UIContext context)",
+      "parameters" : [
+       {
+        "name" : "context",
+        "deco" : "C5dplug3gui7context9UIContext"
+       }
+      ],
+      "endline" : 39,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 41,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 50,
+      "endchar" : 5
+     },
+     {
+      "name" : "setDirty",
+      "kind" : "function",
+      "line" : 52,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(box2i rect)",
+      "parameters" : [
+       {
+        "name" : "rect",
+        "deco" : "S3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 56,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.setDirty"
+      ]
+     },
+     {
+      "name" : "setDirtyWhole",
+      "kind" : "function",
+      "line" : 58,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 62,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.setDirtyWhole"
+      ]
+     },
+     {
+      "name" : "onDraw",
+      "kind" : "function",
+      "line" : 64,
+      "char" : 25,
+      "storageClass" : [
+       "final",
+       "override"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefAS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, box2i[] dirtyRects)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "dirtyRects",
+        "deco" : "AS3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 125,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onDraw"
+      ]
+     },
+     {
+      "name" : "onDrawBuffered",
+      "kind" : "function",
+      "line" : 129,
+      "char" : 19,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRefZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, ImageRef!L8 diffuseOpacity, ImageRef!L8 depthOpacity, ImageRef!L8 materialOpacity)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "diffuseOpacity",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthOpacity",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialOpacity",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRef"
+       }
+      ]
+     },
+     {
+      "name" : "_diffuseBuf",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 137,
+      "char" : 21,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImage",
+      "originalType" : "OwnedImage!RGBA",
+      "offset" : 92
+     },
+     {
+      "name" : "_depthBuf",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 138,
+      "char" : 20,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6drawex68__T10OwnedImageTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ10OwnedImage",
+      "originalType" : "OwnedImage!L16",
+      "offset" : 96
+     },
+     {
+      "name" : "_materialBuf",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 139,
+      "char" : 21,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImage",
+      "originalType" : "OwnedImage!RGBA",
+      "offset" : 100
+     },
+     {
+      "name" : "_diffuseOpacityBuf",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 140,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6drawex68__T10OwnedImageTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ10OwnedImage",
+      "originalType" : "OwnedImage!L8",
+      "offset" : 104
+     },
+     {
+      "name" : "_depthOpacityBuf",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 141,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6drawex68__T10OwnedImageTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ10OwnedImage",
+      "originalType" : "OwnedImage!L8",
+      "offset" : 108
+     },
+     {
+      "name" : "_materialOpacityBuf",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 142,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6drawex68__T10OwnedImageTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ10OwnedImage",
+      "originalType" : "OwnedImage!L8",
+      "offset" : 112
+     },
+     {
+      "name" : "_mustBeRedrawn",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 143,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "b",
+      "offset" : 116
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.gui.compositor",
+  "kind" : "module",
+  "file" : "..\\..\\..\\gui\\dplug\\gui\\compositor.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.vector",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.box",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.matrix",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 15,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 16,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.window.window",
+    "kind" : "import",
+    "line" : 18,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.mipmap",
+    "kind" : "import",
+    "line" : 20,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.drawex",
+    "kind" : "import",
+    "line" : 21,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.image",
+    "kind" : "import",
+    "line" : 22,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.view",
+    "kind" : "import",
+    "line" : 23,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "ICompositor",
+    "kind" : "interface",
+    "line" : 29,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "compositeTile",
+      "kind" : "function",
+      "line" : 31,
+      "char" : 10,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefE5dplug6window6window17WindowPixelFormatS3gfm4math3box14__T3BoxTiVii2Z3BoxC5dplug8graphics6mipmap90__T6MipmapTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ6MipmapC5dplug8graphics6mipmap90__T6MipmapTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ6MipmapC5dplug8graphics6mipmap63__T6MipmapTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ6MipmapC5dplug8graphics6mipmap90__T6MipmapTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ6MipmapZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA wfb, WindowPixelFormat pf, box2i area, Mipmap!RGBA diffuseMap, Mipmap!RGBA materialMap, Mipmap!L16 depthMap, Mipmap!RGBA skybox)",
+      "parameters" : [
+       {
+        "name" : "wfb",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "pf",
+        "deco" : "E5dplug6window6window17WindowPixelFormat"
+       },
+       {
+        "name" : "area",
+        "deco" : "S3gfm4math3box14__T3BoxTiVii2Z3Box"
+       },
+       {
+        "name" : "diffuseMap",
+        "deco" : "C5dplug8graphics6mipmap90__T6MipmapTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ6Mipmap"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "C5dplug8graphics6mipmap90__T6MipmapTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ6Mipmap"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "C5dplug8graphics6mipmap63__T6MipmapTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ6Mipmap"
+       },
+       {
+        "name" : "skybox",
+        "deco" : "C5dplug8graphics6mipmap90__T6MipmapTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ6Mipmap"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "PBRCompositor",
+    "kind" : "class",
+    "line" : 39,
+    "char" : 1,
+    "interfaces" : [
+     "dplug.gui.compositor.ICompositor"
+    ],
+    "members" : [
+     {
+      "name" : "light1Color",
+      "kind" : "variable",
+      "line" : 44,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S3gfm4math6vector17__T6VectorTfVii3Z6Vector",
+      "originalType" : "vec3f",
+      "offset" : 12
+     },
+     {
+      "name" : "light2Dir",
+      "kind" : "variable",
+      "line" : 47,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S3gfm4math6vector17__T6VectorTfVii3Z6Vector",
+      "originalType" : "vec3f",
+      "offset" : 24
+     },
+     {
+      "name" : "light2Color",
+      "kind" : "variable",
+      "line" : 48,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S3gfm4math6vector17__T6VectorTfVii3Z6Vector",
+      "originalType" : "vec3f",
+      "offset" : 36
+     },
+     {
+      "name" : "light3Dir",
+      "kind" : "variable",
+      "line" : 51,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S3gfm4math6vector17__T6VectorTfVii3Z6Vector",
+      "originalType" : "vec3f",
+      "offset" : 48
+     },
+     {
+      "name" : "light3Color",
+      "kind" : "variable",
+      "line" : 52,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S3gfm4math6vector17__T6VectorTfVii3Z6Vector",
+      "originalType" : "vec3f",
+      "offset" : 60
+     },
+     {
+      "name" : "ambientLight",
+      "kind" : "variable",
+      "line" : 54,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 72
+     },
+     {
+      "name" : "skyboxAmount",
+      "kind" : "variable",
+      "line" : 55,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 76
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 57,
+      "char" : 5,
+      "deco" : "FNbNiZC5dplug3gui10compositor13PBRCompositor",
+      "originalType" : "nothrow @nogc ()",
+      "endline" : 90,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 92,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 96,
+      "endchar" : 5
+     },
+     {
+      "name" : "setLiftGammaGainContrast",
+      "kind" : "function",
+      "line" : 100,
+      "char" : 10,
+      "deco" : "FNbNiffffZv",
+      "parameters" : [
+       {
+        "name" : "lift",
+        "deco" : "f",
+        "default" : "0.000000F"
+       },
+       {
+        "name" : "gamma",
+        "deco" : "f",
+        "default" : "1.00000F"
+       },
+       {
+        "name" : "gain",
+        "deco" : "f",
+        "default" : "1.00000F"
+       },
+       {
+        "name" : "contrast",
+        "deco" : "f",
+        "default" : "0.000000F"
+       }
+      ],
+      "endline" : 105,
+      "endchar" : 5
+     },
+     {
+      "name" : "setLiftGammaGainRGB",
+      "kind" : "function",
+      "line" : 109,
+      "char" : 10,
+      "deco" : "FNbNifffffffffZv",
+      "parameters" : [
+       {
+        "name" : "rLift",
+        "deco" : "f",
+        "default" : "0.000000F"
+       },
+       {
+        "name" : "rGamma",
+        "deco" : "f",
+        "default" : "1.00000F"
+       },
+       {
+        "name" : "rGain",
+        "deco" : "f",
+        "default" : "1.00000F"
+       },
+       {
+        "name" : "gLift",
+        "deco" : "f",
+        "default" : "0.000000F"
+       },
+       {
+        "name" : "gGamma",
+        "deco" : "f",
+        "default" : "1.00000F"
+       },
+       {
+        "name" : "gGain",
+        "deco" : "f",
+        "default" : "1.00000F"
+       },
+       {
+        "name" : "bLift",
+        "deco" : "f",
+        "default" : "0.000000F"
+       },
+       {
+        "name" : "bGamma",
+        "deco" : "f",
+        "default" : "1.00000F"
+       },
+       {
+        "name" : "bGain",
+        "deco" : "f",
+        "default" : "1.00000F"
+       }
+      ],
+      "endline" : 116,
+      "endchar" : 5
+     },
+     {
+      "name" : "setLiftGammaGainContrastRGB",
+      "kind" : "function",
+      "line" : 120,
+      "char" : 10,
+      "deco" : "FNbNiffffffffffffZv",
+      "parameters" : [
+       {
+        "name" : "rLift",
+        "deco" : "f",
+        "default" : "0.000000F"
+       },
+       {
+        "name" : "rGamma",
+        "deco" : "f",
+        "default" : "1.00000F"
+       },
+       {
+        "name" : "rGain",
+        "deco" : "f",
+        "default" : "1.00000F"
+       },
+       {
+        "name" : "rContrast",
+        "deco" : "f",
+        "default" : "0.000000F"
+       },
+       {
+        "name" : "gLift",
+        "deco" : "f",
+        "default" : "0.000000F"
+       },
+       {
+        "name" : "gGamma",
+        "deco" : "f",
+        "default" : "1.00000F"
+       },
+       {
+        "name" : "gGain",
+        "deco" : "f",
+        "default" : "1.00000F"
+       },
+       {
+        "name" : "gContrast",
+        "deco" : "f",
+        "default" : "0.000000F"
+       },
+       {
+        "name" : "bLift",
+        "deco" : "f",
+        "default" : "0.000000F"
+       },
+       {
+        "name" : "bGamma",
+        "deco" : "f",
+        "default" : "1.00000F"
+       },
+       {
+        "name" : "bGain",
+        "deco" : "f",
+        "default" : "1.00000F"
+       },
+       {
+        "name" : "bContrast",
+        "deco" : "f",
+        "default" : "0.000000F"
+       }
+      ],
+      "endline" : 166,
+      "endchar" : 5
+     },
+     {
+      "name" : "setLiftGammaGainContrastRGB",
+      "kind" : "function",
+      "line" : 169,
+      "char" : 10,
+      "deco" : "FNbNiS3gfm4math6matrix21__T6MatrixTfVii3Vii4Z6MatrixZv",
+      "originalType" : "nothrow @nogc void(mat3x4f liftGammaGainContrast)",
+      "parameters" : [
+       {
+        "name" : "liftGammaGainContrast",
+        "deco" : "S3gfm4math6matrix21__T6MatrixTfVii3Vii4Z6Matrix"
+       }
+      ],
+      "endline" : 175,
+      "endchar" : 5
+     },
+     {
+      "name" : "compositeTile",
+      "kind" : "function",
+      "line" : 178,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefE5dplug6window6window17WindowPixelFormatS3gfm4math3box14__T3BoxTiVii2Z3BoxC5dplug8graphics6mipmap90__T6MipmapTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ6MipmapC5dplug8graphics6mipmap90__T6MipmapTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ6MipmapC5dplug8graphics6mipmap63__T6MipmapTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ6MipmapC5dplug8graphics6mipmap90__T6MipmapTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ6MipmapZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA wfb, WindowPixelFormat pf, box2i area, Mipmap!RGBA diffuseMap, Mipmap!RGBA materialMap, Mipmap!L16 depthMap, Mipmap!RGBA skybox)",
+      "parameters" : [
+       {
+        "name" : "wfb",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "pf",
+        "deco" : "E5dplug6window6window17WindowPixelFormat"
+       },
+       {
+        "name" : "area",
+        "deco" : "S3gfm4math3box14__T3BoxTiVii2Z3Box"
+       },
+       {
+        "name" : "diffuseMap",
+        "deco" : "C5dplug8graphics6mipmap90__T6MipmapTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ6Mipmap"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "C5dplug8graphics6mipmap90__T6MipmapTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ6Mipmap"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "C5dplug8graphics6mipmap63__T6MipmapTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ6Mipmap"
+       },
+       {
+        "name" : "skybox",
+        "deco" : "C5dplug8graphics6mipmap90__T6MipmapTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ6Mipmap"
+       }
+      ],
+      "endline" : 497,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.compositor.ICompositor.compositeTile"
+      ]
+     },
+     {
+      "name" : "_tableArea",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 501,
+      "char" : 13,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Ah",
+      "init" : "null",
+      "offset" : 80
+     },
+     {
+      "name" : "_redTransferTable",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 502,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Ph",
+      "init" : "null",
+      "offset" : 88
+     },
+     {
+      "name" : "_greenTransferTable",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 503,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Ph",
+      "init" : "null",
+      "offset" : 92
+     },
+     {
+      "name" : "_blueTransferTable",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 504,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Ph",
+      "init" : "null",
+      "offset" : 96
+     },
+     {
+      "name" : "_exponentTable",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 506,
+      "char" : 16,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "G256f",
+      "offset" : 100
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 512,
+    "char" : 7,
+    "name" : "ctLinearStep",
+    "parameters" : [
+     {
+      "name" : "a",
+      "kind" : "value",
+      "deco" : "f"
+     },
+     {
+      "name" : "b",
+      "kind" : "value",
+      "deco" : "f"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "ctLinearStep",
+      "kind" : "function",
+      "line" : 512,
+      "char" : 7,
+      "type" : "pure nothrow @nogc float(float t)",
+      "parameters" : [
+       {
+        "name" : "t",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 523,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "linearStep",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 528,
+    "char" : 7,
+    "deco" : "FNaNbNifffZf",
+    "parameters" : [
+     {
+      "name" : "a",
+      "deco" : "f"
+     },
+     {
+      "name" : "b",
+      "deco" : "f"
+     },
+     {
+      "name" : "t",
+      "deco" : "f"
+     }
+    ],
+    "endline" : 539,
+    "endchar" : 1
+   },
+   {
+    "name" : "fastlog2",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 543,
+    "char" : 7,
+    "deco" : "FNaNbNifZf",
+    "parameters" : [
+     {
+      "name" : "val",
+      "deco" : "f"
+     }
+    ],
+    "endline" : 559,
+    "endchar" : 1
+   },
+   {
+    "name" : "applyColorCorrectionARGB8",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 562,
+    "char" : 6,
+    "deco" : "FNaNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefxS3gfm4math3box14__T3BoxTiVii2Z3BoxxPhZv",
+    "originalType" : "pure nothrow @nogc void(ImageRef!RGBA wfb, const(box2i) area, const(ubyte*) rgbTable)",
+    "parameters" : [
+     {
+      "name" : "wfb",
+      "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+     },
+     {
+      "name" : "area",
+      "deco" : "xS3gfm4math3box14__T3BoxTiVii2Z3Box"
+     },
+     {
+      "name" : "rgbTable",
+      "deco" : "xPh"
+     }
+    ],
+    "endline" : 578,
+    "endchar" : 1
+   },
+   {
+    "name" : "applyColorCorrectionBGRA8",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 581,
+    "char" : 6,
+    "deco" : "FNaNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefxS3gfm4math3box14__T3BoxTiVii2Z3BoxxPhZv",
+    "originalType" : "pure nothrow @nogc void(ImageRef!RGBA wfb, const(box2i) area, const(ubyte*) rgbTable)",
+    "parameters" : [
+     {
+      "name" : "wfb",
+      "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+     },
+     {
+      "name" : "area",
+      "deco" : "xS3gfm4math3box14__T3BoxTiVii2Z3Box"
+     },
+     {
+      "name" : "rgbTable",
+      "deco" : "xPh"
+     }
+    ],
+    "endline" : 598,
+    "endchar" : 1
+   },
+   {
+    "name" : "applyColorCorrectionRGBA8",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 601,
+    "char" : 6,
+    "deco" : "FNaNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefxS3gfm4math3box14__T3BoxTiVii2Z3BoxxPhZv",
+    "originalType" : "pure nothrow @nogc void(ImageRef!RGBA wfb, const(box2i) area, const(ubyte*) rgbTable)",
+    "parameters" : [
+     {
+      "name" : "wfb",
+      "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+     },
+     {
+      "name" : "area",
+      "deco" : "xS3gfm4math3box14__T3BoxTiVii2Z3Box"
+     },
+     {
+      "name" : "rgbTable",
+      "deco" : "xPh"
+     }
+    ],
+    "endline" : 617,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "dplug.gui.context",
+  "kind" : "module",
+  "file" : "..\\..\\..\\gui\\dplug\\gui\\context.d",
+  "members" : [
+   {
+    "name" : "std.file",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.sync",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.window.window",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.font",
+    "kind" : "import",
+    "line" : 16,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.mipmap",
+    "kind" : "import",
+    "line" : 17,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.element",
+    "kind" : "import",
+    "line" : 19,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.boxlist",
+    "kind" : "import",
+    "line" : 20,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "UIContext",
+    "kind" : "class",
+    "line" : 27,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 32,
+      "char" : 5,
+      "deco" : "FNbNiZC5dplug3gui7context9UIContext",
+      "originalType" : "nothrow @nogc ()",
+      "endline" : 39,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 41,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 44,
+      "endchar" : 5
+     },
+     {
+      "name" : "focused",
+      "kind" : "variable",
+      "line" : 47,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug3gui7element9UIElement",
+      "originalType" : "UIElement",
+      "init" : "null",
+      "offset" : 8
+     },
+     {
+      "name" : "dragged",
+      "kind" : "variable",
+      "line" : 50,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug3gui7element9UIElement",
+      "originalType" : "UIElement",
+      "init" : "null",
+      "offset" : 12
+     },
+     {
+      "name" : "skybox",
+      "kind" : "variable",
+      "line" : 53,
+      "char" : 17,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6mipmap90__T6MipmapTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ6Mipmap",
+      "originalType" : "Mipmap!RGBA",
+      "offset" : 16
+     },
+     {
+      "name" : "dirtyList",
+      "kind" : "variable",
+      "line" : 59,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug3gui7context13DirtyRectList",
+      "offset" : 24
+     },
+     {
+      "name" : "setSkybox",
+      "kind" : "function",
+      "line" : 63,
+      "char" : 10,
+      "deco" : "FNbNiC5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImageZv",
+      "originalType" : "nothrow @nogc void(OwnedImage!RGBA image)",
+      "parameters" : [
+       {
+        "name" : "image",
+        "deco" : "C5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImage"
+       }
+      ],
+      "endline" : 67,
+      "endchar" : 5
+     },
+     {
+      "name" : "setFocused",
+      "kind" : "function",
+      "line" : 69,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiC5dplug3gui7element9UIElementZv",
+      "parameters" : [
+       {
+        "name" : "focused",
+        "deco" : "C5dplug3gui7element9UIElement"
+       }
+      ],
+      "endline" : 72,
+      "endchar" : 5
+     },
+     {
+      "name" : "beginDragging",
+      "kind" : "function",
+      "line" : 74,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiC5dplug3gui7element9UIElementZv",
+      "parameters" : [
+       {
+        "name" : "element",
+        "deco" : "C5dplug3gui7element9UIElement"
+       }
+      ],
+      "endline" : 79,
+      "endchar" : 5
+     },
+     {
+      "name" : "stopDragging",
+      "kind" : "function",
+      "line" : 81,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 88,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 41,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 41,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   },
+   {
+    "name" : "makeDirtyRectList",
+    "kind" : "function",
+    "line" : 91,
+    "char" : 15,
+    "deco" : "FNbNiZS5dplug3gui7context13DirtyRectList",
+    "endline" : 94,
+    "endchar" : 1
+   },
+   {
+    "name" : "DirtyRectList",
+    "kind" : "struct",
+    "line" : 96,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 101,
+      "char" : 5,
+      "deco" : "FNbNcNiiZS5dplug3gui7context13DirtyRectList",
+      "originalType" : "nothrow @nogc ref (int dummy)",
+      "parameters" : [
+       {
+        "name" : "dummy",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 105,
+      "endchar" : 5
+     },
+     {
+      "name" : "isEmpty",
+      "kind" : "function",
+      "line" : 109,
+      "char" : 10,
+      "deco" : "FNbNiZb",
+      "endline" : 115,
+      "endchar" : 5
+     },
+     {
+      "name" : "pullAllRectangles",
+      "kind" : "function",
+      "line" : 119,
+      "char" : 10,
+      "deco" : "FNbNiKS5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3VecZv",
+      "originalType" : "nothrow @nogc void(ref Vec!box2i result)",
+      "parameters" : [
+       {
+        "name" : "result",
+        "deco" : "S5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3Vec",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 129,
+      "endchar" : 5
+     },
+     {
+      "name" : "addRect",
+      "kind" : "function",
+      "line" : 132,
+      "char" : 10,
+      "deco" : "FNbNiS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(box2i rect)",
+      "parameters" : [
+       {
+        "name" : "rect",
+        "deco" : "S3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 189,
+      "endchar" : 5
+     },
+     {
+      "name" : "_dirtyRects",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 193,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3Vec",
+      "originalType" : "Vec!box2i",
+      "offset" : 0
+     },
+     {
+      "name" : "_dirtyRectMutex",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 196,
+      "char" : 20,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core4sync14UncheckedMutex",
+      "offset" : 16
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 96,
+      "char" : 1,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     },
+     {
+      "name" : "__xpostblit",
+      "kind" : "alias"
+     },
+     {
+      "name" : "opAssign",
+      "kind" : "generated function",
+      "line" : 96,
+      "char" : 1,
+      "deco" : "FNbNcNiNjS5dplug3gui7context13DirtyRectListZS5dplug3gui7context13DirtyRectList",
+      "parameters" : [
+       {
+        "name" : "p",
+        "deco" : "S5dplug3gui7context13DirtyRectList"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.gui.element",
+  "kind" : "module",
+  "file" : "..\\..\\..\\gui\\dplug\\gui\\element.d",
+  "members" : [
+   {
+    "name" : "std.algorithm.comparison",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "gfm.math.vector",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 15
+   },
+   {
+    "name" : "gfm.math.box",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.graphics",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.window.window",
+    "kind" : "import",
+    "line" : 15,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.core.sync",
+    "kind" : "import",
+    "line" : 17,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 18,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 19,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.graphics.font",
+    "kind" : "import",
+    "line" : 21,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.graphics.drawex",
+    "kind" : "import",
+    "line" : 22,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.gui.boxlist",
+    "kind" : "import",
+    "line" : 24,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.gui.context",
+    "kind" : "import",
+    "line" : 25,
+    "char" : 15
+   },
+   {
+    "name" : "defaultDepth",
+    "kind" : "variable",
+    "line" : 28,
+    "char" : 13,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "t",
+    "init" : "cast(ushort)15000u"
+   },
+   {
+    "name" : "defaultRoughness",
+    "kind" : "variable",
+    "line" : 31,
+    "char" : 12,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "h",
+    "init" : "cast(ubyte)128u"
+   },
+   {
+    "name" : "defaultSpecular",
+    "kind" : "variable",
+    "line" : 34,
+    "char" : 12,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "h",
+    "init" : "cast(ubyte)128u"
+   },
+   {
+    "name" : "defaultPhysical",
+    "kind" : "variable",
+    "line" : 37,
+    "char" : 12,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "h",
+    "init" : "cast(ubyte)255u"
+   },
+   {
+    "name" : "defaultMetalnessDielectric",
+    "kind" : "variable",
+    "line" : 40,
+    "char" : 12,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "h",
+    "init" : "cast(ubyte)25u"
+   },
+   {
+    "name" : "defaultMetalnessMetal",
+    "kind" : "variable",
+    "line" : 43,
+    "char" : 12,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "h",
+    "init" : "cast(ubyte)255u"
+   },
+   {
+    "name" : "UIElement",
+    "kind" : "class",
+    "line" : 49,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 55,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug3gui7context9UIContextZC5dplug3gui7element9UIElement",
+      "originalType" : "nothrow @nogc (UIContext context)",
+      "parameters" : [
+       {
+        "name" : "context",
+        "deco" : "C5dplug3gui7context9UIContext"
+       }
+      ],
+      "endline" : 61,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 63,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 67,
+      "endchar" : 5
+     },
+     {
+      "name" : "render",
+      "kind" : "function",
+      "line" : 71,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefxAS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, in box2i[] areasToUpdate)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "areasToUpdate",
+        "deco" : "xAS3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 110,
+      "endchar" : 5
+     },
+     {
+      "name" : "reflow",
+      "kind" : "function",
+      "line" : 117,
+      "char" : 10,
+      "deco" : "FNbNiS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(box2i availableSpace)",
+      "parameters" : [
+       {
+        "name" : "availableSpace",
+        "deco" : "S3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 124,
+      "endchar" : 5
+     },
+     {
+      "name" : "position",
+      "kind" : "function",
+      "line" : 128,
+      "char" : 17,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZS3gfm4math3box14__T3BoxTiVii2Z3Box",
+      "originalType" : "nothrow @nogc box2i()",
+      "endline" : 131,
+      "endchar" : 5
+     },
+     {
+      "name" : "position",
+      "kind" : "function",
+      "line" : 135,
+      "char" : 17,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiS3gfm4math3box14__T3BoxTiVii2Z3BoxZS3gfm4math3box14__T3BoxTiVii2Z3Box",
+      "originalType" : "nothrow @nogc box2i(box2i p)",
+      "parameters" : [
+       {
+        "name" : "p",
+        "deco" : "S3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 139,
+      "endchar" : 5
+     },
+     {
+      "name" : "child",
+      "kind" : "function",
+      "line" : 141,
+      "char" : 21,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiZC5dplug3gui7element9UIElement",
+      "parameters" : [
+       {
+        "name" : "n",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 144,
+      "endchar" : 5
+     },
+     {
+      "name" : "addChild",
+      "kind" : "function",
+      "line" : 149,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiC5dplug3gui7element9UIElementZv",
+      "parameters" : [
+       {
+        "name" : "element",
+        "deco" : "C5dplug3gui7element9UIElement"
+       }
+      ],
+      "endline" : 153,
+      "endchar" : 5
+     },
+     {
+      "name" : "removeChild",
+      "kind" : "function",
+      "line" : 158,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiC5dplug3gui7element9UIElementZv",
+      "parameters" : [
+       {
+        "name" : "element",
+        "deco" : "C5dplug3gui7element9UIElement"
+       }
+      ],
+      "endline" : 168,
+      "endchar" : 5
+     },
+     {
+      "name" : "onMouseClick",
+      "kind" : "function",
+      "line" : 172,
+      "char" : 10,
+      "deco" : "FNbNiiiibS5dplug6window6window10MouseStateZb",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "button",
+        "deco" : "i"
+       },
+       {
+        "name" : "isDoubleClick",
+        "deco" : "b"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 175,
+      "endchar" : 5
+     },
+     {
+      "name" : "onMouseWheel",
+      "kind" : "function",
+      "line" : 180,
+      "char" : 10,
+      "deco" : "FNbNiiiiiS5dplug6window6window10MouseStateZb",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "wheelDeltaX",
+        "deco" : "i"
+       },
+       {
+        "name" : "wheelDeltaY",
+        "deco" : "i"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 183,
+      "endchar" : 5
+     },
+     {
+      "name" : "onMouseMove",
+      "kind" : "function",
+      "line" : 187,
+      "char" : 10,
+      "deco" : "FNbNiiiiiS5dplug6window6window10MouseStateZv",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "dx",
+        "deco" : "i"
+       },
+       {
+        "name" : "dy",
+        "deco" : "i"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 189,
+      "endchar" : 5
+     },
+     {
+      "name" : "onBeginDrag",
+      "kind" : "function",
+      "line" : 193,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 195,
+      "endchar" : 5
+     },
+     {
+      "name" : "onMouseDrag",
+      "kind" : "function",
+      "line" : 199,
+      "char" : 10,
+      "deco" : "FNbNiiiiiS5dplug6window6window10MouseStateZv",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "dx",
+        "deco" : "i"
+       },
+       {
+        "name" : "dy",
+        "deco" : "i"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 201,
+      "endchar" : 5
+     },
+     {
+      "name" : "onStopDrag",
+      "kind" : "function",
+      "line" : 205,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 207,
+      "endchar" : 5
+     },
+     {
+      "name" : "onMouseEnter",
+      "kind" : "function",
+      "line" : 211,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 213,
+      "endchar" : 5
+     },
+     {
+      "name" : "onMouseExit",
+      "kind" : "function",
+      "line" : 217,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 219,
+      "endchar" : 5
+     },
+     {
+      "name" : "onKeyDown",
+      "kind" : "function",
+      "line" : 223,
+      "char" : 10,
+      "deco" : "FNbNiE5dplug6window6window3KeyZb",
+      "parameters" : [
+       {
+        "name" : "key",
+        "deco" : "E5dplug6window6window3Key"
+       }
+      ],
+      "endline" : 226,
+      "endchar" : 5
+     },
+     {
+      "name" : "onKeyUp",
+      "kind" : "function",
+      "line" : 230,
+      "char" : 10,
+      "deco" : "FNbNiE5dplug6window6window3KeyZb",
+      "parameters" : [
+       {
+        "name" : "key",
+        "deco" : "E5dplug6window6window3Key"
+       }
+      ],
+      "endline" : 233,
+      "endchar" : 5
+     },
+     {
+      "name" : "contains",
+      "kind" : "function",
+      "line" : 237,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiS3gfm4math6vector17__T6VectorTiVii2Z6VectorZb",
+      "originalType" : "nothrow @nogc bool(vec2i pt)",
+      "parameters" : [
+       {
+        "name" : "pt",
+        "deco" : "S3gfm4math6vector17__T6VectorTiVii2Z6Vector"
+       }
+      ],
+      "endline" : 240,
+      "endchar" : 5
+     },
+     {
+      "name" : "mouseClick",
+      "kind" : "function",
+      "line" : 243,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiiibS5dplug6window6window10MouseStateZb",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "button",
+        "deco" : "i"
+       },
+       {
+        "name" : "isDoubleClick",
+        "deco" : "b"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 275,
+      "endchar" : 5
+     },
+     {
+      "name" : "mouseRelease",
+      "kind" : "function",
+      "line" : 278,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiiiS5dplug6window6window10MouseStateZv",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "button",
+        "deco" : "i"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 281,
+      "endchar" : 5
+     },
+     {
+      "name" : "mouseWheel",
+      "kind" : "function",
+      "line" : 284,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiiiiS5dplug6window6window10MouseStateZb",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "wheelDeltaX",
+        "deco" : "i"
+       },
+       {
+        "name" : "wheelDeltaY",
+        "deco" : "i"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 311,
+      "endchar" : 5
+     },
+     {
+      "name" : "mouseMove",
+      "kind" : "function",
+      "line" : 314,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiiiiS5dplug6window6window10MouseStateZv",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "dx",
+        "deco" : "i"
+       },
+       {
+        "name" : "dy",
+        "deco" : "i"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 373,
+      "endchar" : 5
+     },
+     {
+      "name" : "keyDown",
+      "kind" : "function",
+      "line" : 376,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiE5dplug6window6window3KeyZb",
+      "parameters" : [
+       {
+        "name" : "key",
+        "deco" : "E5dplug6window6window3Key"
+       }
+      ],
+      "endline" : 387,
+      "endchar" : 5
+     },
+     {
+      "name" : "keyUp",
+      "kind" : "function",
+      "line" : 390,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiE5dplug6window6window3KeyZb",
+      "parameters" : [
+       {
+        "name" : "key",
+        "deco" : "E5dplug6window6window3Key"
+       }
+      ],
+      "endline" : 401,
+      "endchar" : 5
+     },
+     {
+      "name" : "animate",
+      "kind" : "function",
+      "line" : 404,
+      "char" : 10,
+      "deco" : "FNbNiddZv",
+      "parameters" : [
+       {
+        "name" : "dt",
+        "deco" : "d"
+       },
+       {
+        "name" : "time",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 409,
+      "endchar" : 5
+     },
+     {
+      "name" : "context",
+      "kind" : "function",
+      "line" : 411,
+      "char" : 21,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZC5dplug3gui7context9UIContext",
+      "endline" : 414,
+      "endchar" : 5
+     },
+     {
+      "name" : "isVisible",
+      "kind" : "function",
+      "line" : 416,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZb",
+      "endline" : 419,
+      "endchar" : 5
+     },
+     {
+      "name" : "setVisible",
+      "kind" : "function",
+      "line" : 421,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNaNbNibZv",
+      "parameters" : [
+       {
+        "name" : "visible",
+        "deco" : "b"
+       }
+      ],
+      "endline" : 424,
+      "endchar" : 5
+     },
+     {
+      "name" : "zOrder",
+      "kind" : "function",
+      "line" : 426,
+      "char" : 15,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZi",
+      "endline" : 429,
+      "endchar" : 5
+     },
+     {
+      "name" : "setZOrder",
+      "kind" : "function",
+      "line" : 431,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNaNbNiiZv",
+      "parameters" : [
+       {
+        "name" : "zOrder",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 434,
+      "endchar" : 5
+     },
+     {
+      "name" : "setDirtyWhole",
+      "kind" : "function",
+      "line" : 437,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 440,
+      "endchar" : 5
+     },
+     {
+      "name" : "setDirty",
+      "kind" : "function",
+      "line" : 446,
+      "char" : 10,
+      "deco" : "FNbNiS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(box2i rect)",
+      "parameters" : [
+       {
+        "name" : "rect",
+        "deco" : "S3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 451,
+      "endchar" : 5
+     },
+     {
+      "name" : "parent",
+      "kind" : "function",
+      "line" : 454,
+      "char" : 21,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNaNbNiZC5dplug3gui7element9UIElement",
+      "endline" : 457,
+      "endchar" : 5
+     },
+     {
+      "name" : "topLevelParent",
+      "kind" : "function",
+      "line" : 460,
+      "char" : 21,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNaNbNiZC5dplug3gui7element9UIElement",
+      "endline" : 466,
+      "endchar" : 5
+     },
+     {
+      "name" : "isMouseOver",
+      "kind" : "function",
+      "line" : 468,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZb",
+      "endline" : 471,
+      "endchar" : 5
+     },
+     {
+      "name" : "isDragged",
+      "kind" : "function",
+      "line" : 473,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZb",
+      "endline" : 476,
+      "endchar" : 5
+     },
+     {
+      "name" : "isFocused",
+      "kind" : "function",
+      "line" : 478,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZb",
+      "endline" : 481,
+      "endchar" : 5
+     },
+     {
+      "name" : "getDrawList",
+      "kind" : "function",
+      "line" : 487,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiKS5dplug4core13alignedbuffer38__T3VecTC5dplug3gui7element9UIElementZ3VecZv",
+      "originalType" : "nothrow @nogc void(ref Vec!UIElement list)",
+      "parameters" : [
+       {
+        "name" : "list",
+        "deco" : "S5dplug4core13alignedbuffer38__T3VecTC5dplug3gui7element9UIElementZ3Vec",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 495,
+      "endchar" : 5
+     },
+     {
+      "name" : "onDraw",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 511,
+      "char" : 10,
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefAS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, box2i[] dirtyRects)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "dirtyRects",
+        "deco" : "AS3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 532,
+      "endchar" : 5
+     },
+     {
+      "name" : "onAnimate",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 540,
+      "char" : 10,
+      "deco" : "FNbNiddZv",
+      "parameters" : [
+       {
+        "name" : "dt",
+        "deco" : "d"
+       },
+       {
+        "name" : "time",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 542,
+      "endchar" : 5
+     },
+     {
+      "name" : "_parent",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 546,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug3gui7element9UIElement",
+      "originalType" : "UIElement",
+      "init" : "null",
+      "offset" : 8
+     },
+     {
+      "name" : "_position",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 551,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S3gfm4math3box14__T3BoxTiVii2Z3Box",
+      "originalType" : "box2i",
+      "offset" : 12
+     },
+     {
+      "name" : "_children",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 554,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer38__T3VecTC5dplug3gui7element9UIElementZ3Vec",
+      "originalType" : "Vec!UIElement",
+      "offset" : 28
+     },
+     {
+      "name" : "_visible",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 557,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "b",
+      "init" : "true",
+      "offset" : 44
+     },
+     {
+      "name" : "_zOrder",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 562,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "init" : "0",
+      "offset" : 48
+     },
+     {
+      "name" : "_context",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 567,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug3gui7context9UIContext",
+      "originalType" : "UIContext",
+      "offset" : 52
+     },
+     {
+      "name" : "_mouseOver",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 570,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "b",
+      "init" : "false",
+      "offset" : 56
+     },
+     {
+      "name" : "_localRectsBuf",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 573,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3Vec",
+      "originalType" : "Vec!box2i",
+      "offset" : 60
+     },
+     {
+      "name" : "_zOrderedChildren",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 576,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer38__T3VecTC5dplug3gui7element9UIElementZ3Vec",
+      "originalType" : "Vec!UIElement",
+      "offset" : 76
+     },
+     {
+      "name" : "recomputeZOrderedChildren",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 581,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 596,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 63,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 63,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.gui.graphics",
+  "kind" : "module",
+  "file" : "..\\..\\..\\gui\\dplug\\gui\\graphics.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.algorithm.comparison",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.algorithm.sorting",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.algorithm.mutation",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.thread",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.client",
+    "kind" : "import",
+    "line" : 16,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.graphics",
+    "kind" : "import",
+    "line" : 17,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.daw",
+    "kind" : "import",
+    "line" : 18,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.window.window",
+    "kind" : "import",
+    "line" : 20,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.mipmap",
+    "kind" : "import",
+    "line" : 22,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.boxlist",
+    "kind" : "import",
+    "line" : 24,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.context",
+    "kind" : "import",
+    "line" : 25,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.element",
+    "kind" : "import",
+    "line" : 26,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.compositor",
+    "kind" : "import",
+    "line" : 27,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "RMSP",
+    "kind" : "alias",
+    "line" : 36,
+    "char" : 1,
+    "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color"
+   },
+   {
+    "name" : "GUIGraphics",
+    "kind" : "class",
+    "line" : 45,
+    "char" : 1,
+    "base" : "dplug.gui.element.UIElement",
+    "interfaces" : [
+     "dplug.client.graphics.IGraphics"
+    ],
+    "members" : [
+     {
+      "name" : "compositor",
+      "kind" : "variable",
+      "line" : 50,
+      "char" : 17,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug3gui10compositor11ICompositor",
+      "originalType" : "ICompositor",
+      "offset" : 96
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 52,
+      "char" : 5,
+      "deco" : "FNbNiiiZC5dplug3gui8graphics11GUIGraphics",
+      "originalType" : "nothrow @nogc (int initialWidth, int initialHeight)",
+      "parameters" : [
+       {
+        "name" : "initialWidth",
+        "deco" : "i"
+       },
+       {
+        "name" : "initialHeight",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 90,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 93,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 107,
+      "endchar" : 5
+     },
+     {
+      "name" : "openUI",
+      "kind" : "function",
+      "line" : 111,
+      "char" : 20,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiPvPvE5dplug6client3daw3DAWE5dplug6client8graphics15GraphicsBackendZPv",
+      "parameters" : [
+       {
+        "name" : "parentInfo",
+        "deco" : "Pv"
+       },
+       {
+        "name" : "controlInfo",
+        "deco" : "Pv"
+       },
+       {
+        "name" : "daw",
+        "deco" : "E5dplug6client3daw3DAW"
+       },
+       {
+        "name" : "backend",
+        "deco" : "E5dplug6client8graphics15GraphicsBackend"
+       }
+      ],
+      "endline" : 132,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.graphics.IGraphics.openUI"
+      ]
+     },
+     {
+      "name" : "closeUI",
+      "kind" : "function",
+      "line" : 134,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 142,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.graphics.IGraphics.closeUI"
+      ]
+     },
+     {
+      "name" : "getGUISize",
+      "kind" : "function",
+      "line" : 144,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiPiPiZv",
+      "parameters" : [
+       {
+        "name" : "width",
+        "deco" : "Pi"
+       },
+       {
+        "name" : "height",
+        "deco" : "Pi"
+       }
+      ],
+      "endline" : 148,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.graphics.IGraphics.getGUISize"
+      ]
+     },
+     {
+      "name" : "WindowListener",
+      "kind" : "class",
+      "line" : 199,
+      "char" : 12,
+      "interfaces" : [
+       "dplug.window.window.IWindowListener"
+      ],
+      "members" : [
+       {
+        "name" : "outer",
+        "kind" : "variable",
+        "line" : 203,
+        "char" : 21,
+        "storageClass" : [
+         "nothrow",
+         "@nogc"
+        ],
+        "deco" : "C5dplug3gui8graphics11GUIGraphics",
+        "originalType" : "GUIGraphics",
+        "offset" : 12
+       },
+       {
+        "name" : "this",
+        "kind" : "constructor",
+        "line" : 205,
+        "char" : 9,
+        "deco" : "FNbNiC5dplug3gui8graphics11GUIGraphicsZC5dplug3gui8graphics11GUIGraphics14WindowListener",
+        "originalType" : "nothrow @nogc (GUIGraphics outer)",
+        "parameters" : [
+         {
+          "name" : "outer",
+          "deco" : "C5dplug3gui8graphics11GUIGraphics"
+         }
+        ],
+        "endline" : 208,
+        "endchar" : 9
+       },
+       {
+        "name" : "onMouseClick",
+        "kind" : "function",
+        "line" : 210,
+        "char" : 23,
+        "storageClass" : [
+         "override"
+        ],
+        "deco" : "FNbNiiiE5dplug6window6window11MouseButtonbS5dplug6window6window10MouseStateZb",
+        "parameters" : [
+         {
+          "name" : "x",
+          "deco" : "i"
+         },
+         {
+          "name" : "y",
+          "deco" : "i"
+         },
+         {
+          "name" : "mb",
+          "deco" : "E5dplug6window6window11MouseButton"
+         },
+         {
+          "name" : "isDoubleClick",
+          "deco" : "b"
+         },
+         {
+          "name" : "mstate",
+          "deco" : "S5dplug6window6window10MouseState"
+         }
+        ],
+        "endline" : 213,
+        "endchar" : 9,
+        "overrides" : [
+         "dplug.window.window.IWindowListener.onMouseClick"
+        ]
+       },
+       {
+        "name" : "onMouseRelease",
+        "kind" : "function",
+        "line" : 215,
+        "char" : 23,
+        "storageClass" : [
+         "override"
+        ],
+        "deco" : "FNbNiiiE5dplug6window6window11MouseButtonS5dplug6window6window10MouseStateZb",
+        "parameters" : [
+         {
+          "name" : "x",
+          "deco" : "i"
+         },
+         {
+          "name" : "y",
+          "deco" : "i"
+         },
+         {
+          "name" : "mb",
+          "deco" : "E5dplug6window6window11MouseButton"
+         },
+         {
+          "name" : "mstate",
+          "deco" : "S5dplug6window6window10MouseState"
+         }
+        ],
+        "endline" : 219,
+        "endchar" : 9,
+        "overrides" : [
+         "dplug.window.window.IWindowListener.onMouseRelease"
+        ]
+       },
+       {
+        "name" : "onMouseWheel",
+        "kind" : "function",
+        "line" : 221,
+        "char" : 23,
+        "storageClass" : [
+         "override"
+        ],
+        "deco" : "FNbNiiiiiS5dplug6window6window10MouseStateZb",
+        "parameters" : [
+         {
+          "name" : "x",
+          "deco" : "i"
+         },
+         {
+          "name" : "y",
+          "deco" : "i"
+         },
+         {
+          "name" : "wheelDeltaX",
+          "deco" : "i"
+         },
+         {
+          "name" : "wheelDeltaY",
+          "deco" : "i"
+         },
+         {
+          "name" : "mstate",
+          "deco" : "S5dplug6window6window10MouseState"
+         }
+        ],
+        "endline" : 224,
+        "endchar" : 9,
+        "overrides" : [
+         "dplug.window.window.IWindowListener.onMouseWheel"
+        ]
+       },
+       {
+        "name" : "onMouseMove",
+        "kind" : "function",
+        "line" : 226,
+        "char" : 23,
+        "storageClass" : [
+         "override"
+        ],
+        "deco" : "FNbNiiiiiS5dplug6window6window10MouseStateZv",
+        "parameters" : [
+         {
+          "name" : "x",
+          "deco" : "i"
+         },
+         {
+          "name" : "y",
+          "deco" : "i"
+         },
+         {
+          "name" : "dx",
+          "deco" : "i"
+         },
+         {
+          "name" : "dy",
+          "deco" : "i"
+         },
+         {
+          "name" : "mstate",
+          "deco" : "S5dplug6window6window10MouseState"
+         }
+        ],
+        "endline" : 229,
+        "endchar" : 9,
+        "overrides" : [
+         "dplug.window.window.IWindowListener.onMouseMove"
+        ]
+       },
+       {
+        "name" : "recomputeDirtyAreas",
+        "kind" : "function",
+        "line" : 231,
+        "char" : 23,
+        "storageClass" : [
+         "override"
+        ],
+        "deco" : "FNbNiZv",
+        "endline" : 234,
+        "endchar" : 9,
+        "overrides" : [
+         "dplug.window.window.IWindowListener.recomputeDirtyAreas"
+        ]
+       },
+       {
+        "name" : "onKeyDown",
+        "kind" : "function",
+        "line" : 236,
+        "char" : 23,
+        "storageClass" : [
+         "override"
+        ],
+        "deco" : "FNbNiE5dplug6window6window3KeyZb",
+        "parameters" : [
+         {
+          "name" : "key",
+          "deco" : "E5dplug6window6window3Key"
+         }
+        ],
+        "endline" : 245,
+        "endchar" : 9,
+        "overrides" : [
+         "dplug.window.window.IWindowListener.onKeyDown"
+        ]
+       },
+       {
+        "name" : "onKeyUp",
+        "kind" : "function",
+        "line" : 247,
+        "char" : 23,
+        "storageClass" : [
+         "override"
+        ],
+        "deco" : "FNbNiE5dplug6window6window3KeyZb",
+        "parameters" : [
+         {
+          "name" : "key",
+          "deco" : "E5dplug6window6window3Key"
+         }
+        ],
+        "endline" : 255,
+        "endchar" : 9,
+        "overrides" : [
+         "dplug.window.window.IWindowListener.onKeyUp"
+        ]
+       },
+       {
+        "name" : "getDirtyRectangle",
+        "kind" : "function",
+        "line" : 258,
+        "char" : 24,
+        "storageClass" : [
+         "override"
+        ],
+        "deco" : "FNbNiZS3gfm4math3box14__T3BoxTiVii2Z3Box",
+        "originalType" : "nothrow @nogc box2i()",
+        "endline" : 261,
+        "endchar" : 9,
+        "overrides" : [
+         "dplug.window.window.IWindowListener.getDirtyRectangle"
+        ]
+       },
+       {
+        "name" : "onResized",
+        "kind" : "function",
+        "line" : 263,
+        "char" : 32,
+        "storageClass" : [
+         "override"
+        ],
+        "deco" : "FNbNiiiZS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef",
+        "originalType" : "nothrow @nogc ImageRef!RGBA(int width, int height)",
+        "parameters" : [
+         {
+          "name" : "width",
+          "deco" : "i"
+         },
+         {
+          "name" : "height",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 266,
+        "endchar" : 9,
+        "overrides" : [
+         "dplug.window.window.IWindowListener.onResized"
+        ]
+       },
+       {
+        "name" : "onDraw",
+        "kind" : "function",
+        "line" : 270,
+        "char" : 23,
+        "storageClass" : [
+         "override"
+        ],
+        "deco" : "FNbNiE5dplug6window6window17WindowPixelFormatZv",
+        "parameters" : [
+         {
+          "name" : "pf",
+          "deco" : "E5dplug6window6window17WindowPixelFormat"
+         }
+        ],
+        "endline" : 273,
+        "endchar" : 9,
+        "overrides" : [
+         "dplug.window.window.IWindowListener.onDraw"
+        ]
+       },
+       {
+        "name" : "onMouseCaptureCancelled",
+        "kind" : "function",
+        "line" : 275,
+        "char" : 23,
+        "storageClass" : [
+         "override"
+        ],
+        "deco" : "FNbNiZv",
+        "endline" : 279,
+        "endchar" : 9,
+        "overrides" : [
+         "dplug.window.window.IWindowListener.onMouseCaptureCancelled"
+        ]
+       },
+       {
+        "name" : "onAnimate",
+        "kind" : "function",
+        "line" : 281,
+        "char" : 23,
+        "storageClass" : [
+         "override"
+        ],
+        "deco" : "FNbNiddZv",
+        "parameters" : [
+         {
+          "name" : "dt",
+          "deco" : "d"
+         },
+         {
+          "name" : "time",
+          "deco" : "d"
+         }
+        ],
+        "endline" : 284,
+        "endchar" : 9,
+        "overrides" : [
+         "dplug.window.window.IWindowListener.onAnimate"
+        ]
+       }
+      ]
+     },
+     {
+      "name" : "setUpdateMargin",
+      "kind" : "function",
+      "line" : 291,
+      "char" : 10,
+      "deco" : "FNbNiiZv",
+      "parameters" : [
+       {
+        "name" : "margin",
+        "deco" : "i",
+        "default" : "20"
+       }
+      ],
+      "endline" : 294,
+      "endchar" : 5
+     },
+     {
+      "name" : "_uiContext",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 298,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug3gui7context9UIContext",
+      "originalType" : "UIContext",
+      "offset" : 100
+     },
+     {
+      "name" : "_windowListener",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 300,
+      "char" : 20,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug3gui8graphics11GUIGraphics14WindowListener",
+      "originalType" : "WindowListener",
+      "offset" : 104
+     },
+     {
+      "name" : "_window",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 303,
+      "char" : 13,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug6window6window7IWindow",
+      "originalType" : "IWindow",
+      "offset" : 108
+     },
+     {
+      "name" : "_threadPool",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 306,
+      "char" : 16,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug4core6thread10ThreadPool",
+      "originalType" : "ThreadPool",
+      "offset" : 112
+     },
+     {
+      "name" : "_askedWidth",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 308,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "init" : "0",
+      "offset" : 116
+     },
+     {
+      "name" : "_askedHeight",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 309,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "init" : "0",
+      "offset" : 120
+     },
+     {
+      "name" : "_diffuseMap",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 312,
+      "char" : 17,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6mipmap90__T6MipmapTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ6Mipmap",
+      "originalType" : "Mipmap!RGBA",
+      "offset" : 124
+     },
+     {
+      "name" : "_depthMap",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 315,
+      "char" : 16,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6mipmap63__T6MipmapTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ6Mipmap",
+      "originalType" : "Mipmap!L16",
+      "offset" : 128
+     },
+     {
+      "name" : "_materialMap",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 318,
+      "char" : 17,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6mipmap90__T6MipmapTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ6Mipmap",
+      "originalType" : "Mipmap!RGBA",
+      "offset" : 132
+     },
+     {
+      "name" : "_areasToUpdateNonOverlapping",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 321,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3Vec",
+      "originalType" : "Vec!box2i",
+      "offset" : 136
+     },
+     {
+      "name" : "_areasToUpdateTemp",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 324,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3Vec",
+      "originalType" : "Vec!box2i",
+      "offset" : 152
+     },
+     {
+      "name" : "_updateRectScratch",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 327,
+      "char" : 18,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "G2S5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3Vec",
+      "originalType" : "Vec!box2i[2]",
+      "offset" : 168
+     },
+     {
+      "name" : "_areasToRender",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 331,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3Vec",
+      "originalType" : "Vec!box2i",
+      "offset" : 200
+     },
+     {
+      "name" : "_areasToRenderNonOverlapping",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 334,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3Vec",
+      "originalType" : "Vec!box2i",
+      "offset" : 216
+     },
+     {
+      "name" : "_areasToRenderNonOverlappingTiled",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 337,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer43__T3VecTS3gfm4math3box14__T3BoxTiVii2Z3BoxZ3Vec",
+      "originalType" : "Vec!box2i",
+      "offset" : 232
+     },
+     {
+      "name" : "_elemsToDraw",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 342,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer38__T3VecTC5dplug3gui7element9UIElementZ3Vec",
+      "originalType" : "Vec!UIElement",
+      "offset" : 248
+     },
+     {
+      "name" : "_updateMargin",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 345,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "init" : "20",
+      "offset" : 264
+     },
+     {
+      "name" : "_renderedBuffer",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 349,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Ph",
+      "init" : "null",
+      "offset" : 268
+     },
+     {
+      "name" : "doDraw",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 358,
+      "char" : 10,
+      "deco" : "FNbNiE5dplug6window6window17WindowPixelFormatZv",
+      "parameters" : [
+       {
+        "name" : "pf",
+        "deco" : "E5dplug6window6window17WindowPixelFormat"
+       }
+      ],
+      "endline" : 411,
+      "endchar" : 5
+     },
+     {
+      "name" : "recomputeDirtyAreas",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 414,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 447,
+      "endchar" : 5
+     },
+     {
+      "name" : "extendsDirtyRect",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 449,
+      "char" : 11,
+      "deco" : "FNbNiS3gfm4math3box14__T3BoxTiVii2Z3BoxiiZS3gfm4math3box14__T3BoxTiVii2Z3Box",
+      "originalType" : "nothrow @nogc box2i(box2i rect, int width, int height)",
+      "parameters" : [
+       {
+        "name" : "rect",
+        "deco" : "S3gfm4math3box14__T3BoxTiVii2Z3Box"
+       },
+       {
+        "name" : "width",
+        "deco" : "i"
+       },
+       {
+        "name" : "height",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 470,
+      "endchar" : 5
+     },
+     {
+      "name" : "doResize",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 472,
+      "char" : 19,
+      "deco" : "FNbNiiiZS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef",
+      "originalType" : "nothrow @nogc ImageRef!RGBA(int width, int height)",
+      "parameters" : [
+       {
+        "name" : "width",
+        "deco" : "i"
+       },
+       {
+        "name" : "height",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 494,
+      "endchar" : 5
+     },
+     {
+      "name" : "renderElements",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 497,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 566,
+      "endchar" : 5
+     },
+     {
+      "name" : "compositeGUI",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 571,
+      "char" : 10,
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefE5dplug6window6window17WindowPixelFormatZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA wfb, WindowPixelFormat pf)",
+      "parameters" : [
+       {
+        "name" : "wfb",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "pf",
+        "deco" : "E5dplug6window6window17WindowPixelFormat"
+       }
+      ],
+      "endline" : 589,
+      "endchar" : 5
+     },
+     {
+      "name" : "regenerateMipmaps",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 594,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 644,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 93,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 93,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   },
+   {
+    "name" : "scanLineAlignment",
+    "kind" : "variable",
+    "line" : 648,
+    "char" : 6,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "i",
+    "init" : "4"
+   },
+   {
+    "name" : "byteStride",
+    "kind" : "function",
+    "line" : 651,
+    "char" : 5,
+    "deco" : "FNaNbNiiZi",
+    "parameters" : [
+     {
+      "name" : "width",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 655,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "dplug.gui",
+  "kind" : "module",
+  "file" : "..\\..\\..\\gui\\dplug\\gui\\package.d",
+  "members" : [
+   {
+    "name" : "dplug.gui.element",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.gui.bufferedelement",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.gui.context",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.gui.graphics",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.gui.boxlist",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.gui.compositor",
+    "kind" : "import",
+    "line" : 15,
+    "char" : 15
+   }
+  ]
+ }
+]

@@ -1,0 +1,6255 @@
+[
+ {
+  "name" : "dplug.client.binrange",
+  "kind" : "module",
+  "file" : "..\\..\\..\\client\\dplug\\client\\binrange.d",
+  "members" : [
+   {
+    "name" : "std.range.primitives",
+    "kind" : "import",
+    "line" : 3,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 5,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.traits",
+    "kind" : "import",
+    "line" : 6,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 13,
+    "char" : 10,
+    "name" : "skipBytes",
+    "parameters" : [
+     {
+      "name" : "R",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isInputRange!R",
+    "members" : [
+     {
+      "name" : "skipBytes",
+      "kind" : "function",
+      "line" : 13,
+      "char" : 10,
+      "type" : "void(ref R input, int numBytes)",
+      "parameters" : [
+       {
+        "name" : "input",
+        "type" : "R",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "numBytes",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 17,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 20,
+    "char" : 7,
+    "name" : "popBE",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "R",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isInputRange!R",
+    "members" : [
+     {
+      "name" : "popBE",
+      "kind" : "function",
+      "line" : 20,
+      "char" : 7,
+      "type" : "T(ref R input)",
+      "parameters" : [
+       {
+        "name" : "input",
+        "type" : "R",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 23,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 26,
+    "char" : 7,
+    "name" : "popLE",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "R",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isInputRange!R",
+    "members" : [
+     {
+      "name" : "popLE",
+      "kind" : "function",
+      "line" : 26,
+      "char" : 7,
+      "type" : "T(ref R input)",
+      "parameters" : [
+       {
+        "name" : "input",
+        "type" : "R",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 29,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 32,
+    "char" : 10,
+    "name" : "writeBE",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "R",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isOutputRange!(R, ubyte)",
+    "members" : [
+     {
+      "name" : "writeBE",
+      "kind" : "function",
+      "line" : 32,
+      "char" : 10,
+      "type" : "void(ref R output, T n)",
+      "parameters" : [
+       {
+        "name" : "output",
+        "type" : "R",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "n",
+        "type" : "T"
+       }
+      ],
+      "endline" : 35,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 38,
+    "char" : 10,
+    "name" : "writeLE",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "R",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isOutputRange!(R, ubyte)",
+    "members" : [
+     {
+      "name" : "writeLE",
+      "kind" : "function",
+      "line" : 38,
+      "char" : 10,
+      "type" : "void(ref R output, T n)",
+      "parameters" : [
+       {
+        "name" : "output",
+        "type" : "R",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "n",
+        "type" : "T"
+       }
+      ],
+      "endline" : 41,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 44,
+    "char" : 10,
+    "name" : "readRIFFChunkHeader",
+    "parameters" : [
+     {
+      "name" : "R",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isInputRange!R",
+    "members" : [
+     {
+      "name" : "readRIFFChunkHeader",
+      "kind" : "function",
+      "line" : 44,
+      "char" : 10,
+      "type" : "void(ref R input, out uint chunkId, out uint chunkSize)",
+      "parameters" : [
+       {
+        "name" : "input",
+        "type" : "R",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "chunkId",
+        "deco" : "k",
+        "storageClass" : [
+         "out"
+        ]
+       },
+       {
+        "name" : "chunkSize",
+        "deco" : "k",
+        "storageClass" : [
+         "out"
+        ]
+       }
+      ],
+      "endline" : 48,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 51,
+    "char" : 10,
+    "name" : "writeRIFFChunkHeader",
+    "parameters" : [
+     {
+      "name" : "R",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isOutputRange!(R, ubyte)",
+    "members" : [
+     {
+      "name" : "writeRIFFChunkHeader",
+      "kind" : "function",
+      "line" : 51,
+      "char" : 10,
+      "type" : "void(ref R output, uint chunkId, uint chunkSize)",
+      "parameters" : [
+       {
+        "name" : "output",
+        "type" : "R",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "chunkId",
+        "deco" : "k"
+       },
+       {
+        "name" : "chunkSize",
+        "deco" : "k"
+       }
+      ],
+      "endline" : 55,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 58,
+    "char" : 5,
+    "name" : "RIFFChunkId",
+    "parameters" : [
+     {
+      "name" : "id",
+      "kind" : "value",
+      "deco" : "Aya"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "RIFFChunkId",
+      "kind" : "variable",
+      "line" : 61,
+      "char" : 14,
+      "deco" : "k",
+      "init" : "cast(ubyte)id[0] << 24 | cast(ubyte)id[1] << 16 | cast(ubyte)id[2] << 8 | cast(ubyte)id[3]"
+     }
+    ]
+   },
+   {
+    "name" : "float_uint",
+    "kind" : "union",
+    "protection" : "private",
+    "line" : 72,
+    "char" : 5,
+    "members" : [
+     {
+      "name" : "f",
+      "kind" : "variable",
+      "line" : 74,
+      "char" : 15,
+      "deco" : "f",
+      "offset" : 0
+     },
+     {
+      "name" : "i",
+      "kind" : "variable",
+      "line" : 75,
+      "char" : 14,
+      "deco" : "k",
+      "offset" : 0
+     }
+    ]
+   },
+   {
+    "name" : "double_ulong",
+    "kind" : "union",
+    "protection" : "private",
+    "line" : 79,
+    "char" : 5,
+    "members" : [
+     {
+      "name" : "f",
+      "kind" : "variable",
+      "line" : 81,
+      "char" : 16,
+      "deco" : "d",
+      "offset" : 0
+     },
+     {
+      "name" : "i",
+      "kind" : "variable",
+      "line" : 82,
+      "char" : 15,
+      "deco" : "m",
+      "offset" : 0
+     }
+    ]
+   },
+   {
+    "name" : "float2uint",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 85,
+    "char" : 10,
+    "deco" : "FNaNbNifZk",
+    "parameters" : [
+     {
+      "name" : "x",
+      "deco" : "f"
+     }
+    ],
+    "endline" : 90,
+    "endchar" : 5
+   },
+   {
+    "name" : "uint2float",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 92,
+    "char" : 11,
+    "deco" : "FNaNbNiiZf",
+    "parameters" : [
+     {
+      "name" : "x",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 97,
+    "endchar" : 5
+   },
+   {
+    "name" : "double2ulong",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 99,
+    "char" : 11,
+    "deco" : "FNaNbNidZm",
+    "parameters" : [
+     {
+      "name" : "x",
+      "deco" : "d"
+     }
+    ],
+    "endline" : 104,
+    "endchar" : 5
+   },
+   {
+    "name" : "ulong2double",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 106,
+    "char" : 12,
+    "deco" : "FNaNbNimZd",
+    "parameters" : [
+     {
+      "name" : "x",
+      "deco" : "m"
+     }
+    ],
+    "endline" : 111,
+    "endchar" : 5
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 113,
+    "char" : 13,
+    "name" : "IntegerLargerThan",
+    "parameters" : [
+     {
+      "name" : "numBytes",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "constraint" : "numBytes >= 1 && numBytes <= 8",
+    "members" : []
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 125,
+    "char" : 11,
+    "name" : "popUbyte",
+    "parameters" : [
+     {
+      "name" : "R",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isInputRange!R",
+    "members" : [
+     {
+      "name" : "popUbyte",
+      "kind" : "function",
+      "line" : 125,
+      "char" : 11,
+      "type" : "@nogc ubyte(ref R input)",
+      "parameters" : [
+       {
+        "name" : "input",
+        "type" : "R",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 133,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 136,
+    "char" : 10,
+    "name" : "popInteger",
+    "parameters" : [
+     {
+      "name" : "R",
+      "kind" : "type"
+     },
+     {
+      "name" : "NumBytes",
+      "kind" : "value",
+      "deco" : "i"
+     },
+     {
+      "name" : "WantSigned",
+      "kind" : "value",
+      "deco" : "b"
+     },
+     {
+      "name" : "LittleEndian",
+      "kind" : "value",
+      "deco" : "b"
+     }
+    ],
+    "constraint" : "isInputRange!R",
+    "members" : [
+     {
+      "name" : "popInteger",
+      "kind" : "function",
+      "line" : 136,
+      "char" : 10,
+      "storageClass" : [
+       "auto"
+      ],
+      "type" : "@nogc (ref R input)",
+      "parameters" : [
+       {
+        "name" : "input",
+        "type" : "R",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 157,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 160,
+    "char" : 10,
+    "name" : "writeInteger",
+    "parameters" : [
+     {
+      "name" : "R",
+      "kind" : "type"
+     },
+     {
+      "name" : "NumBytes",
+      "kind" : "value",
+      "deco" : "i"
+     },
+     {
+      "name" : "LittleEndian",
+      "kind" : "value",
+      "deco" : "b"
+     }
+    ],
+    "constraint" : "isOutputRange!(R, ubyte)",
+    "members" : [
+     {
+      "name" : "writeInteger",
+      "kind" : "function",
+      "line" : 160,
+      "char" : 10,
+      "type" : "void(ref R output, IntegerLargerThan!NumBytes n)",
+      "parameters" : [
+       {
+        "name" : "output",
+        "type" : "R",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "n",
+        "type" : "IntegerLargerThan!NumBytes"
+       }
+      ],
+      "endline" : 183,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 185,
+    "char" : 10,
+    "name" : "writeFunction",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "R",
+      "kind" : "type"
+     },
+     {
+      "name" : "endian",
+      "kind" : "value",
+      "deco" : "b"
+     }
+    ],
+    "constraint" : "isOutputRange!(R, ubyte)",
+    "members" : [
+     {
+      "name" : "writeFunction",
+      "kind" : "function",
+      "line" : 185,
+      "char" : 10,
+      "type" : "@nogc void(ref R output, T n)",
+      "parameters" : [
+       {
+        "name" : "output",
+        "type" : "R",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "n",
+        "type" : "T"
+       }
+      ],
+      "endline" : 195,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 197,
+    "char" : 7,
+    "name" : "popFunction",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "R",
+      "kind" : "type"
+     },
+     {
+      "name" : "endian",
+      "kind" : "value",
+      "deco" : "b"
+     }
+    ],
+    "constraint" : "isInputRange!R",
+    "members" : [
+     {
+      "name" : "popFunction",
+      "kind" : "function",
+      "line" : 197,
+      "char" : 7,
+      "type" : "@nogc T(ref R input)",
+      "parameters" : [
+       {
+        "name" : "input",
+        "type" : "R",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 207,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL210_1",
+    "kind" : "function",
+    "line" : 210,
+    "char" : 1,
+    "endline" : 225,
+    "endchar" : 1
+   },
+   {
+    "name" : "__unittestL225_2",
+    "kind" : "function",
+    "line" : 225,
+    "char" : 1,
+    "endline" : 232,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "dplug.client.client",
+  "kind" : "module",
+  "file" : "..\\..\\..\\client\\dplug\\client\\client.d",
+  "members" : [
+   {
+    "name" : "core.atomic",
+    "kind" : "import",
+    "line" : 22,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "core.stdc.string",
+    "kind" : "import",
+    "line" : 23,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "core.stdc.stdio",
+    "kind" : "import",
+    "line" : 24,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.container",
+    "kind" : "import",
+    "line" : 26,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 28,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 29,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 30,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.params",
+    "kind" : "import",
+    "line" : 32,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.preset",
+    "kind" : "import",
+    "line" : 33,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.midi",
+    "kind" : "import",
+    "line" : 34,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.graphics",
+    "kind" : "import",
+    "line" : 35,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.daw",
+    "kind" : "import",
+    "line" : 36,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "IHostCommand",
+    "kind" : "interface",
+    "line" : 43,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "beginParamEdit",
+      "kind" : "function",
+      "line" : 46,
+      "char" : 10,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiiZv",
+      "parameters" : [
+       {
+        "name" : "paramIndex",
+        "deco" : "i"
+       }
+      ]
+     },
+     {
+      "name" : "paramAutomate",
+      "kind" : "function",
+      "line" : 47,
+      "char" : 10,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiifZv",
+      "parameters" : [
+       {
+        "name" : "paramIndex",
+        "deco" : "i"
+       },
+       {
+        "name" : "value",
+        "deco" : "f"
+       }
+      ]
+     },
+     {
+      "name" : "endParamEdit",
+      "kind" : "function",
+      "line" : 48,
+      "char" : 10,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiiZv",
+      "parameters" : [
+       {
+        "name" : "paramIndex",
+        "deco" : "i"
+       }
+      ]
+     },
+     {
+      "name" : "requestResize",
+      "kind" : "function",
+      "line" : 49,
+      "char" : 10,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiiiZb",
+      "parameters" : [
+       {
+        "name" : "width",
+        "deco" : "i"
+       },
+       {
+        "name" : "height",
+        "deco" : "i"
+       }
+      ]
+     },
+     {
+      "name" : "getDAW",
+      "kind" : "function",
+      "line" : 50,
+      "char" : 9,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiZE5dplug6client3daw3DAW"
+     }
+    ]
+   },
+   {
+    "name" : "PluginVersion",
+    "kind" : "struct",
+    "line" : 54,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "major",
+      "kind" : "variable",
+      "line" : 56,
+      "char" : 9,
+      "deco" : "i",
+      "offset" : 0
+     },
+     {
+      "name" : "minor",
+      "kind" : "variable",
+      "line" : 57,
+      "char" : 9,
+      "deco" : "i",
+      "offset" : 4
+     },
+     {
+      "name" : "patch",
+      "kind" : "variable",
+      "line" : 58,
+      "char" : 9,
+      "deco" : "i",
+      "offset" : 8
+     },
+     {
+      "name" : "toVSTVersion",
+      "kind" : "function",
+      "line" : 60,
+      "char" : 9,
+      "deco" : "xFNaNbNiZi",
+      "endline" : 64,
+      "endchar" : 5
+     },
+     {
+      "name" : "toAUVersion",
+      "kind" : "function",
+      "line" : 66,
+      "char" : 9,
+      "deco" : "xFNaNbNiZi",
+      "endline" : 70,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "name" : "PluginInfo",
+    "kind" : "struct",
+    "line" : 76,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "vendorName",
+      "kind" : "variable",
+      "line" : 78,
+      "char" : 12,
+      "deco" : "Aya",
+      "init" : "\"Witty Audio\"",
+      "offset" : 0
+     },
+     {
+      "name" : "vendorUniqueID",
+      "kind" : "variable",
+      "line" : 81,
+      "char" : 13,
+      "deco" : "G4a",
+      "init" : "\"Wity\"",
+      "offset" : 8
+     },
+     {
+      "name" : "pluginName",
+      "kind" : "variable",
+      "line" : 83,
+      "char" : 12,
+      "deco" : "Aya",
+      "init" : "\"Destructatorizer\"",
+      "offset" : 12
+     },
+     {
+      "name" : "pluginUniqueID",
+      "kind" : "variable",
+      "line" : 90,
+      "char" : 13,
+      "deco" : "G4a",
+      "init" : "\"WiDi\"",
+      "offset" : 20
+     },
+     {
+      "name" : "pluginVersion",
+      "kind" : "alias",
+      "line" : 99,
+      "char" : 45,
+      "storageClass" : [
+       "deprecated"
+      ]
+     },
+     {
+      "name" : "publicVersion",
+      "kind" : "variable",
+      "line" : 100,
+      "char" : 19,
+      "deco" : "S5dplug6client6client13PluginVersion",
+      "init" : "PluginVersion(0, 0, 0)",
+      "offset" : 24
+     },
+     {
+      "name" : "hasGUI",
+      "kind" : "variable",
+      "line" : 103,
+      "char" : 10,
+      "deco" : "b",
+      "init" : "false",
+      "offset" : 36
+     },
+     {
+      "name" : "isSynth",
+      "kind" : "variable",
+      "line" : 106,
+      "char" : 10,
+      "deco" : "b",
+      "init" : "false",
+      "offset" : 37
+     },
+     {
+      "name" : "receivesMIDI",
+      "kind" : "variable",
+      "line" : 111,
+      "char" : 10,
+      "deco" : "b",
+      "init" : "false",
+      "offset" : 38
+     }
+    ]
+   },
+   {
+    "name" : "TimeInfo",
+    "kind" : "struct",
+    "line" : 115,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "tempo",
+      "kind" : "variable",
+      "line" : 118,
+      "char" : 12,
+      "deco" : "d",
+      "init" : "120.000",
+      "offset" : 0
+     },
+     {
+      "name" : "timeInSamples",
+      "kind" : "variable",
+      "line" : 121,
+      "char" : 10,
+      "deco" : "l",
+      "init" : "0L",
+      "offset" : 8
+     },
+     {
+      "name" : "hostIsPlaying",
+      "kind" : "variable",
+      "line" : 124,
+      "char" : 10,
+      "deco" : "b",
+      "offset" : 16
+     }
+    ]
+   },
+   {
+    "name" : "LegalIO",
+    "kind" : "struct",
+    "line" : 128,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "numInputChannels",
+      "kind" : "variable",
+      "line" : 130,
+      "char" : 9,
+      "deco" : "i",
+      "offset" : 0
+     },
+     {
+      "name" : "numOutputChannels",
+      "kind" : "variable",
+      "line" : 131,
+      "char" : 9,
+      "deco" : "i",
+      "offset" : 4
+     }
+    ]
+   },
+   {
+    "name" : "Client",
+    "kind" : "class",
+    "line" : 138,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 144,
+      "char" : 5,
+      "deco" : "FNbNiZC5dplug6client6client6Client",
+      "originalType" : "nothrow @nogc ()",
+      "endline" : 191,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 193,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 216,
+      "endchar" : 5
+     },
+     {
+      "name" : "maxInputs",
+      "kind" : "function",
+      "line" : 218,
+      "char" : 15,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZi",
+      "endline" : 221,
+      "endchar" : 5
+     },
+     {
+      "name" : "maxOutputs",
+      "kind" : "function",
+      "line" : 223,
+      "char" : 15,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZi",
+      "endline" : 226,
+      "endchar" : 5
+     },
+     {
+      "name" : "params",
+      "kind" : "function",
+      "line" : 229,
+      "char" : 23,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZAC5dplug6client6params9Parameter",
+      "endline" : 232,
+      "endchar" : 5
+     },
+     {
+      "name" : "legalIOs",
+      "kind" : "function",
+      "line" : 235,
+      "char" : 21,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZAS5dplug6client6client7LegalIO",
+      "endline" : 238,
+      "endchar" : 5
+     },
+     {
+      "name" : "isLegalIO",
+      "kind" : "function",
+      "line" : 242,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiiiZb",
+      "parameters" : [
+       {
+        "name" : "numInputChannels",
+        "deco" : "i"
+       },
+       {
+        "name" : "numOutputChannels",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 256,
+      "endchar" : 5
+     },
+     {
+      "name" : "presetBank",
+      "kind" : "function",
+      "line" : 259,
+      "char" : 22,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZC5dplug6client6preset10PresetBank",
+      "endline" : 262,
+      "endchar" : 5
+     },
+     {
+      "name" : "param",
+      "kind" : "function",
+      "line" : 265,
+      "char" : 21,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiZC5dplug6client6params9Parameter",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 268,
+      "endchar" : 5
+     },
+     {
+      "name" : "isValidParamIndex",
+      "kind" : "function",
+      "line" : 271,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiZb",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 274,
+      "endchar" : 5
+     },
+     {
+      "name" : "isValidInputIndex",
+      "kind" : "function",
+      "line" : 277,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiZb",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 280,
+      "endchar" : 5
+     },
+     {
+      "name" : "isValidOutputIndex",
+      "kind" : "function",
+      "line" : 283,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiZb",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 286,
+      "endchar" : 5
+     },
+     {
+      "name" : "openGUI",
+      "kind" : "function",
+      "line" : 290,
+      "char" : 17,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiPvPvE5dplug6client8graphics15GraphicsBackendZPv",
+      "parameters" : [
+       {
+        "name" : "parentInfo",
+        "deco" : "Pv"
+       },
+       {
+        "name" : "controlInfo",
+        "deco" : "Pv"
+       },
+       {
+        "name" : "backend",
+        "deco" : "E5dplug6client8graphics15GraphicsBackend"
+       }
+      ],
+      "endline" : 294,
+      "endchar" : 5
+     },
+     {
+      "name" : "getGUISize",
+      "kind" : "function",
+      "line" : 296,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiPiPiZb",
+      "parameters" : [
+       {
+        "name" : "width",
+        "deco" : "Pi"
+       },
+       {
+        "name" : "height",
+        "deco" : "Pi"
+       }
+      ],
+      "endline" : 307,
+      "endchar" : 5
+     },
+     {
+      "name" : "closeGUI",
+      "kind" : "function",
+      "line" : 310,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 313,
+      "endchar" : 5
+     },
+     {
+      "name" : "setParameterFromHost",
+      "kind" : "function",
+      "line" : 316,
+      "char" : 10,
+      "deco" : "FNbNiifZv",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       },
+       {
+        "name" : "value",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 319,
+      "endchar" : 5
+     },
+     {
+      "name" : "createGraphics",
+      "kind" : "function",
+      "line" : 323,
+      "char" : 15,
+      "deco" : "FNbNiZC5dplug6client8graphics9IGraphics",
+      "endline" : 326,
+      "endchar" : 5
+     },
+     {
+      "name" : "graphicsAcquire",
+      "kind" : "function",
+      "line" : 332,
+      "char" : 21,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZC5dplug6client8graphics9IGraphics",
+      "endline" : 338,
+      "endchar" : 5
+     },
+     {
+      "name" : "graphicsRelease",
+      "kind" : "function",
+      "line" : 342,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 347,
+      "endchar" : 5
+     },
+     {
+      "name" : "hostCommand",
+      "kind" : "function",
+      "line" : 350,
+      "char" : 24,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZC5dplug6client6client12IHostCommand",
+      "endline" : 353,
+      "endchar" : 5
+     },
+     {
+      "name" : "reset",
+      "kind" : "function",
+      "line" : 358,
+      "char" : 19,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNidiiiZv",
+      "parameters" : [
+       {
+        "name" : "sampleRate",
+        "deco" : "d"
+       },
+       {
+        "name" : "maxFrames",
+        "deco" : "i"
+       },
+       {
+        "name" : "numInputs",
+        "deco" : "i"
+       },
+       {
+        "name" : "numOutputs",
+        "deco" : "i"
+       }
+      ]
+     },
+     {
+      "name" : "latencySamples",
+      "kind" : "function",
+      "line" : 365,
+      "char" : 9,
+      "deco" : "xFNaNbNidZi",
+      "parameters" : [
+       {
+        "name" : "sampleRate",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 368,
+      "endchar" : 5
+     },
+     {
+      "name" : "tailSizeInSeconds",
+      "kind" : "function",
+      "line" : 373,
+      "char" : 11,
+      "deco" : "xFNaNbNiZf",
+      "endline" : 376,
+      "endchar" : 5
+     },
+     {
+      "name" : "maxFramesInProcess",
+      "kind" : "function",
+      "line" : 385,
+      "char" : 9,
+      "deco" : "xFNaNbNiZi",
+      "endline" : 388,
+      "endchar" : 5
+     },
+     {
+      "name" : "processAudio",
+      "kind" : "function",
+      "line" : 401,
+      "char" : 19,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiAxPfAPfiS5dplug6client6client8TimeInfoZv",
+      "parameters" : [
+       {
+        "name" : "inputs",
+        "deco" : "AxPf"
+       },
+       {
+        "name" : "outputs",
+        "deco" : "APf"
+       },
+       {
+        "name" : "frames",
+        "deco" : "i"
+       },
+       {
+        "name" : "timeInfo",
+        "deco" : "S5dplug6client6client8TimeInfo"
+       }
+      ]
+     },
+     {
+      "name" : "getNextMidiMessages",
+      "kind" : "function",
+      "line" : 410,
+      "char" : 32,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiZAxS5dplug6client4midi11MidiMessage",
+      "parameters" : [
+       {
+        "name" : "frames",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 413,
+      "endchar" : 5
+     },
+     {
+      "name" : "makeDefaultPreset",
+      "kind" : "function",
+      "line" : 416,
+      "char" : 18,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZC5dplug6client6preset6Preset",
+      "endline" : 423,
+      "endchar" : 5
+     },
+     {
+      "name" : "hasGUI",
+      "kind" : "function",
+      "line" : 427,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZb",
+      "endline" : 430,
+      "endchar" : 5
+     },
+     {
+      "name" : "isSynth",
+      "kind" : "function",
+      "line" : 432,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZb",
+      "endline" : 435,
+      "endchar" : 5
+     },
+     {
+      "name" : "receivesMIDI",
+      "kind" : "function",
+      "line" : 437,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZb",
+      "endline" : 440,
+      "endchar" : 5
+     },
+     {
+      "name" : "vendorName",
+      "kind" : "function",
+      "line" : 442,
+      "char" : 18,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZAya",
+      "endline" : 445,
+      "endchar" : 5
+     },
+     {
+      "name" : "getVendorUniqueID",
+      "kind" : "function",
+      "line" : 447,
+      "char" : 19,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZG4a",
+      "endline" : 450,
+      "endchar" : 5
+     },
+     {
+      "name" : "pluginName",
+      "kind" : "function",
+      "line" : 452,
+      "char" : 18,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZAya",
+      "endline" : 455,
+      "endchar" : 5
+     },
+     {
+      "name" : "getPluginUniqueID",
+      "kind" : "function",
+      "line" : 458,
+      "char" : 19,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZG4a",
+      "endline" : 461,
+      "endchar" : 5
+     },
+     {
+      "name" : "getPluginFullName",
+      "kind" : "function",
+      "line" : 464,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNbNiPaiZv",
+      "parameters" : [
+       {
+        "name" : "p",
+        "deco" : "Pa"
+       },
+       {
+        "name" : "bufLength",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 469,
+      "endchar" : 5
+     },
+     {
+      "name" : "getPluginVersion",
+      "kind" : "alias",
+      "line" : 472,
+      "char" : 48,
+      "storageClass" : [
+       "deprecated"
+      ]
+     },
+     {
+      "name" : "getPublicVersion",
+      "kind" : "function",
+      "line" : 473,
+      "char" : 25,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZS5dplug6client6client13PluginVersion",
+      "endline" : 476,
+      "endchar" : 5
+     },
+     {
+      "name" : "readFloatParamValue",
+      "kind" : "function",
+      "line" : 479,
+      "char" : 17,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiZf",
+      "parameters" : [
+       {
+        "name" : "paramIndex",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 484,
+      "endchar" : 5
+     },
+     {
+      "name" : "readIntegerParamValue",
+      "kind" : "function",
+      "line" : 487,
+      "char" : 15,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiZi",
+      "parameters" : [
+       {
+        "name" : "paramIndex",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 492,
+      "endchar" : 5
+     },
+     {
+      "name" : "readEnumParamValue",
+      "kind" : "function",
+      "line" : 494,
+      "char" : 15,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiZi",
+      "parameters" : [
+       {
+        "name" : "paramIndex",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 499,
+      "endchar" : 5
+     },
+     {
+      "name" : "readBoolParamValue",
+      "kind" : "function",
+      "line" : 502,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiZb",
+      "parameters" : [
+       {
+        "name" : "paramIndex",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 507,
+      "endchar" : 5
+     },
+     {
+      "name" : "setHostCommand",
+      "kind" : "function",
+      "line" : 510,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiC5dplug6client6client12IHostCommandZv",
+      "parameters" : [
+       {
+        "name" : "hostCommand",
+        "deco" : "C5dplug6client6client12IHostCommand"
+       }
+      ],
+      "endline" : 513,
+      "endchar" : 5
+     },
+     {
+      "name" : "enqueueMIDIFromHost",
+      "kind" : "function",
+      "line" : 517,
+      "char" : 10,
+      "deco" : "FNbNiS5dplug6client4midi11MidiMessageZv",
+      "parameters" : [
+       {
+        "name" : "message",
+        "deco" : "S5dplug6client4midi11MidiMessage"
+       }
+      ],
+      "endline" : 520,
+      "endchar" : 5
+     },
+     {
+      "name" : "processAudioFromHost",
+      "kind" : "function",
+      "line" : 526,
+      "char" : 10,
+      "deco" : "FNbNiAPfAPfiS5dplug6client6client8TimeInfoZv",
+      "parameters" : [
+       {
+        "name" : "inputs",
+        "deco" : "APf"
+       },
+       {
+        "name" : "outputs",
+        "deco" : "APf"
+       },
+       {
+        "name" : "frames",
+        "deco" : "i"
+       },
+       {
+        "name" : "timeInfo",
+        "deco" : "S5dplug6client6client8TimeInfo"
+       }
+      ],
+      "endline" : 564,
+      "endchar" : 5
+     },
+     {
+      "name" : "resetFromHost",
+      "kind" : "function",
+      "line" : 569,
+      "char" : 10,
+      "deco" : "FNbNidiiiZv",
+      "parameters" : [
+       {
+        "name" : "sampleRate",
+        "deco" : "d"
+       },
+       {
+        "name" : "maxFrames",
+        "deco" : "i"
+       },
+       {
+        "name" : "numInputs",
+        "deco" : "i"
+       },
+       {
+        "name" : "numOutputs",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 581,
+      "endchar" : 5
+     },
+     {
+      "name" : "buildParameters",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 589,
+      "char" : 17,
+      "deco" : "FNbNiZAC5dplug6client6params9Parameter",
+      "endline" : 592,
+      "endchar" : 5
+     },
+     {
+      "name" : "buildPresets",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 597,
+      "char" : 14,
+      "deco" : "FNbNiZAC5dplug6client6preset6Preset",
+      "endline" : 602,
+      "endchar" : 5
+     },
+     {
+      "name" : "buildPluginInfo",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 606,
+      "char" : 25,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiZS5dplug6client6client10PluginInfo"
+     },
+     {
+      "name" : "buildLegalIO",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 610,
+      "char" : 24,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiZAS5dplug6client6client7LegalIO"
+     },
+     {
+      "name" : "_graphics",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 612,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug6client8graphics9IGraphics",
+      "originalType" : "IGraphics",
+      "offset" : 8
+     },
+     {
+      "name" : "_graphicsIsAvailable",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 615,
+      "char" : 18,
+      "storageClass" : [
+       "shared",
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Ob",
+      "init" : "false",
+      "offset" : 12
+     },
+     {
+      "name" : "_hostCommand",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 617,
+      "char" : 18,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug6client6client12IHostCommand",
+      "originalType" : "IHostCommand",
+      "offset" : 16
+     },
+     {
+      "name" : "_info",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 619,
+      "char" : 16,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug6client6client10PluginInfo",
+      "offset" : 20
+     },
+     {
+      "name" : "_params",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 622,
+      "char" : 17,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "AC5dplug6client6params9Parameter",
+      "offset" : 60
+     },
+     {
+      "name" : "_presetBank",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 624,
+      "char" : 16,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug6client6preset10PresetBank",
+      "originalType" : "PresetBank",
+      "offset" : 68
+     },
+     {
+      "name" : "_legalIOs",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 626,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "AS5dplug6client6client7LegalIO",
+      "offset" : 72
+     },
+     {
+      "name" : "_maxInputs",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 628,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 80
+     },
+     {
+      "name" : "_maxOutputs",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 628,
+      "char" : 21,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 84
+     },
+     {
+      "name" : "_maxFramesInProcess",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 631,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 88
+     },
+     {
+      "name" : "_midiQueue",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 634,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug6client4midi9MidiQueue",
+      "offset" : 92
+     },
+     {
+      "name" : "createGraphicsLazily",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 636,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 655,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 193,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 193,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   },
+   {
+    "name" : "parsePluginInfo",
+    "kind" : "function",
+    "line" : 660,
+    "char" : 12,
+    "deco" : "FAyaZS5dplug6client6client10PluginInfo",
+    "parameters" : [
+     {
+      "name" : "json",
+      "deco" : "Aya"
+     }
+    ],
+    "endline" : 714,
+    "endchar" : 1
+   },
+   {
+    "name" : "_arraySliceComSliceAssign_k",
+    "kind" : "function",
+    "deco" : "UNaNbNiNeAkxAkZAk",
+    "originalType" : "pure nothrow @nogc @trusted extern (C) uint[](uint[] p1, const const(uint)[] p0)",
+    "parameters" : [
+     {
+      "name" : "p1",
+      "deco" : "Ak"
+     },
+     {
+      "name" : "p0",
+      "deco" : "xAk"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.client.daw",
+  "kind" : "module",
+  "file" : "..\\..\\..\\client\\dplug\\client\\daw.d",
+  "members" : [
+   {
+    "name" : "core.stdc.string",
+    "kind" : "import",
+    "line" : 19,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.string",
+    "kind" : "import",
+    "line" : 21,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.utf",
+    "kind" : "import",
+    "line" : 22,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "DAW",
+    "kind" : "enum",
+    "line" : 24,
+    "char" : 1,
+    "baseDeco" : "i",
+    "members" : [
+     {
+      "name" : "Unknown",
+      "kind" : "enum member",
+      "value" : "0",
+      "line" : 26,
+      "char" : 5
+     },
+     {
+      "name" : "Reaper",
+      "kind" : "enum member",
+      "value" : "1",
+      "line" : 27,
+      "char" : 5
+     },
+     {
+      "name" : "ProTools",
+      "kind" : "enum member",
+      "value" : "2",
+      "line" : 28,
+      "char" : 5
+     },
+     {
+      "name" : "Cubase",
+      "kind" : "enum member",
+      "value" : "3",
+      "line" : 29,
+      "char" : 5
+     },
+     {
+      "name" : "Nuendo",
+      "kind" : "enum member",
+      "value" : "4",
+      "line" : 30,
+      "char" : 5
+     },
+     {
+      "name" : "Sonar",
+      "kind" : "enum member",
+      "value" : "5",
+      "line" : 31,
+      "char" : 5
+     },
+     {
+      "name" : "Vegas",
+      "kind" : "enum member",
+      "value" : "6",
+      "line" : 32,
+      "char" : 5
+     },
+     {
+      "name" : "FLStudio",
+      "kind" : "enum member",
+      "value" : "7",
+      "line" : 33,
+      "char" : 5
+     },
+     {
+      "name" : "Samplitude",
+      "kind" : "enum member",
+      "value" : "8",
+      "line" : 34,
+      "char" : 5
+     },
+     {
+      "name" : "AbletonLive",
+      "kind" : "enum member",
+      "value" : "9",
+      "line" : 35,
+      "char" : 5
+     },
+     {
+      "name" : "Tracktion",
+      "kind" : "enum member",
+      "value" : "10",
+      "line" : 36,
+      "char" : 5
+     },
+     {
+      "name" : "NTracks",
+      "kind" : "enum member",
+      "value" : "11",
+      "line" : 37,
+      "char" : 5
+     },
+     {
+      "name" : "MelodyneStudio",
+      "kind" : "enum member",
+      "value" : "12",
+      "line" : 38,
+      "char" : 5
+     },
+     {
+      "name" : "VSTScanner",
+      "kind" : "enum member",
+      "value" : "13",
+      "line" : 39,
+      "char" : 5
+     },
+     {
+      "name" : "AULab",
+      "kind" : "enum member",
+      "value" : "14",
+      "line" : 40,
+      "char" : 5
+     },
+     {
+      "name" : "Forte",
+      "kind" : "enum member",
+      "value" : "15",
+      "line" : 41,
+      "char" : 5
+     },
+     {
+      "name" : "Chainer",
+      "kind" : "enum member",
+      "value" : "16",
+      "line" : 42,
+      "char" : 5
+     },
+     {
+      "name" : "Audition",
+      "kind" : "enum member",
+      "value" : "17",
+      "line" : 43,
+      "char" : 5
+     },
+     {
+      "name" : "Orion",
+      "kind" : "enum member",
+      "value" : "18",
+      "line" : 44,
+      "char" : 5
+     },
+     {
+      "name" : "Bias",
+      "kind" : "enum member",
+      "value" : "19",
+      "line" : 45,
+      "char" : 5
+     },
+     {
+      "name" : "SAWStudio",
+      "kind" : "enum member",
+      "value" : "20",
+      "line" : 46,
+      "char" : 5
+     },
+     {
+      "name" : "Logic",
+      "kind" : "enum member",
+      "value" : "21",
+      "line" : 47,
+      "char" : 5
+     },
+     {
+      "name" : "GarageBand",
+      "kind" : "enum member",
+      "value" : "22",
+      "line" : 48,
+      "char" : 5
+     },
+     {
+      "name" : "DigitalPerformer",
+      "kind" : "enum member",
+      "value" : "23",
+      "line" : 49,
+      "char" : 5
+     },
+     {
+      "name" : "Standalone",
+      "kind" : "enum member",
+      "value" : "24",
+      "line" : 50,
+      "char" : 5
+     },
+     {
+      "name" : "AudioMulch",
+      "kind" : "enum member",
+      "value" : "25",
+      "line" : 51,
+      "char" : 5
+     },
+     {
+      "name" : "StudioOne",
+      "kind" : "enum member",
+      "value" : "26",
+      "line" : 52,
+      "char" : 5
+     },
+     {
+      "name" : "VST3TestHost",
+      "kind" : "enum member",
+      "value" : "27",
+      "line" : 53,
+      "char" : 5
+     },
+     {
+      "name" : "Ardour",
+      "kind" : "enum member",
+      "value" : "28",
+      "line" : 54,
+      "char" : 5
+     }
+    ]
+   },
+   {
+    "name" : "hasSubstring",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 60,
+    "char" : 14,
+    "deco" : "FNaNbNixPaxPaZb",
+    "parameters" : [
+     {
+      "name" : "s",
+      "deco" : "xPa"
+     },
+     {
+      "name" : "sub",
+      "deco" : "xPa"
+     }
+    ],
+    "endline" : 63,
+    "endchar" : 1
+   },
+   {
+    "name" : "identifyDAW",
+    "kind" : "function",
+    "line" : 65,
+    "char" : 5,
+    "deco" : "FNaNbNixPaZE5dplug6client3daw3DAW",
+    "parameters" : [
+     {
+      "name" : "s",
+      "deco" : "xPa"
+     }
+    ],
+    "endline" : 94,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "dplug.client.dllmain",
+  "kind" : "module",
+  "file" : "..\\..\\..\\client\\dplug\\client\\dllmain.d",
+  "members" : [
+   {
+    "kind" : "template",
+    "line" : 17,
+    "char" : 9,
+    "name" : "DLLEntryPoint",
+    "parameters" : [],
+    "members" : [
+     {
+      "name" : "DLLEntryPoint",
+      "kind" : "variable",
+      "line" : 19,
+      "char" : 26,
+      "storageClass" : [
+       "const"
+      ],
+      "type" : "char[]",
+      "init" : "\"\\x0a                import std.c.windows.windows;\\x0a                import core.sys.windows.dll;\\x0a                extern (Windows) BOOL DllMain(HINSTANCE hInstance, ULONG ulReason, LPVOID pvReserved)\\x0a                {\\x0a                    return true;\\x0a                }\\x0a            \""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.client.graphics",
+  "kind" : "module",
+  "file" : "..\\..\\..\\client\\dplug\\client\\graphics.d",
+  "members" : [
+   {
+    "name" : "dplug.client.client",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.daw",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "GraphicsBackend",
+    "kind" : "enum",
+    "line" : 11,
+    "char" : 1,
+    "baseDeco" : "i",
+    "members" : [
+     {
+      "name" : "autodetect",
+      "kind" : "enum member",
+      "value" : "0",
+      "line" : 13,
+      "char" : 5
+     },
+     {
+      "name" : "win32",
+      "kind" : "enum member",
+      "value" : "1",
+      "line" : 14,
+      "char" : 5
+     },
+     {
+      "name" : "carbon",
+      "kind" : "enum member",
+      "value" : "2",
+      "line" : 15,
+      "char" : 5
+     },
+     {
+      "name" : "cocoa",
+      "kind" : "enum member",
+      "value" : "3",
+      "line" : 16,
+      "char" : 5
+     },
+     {
+      "name" : "x11",
+      "kind" : "enum member",
+      "value" : "4",
+      "line" : 17,
+      "char" : 5
+     }
+    ]
+   },
+   {
+    "name" : "IGraphics",
+    "kind" : "interface",
+    "line" : 21,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "openUI",
+      "kind" : "function",
+      "line" : 26,
+      "char" : 20,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiPvPvE5dplug6client3daw3DAWE5dplug6client8graphics15GraphicsBackendZPv",
+      "parameters" : [
+       {
+        "name" : "parentInfo",
+        "deco" : "Pv"
+       },
+       {
+        "name" : "controlInfo",
+        "deco" : "Pv"
+       },
+       {
+        "name" : "daw",
+        "deco" : "E5dplug6client3daw3DAW"
+       },
+       {
+        "name" : "backend",
+        "deco" : "E5dplug6client8graphics15GraphicsBackend"
+       }
+      ]
+     },
+     {
+      "name" : "closeUI",
+      "kind" : "function",
+      "line" : 27,
+      "char" : 19,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "getGUISize",
+      "kind" : "function",
+      "line" : 28,
+      "char" : 19,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiPiPiZv",
+      "parameters" : [
+       {
+        "name" : "width",
+        "deco" : "Pi"
+       },
+       {
+        "name" : "height",
+        "deco" : "Pi"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.client.midi",
+  "kind" : "module",
+  "file" : "..\\..\\..\\client\\dplug\\client\\midi.d",
+  "members" : [
+   {
+    "name" : "std.algorithm.mutation",
+    "kind" : "import",
+    "line" : 19,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 20,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "MidiMessage",
+    "kind" : "struct",
+    "line" : 25,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 31,
+      "char" : 5,
+      "deco" : "FNaNbNcNiihhhZS5dplug6client4midi11MidiMessage",
+      "originalType" : "pure nothrow @nogc ref (int offset, ubyte status, ubyte data1, ubyte data2)",
+      "parameters" : [
+       {
+        "name" : "offset",
+        "deco" : "i"
+       },
+       {
+        "name" : "status",
+        "deco" : "h"
+       },
+       {
+        "name" : "data1",
+        "deco" : "h"
+       },
+       {
+        "name" : "data2",
+        "deco" : "h"
+       }
+      ],
+      "endline" : 37,
+      "endchar" : 5
+     },
+     {
+      "name" : "offset",
+      "kind" : "function",
+      "line" : 39,
+      "char" : 9,
+      "deco" : "xFNaNbNiZi",
+      "endline" : 42,
+      "endchar" : 5
+     },
+     {
+      "name" : "channel",
+      "kind" : "function",
+      "line" : 44,
+      "char" : 9,
+      "deco" : "xFNaNbNiZi",
+      "endline" : 47,
+      "endchar" : 5
+     },
+     {
+      "name" : "status",
+      "kind" : "function",
+      "line" : 49,
+      "char" : 9,
+      "deco" : "xFNaNbNiZi",
+      "endline" : 52,
+      "endchar" : 5
+     },
+     {
+      "name" : "isNoteOn",
+      "kind" : "function",
+      "line" : 54,
+      "char" : 10,
+      "deco" : "xFNaNbNiZb",
+      "endline" : 57,
+      "endchar" : 5
+     },
+     {
+      "name" : "isNoteOff",
+      "kind" : "function",
+      "line" : 59,
+      "char" : 10,
+      "deco" : "xFNaNbNiZb",
+      "endline" : 62,
+      "endchar" : 5
+     },
+     {
+      "name" : "noteNumber",
+      "kind" : "function",
+      "line" : 64,
+      "char" : 9,
+      "deco" : "xFNaNbNiZi",
+      "endline" : 68,
+      "endchar" : 5
+     },
+     {
+      "name" : "noteVelocity",
+      "kind" : "function",
+      "line" : 70,
+      "char" : 9,
+      "deco" : "xFNaNbNiZi",
+      "endline" : 74,
+      "endchar" : 5
+     },
+     {
+      "name" : "_offset",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 77,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "pure",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "init" : "0",
+      "offset" : 0
+     },
+     {
+      "name" : "_status",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 79,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "pure",
+       "@nogc"
+      ],
+      "deco" : "h",
+      "init" : "cast(ubyte)0u",
+      "offset" : 4
+     },
+     {
+      "name" : "_data1",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 81,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "pure",
+       "@nogc"
+      ],
+      "deco" : "h",
+      "init" : "cast(ubyte)0u",
+      "offset" : 5
+     },
+     {
+      "name" : "_data2",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 83,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "pure",
+       "@nogc"
+      ],
+      "deco" : "h",
+      "init" : "cast(ubyte)0u",
+      "offset" : 6
+     }
+    ]
+   },
+   {
+    "name" : "MidiStatus",
+    "kind" : "enum",
+    "line" : 87,
+    "char" : 1,
+    "baseDeco" : "h",
+    "members" : [
+     {
+      "name" : "none",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)0u",
+      "line" : 89,
+      "char" : 5
+     },
+     {
+      "name" : "noteOff",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)8u",
+      "line" : 90,
+      "char" : 5
+     },
+     {
+      "name" : "noteOn",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)9u",
+      "line" : 91,
+      "char" : 5
+     },
+     {
+      "name" : "polyAftertouch",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)10u",
+      "line" : 92,
+      "char" : 5
+     },
+     {
+      "name" : "controlChange",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)11u",
+      "line" : 93,
+      "char" : 5
+     },
+     {
+      "name" : "programChange",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)12u",
+      "line" : 94,
+      "char" : 5
+     },
+     {
+      "name" : "channelAftertouch",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)13u",
+      "line" : 95,
+      "char" : 5
+     },
+     {
+      "name" : "pitchWheel",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)14u",
+      "line" : 96,
+      "char" : 5
+     }
+    ]
+   },
+   {
+    "name" : "MidiControlChange",
+    "kind" : "enum",
+    "line" : 99,
+    "char" : 1,
+    "baseDeco" : "h",
+    "members" : [
+     {
+      "name" : "modWheel",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)1u",
+      "line" : 101,
+      "char" : 5
+     },
+     {
+      "name" : "breathController",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)2u",
+      "line" : 102,
+      "char" : 5
+     },
+     {
+      "name" : "undefined003",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)3u",
+      "line" : 103,
+      "char" : 5
+     },
+     {
+      "name" : "footController",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)4u",
+      "line" : 104,
+      "char" : 5
+     },
+     {
+      "name" : "portamentoTime",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)5u",
+      "line" : 105,
+      "char" : 5
+     },
+     {
+      "name" : "channelVolume",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)7u",
+      "line" : 106,
+      "char" : 5
+     },
+     {
+      "name" : "balance",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)8u",
+      "line" : 107,
+      "char" : 5
+     },
+     {
+      "name" : "undefined009",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)9u",
+      "line" : 108,
+      "char" : 5
+     },
+     {
+      "name" : "pan",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)10u",
+      "line" : 109,
+      "char" : 5
+     },
+     {
+      "name" : "expressionController",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)11u",
+      "line" : 110,
+      "char" : 5
+     },
+     {
+      "name" : "effectControl1",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)12u",
+      "line" : 111,
+      "char" : 5
+     },
+     {
+      "name" : "effectControl2",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)13u",
+      "line" : 112,
+      "char" : 5
+     },
+     {
+      "name" : "generalPurposeController1",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)16u",
+      "line" : 113,
+      "char" : 5
+     },
+     {
+      "name" : "generalPurposeController2",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)17u",
+      "line" : 114,
+      "char" : 5
+     },
+     {
+      "name" : "generalPurposeController3",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)18u",
+      "line" : 115,
+      "char" : 5
+     },
+     {
+      "name" : "generalPurposeController4",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)19u",
+      "line" : 116,
+      "char" : 5
+     },
+     {
+      "name" : "sustainOnOff",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)64u",
+      "line" : 117,
+      "char" : 5
+     },
+     {
+      "name" : "portamentoOnOff",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)65u",
+      "line" : 118,
+      "char" : 5
+     },
+     {
+      "name" : "sustenutoOnOff",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)66u",
+      "line" : 119,
+      "char" : 5
+     },
+     {
+      "name" : "softPedalOnOff",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)67u",
+      "line" : 120,
+      "char" : 5
+     },
+     {
+      "name" : "legatoOnOff",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)68u",
+      "line" : 121,
+      "char" : 5
+     },
+     {
+      "name" : "hold2OnOff",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)69u",
+      "line" : 122,
+      "char" : 5
+     },
+     {
+      "name" : "soundVariation",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)70u",
+      "line" : 123,
+      "char" : 5
+     },
+     {
+      "name" : "resonance",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)71u",
+      "line" : 124,
+      "char" : 5
+     },
+     {
+      "name" : "releaseTime",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)72u",
+      "line" : 125,
+      "char" : 5
+     },
+     {
+      "name" : "attackTime",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)73u",
+      "line" : 126,
+      "char" : 5
+     },
+     {
+      "name" : "cutoffFrequency",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)74u",
+      "line" : 127,
+      "char" : 5
+     },
+     {
+      "name" : "decayTime",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)75u",
+      "line" : 128,
+      "char" : 5
+     },
+     {
+      "name" : "vibratoRate",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)76u",
+      "line" : 129,
+      "char" : 5
+     },
+     {
+      "name" : "vibratoDepth",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)77u",
+      "line" : 130,
+      "char" : 5
+     },
+     {
+      "name" : "vibratoDelay",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)78u",
+      "line" : 131,
+      "char" : 5
+     },
+     {
+      "name" : "soundControllerUndefined",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)79u",
+      "line" : 132,
+      "char" : 5
+     },
+     {
+      "name" : "tremoloDepth",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)92u",
+      "line" : 133,
+      "char" : 5
+     },
+     {
+      "name" : "chorusDepth",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)93u",
+      "line" : 134,
+      "char" : 5
+     },
+     {
+      "name" : "phaserDepth",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)95u",
+      "line" : 135,
+      "char" : 5
+     },
+     {
+      "name" : "allNotesOff",
+      "kind" : "enum member",
+      "value" : "cast(ubyte)123u",
+      "line" : 136,
+      "char" : 5
+     }
+    ]
+   },
+   {
+    "name" : "makeMidiMessage",
+    "kind" : "function",
+    "line" : 141,
+    "char" : 13,
+    "deco" : "FNbNiiiE5dplug6client4midi10MidiStatusiiZS5dplug6client4midi11MidiMessage",
+    "parameters" : [
+     {
+      "name" : "offset",
+      "deco" : "i"
+     },
+     {
+      "name" : "channel",
+      "deco" : "i"
+     },
+     {
+      "name" : "status",
+      "deco" : "E5dplug6client4midi10MidiStatus"
+     },
+     {
+      "name" : "data1",
+      "deco" : "i"
+     },
+     {
+      "name" : "data2",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 153,
+    "endchar" : 1
+   },
+   {
+    "name" : "makeMidiMessageNoteOn",
+    "kind" : "function",
+    "line" : 155,
+    "char" : 13,
+    "deco" : "FNbNiiiiiZS5dplug6client4midi11MidiMessage",
+    "parameters" : [
+     {
+      "name" : "offset",
+      "deco" : "i"
+     },
+     {
+      "name" : "channel",
+      "deco" : "i"
+     },
+     {
+      "name" : "noteNumber",
+      "deco" : "i"
+     },
+     {
+      "name" : "velocity",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 158,
+    "endchar" : 1
+   },
+   {
+    "name" : "makeMidiMessageNoteOff",
+    "kind" : "function",
+    "line" : 160,
+    "char" : 13,
+    "deco" : "FNbNiiiiZS5dplug6client4midi11MidiMessage",
+    "parameters" : [
+     {
+      "name" : "offset",
+      "deco" : "i"
+     },
+     {
+      "name" : "channel",
+      "deco" : "i"
+     },
+     {
+      "name" : "noteNumber",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 163,
+    "endchar" : 1
+   },
+   {
+    "name" : "makeMidiMessagePitchWheel",
+    "kind" : "function",
+    "line" : 165,
+    "char" : 13,
+    "deco" : "FNbNiiifZS5dplug6client4midi11MidiMessage",
+    "parameters" : [
+     {
+      "name" : "offset",
+      "deco" : "i"
+     },
+     {
+      "name" : "channel",
+      "deco" : "i"
+     },
+     {
+      "name" : "value",
+      "deco" : "f"
+     }
+    ],
+    "endline" : 173,
+    "endchar" : 1
+   },
+   {
+    "name" : "makeMidiMessageControlChange",
+    "kind" : "function",
+    "line" : 175,
+    "char" : 13,
+    "deco" : "FNbNiiiE5dplug6client4midi17MidiControlChangefZS5dplug6client4midi11MidiMessage",
+    "parameters" : [
+     {
+      "name" : "offset",
+      "deco" : "i"
+     },
+     {
+      "name" : "channel",
+      "deco" : "i"
+     },
+     {
+      "name" : "index",
+      "deco" : "E5dplug6client4midi17MidiControlChange"
+     },
+     {
+      "name" : "value",
+      "deco" : "f"
+     }
+    ],
+    "endline" : 179,
+    "endchar" : 1
+   },
+   {
+    "name" : "makeMidiQueue",
+    "kind" : "function",
+    "line" : 182,
+    "char" : 11,
+    "deco" : "FNbNiZS5dplug6client4midi9MidiQueue",
+    "endline" : 185,
+    "endchar" : 1
+   },
+   {
+    "name" : "MidiQueue",
+    "kind" : "struct",
+    "line" : 189,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "QueueCapacity",
+      "kind" : "variable",
+      "line" : 194,
+      "char" : 10,
+      "storageClass" : [
+       "enum",
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "init" : "511"
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "protection" : "private",
+      "line" : 196,
+      "char" : 13,
+      "deco" : "FNbNcNiiZS5dplug6client4midi9MidiQueue",
+      "originalType" : "nothrow @nogc ref (int dummy)",
+      "parameters" : [
+       {
+        "name" : "dummy",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 199,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 203,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 205,
+      "endchar" : 5
+     },
+     {
+      "name" : "initialize",
+      "kind" : "function",
+      "line" : 207,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 212,
+      "endchar" : 5
+     },
+     {
+      "name" : "enqueue",
+      "kind" : "function",
+      "line" : 215,
+      "char" : 10,
+      "deco" : "FNbNiS5dplug6client4midi11MidiMessageZv",
+      "parameters" : [
+       {
+        "name" : "message",
+        "deco" : "S5dplug6client4midi11MidiMessage"
+       }
+      ],
+      "endline" : 222,
+      "endchar" : 5
+     },
+     {
+      "name" : "getNextMidiMessages",
+      "kind" : "function",
+      "line" : 227,
+      "char" : 26,
+      "deco" : "FNbNiiZAxS5dplug6client4midi11MidiMessage",
+      "parameters" : [
+       {
+        "name" : "frames",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 254,
+      "endchar" : 5
+     },
+     {
+      "name" : "_framesElapsed",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 259,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "init" : "0",
+      "offset" : 0
+     },
+     {
+      "name" : "_outMessages",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 262,
+      "char" : 21,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer41__T3VecTS5dplug6client4midi11MidiMessageZ3Vec",
+      "originalType" : "Vec!MidiMessage",
+      "offset" : 4
+     },
+     {
+      "name" : "_numElements",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 268,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "init" : "0",
+      "offset" : 20
+     },
+     {
+      "name" : "_heap",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 272,
+      "char" : 34,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "G512S5dplug6client4midi11MidiMessage",
+      "originalType" : "MidiMessage[QueueCapacity + 1]",
+      "offset" : 24
+     },
+     {
+      "name" : "insertElement",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 274,
+      "char" : 10,
+      "deco" : "FNbNiS5dplug6client4midi11MidiMessageZv",
+      "parameters" : [
+       {
+        "name" : "message",
+        "deco" : "S5dplug6client4midi11MidiMessage"
+       }
+      ],
+      "endline" : 306,
+      "endchar" : 5
+     },
+     {
+      "name" : "empty",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 308,
+      "char" : 10,
+      "deco" : "FNbNiZb",
+      "endline" : 312,
+      "endchar" : 5
+     },
+     {
+      "name" : "minElement",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 314,
+      "char" : 17,
+      "deco" : "FNbNiZS5dplug6client4midi11MidiMessage",
+      "endline" : 318,
+      "endchar" : 5
+     },
+     {
+      "name" : "popMinElement",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 320,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 362,
+      "endchar" : 5
+     },
+     {
+      "name" : "parentOf",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 364,
+      "char" : 16,
+      "storageClass" : [
+       "static"
+      ],
+      "deco" : "FNbNiiZi",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 367,
+      "endchar" : 5
+     },
+     {
+      "name" : "leftChildOf",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 369,
+      "char" : 16,
+      "storageClass" : [
+       "static"
+      ],
+      "deco" : "FNbNiiZi",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 372,
+      "endchar" : 5
+     },
+     {
+      "name" : "rightChildOf",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 374,
+      "char" : 16,
+      "storageClass" : [
+       "static"
+      ],
+      "deco" : "FNbNiiZi",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 377,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 203,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 203,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     },
+     {
+      "name" : "__xpostblit",
+      "kind" : "alias"
+     },
+     {
+      "name" : "opAssign",
+      "kind" : "generated function",
+      "line" : 189,
+      "char" : 1,
+      "deco" : "FNbNcNiNjS5dplug6client4midi9MidiQueueZS5dplug6client4midi9MidiQueue",
+      "parameters" : [
+       {
+        "name" : "p",
+        "deco" : "S5dplug6client4midi9MidiQueue"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittestL380_3",
+    "kind" : "function",
+    "line" : 380,
+    "char" : 1,
+    "endline" : 402,
+    "endchar" : 2
+   }
+  ]
+ },
+ {
+  "name" : "dplug.client",
+  "kind" : "module",
+  "file" : "..\\..\\..\\client\\dplug\\client\\package.d",
+  "members" : [
+   {
+    "name" : "dplug.client.client",
+    "kind" : "import",
+    "line" : 6,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.client.params",
+    "kind" : "import",
+    "line" : 7,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.client.preset",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.client.daw",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.client.midi",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.client.graphics",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.client.dllmain",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 12
+   }
+  ]
+ },
+ {
+  "name" : "dplug.client.params",
+  "kind" : "module",
+  "file" : "..\\..\\..\\client\\dplug\\client\\params.d",
+  "members" : [
+   {
+    "name" : "core.atomic",
+    "kind" : "import",
+    "line" : 19,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "core.stdc.stdio",
+    "kind" : "import",
+    "line" : 20,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "core.stdc.string",
+    "kind" : "import",
+    "line" : 21,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 23,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.algorithm.comparison",
+    "kind" : "import",
+    "line" : 24,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.string",
+    "kind" : "import",
+    "line" : 25,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.conv",
+    "kind" : "import",
+    "line" : 26,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 28,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.sync",
+    "kind" : "import",
+    "line" : 29,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 30,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 31,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.client",
+    "kind" : "import",
+    "line" : 32,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "Parameter",
+    "kind" : "class",
+    "line" : 39,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "name",
+      "kind" : "function",
+      "line" : 46,
+      "char" : 12,
+      "deco" : "xFNaNbNiZAya",
+      "endline" : 49,
+      "endchar" : 5
+     },
+     {
+      "name" : "label",
+      "kind" : "function",
+      "line" : 52,
+      "char" : 12,
+      "deco" : "xFNaNbNiZAya",
+      "endline" : 55,
+      "endchar" : 5
+     },
+     {
+      "name" : "index",
+      "kind" : "function",
+      "line" : 58,
+      "char" : 9,
+      "deco" : "xFNaNbNiZi",
+      "endline" : 61,
+      "endchar" : 5
+     },
+     {
+      "name" : "setFromHost",
+      "kind" : "function",
+      "line" : 64,
+      "char" : 10,
+      "deco" : "FNbNidZv",
+      "parameters" : [
+       {
+        "name" : "hostValue",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 68,
+      "endchar" : 5
+     },
+     {
+      "name" : "getForHost",
+      "kind" : "function",
+      "line" : 71,
+      "char" : 12,
+      "deco" : "FNbNiZd",
+      "endline" : 74,
+      "endchar" : 5
+     },
+     {
+      "name" : "toDisplayN",
+      "kind" : "function",
+      "line" : 76,
+      "char" : 10,
+      "deco" : "FNbNiPakZv",
+      "originalType" : "nothrow @nogc void(char* buffer, size_t numBytes)",
+      "parameters" : [
+       {
+        "name" : "buffer",
+        "deco" : "Pa"
+       },
+       {
+        "name" : "numBytes",
+        "deco" : "k"
+       }
+      ],
+      "endline" : 79,
+      "endchar" : 5
+     },
+     {
+      "name" : "addListener",
+      "kind" : "function",
+      "line" : 82,
+      "char" : 10,
+      "deco" : "FNbNiC5dplug6client6params18IParameterListenerZv",
+      "parameters" : [
+       {
+        "name" : "listener",
+        "deco" : "C5dplug6client6params18IParameterListener"
+       }
+      ],
+      "endline" : 85,
+      "endchar" : 5
+     },
+     {
+      "name" : "removeListener",
+      "kind" : "function",
+      "line" : 88,
+      "char" : 10,
+      "deco" : "FNbNiC5dplug6client6params18IParameterListenerZv",
+      "parameters" : [
+       {
+        "name" : "listener",
+        "deco" : "C5dplug6client6params18IParameterListener"
+       }
+      ],
+      "endline" : 93,
+      "endchar" : 5
+     },
+     {
+      "name" : "beginParamEdit",
+      "kind" : "function",
+      "line" : 97,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 103,
+      "endchar" : 5
+     },
+     {
+      "name" : "endParamEdit",
+      "kind" : "function",
+      "line" : 107,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 113,
+      "endchar" : 5
+     },
+     {
+      "name" : "getNormalized",
+      "kind" : "function",
+      "line" : 116,
+      "char" : 21,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiZd"
+     },
+     {
+      "name" : "getNormalizedDefault",
+      "kind" : "function",
+      "line" : 119,
+      "char" : 21,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiZd"
+     },
+     {
+      "name" : "stringFromNormalizedValue",
+      "kind" : "function",
+      "line" : 122,
+      "char" : 19,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNidPakZv",
+      "originalType" : "nothrow @nogc void(double normalizedValue, char* buffer, size_t len)",
+      "parameters" : [
+       {
+        "name" : "normalizedValue",
+        "deco" : "d"
+       },
+       {
+        "name" : "buffer",
+        "deco" : "Pa"
+       },
+       {
+        "name" : "len",
+        "deco" : "k"
+       }
+      ]
+     },
+     {
+      "name" : "normalizedValueFromString",
+      "kind" : "function",
+      "line" : 126,
+      "char" : 19,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiAyaJdZb",
+      "parameters" : [
+       {
+        "name" : "valueString",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "result",
+        "deco" : "d",
+        "storageClass" : [
+         "out"
+        ]
+       }
+      ]
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 128,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 132,
+      "endchar" : 5
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "protection" : "protected",
+      "line" : 136,
+      "char" : 5,
+      "deco" : "FNbNiiAyaAyaZC5dplug6client6params9Parameter",
+      "originalType" : "nothrow @nogc (int index, string name, string label)",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       },
+       {
+        "name" : "name",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "label",
+        "deco" : "Aya"
+       }
+      ],
+      "endline" : 144,
+      "endchar" : 5
+     },
+     {
+      "name" : "setNormalized",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 149,
+      "char" : 19,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNidZv",
+      "parameters" : [
+       {
+        "name" : "hostValue",
+        "deco" : "d"
+       }
+      ]
+     },
+     {
+      "name" : "toStringN",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 152,
+      "char" : 19,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiPakZv",
+      "originalType" : "nothrow @nogc void(char* buffer, size_t numBytes)",
+      "parameters" : [
+       {
+        "name" : "buffer",
+        "deco" : "Pa"
+       },
+       {
+        "name" : "numBytes",
+        "deco" : "k"
+       }
+      ]
+     },
+     {
+      "name" : "notifyListeners",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 154,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 158,
+      "endchar" : 5
+     },
+     {
+      "name" : "checkBeingEdited",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 160,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 169,
+      "endchar" : 5
+     },
+     {
+      "name" : "setClientReference",
+      "kind" : "function",
+      "protection" : "package",
+      "line" : 174,
+      "char" : 10,
+      "deco" : "FNbNiC5dplug6client6client6ClientZv",
+      "parameters" : [
+       {
+        "name" : "client",
+        "deco" : "C5dplug6client6client6Client"
+       }
+      ],
+      "endline" : 177,
+      "endchar" : 5
+     },
+     {
+      "name" : "_client",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 182,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug6client6client6Client",
+      "originalType" : "Client",
+      "offset" : 8
+     },
+     {
+      "name" : "_index",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 184,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 12
+     },
+     {
+      "name" : "_name",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 185,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Aya",
+      "offset" : 16
+     },
+     {
+      "name" : "_label",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 186,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Aya",
+      "offset" : 24
+     },
+     {
+      "name" : "_listeners",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 187,
+      "char" : 28,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer50__T3VecTC5dplug6client6params18IParameterListenerZ3Vec",
+      "originalType" : "Vec!IParameterListener",
+      "offset" : 32
+     },
+     {
+      "name" : "_editCount",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 191,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "init" : "0",
+      "offset" : 48
+     },
+     {
+      "name" : "_valueMutex",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 193,
+      "char" : 20,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core4sync14UncheckedMutex",
+      "offset" : 56
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 128,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 128,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   },
+   {
+    "name" : "IParameterListener",
+    "kind" : "interface",
+    "line" : 198,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "onParameterChanged",
+      "kind" : "function",
+      "line" : 205,
+      "char" : 10,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ]
+     },
+     {
+      "name" : "onBeginParameterEdit",
+      "kind" : "function",
+      "line" : 208,
+      "char" : 10,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ]
+     },
+     {
+      "name" : "onEndParameterEdit",
+      "kind" : "function",
+      "line" : 211,
+      "char" : 10,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "BoolParameter",
+    "kind" : "class",
+    "line" : 216,
+    "char" : 1,
+    "base" : "dplug.client.params.Parameter",
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 219,
+      "char" : 5,
+      "deco" : "FNbNiiAyabZC5dplug6client6params13BoolParameter",
+      "originalType" : "nothrow @nogc (int index, string name, bool defaultValue)",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       },
+       {
+        "name" : "name",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "defaultValue",
+        "deco" : "b"
+       }
+      ],
+      "endline" : 224,
+      "endchar" : 5
+     },
+     {
+      "name" : "setNormalized",
+      "kind" : "function",
+      "line" : 226,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNidZv",
+      "originalType" : "void(double hostValue)",
+      "parameters" : [
+       {
+        "name" : "hostValue",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 232,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.setNormalized"
+      ]
+     },
+     {
+      "name" : "getNormalized",
+      "kind" : "function",
+      "line" : 234,
+      "char" : 21,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZd",
+      "originalType" : "double()",
+      "endline" : 237,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.getNormalized"
+      ]
+     },
+     {
+      "name" : "getNormalizedDefault",
+      "kind" : "function",
+      "line" : 239,
+      "char" : 21,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZd",
+      "originalType" : "double()",
+      "endline" : 242,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.getNormalizedDefault"
+      ]
+     },
+     {
+      "name" : "toStringN",
+      "kind" : "function",
+      "line" : 244,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiPakZv",
+      "originalType" : "void(char* buffer, size_t numBytes)",
+      "parameters" : [
+       {
+        "name" : "buffer",
+        "deco" : "Pa"
+       },
+       {
+        "name" : "numBytes",
+        "deco" : "k"
+       }
+      ],
+      "endline" : 252,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.toStringN"
+      ]
+     },
+     {
+      "name" : "stringFromNormalizedValue",
+      "kind" : "function",
+      "line" : 255,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNidPakZv",
+      "originalType" : "void(double normalizedValue, char* buffer, size_t len)",
+      "parameters" : [
+       {
+        "name" : "normalizedValue",
+        "deco" : "d"
+       },
+       {
+        "name" : "buffer",
+        "deco" : "Pa"
+       },
+       {
+        "name" : "len",
+        "deco" : "k"
+       }
+      ],
+      "endline" : 262,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.stringFromNormalizedValue"
+      ]
+     },
+     {
+      "name" : "normalizedValueFromString",
+      "kind" : "function",
+      "line" : 265,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiAyaJdZb",
+      "originalType" : "bool(string valueString, out double result)",
+      "parameters" : [
+       {
+        "name" : "valueString",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "result",
+        "deco" : "d",
+        "storageClass" : [
+         "out"
+        ]
+       }
+      ],
+      "endline" : 279,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.normalizedValueFromString"
+      ]
+     },
+     {
+      "name" : "toggleFromGUI",
+      "kind" : "function",
+      "line" : 282,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 285,
+      "endchar" : 5
+     },
+     {
+      "name" : "setFromGUI",
+      "kind" : "function",
+      "line" : 288,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNibZv",
+      "parameters" : [
+       {
+        "name" : "newValue",
+        "deco" : "b"
+       }
+      ],
+      "endline" : 298,
+      "endchar" : 5
+     },
+     {
+      "name" : "value",
+      "kind" : "function",
+      "line" : 301,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZb",
+      "endline" : 308,
+      "endchar" : 5
+     },
+     {
+      "name" : "valueAtomic",
+      "kind" : "function",
+      "line" : 312,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZb",
+      "endline" : 315,
+      "endchar" : 5
+     },
+     {
+      "name" : "defaultValue",
+      "kind" : "function",
+      "line" : 318,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZb",
+      "endline" : 321,
+      "endchar" : 5
+     },
+     {
+      "name" : "_value",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 324,
+      "char" : 18,
+      "storageClass" : [
+       "shared"
+      ],
+      "deco" : "Ob",
+      "offset" : 88
+     },
+     {
+      "name" : "_defaultValue",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 325,
+      "char" : 10,
+      "deco" : "b",
+      "offset" : 89
+     }
+    ]
+   },
+   {
+    "name" : "IntegerParameter",
+    "kind" : "class",
+    "line" : 329,
+    "char" : 1,
+    "base" : "dplug.client.params.Parameter",
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 332,
+      "char" : 5,
+      "deco" : "FNbNiiAyaAyaiiiZC5dplug6client6params16IntegerParameter",
+      "originalType" : "nothrow @nogc (int index, string name, string label, int min = 0, int max = 1, int defaultValue = 0)",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       },
+       {
+        "name" : "name",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "label",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "min",
+        "deco" : "i",
+        "default" : "0"
+       },
+       {
+        "name" : "max",
+        "deco" : "i",
+        "default" : "1"
+       },
+       {
+        "name" : "defaultValue",
+        "deco" : "i",
+        "default" : "0"
+       }
+      ],
+      "endline" : 339,
+      "endchar" : 5
+     },
+     {
+      "name" : "setNormalized",
+      "kind" : "function",
+      "line" : 341,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNidZv",
+      "originalType" : "void(double hostValue)",
+      "parameters" : [
+       {
+        "name" : "hostValue",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 347,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.setNormalized"
+      ]
+     },
+     {
+      "name" : "getNormalized",
+      "kind" : "function",
+      "line" : 349,
+      "char" : 21,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZd",
+      "originalType" : "double()",
+      "endline" : 354,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.getNormalized"
+      ]
+     },
+     {
+      "name" : "getNormalizedDefault",
+      "kind" : "function",
+      "line" : 356,
+      "char" : 21,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZd",
+      "originalType" : "double()",
+      "endline" : 360,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.getNormalizedDefault"
+      ]
+     },
+     {
+      "name" : "toStringN",
+      "kind" : "function",
+      "line" : 362,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiPakZv",
+      "originalType" : "void(char* buffer, size_t numBytes)",
+      "parameters" : [
+       {
+        "name" : "buffer",
+        "deco" : "Pa"
+       },
+       {
+        "name" : "numBytes",
+        "deco" : "k"
+       }
+      ],
+      "endline" : 366,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.toStringN"
+      ]
+     },
+     {
+      "name" : "stringFromNormalizedValue",
+      "kind" : "function",
+      "line" : 368,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNidPakZv",
+      "originalType" : "void(double normalizedValue, char* buffer, size_t len)",
+      "parameters" : [
+       {
+        "name" : "normalizedValue",
+        "deco" : "d"
+       },
+       {
+        "name" : "buffer",
+        "deco" : "Pa"
+       },
+       {
+        "name" : "len",
+        "deco" : "k"
+       }
+      ],
+      "endline" : 372,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.stringFromNormalizedValue"
+      ]
+     },
+     {
+      "name" : "normalizedValueFromString",
+      "kind" : "function",
+      "line" : 374,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiAyaJdZb",
+      "originalType" : "bool(string valueString, out double result)",
+      "parameters" : [
+       {
+        "name" : "valueString",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "result",
+        "deco" : "d",
+        "storageClass" : [
+         "out"
+        ]
+       }
+      ],
+      "endline" : 391,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.normalizedValueFromString"
+      ]
+     },
+     {
+      "name" : "value",
+      "kind" : "function",
+      "line" : 394,
+      "char" : 15,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZi",
+      "endline" : 401,
+      "endchar" : 5
+     },
+     {
+      "name" : "valueAtomic",
+      "kind" : "function",
+      "line" : 405,
+      "char" : 15,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZi",
+      "endline" : 408,
+      "endchar" : 5
+     },
+     {
+      "name" : "setFromGUI",
+      "kind" : "function",
+      "line" : 410,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiZv",
+      "parameters" : [
+       {
+        "name" : "value",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 425,
+      "endchar" : 5
+     },
+     {
+      "name" : "setFromGUINormalized",
+      "kind" : "function",
+      "line" : 427,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNidZv",
+      "parameters" : [
+       {
+        "name" : "normalizedValue",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 431,
+      "endchar" : 5
+     },
+     {
+      "name" : "minValue",
+      "kind" : "function",
+      "line" : 434,
+      "char" : 15,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZi",
+      "endline" : 437,
+      "endchar" : 5
+     },
+     {
+      "name" : "maxValue",
+      "kind" : "function",
+      "line" : 440,
+      "char" : 15,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZi",
+      "endline" : 443,
+      "endchar" : 5
+     },
+     {
+      "name" : "numValues",
+      "kind" : "function",
+      "line" : 446,
+      "char" : 15,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZi",
+      "endline" : 449,
+      "endchar" : 5
+     },
+     {
+      "name" : "defaultValue",
+      "kind" : "function",
+      "line" : 452,
+      "char" : 15,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZi",
+      "endline" : 455,
+      "endchar" : 5
+     },
+     {
+      "name" : "_value",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 458,
+      "char" : 17,
+      "storageClass" : [
+       "shared"
+      ],
+      "deco" : "Oi",
+      "offset" : 88
+     },
+     {
+      "name" : "_min",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 459,
+      "char" : 9,
+      "deco" : "i",
+      "offset" : 92
+     },
+     {
+      "name" : "_max",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 460,
+      "char" : 9,
+      "deco" : "i",
+      "offset" : 96
+     },
+     {
+      "name" : "_defaultValue",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 461,
+      "char" : 9,
+      "deco" : "i",
+      "offset" : 100
+     },
+     {
+      "name" : "fromNormalized",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 463,
+      "char" : 15,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNidZi",
+      "parameters" : [
+       {
+        "name" : "normalizedValue",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 475,
+      "endchar" : 5
+     },
+     {
+      "name" : "toNormalized",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 477,
+      "char" : 18,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiZd",
+      "parameters" : [
+       {
+        "name" : "value",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 480,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "name" : "EnumParameter",
+    "kind" : "class",
+    "line" : 483,
+    "char" : 1,
+    "base" : "dplug.client.params.IntegerParameter",
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 486,
+      "char" : 5,
+      "deco" : "FNbNiiAyaxAAyaiZC5dplug6client6params13EnumParameter",
+      "originalType" : "nothrow @nogc (int index, string name, const(string[]) possibleValues, int defaultValue = 0)",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       },
+       {
+        "name" : "name",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "possibleValues",
+        "deco" : "xAAya"
+       },
+       {
+        "name" : "defaultValue",
+        "deco" : "i",
+        "default" : "0"
+       }
+      ],
+      "endline" : 491,
+      "endchar" : 5
+     },
+     {
+      "name" : "toStringN",
+      "kind" : "function",
+      "line" : 493,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiPakZv",
+      "originalType" : "void(char* buffer, size_t numBytes)",
+      "parameters" : [
+       {
+        "name" : "buffer",
+        "deco" : "Pa"
+       },
+       {
+        "name" : "numBytes",
+        "deco" : "k"
+       }
+      ],
+      "endline" : 501,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IntegerParameter.toStringN"
+      ]
+     },
+     {
+      "name" : "stringFromNormalizedValue",
+      "kind" : "function",
+      "line" : 503,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNidPakZv",
+      "originalType" : "void(double normalizedValue, char* buffer, size_t len)",
+      "parameters" : [
+       {
+        "name" : "normalizedValue",
+        "deco" : "d"
+       },
+       {
+        "name" : "buffer",
+        "deco" : "Pa"
+       },
+       {
+        "name" : "len",
+        "deco" : "k"
+       }
+      ],
+      "endline" : 507,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IntegerParameter.stringFromNormalizedValue"
+      ]
+     },
+     {
+      "name" : "normalizedValueFromString",
+      "kind" : "function",
+      "line" : 509,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiAyaJdZb",
+      "originalType" : "bool(string valueString, out double result)",
+      "parameters" : [
+       {
+        "name" : "valueString",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "result",
+        "deco" : "d",
+        "storageClass" : [
+         "out"
+        ]
+       }
+      ],
+      "endline" : 519,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IntegerParameter.normalizedValueFromString"
+      ]
+     },
+     {
+      "name" : "getValueString",
+      "kind" : "function",
+      "line" : 521,
+      "char" : 18,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiZAya",
+      "parameters" : [
+       {
+        "name" : "n",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 524,
+      "endchar" : 5
+     },
+     {
+      "name" : "_possibleValues",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 527,
+      "char" : 21,
+      "storageClass" : [
+       "const"
+      ],
+      "deco" : "xAAya",
+      "offset" : 104
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 532,
+    "char" : 7,
+    "name" : "clampValue",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "clampValue",
+      "kind" : "function",
+      "line" : 532,
+      "char" : 7,
+      "type" : "pure nothrow @nogc T(T x, T min, T max)",
+      "parameters" : [
+       {
+        "name" : "x",
+        "type" : "T"
+       },
+       {
+        "name" : "min",
+        "type" : "T"
+       },
+       {
+        "name" : "max",
+        "type" : "T"
+       }
+      ],
+      "endline" : 540,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "name" : "FloatParameter",
+    "kind" : "class",
+    "line" : 545,
+    "char" : 1,
+    "base" : "dplug.client.params.Parameter",
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 548,
+      "char" : 5,
+      "deco" : "FNbNiiAyaAyadddZC5dplug6client6params14FloatParameter",
+      "originalType" : "nothrow @nogc (int index, string name, string label, double min, double max, double defaultValue)",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       },
+       {
+        "name" : "name",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "label",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "min",
+        "deco" : "d"
+       },
+       {
+        "name" : "max",
+        "deco" : "d"
+       },
+       {
+        "name" : "defaultValue",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 560,
+      "endchar" : 5
+     },
+     {
+      "name" : "value",
+      "kind" : "function",
+      "line" : 563,
+      "char" : 18,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZd",
+      "endline" : 570,
+      "endchar" : 5
+     },
+     {
+      "name" : "valueAtomic",
+      "kind" : "function",
+      "line" : 574,
+      "char" : 18,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZd",
+      "endline" : 577,
+      "endchar" : 5
+     },
+     {
+      "name" : "minValue",
+      "kind" : "function",
+      "line" : 579,
+      "char" : 18,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZd",
+      "endline" : 582,
+      "endchar" : 5
+     },
+     {
+      "name" : "maxValue",
+      "kind" : "function",
+      "line" : 584,
+      "char" : 18,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZd",
+      "endline" : 587,
+      "endchar" : 5
+     },
+     {
+      "name" : "defaultValue",
+      "kind" : "function",
+      "line" : 589,
+      "char" : 18,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZd",
+      "endline" : 592,
+      "endchar" : 5
+     },
+     {
+      "name" : "setFromGUINormalized",
+      "kind" : "function",
+      "line" : 594,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNidZv",
+      "parameters" : [
+       {
+        "name" : "normalizedValue",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 598,
+      "endchar" : 5
+     },
+     {
+      "name" : "setDecimalPrecision",
+      "kind" : "function",
+      "line" : 601,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiZv",
+      "parameters" : [
+       {
+        "name" : "digits",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 606,
+      "endchar" : 5
+     },
+     {
+      "name" : "setFromGUI",
+      "kind" : "function",
+      "line" : 608,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNidZv",
+      "parameters" : [
+       {
+        "name" : "value",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 623,
+      "endchar" : 5
+     },
+     {
+      "name" : "setNormalized",
+      "kind" : "function",
+      "line" : 625,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNidZv",
+      "originalType" : "void(double hostValue)",
+      "parameters" : [
+       {
+        "name" : "hostValue",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 631,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.setNormalized"
+      ]
+     },
+     {
+      "name" : "getNormalized",
+      "kind" : "function",
+      "line" : 633,
+      "char" : 21,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZd",
+      "originalType" : "double()",
+      "endline" : 636,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.getNormalized"
+      ]
+     },
+     {
+      "name" : "getNormalizedDefault",
+      "kind" : "function",
+      "line" : 638,
+      "char" : 21,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZd",
+      "originalType" : "double()",
+      "endline" : 641,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.getNormalizedDefault"
+      ]
+     },
+     {
+      "name" : "toStringN",
+      "kind" : "function",
+      "line" : 643,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiPakZv",
+      "originalType" : "void(char* buffer, size_t numBytes)",
+      "parameters" : [
+       {
+        "name" : "buffer",
+        "deco" : "Pa"
+       },
+       {
+        "name" : "numBytes",
+        "deco" : "k"
+       }
+      ],
+      "endline" : 646,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.toStringN"
+      ]
+     },
+     {
+      "name" : "stringFromNormalizedValue",
+      "kind" : "function",
+      "line" : 648,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNidPakZv",
+      "originalType" : "void(double normalizedValue, char* buffer, size_t len)",
+      "parameters" : [
+       {
+        "name" : "normalizedValue",
+        "deco" : "d"
+       },
+       {
+        "name" : "buffer",
+        "deco" : "Pa"
+       },
+       {
+        "name" : "len",
+        "deco" : "k"
+       }
+      ],
+      "endline" : 652,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.stringFromNormalizedValue"
+      ]
+     },
+     {
+      "name" : "normalizedValueFromString",
+      "kind" : "function",
+      "line" : 654,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiAyaJdZb",
+      "originalType" : "bool(string valueString, out double result)",
+      "parameters" : [
+       {
+        "name" : "valueString",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "result",
+        "deco" : "d",
+        "storageClass" : [
+         "out"
+        ]
+       }
+      ],
+      "endline" : 671,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.Parameter.normalizedValueFromString"
+      ]
+     },
+     {
+      "name" : "toNormalized",
+      "kind" : "function",
+      "line" : 674,
+      "char" : 21,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNidZd",
+      "parameters" : [
+       {
+        "name" : "value",
+        "deco" : "d"
+       }
+      ]
+     },
+     {
+      "name" : "fromNormalized",
+      "kind" : "function",
+      "line" : 677,
+      "char" : 21,
+      "storageClass" : [
+       "abstract"
+      ],
+      "deco" : "FNbNidZd",
+      "parameters" : [
+       {
+        "name" : "value",
+        "deco" : "d"
+       }
+      ]
+     },
+     {
+      "name" : "_value",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 680,
+      "char" : 20,
+      "storageClass" : [
+       "shared"
+      ],
+      "deco" : "Od",
+      "offset" : 88
+     },
+     {
+      "name" : "_min",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 681,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 96
+     },
+     {
+      "name" : "_max",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 682,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 104
+     },
+     {
+      "name" : "_defaultValue",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 683,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 112
+     },
+     {
+      "name" : "_formatString",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 686,
+      "char" : 13,
+      "deco" : "G6a",
+      "init" : "\"%2.2f\\x00\"",
+      "offset" : 120
+     }
+    ]
+   },
+   {
+    "name" : "LinearFloatParameter",
+    "kind" : "class",
+    "line" : 690,
+    "char" : 1,
+    "base" : "dplug.client.params.FloatParameter",
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 692,
+      "char" : 5,
+      "deco" : "FNbNiiAyaAyafffZC5dplug6client6params20LinearFloatParameter",
+      "originalType" : "nothrow @nogc (int index, string name, string label, float min, float max, float defaultValue)",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       },
+       {
+        "name" : "name",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "label",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "min",
+        "deco" : "f"
+       },
+       {
+        "name" : "max",
+        "deco" : "f"
+       },
+       {
+        "name" : "defaultValue",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 695,
+      "endchar" : 5
+     },
+     {
+      "name" : "toNormalized",
+      "kind" : "function",
+      "line" : 697,
+      "char" : 21,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNidZd",
+      "originalType" : "double(double value)",
+      "parameters" : [
+       {
+        "name" : "value",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 700,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.FloatParameter.toNormalized"
+      ]
+     },
+     {
+      "name" : "fromNormalized",
+      "kind" : "function",
+      "line" : 702,
+      "char" : 21,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNidZd",
+      "originalType" : "double(double normalizedValue)",
+      "parameters" : [
+       {
+        "name" : "normalizedValue",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 705,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.FloatParameter.fromNormalized"
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "LogFloatParameter",
+    "kind" : "class",
+    "line" : 709,
+    "char" : 1,
+    "base" : "dplug.client.params.FloatParameter",
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 711,
+      "char" : 5,
+      "deco" : "FNbNiiAyaAyadddZC5dplug6client6params17LogFloatParameter",
+      "originalType" : "nothrow @nogc (int index, string name, string label, double min, double max, double defaultValue)",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       },
+       {
+        "name" : "name",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "label",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "min",
+        "deco" : "d"
+       },
+       {
+        "name" : "max",
+        "deco" : "d"
+       },
+       {
+        "name" : "defaultValue",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 715,
+      "endchar" : 5
+     },
+     {
+      "name" : "toNormalized",
+      "kind" : "function",
+      "line" : 717,
+      "char" : 21,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNidZd",
+      "originalType" : "double(double value)",
+      "parameters" : [
+       {
+        "name" : "value",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 725,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.FloatParameter.toNormalized"
+      ]
+     },
+     {
+      "name" : "fromNormalized",
+      "kind" : "function",
+      "line" : 727,
+      "char" : 21,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNidZd",
+      "originalType" : "double(double normalizedValue)",
+      "parameters" : [
+       {
+        "name" : "normalizedValue",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 730,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.FloatParameter.fromNormalized"
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "GainParameter",
+    "kind" : "class",
+    "line" : 734,
+    "char" : 1,
+    "base" : "dplug.client.params.FloatParameter",
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 736,
+      "char" : 5,
+      "deco" : "FNbNiiAyadddZC5dplug6client6params13GainParameter",
+      "originalType" : "nothrow @nogc (int index, string name, double max, double defaultValue, double shape = 2.00000)",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       },
+       {
+        "name" : "name",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "max",
+        "deco" : "d"
+       },
+       {
+        "name" : "defaultValue",
+        "deco" : "d"
+       },
+       {
+        "name" : "shape",
+        "deco" : "d",
+        "default" : "2.00000"
+       }
+      ],
+      "endline" : 741,
+      "endchar" : 5
+     },
+     {
+      "name" : "toNormalized",
+      "kind" : "function",
+      "line" : 743,
+      "char" : 21,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNidZd",
+      "originalType" : "double(double value)",
+      "parameters" : [
+       {
+        "name" : "value",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 753,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.FloatParameter.toNormalized"
+      ]
+     },
+     {
+      "name" : "fromNormalized",
+      "kind" : "function",
+      "line" : 755,
+      "char" : 21,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNidZd",
+      "originalType" : "double(double normalizedValue)",
+      "parameters" : [
+       {
+        "name" : "normalizedValue",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 758,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.FloatParameter.fromNormalized"
+      ]
+     },
+     {
+      "name" : "_shape",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 761,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 128
+     }
+    ]
+   },
+   {
+    "name" : "PowFloatParameter",
+    "kind" : "class",
+    "line" : 765,
+    "char" : 1,
+    "base" : "dplug.client.params.FloatParameter",
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 767,
+      "char" : 5,
+      "deco" : "FNbNiiAyaAyaddddZC5dplug6client6params17PowFloatParameter",
+      "originalType" : "nothrow @nogc (int index, string name, string label, double min, double max, double defaultValue, double shape)",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       },
+       {
+        "name" : "name",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "label",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "min",
+        "deco" : "d"
+       },
+       {
+        "name" : "max",
+        "deco" : "d"
+       },
+       {
+        "name" : "defaultValue",
+        "deco" : "d"
+       },
+       {
+        "name" : "shape",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 771,
+      "endchar" : 5
+     },
+     {
+      "name" : "toNormalized",
+      "kind" : "function",
+      "line" : 773,
+      "char" : 21,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNidZd",
+      "originalType" : "double(double value)",
+      "parameters" : [
+       {
+        "name" : "value",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 778,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.FloatParameter.toNormalized"
+      ]
+     },
+     {
+      "name" : "fromNormalized",
+      "kind" : "function",
+      "line" : 780,
+      "char" : 21,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNidZd",
+      "originalType" : "double(double normalizedValue)",
+      "parameters" : [
+       {
+        "name" : "normalizedValue",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 784,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.FloatParameter.fromNormalized"
+      ]
+     },
+     {
+      "name" : "_shape",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 787,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 128
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.client.preset",
+  "kind" : "module",
+  "file" : "..\\..\\..\\client\\dplug\\client\\preset.d",
+  "members" : [
+   {
+    "name" : "core.stdc.stdlib",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private",
+    "selective" : [
+     "free"
+    ]
+   },
+   {
+    "name" : "std.range.primitives",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.array",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.algorithm.comparison",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 15,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 16,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.binrange",
+    "kind" : "import",
+    "line" : 18,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.client",
+    "kind" : "import",
+    "line" : 19,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.params",
+    "kind" : "import",
+    "line" : 20,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "DPLUG_SERIALIZATION_MAJOR_VERSION",
+    "kind" : "variable",
+    "line" : 27,
+    "char" : 10,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "i",
+    "init" : "0"
+   },
+   {
+    "name" : "DPLUG_SERIALIZATION_MINOR_VERSION",
+    "kind" : "variable",
+    "line" : 31,
+    "char" : 10,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "i",
+    "init" : "0"
+   },
+   {
+    "name" : "Preset",
+    "kind" : "class",
+    "line" : 34,
+    "char" : 7,
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 38,
+      "char" : 5,
+      "deco" : "FNbNiAyaAxfZC5dplug6client6preset6Preset",
+      "originalType" : "nothrow @nogc (string name, const(float)[] normalizedParams)",
+      "parameters" : [
+       {
+        "name" : "name",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "normalizedParams",
+        "deco" : "Axf"
+       }
+      ],
+      "endline" : 42,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 44,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 48,
+      "endchar" : 5
+     },
+     {
+      "name" : "setNormalized",
+      "kind" : "function",
+      "line" : 50,
+      "char" : 10,
+      "deco" : "FNbNiifZv",
+      "parameters" : [
+       {
+        "name" : "paramIndex",
+        "deco" : "i"
+       },
+       {
+        "name" : "value",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 53,
+      "endchar" : 5
+     },
+     {
+      "name" : "name",
+      "kind" : "function",
+      "line" : 55,
+      "char" : 19,
+      "deco" : "FNaNbNiZAxa",
+      "endline" : 58,
+      "endchar" : 5
+     },
+     {
+      "name" : "setName",
+      "kind" : "function",
+      "line" : 60,
+      "char" : 10,
+      "deco" : "FNbNiAxaZv",
+      "parameters" : [
+       {
+        "name" : "newName",
+        "deco" : "Axa"
+       }
+      ],
+      "endline" : 64,
+      "endchar" : 5
+     },
+     {
+      "name" : "saveFromHost",
+      "kind" : "function",
+      "line" : 66,
+      "char" : 10,
+      "deco" : "FNbNiC5dplug6client6client6ClientZv",
+      "parameters" : [
+       {
+        "name" : "client",
+        "deco" : "C5dplug6client6client6Client"
+       }
+      ],
+      "endline" : 73,
+      "endchar" : 5
+     },
+     {
+      "name" : "loadFromHost",
+      "kind" : "function",
+      "line" : 75,
+      "char" : 10,
+      "deco" : "FNbNiC5dplug6client6client6ClientZv",
+      "parameters" : [
+       {
+        "name" : "client",
+        "deco" : "C5dplug6client6client6Client"
+       }
+      ],
+      "endline" : 88,
+      "endchar" : 5
+     },
+     {
+      "kind" : "template",
+      "line" : 90,
+      "char" : 10,
+      "name" : "serializeBinary",
+      "parameters" : [
+       {
+        "name" : "O",
+        "kind" : "type"
+       }
+      ],
+      "constraint" : "isOutputRange!(O, ubyte)",
+      "members" : [
+       {
+        "name" : "serializeBinary",
+        "kind" : "function",
+        "line" : 90,
+        "char" : 10,
+        "type" : "nothrow @nogc void(auto ref O output)",
+        "parameters" : [
+         {
+          "name" : "output",
+          "type" : "O",
+          "storageClass" : [
+           "auto",
+           "ref"
+          ]
+         }
+        ],
+        "endline" : 101,
+        "endchar" : 5
+       }
+      ]
+     },
+     {
+      "name" : "unserializeBinary",
+      "kind" : "function",
+      "line" : 104,
+      "char" : 10,
+      "deco" : "FNiKAhZv",
+      "parameters" : [
+       {
+        "name" : "input",
+        "deco" : "Ah",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 129,
+      "endchar" : 5
+     },
+     {
+      "name" : "isValidNormalizedParam",
+      "kind" : "function",
+      "line" : 131,
+      "char" : 17,
+      "storageClass" : [
+       "static"
+      ],
+      "deco" : "FNbNifZb",
+      "parameters" : [
+       {
+        "name" : "f",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 134,
+      "endchar" : 5
+     },
+     {
+      "name" : "_name",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 137,
+      "char" : 12,
+      "deco" : "Aa",
+      "offset" : 8
+     },
+     {
+      "name" : "_normalizedParams",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 138,
+      "char" : 13,
+      "deco" : "Af",
+      "offset" : 16
+     },
+     {
+      "name" : "clearName",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 140,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 147,
+      "endchar" : 5
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   },
+   {
+    "name" : "PresetBank",
+    "kind" : "class",
+    "line" : 151,
+    "char" : 7,
+    "members" : [
+     {
+      "name" : "presets",
+      "kind" : "variable",
+      "line" : 156,
+      "char" : 16,
+      "deco" : "S5dplug4core13alignedbuffer37__T3VecTC5dplug6client6preset6PresetZ3Vec",
+      "originalType" : "Vec!Preset",
+      "offset" : 8
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 161,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug6client6client6ClientAC5dplug6client6preset6PresetZC5dplug6client6preset10PresetBank",
+      "originalType" : "nothrow @nogc (Client client, Preset[] presets_)",
+      "parameters" : [
+       {
+        "name" : "client",
+        "deco" : "C5dplug6client6client6Client"
+       },
+       {
+        "name" : "presets_",
+        "deco" : "AC5dplug6client6preset6Preset"
+       }
+      ],
+      "endline" : 170,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 172,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 181,
+      "endchar" : 5
+     },
+     {
+      "name" : "preset",
+      "kind" : "function",
+      "line" : 183,
+      "char" : 12,
+      "deco" : "FNbNiiZC5dplug6client6preset6Preset",
+      "parameters" : [
+       {
+        "name" : "i",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 186,
+      "endchar" : 5
+     },
+     {
+      "name" : "numPresets",
+      "kind" : "function",
+      "line" : 188,
+      "char" : 9,
+      "deco" : "FNbNiZi",
+      "endline" : 191,
+      "endchar" : 5
+     },
+     {
+      "name" : "currentPresetIndex",
+      "kind" : "function",
+      "line" : 193,
+      "char" : 9,
+      "deco" : "FNbNiZi",
+      "endline" : 196,
+      "endchar" : 5
+     },
+     {
+      "name" : "currentPreset",
+      "kind" : "function",
+      "line" : 198,
+      "char" : 12,
+      "deco" : "FNbNiZC5dplug6client6preset6Preset",
+      "endline" : 204,
+      "endchar" : 5
+     },
+     {
+      "name" : "isValidPresetIndex",
+      "kind" : "function",
+      "line" : 206,
+      "char" : 10,
+      "deco" : "FNbNiiZb",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 209,
+      "endchar" : 5
+     },
+     {
+      "name" : "putCurrentStateInCurrentPreset",
+      "kind" : "function",
+      "line" : 213,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 216,
+      "endchar" : 5
+     },
+     {
+      "name" : "loadPresetByNameFromHost",
+      "kind" : "function",
+      "line" : 218,
+      "char" : 10,
+      "deco" : "FNbNiAyaZv",
+      "parameters" : [
+       {
+        "name" : "name",
+        "deco" : "Aya"
+       }
+      ],
+      "endline" : 223,
+      "endchar" : 5
+     },
+     {
+      "name" : "loadPresetFromHost",
+      "kind" : "function",
+      "line" : 225,
+      "char" : 10,
+      "deco" : "FNbNiiZv",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 230,
+      "endchar" : 5
+     },
+     {
+      "name" : "addNewDefaultPresetFromHost",
+      "kind" : "function",
+      "line" : 233,
+      "char" : 10,
+      "deco" : "FNbNiAyaZv",
+      "parameters" : [
+       {
+        "name" : "presetName",
+        "deco" : "Aya"
+       }
+      ],
+      "endline" : 244,
+      "endchar" : 5
+     },
+     {
+      "name" : "getPresetChunk",
+      "kind" : "function",
+      "line" : 248,
+      "char" : 13,
+      "deco" : "FNbNiiZAh",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 254,
+      "endchar" : 5
+     },
+     {
+      "name" : "loadPresetChunk",
+      "kind" : "function",
+      "line" : 258,
+      "char" : 10,
+      "deco" : "FiAhZv",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       },
+       {
+        "name" : "chunk",
+        "deco" : "Ah"
+       }
+      ],
+      "endline" : 266,
+      "endchar" : 5
+     },
+     {
+      "name" : "getBankChunk",
+      "kind" : "function",
+      "line" : 270,
+      "char" : 13,
+      "deco" : "FNbNiZAh",
+      "endline" : 282,
+      "endchar" : 5
+     },
+     {
+      "name" : "loadBankChunk",
+      "kind" : "function",
+      "line" : 286,
+      "char" : 10,
+      "deco" : "FNiAhZv",
+      "parameters" : [
+       {
+        "name" : "chunk",
+        "deco" : "Ah"
+       }
+      ],
+      "endline" : 296,
+      "endchar" : 5
+     },
+     {
+      "name" : "getStateChunk",
+      "kind" : "function",
+      "line" : 300,
+      "char" : 13,
+      "deco" : "FNbNiZAh",
+      "endline" : 313,
+      "endchar" : 5
+     },
+     {
+      "name" : "loadStateChunk",
+      "kind" : "function",
+      "line" : 317,
+      "char" : 10,
+      "deco" : "FNiAhZv",
+      "parameters" : [
+       {
+        "name" : "chunk",
+        "deco" : "Ah"
+       }
+      ],
+      "endline" : 337,
+      "endchar" : 5
+     },
+     {
+      "name" : "_client",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 340,
+      "char" : 12,
+      "deco" : "C5dplug6client6client6Client",
+      "originalType" : "Client",
+      "offset" : 24
+     },
+     {
+      "name" : "_current",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 341,
+      "char" : 9,
+      "deco" : "i",
+      "offset" : 28
+     },
+     {
+      "name" : "DPLUG_MAGIC",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 343,
+      "char" : 15,
+      "storageClass" : [
+       "enum"
+      ],
+      "deco" : "k",
+      "init" : "186694290u"
+     },
+     {
+      "kind" : "template",
+      "protection" : "private",
+      "line" : 345,
+      "char" : 10,
+      "name" : "writeChunkHeader",
+      "parameters" : [
+       {
+        "name" : "O",
+        "kind" : "type"
+       }
+      ],
+      "constraint" : "isOutputRange!(O, ubyte)",
+      "members" : [
+       {
+        "name" : "writeChunkHeader",
+        "kind" : "function",
+        "line" : 345,
+        "char" : 10,
+        "type" : "@nogc void(auto ref O output)",
+        "parameters" : [
+         {
+          "name" : "output",
+          "type" : "O",
+          "storageClass" : [
+           "auto",
+           "ref"
+          ]
+         }
+        ],
+        "endline" : 354,
+        "endchar" : 5
+       }
+      ]
+     },
+     {
+      "name" : "checkChunkHeader",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 356,
+      "char" : 10,
+      "deco" : "FNiKAhZv",
+      "parameters" : [
+       {
+        "name" : "input",
+        "deco" : "Ah",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 373,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 172,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 172,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   }
+  ]
+ }
+]

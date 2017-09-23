@@ -1,0 +1,3159 @@
+[
+ {
+  "name" : "dplug.au.audiocomponentdispatch",
+  "kind" : "module",
+  "file" : "..\\..\\..\\au\\dplug\\au\\audiocomponentdispatch.d",
+  "members" : [
+   {
+    "name" : "derelict.carbon",
+    "kind" : "import",
+    "line" : 54,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "core.stdc.stdio",
+    "kind" : "import",
+    "line" : 59,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "AudioComponentPlugInInstance",
+    "kind" : "struct",
+    "line" : 62,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "iface",
+      "kind" : "variable",
+      "line" : 64,
+      "char" : 35,
+      "deco" : "S8derelict6carbon9audiounit29AudioComponentPlugInInterface",
+      "offset" : 0
+     }
+    ]
+   },
+   {
+    "name" : "audioComponentOpen",
+    "kind" : "function",
+    "line" : 70,
+    "char" : 14,
+    "deco" : "UNbPvPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self, AudioComponentInstance mInstance)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "mInstance",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 91,
+    "endchar" : 5
+   },
+   {
+    "name" : "audioComponentClose",
+    "kind" : "function",
+    "line" : 93,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 109,
+    "endchar" : 5
+   },
+   {
+    "name" : "audioComponentLookup",
+    "kind" : "function",
+    "line" : 111,
+    "char" : 26,
+    "deco" : "UNbsZPUNbPvYi",
+    "originalType" : "nothrow extern (C) AudioComponentMethod(SInt16 selector)",
+    "parameters" : [
+     {
+      "name" : "selector",
+      "deco" : "s"
+     }
+    ],
+    "endline" : 150,
+    "endchar" : 5
+   },
+   {
+    "name" : "AUMethodInitialize",
+    "kind" : "function",
+    "line" : 152,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 156,
+    "endchar" : 5
+   },
+   {
+    "name" : "AUMethodUninitialize",
+    "kind" : "function",
+    "line" : 157,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 161,
+    "endchar" : 5
+   },
+   {
+    "name" : "AUMethodGetPropertyInfo",
+    "kind" : "function",
+    "line" : 162,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 166,
+    "endchar" : 5
+   },
+   {
+    "name" : "AUMethodGetProperty",
+    "kind" : "function",
+    "line" : 167,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 171,
+    "endchar" : 5
+   },
+   {
+    "name" : "AUMethodSetProperty",
+    "kind" : "function",
+    "line" : 172,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 176,
+    "endchar" : 5
+   },
+   {
+    "name" : "AUMethodAddPropertyListener",
+    "kind" : "function",
+    "line" : 177,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 181,
+    "endchar" : 5
+   },
+   {
+    "name" : "AUMethodRemovePropertyListener",
+    "kind" : "function",
+    "line" : 182,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 186,
+    "endchar" : 5
+   },
+   {
+    "name" : "AUMethodRemovePropertyListenerWithUserData",
+    "kind" : "function",
+    "line" : 187,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 191,
+    "endchar" : 5
+   },
+   {
+    "name" : "AUMethodAddRenderNotify",
+    "kind" : "function",
+    "line" : 192,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 196,
+    "endchar" : 5
+   },
+   {
+    "name" : "AUMethodRemoveRenderNotify",
+    "kind" : "function",
+    "line" : 197,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 201,
+    "endchar" : 5
+   },
+   {
+    "name" : "AUMethodGetParameter",
+    "kind" : "function",
+    "line" : 202,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 206,
+    "endchar" : 5
+   },
+   {
+    "name" : "AUMethodSetParameter",
+    "kind" : "function",
+    "line" : 207,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 211,
+    "endchar" : 5
+   },
+   {
+    "name" : "AUMethodScheduleParameters",
+    "kind" : "function",
+    "line" : 212,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 216,
+    "endchar" : 5
+   },
+   {
+    "name" : "AUMethodRender",
+    "kind" : "function",
+    "line" : 217,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 221,
+    "endchar" : 5
+   },
+   {
+    "name" : "AUMethodReset",
+    "kind" : "function",
+    "line" : 222,
+    "char" : 14,
+    "deco" : "UNbPvZi",
+    "originalType" : "nothrow extern (C) OSStatus(void* self)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 226,
+    "endchar" : 5
+   }
+  ]
+ },
+ {
+  "name" : "dplug.au.client",
+  "kind" : "module",
+  "file" : "..\\..\\..\\au\\dplug\\au\\client.d",
+  "members" : [
+   {
+    "name" : "core.stdc.stdio",
+    "kind" : "import",
+    "line" : 19,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "core.stdc.config",
+    "kind" : "import",
+    "line" : 20,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "core.stdc.string",
+    "kind" : "import",
+    "line" : 21,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.algorithm.comparison",
+    "kind" : "import",
+    "line" : 23,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.string",
+    "kind" : "import",
+    "line" : 24,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.conv",
+    "kind" : "import",
+    "line" : 25,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "derelict.carbon",
+    "kind" : "import",
+    "line" : 27,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 29,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 30,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.lockedqueue",
+    "kind" : "import",
+    "line" : 31,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.runtime",
+    "kind" : "import",
+    "line" : 32,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.sync",
+    "kind" : "import",
+    "line" : 33,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.thread",
+    "kind" : "import",
+    "line" : 34,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.client",
+    "kind" : "import",
+    "line" : 36,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.daw",
+    "kind" : "import",
+    "line" : 37,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.midi",
+    "kind" : "import",
+    "line" : 38,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.preset",
+    "kind" : "import",
+    "line" : 39,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.params",
+    "kind" : "import",
+    "line" : 40,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.graphics",
+    "kind" : "import",
+    "line" : 41,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.au.dfxutil",
+    "kind" : "import",
+    "line" : 43,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.au.cocoaviewfactory",
+    "kind" : "import",
+    "line" : 44,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.au.audiocomponentdispatch",
+    "kind" : "import",
+    "line" : 45,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 61,
+    "char" : 1,
+    "name" : "AUEntryPoint",
+    "parameters" : [
+     {
+      "name" : "ClientClass",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "AUEntryPoint",
+      "kind" : "variable",
+      "line" : 65,
+      "char" : 18,
+      "storageClass" : [
+       "const"
+      ],
+      "type" : "char[]",
+      "init" : "\"import derelict.carbon;\" ~ \"extern(C) ComponentResult dplugAUEntryPoint(ComponentParameters* params, void* pPlug) nothrow  @nogc\" ~ \"{\" ~ \"return audioUnitEntryPoint!\" ~ ClientClass.stringof ~ \"(params, pPlug);\" ~ \"}\" ~ \"extern(C) ComponentResult dplugAUCarbonViewEntryPoint(ComponentParameters* params, void* pView) nothrow  @nogc\" ~ \"{\" ~ \"return audioUnitCarbonViewEntry!\" ~ ClientClass.stringof ~ \"(params, pView);\" ~ \"}\" ~ \"extern(C) void* dplugAUComponentFactoryFunction(void* inDesc) nothrow  @nogc\" ~ \"{\" ~ \"return audioUnitComponentFactory!\" ~ ClientClass.stringof ~ \"(inDesc);\" ~ \"}\""
+     }
+    ]
+   },
+   {
+    "name" : "__LP64__",
+    "kind" : "variable",
+    "protection" : "private",
+    "line" : 86,
+    "char" : 18,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "i",
+    "init" : "0"
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 90,
+    "char" : 11,
+    "name" : "getCompParam",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     },
+     {
+      "name" : "Idx",
+      "kind" : "value",
+      "deco" : "i"
+     },
+     {
+      "name" : "Num",
+      "kind" : "value",
+      "deco" : "i"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "getCompParam",
+      "kind" : "function",
+      "line" : 90,
+      "char" : 11,
+      "type" : "pure nothrow @nogc T(ComponentParameters* params)",
+      "parameters" : [
+       {
+        "name" : "params",
+        "type" : "ComponentParameters*"
+       }
+      ],
+      "endline" : 98,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "acquireAUFunctions",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 100,
+    "char" : 14,
+    "deco" : "FNbNiZv",
+    "endline" : 106,
+    "endchar" : 1
+   },
+   {
+    "name" : "releaseAUFunctions",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 108,
+    "char" : 14,
+    "deco" : "FNbNiZv",
+    "endline" : 114,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 116,
+    "char" : 17,
+    "name" : "audioUnitEntryPoint",
+    "parameters" : [
+     {
+      "name" : "ClientClass",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "audioUnitEntryPoint",
+      "kind" : "function",
+      "line" : 116,
+      "char" : 17,
+      "type" : "nothrow @nogc ComponentResult(ComponentParameters* params, void* pPlug)",
+      "parameters" : [
+       {
+        "name" : "params",
+        "type" : "ComponentParameters*"
+       },
+       {
+        "name" : "pPlug",
+        "type" : "void*"
+       }
+      ],
+      "endline" : 146,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "CarbonViewInstance",
+    "kind" : "struct",
+    "line" : 148,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "mCI",
+      "kind" : "variable",
+      "line" : 150,
+      "char" : 23,
+      "deco" : "Pv",
+      "originalType" : "ComponentInstance",
+      "offset" : 0
+     },
+     {
+      "name" : "mPlug",
+      "kind" : "variable",
+      "line" : 151,
+      "char" : 14,
+      "deco" : "C5dplug2au6client8AUClient",
+      "originalType" : "AUClient",
+      "offset" : 4
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 154,
+    "char" : 17,
+    "name" : "audioUnitCarbonViewEntry",
+    "parameters" : [
+     {
+      "name" : "ClientClass",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "audioUnitCarbonViewEntry",
+      "kind" : "function",
+      "line" : 154,
+      "char" : 17,
+      "type" : "nothrow @nogc ComponentResult(ComponentParameters* params, void* pView)",
+      "parameters" : [
+       {
+        "name" : "params",
+        "type" : "ComponentParameters*"
+       },
+       {
+        "name" : "pView",
+        "type" : "void*"
+       }
+      ],
+      "endline" : 203,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 208,
+    "char" : 7,
+    "name" : "audioUnitComponentFactory",
+    "parameters" : [
+     {
+      "name" : "ClientClass",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "audioUnitComponentFactory",
+      "kind" : "function",
+      "line" : 208,
+      "char" : 7,
+      "type" : "nothrow @nogc void*(void* inDesc)",
+      "parameters" : [
+       {
+        "name" : "inDesc",
+        "type" : "void*"
+       }
+      ],
+      "endline" : 231,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "AUInputType",
+    "kind" : "enum",
+    "line" : 233,
+    "char" : 1,
+    "baseDeco" : "i",
+    "members" : [
+     {
+      "name" : "notConnected",
+      "kind" : "enum member",
+      "value" : "0",
+      "line" : 235,
+      "char" : 5
+     },
+     {
+      "name" : "directFastProc",
+      "kind" : "enum member",
+      "value" : "1",
+      "line" : 236,
+      "char" : 5
+     },
+     {
+      "name" : "directNoFastProc",
+      "kind" : "enum member",
+      "value" : "2",
+      "line" : 237,
+      "char" : 5
+     },
+     {
+      "name" : "renderCallback",
+      "kind" : "enum member",
+      "value" : "3",
+      "line" : 238,
+      "char" : 5
+     }
+    ]
+   },
+   {
+    "name" : "AUClient",
+    "kind" : "class",
+    "line" : 242,
+    "char" : 1,
+    "interfaces" : [
+     "dplug.client.client.IHostCommand"
+    ],
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 248,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug6client6client6ClientPvZC5dplug2au6client8AUClient",
+      "originalType" : "nothrow @nogc (Client client, ComponentInstance componentInstance)",
+      "parameters" : [
+       {
+        "name" : "client",
+        "deco" : "C5dplug6client6client6Client"
+       },
+       {
+        "name" : "componentInstance",
+        "deco" : "Pv"
+       }
+      ],
+      "endline" : 314,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 316,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 338,
+      "endchar" : 5
+     },
+     {
+      "name" : "_componentInstance",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 341,
+      "char" : 23,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Pv",
+      "originalType" : "ComponentInstance",
+      "offset" : 12
+     },
+     {
+      "name" : "_client",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 342,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug6client6client6Client",
+      "originalType" : "Client",
+      "offset" : 16
+     },
+     {
+      "name" : "_hostCallbacks",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 344,
+      "char" : 22,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S8derelict6carbon9audiounit16HostCallbackInfo",
+      "offset" : 20
+     },
+     {
+      "name" : "_globalMutex",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 347,
+      "char" : 20,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core4sync14UncheckedMutex",
+      "offset" : 40
+     },
+     {
+      "name" : "_messageQueue",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 349,
+      "char" : 36,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core11lockedqueue55__T11LockedQueueTS5dplug2au6client18AudioThreadMessageZ11LockedQueue",
+      "originalType" : "LockedQueue!AudioThreadMessage",
+      "offset" : 72
+     },
+     {
+      "name" : "_maxInputs",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 351,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 160
+     },
+     {
+      "name" : "_maxOutputs",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 351,
+      "char" : 21,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 164
+     },
+     {
+      "name" : "_sampleRate",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 352,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "44100.0F",
+      "offset" : 168
+     },
+     {
+      "name" : "_maxFrames",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 353,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "init" : "1024",
+      "offset" : 172
+     },
+     {
+      "name" : "_lastBypassed",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 356,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "b",
+      "init" : "false",
+      "offset" : 176
+     },
+     {
+      "name" : "_lastMaxFrames",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 357,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "init" : "0",
+      "offset" : 180
+     },
+     {
+      "name" : "_lastSamplerate",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 358,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.000000F",
+      "offset" : 184
+     },
+     {
+      "name" : "_lastUsedInputs",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 359,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "init" : "0",
+      "offset" : 188
+     },
+     {
+      "name" : "_lastUsedOutputs",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 360,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "init" : "0",
+      "offset" : 192
+     },
+     {
+      "name" : "_lastRenderTimestamp",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 362,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "d",
+      "init" : "nan",
+      "offset" : 200
+     },
+     {
+      "name" : "_bypassed",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 365,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "b",
+      "init" : "false",
+      "offset" : 208
+     },
+     {
+      "name" : "_active",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 367,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "b",
+      "init" : "false",
+      "offset" : 209
+     },
+     {
+      "name" : "_isUIOpenedAlready",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 369,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "b",
+      "init" : "false",
+      "offset" : 210
+     },
+     {
+      "name" : "_inputScratchBuffer",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 371,
+      "char" : 17,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "AS5dplug4core13alignedbuffer10__T3VecTfZ3Vec",
+      "offset" : 212
+     },
+     {
+      "name" : "_outputScratchBuffer",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 372,
+      "char" : 17,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "AS5dplug4core13alignedbuffer10__T3VecTfZ3Vec",
+      "offset" : 220
+     },
+     {
+      "name" : "_inputPointers",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 374,
+      "char" : 14,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "APf",
+      "offset" : 228
+     },
+     {
+      "name" : "_outputPointers",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 375,
+      "char" : 14,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "APf",
+      "offset" : 236
+     },
+     {
+      "name" : "_inputPointersNoGap",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 377,
+      "char" : 14,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "APf",
+      "offset" : 244
+     },
+     {
+      "name" : "_outputPointersNoGap",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 378,
+      "char" : 14,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "APf",
+      "offset" : 252
+     },
+     {
+      "name" : "PropertyListener",
+      "kind" : "struct",
+      "protection" : "private",
+      "line" : 384,
+      "char" : 12,
+      "members" : [
+       {
+        "name" : "mPropID",
+        "kind" : "variable",
+        "line" : 386,
+        "char" : 29,
+        "deco" : "k",
+        "originalType" : "AudioUnitPropertyID",
+        "offset" : 0
+       },
+       {
+        "name" : "mListenerProc",
+        "kind" : "variable",
+        "line" : 387,
+        "char" : 39,
+        "deco" : "PUNbNiPvPvkkkZv",
+        "originalType" : "AudioUnitPropertyListenerProc",
+        "offset" : 4
+       },
+       {
+        "name" : "mProcArgs",
+        "kind" : "variable",
+        "line" : 388,
+        "char" : 15,
+        "deco" : "Pv",
+        "offset" : 8
+       }
+      ]
+     },
+     {
+      "name" : "_propertyListeners",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 390,
+      "char" : 26,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer53__T3VecTS5dplug2au6client8AUClient16PropertyListenerZ3Vec",
+      "originalType" : "Vec!PropertyListener",
+      "offset" : 260
+     },
+     {
+      "name" : "MaxIOChannels",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 392,
+      "char" : 10,
+      "storageClass" : [
+       "enum",
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "init" : "128"
+     },
+     {
+      "name" : "BufferList",
+      "kind" : "struct",
+      "protection" : "private",
+      "line" : 393,
+      "char" : 12,
+      "members" : [
+       {
+        "name" : "mNumberBuffers",
+        "kind" : "variable",
+        "line" : 395,
+        "char" : 13,
+        "deco" : "i",
+        "offset" : 0
+       },
+       {
+        "name" : "mBuffers",
+        "kind" : "variable",
+        "line" : 396,
+        "char" : 36,
+        "deco" : "G128S8derelict6carbon9coreaudio11AudioBuffer",
+        "originalType" : "AudioBuffer[MaxIOChannels]",
+        "offset" : 4
+       }
+      ]
+     },
+     {
+      "name" : "BusChannels",
+      "kind" : "struct",
+      "protection" : "private",
+      "line" : 403,
+      "char" : 12,
+      "members" : [
+       {
+        "name" : "connected",
+        "kind" : "variable",
+        "line" : 405,
+        "char" : 14,
+        "deco" : "b",
+        "offset" : 0
+       },
+       {
+        "name" : "numHostChannels",
+        "kind" : "variable",
+        "line" : 406,
+        "char" : 13,
+        "deco" : "i",
+        "offset" : 4
+       },
+       {
+        "name" : "numPlugChannels",
+        "kind" : "variable",
+        "line" : 407,
+        "char" : 13,
+        "deco" : "i",
+        "offset" : 8
+       },
+       {
+        "name" : "plugChannelStartIdx",
+        "kind" : "variable",
+        "line" : 408,
+        "char" : 13,
+        "deco" : "i",
+        "offset" : 12
+       },
+       {
+        "name" : "label",
+        "kind" : "variable",
+        "line" : 409,
+        "char" : 18,
+        "deco" : "G16a",
+        "offset" : 16
+       },
+       {
+        "name" : "tagsBuffer",
+        "kind" : "variable",
+        "line" : 410,
+        "char" : 34,
+        "deco" : "G1k",
+        "originalType" : "AudioChannelLayoutTag[1]",
+        "offset" : 32
+       },
+       {
+        "name" : "getSupportedChannelLayoutTags",
+        "kind" : "function",
+        "line" : 412,
+        "char" : 33,
+        "deco" : "FNbNiZAk",
+        "originalType" : "nothrow @nogc AudioChannelLayoutTag[]()",
+        "endline" : 429,
+        "endchar" : 9
+       }
+      ]
+     },
+     {
+      "name" : "_inBuses",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 432,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "AS5dplug2au6client8AUClient11BusChannels",
+      "offset" : 276
+     },
+     {
+      "name" : "_outBuses",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 433,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "AS5dplug2au6client8AUClient11BusChannels",
+      "offset" : 284
+     },
+     {
+      "name" : "getBus",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 435,
+      "char" : 18,
+      "deco" : "FNbNikkZPS5dplug2au6client8AUClient11BusChannels",
+      "originalType" : "nothrow @nogc BusChannels*(AudioUnitScope scope_, AudioUnitElement busIdx)",
+      "parameters" : [
+       {
+        "name" : "scope_",
+        "deco" : "k"
+       },
+       {
+        "name" : "busIdx",
+        "deco" : "k"
+       }
+      ],
+      "endline" : 445,
+      "endchar" : 5
+     },
+     {
+      "name" : "InputBusConnection",
+      "kind" : "struct",
+      "protection" : "private",
+      "line" : 447,
+      "char" : 12,
+      "members" : [
+       {
+        "name" : "upstreamObj",
+        "kind" : "variable",
+        "line" : 449,
+        "char" : 15,
+        "deco" : "Pv",
+        "init" : "null",
+        "offset" : 0
+       },
+       {
+        "name" : "upstreamRenderProc",
+        "kind" : "variable",
+        "line" : 450,
+        "char" : 29,
+        "deco" : "PUNbNiPvPkPxS8derelict6carbon9coreaudio14AudioTimeStampkkPS8derelict6carbon9coreaudio15AudioBufferListZi",
+        "originalType" : "AudioUnitRenderProc",
+        "init" : "null",
+        "offset" : 4
+       },
+       {
+        "name" : "upstreamUnit",
+        "kind" : "variable",
+        "line" : 452,
+        "char" : 19,
+        "deco" : "Pv",
+        "originalType" : "AudioUnit",
+        "init" : "null",
+        "offset" : 8
+       },
+       {
+        "name" : "upstreamBusIdx",
+        "kind" : "variable",
+        "line" : 453,
+        "char" : 13,
+        "deco" : "i",
+        "init" : "0",
+        "offset" : 12
+       },
+       {
+        "name" : "upstreamRenderCallback",
+        "kind" : "variable",
+        "line" : 455,
+        "char" : 32,
+        "deco" : "S8derelict6carbon9audiounit22AURenderCallbackStruct",
+        "init" : "AURenderCallbackStruct(null, null)",
+        "offset" : 16
+       },
+       {
+        "name" : "isConnected",
+        "kind" : "function",
+        "line" : 457,
+        "char" : 14,
+        "deco" : "xFNaNbNiZb",
+        "endline" : 460,
+        "endchar" : 9
+       },
+       {
+        "name" : "getInputType",
+        "kind" : "function",
+        "line" : 462,
+        "char" : 21,
+        "deco" : "xFNaNbNiZE5dplug2au6client11AUInputType",
+        "endline" : 484,
+        "endchar" : 9
+       },
+       {
+        "name" : "callUpstreamRender",
+        "kind" : "function",
+        "line" : 486,
+        "char" : 25,
+        "deco" : "FNbNiPkPxS8derelict6carbon9coreaudio14AudioTimeStampkPS8derelict6carbon9coreaudio15AudioBufferListiZi",
+        "originalType" : "nothrow @nogc ComponentResult(AudioUnitRenderActionFlags* flags, const(AudioTimeStamp)* pTimestamp, uint nFrames, AudioBufferList* pOutBufList, int inputBusIdx)",
+        "parameters" : [
+         {
+          "name" : "flags",
+          "deco" : "Pk"
+         },
+         {
+          "name" : "pTimestamp",
+          "deco" : "PxS8derelict6carbon9coreaudio14AudioTimeStamp"
+         },
+         {
+          "name" : "nFrames",
+          "deco" : "k"
+         },
+         {
+          "name" : "pOutBufList",
+          "deco" : "PS8derelict6carbon9coreaudio15AudioBufferList"
+         },
+         {
+          "name" : "inputBusIdx",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 511,
+        "endchar" : 9
+       }
+      ]
+     },
+     {
+      "name" : "_inBusConnections",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 514,
+      "char" : 26,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "AS5dplug2au6client8AUClient18InputBusConnection",
+      "offset" : 292
+     },
+     {
+      "name" : "_renderNotifyMutex",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 517,
+      "char" : 20,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core4sync14UncheckedMutex",
+      "offset" : 304
+     },
+     {
+      "name" : "_renderNotify",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 518,
+      "char" : 32,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer60__T3VecTS8derelict6carbon9audiounit22AURenderCallbackStructZ3Vec",
+      "originalType" : "Vec!AURenderCallbackStruct",
+      "offset" : 336
+     },
+     {
+      "name" : "resizeScratchBuffers",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 524,
+      "char" : 10,
+      "deco" : "FNbNiiZv",
+      "parameters" : [
+       {
+        "name" : "nFrames",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 532,
+      "endchar" : 5
+     },
+     {
+      "name" : "dispatcher",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 542,
+      "char" : 21,
+      "deco" : "FNbNiiPS8derelict6carbon12coreservices19ComponentParametersZi",
+      "originalType" : "nothrow @nogc ComponentResult(int select, ComponentParameters* params)",
+      "parameters" : [
+       {
+        "name" : "select",
+        "deco" : "i"
+       },
+       {
+        "name" : "params",
+        "deco" : "PS8derelict6carbon12coreservices19ComponentParameters"
+       }
+      ],
+      "endline" : 871,
+      "endchar" : 5
+     },
+     {
+      "name" : "getProperty",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 876,
+      "char" : 21,
+      "deco" : "FNbNikkkPkPhPvZi",
+      "originalType" : "nothrow @nogc ComponentResult(AudioUnitPropertyID propID, AudioUnitScope scope_, AudioUnitElement element, UInt32* pDataSize, Boolean* pWriteable, void* pData)",
+      "parameters" : [
+       {
+        "name" : "propID",
+        "deco" : "k"
+       },
+       {
+        "name" : "scope_",
+        "deco" : "k"
+       },
+       {
+        "name" : "element",
+        "deco" : "k"
+       },
+       {
+        "name" : "pDataSize",
+        "deco" : "Pk"
+       },
+       {
+        "name" : "pWriteable",
+        "deco" : "Ph"
+       },
+       {
+        "name" : "pData",
+        "deco" : "Pv"
+       }
+      ],
+      "endline" : 1451,
+      "endchar" : 5
+     },
+     {
+      "name" : "setProperty",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 1453,
+      "char" : 21,
+      "deco" : "FNbNikkkPkPxvZi",
+      "originalType" : "nothrow @nogc ComponentResult(AudioUnitPropertyID propID, AudioUnitScope scope_, AudioUnitElement element, UInt32* pDataSize, const(void)* pData)",
+      "parameters" : [
+       {
+        "name" : "propID",
+        "deco" : "k"
+       },
+       {
+        "name" : "scope_",
+        "deco" : "k"
+       },
+       {
+        "name" : "element",
+        "deco" : "k"
+       },
+       {
+        "name" : "pDataSize",
+        "deco" : "Pk"
+       },
+       {
+        "name" : "pData",
+        "deco" : "Pxv"
+       }
+      ],
+      "endline" : 1639,
+      "endchar" : 5
+     },
+     {
+      "name" : "assessInputConnections",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 1642,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 1666,
+      "endchar" : 5
+     },
+     {
+      "name" : "checkLegalIO",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 1668,
+      "char" : 10,
+      "deco" : "FNbNikiiZb",
+      "originalType" : "nothrow @nogc bool(AudioUnitScope scope_, int busIdx, int nChannels)",
+      "parameters" : [
+       {
+        "name" : "scope_",
+        "deco" : "k"
+       },
+       {
+        "name" : "busIdx",
+        "deco" : "i"
+       },
+       {
+        "name" : "nChannels",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 1683,
+      "endchar" : 5
+     },
+     {
+      "name" : "numHostChannelsConnected",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 1685,
+      "char" : 16,
+      "storageClass" : [
+       "static"
+      ],
+      "deco" : "FNaNbNiAS5dplug2au6client8AUClient11BusChannelsiZi",
+      "parameters" : [
+       {
+        "name" : "pBuses",
+        "deco" : "AS5dplug2au6client8AUClient11BusChannels"
+       },
+       {
+        "name" : "excludeIdx",
+        "deco" : "i",
+        "default" : "-1"
+       }
+      ],
+      "endline" : 1708,
+      "endchar" : 5
+     },
+     {
+      "name" : "makeResetStateMessage",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 1710,
+      "char" : 24,
+      "deco" : "xFNaNbNiZS5dplug2au6client18AudioThreadMessage",
+      "endline" : 1713,
+      "endchar" : 5
+     },
+     {
+      "name" : "readState",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 1716,
+      "char" : 21,
+      "deco" : "FNbNiPPxvZi",
+      "originalType" : "nothrow @nogc ComponentResult(CFPropertyListRef* ppPropList)",
+      "parameters" : [
+       {
+        "name" : "ppPropList",
+        "deco" : "PPxv"
+       }
+      ],
+      "endline" : 1734,
+      "endchar" : 5
+     },
+     {
+      "name" : "writeState",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 1736,
+      "char" : 21,
+      "deco" : "FNbNiPxvZi",
+      "originalType" : "nothrow @nogc ComponentResult(CFPropertyListRef ppPropList)",
+      "parameters" : [
+       {
+        "name" : "ppPropList",
+        "deco" : "Pxv"
+       }
+      ],
+      "endline" : 1781,
+      "endchar" : 5
+     },
+     {
+      "name" : "render",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 1788,
+      "char" : 21,
+      "deco" : "FNbNiPkPxS8derelict6carbon9coreaudio14AudioTimeStampkkPS8derelict6carbon9coreaudio15AudioBufferListbZi",
+      "originalType" : "nothrow @nogc ComponentResult(AudioUnitRenderActionFlags* pFlags, const(AudioTimeStamp)* pTimestamp, uint outputBusIdx, uint nFrames, AudioBufferList* pOutBufList, bool isFastCall)",
+      "parameters" : [
+       {
+        "name" : "pFlags",
+        "deco" : "Pk"
+       },
+       {
+        "name" : "pTimestamp",
+        "deco" : "PxS8derelict6carbon9coreaudio14AudioTimeStamp"
+       },
+       {
+        "name" : "outputBusIdx",
+        "deco" : "k"
+       },
+       {
+        "name" : "nFrames",
+        "deco" : "k"
+       },
+       {
+        "name" : "pOutBufList",
+        "deco" : "PS8derelict6carbon9coreaudio15AudioBufferList"
+       },
+       {
+        "name" : "isFastCall",
+        "deco" : "b"
+       }
+      ],
+      "endline" : 2011,
+      "endchar" : 5
+     },
+     {
+      "name" : "sendAUEvent",
+      "kind" : "function",
+      "line" : 2016,
+      "char" : 20,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNikPviZv",
+      "originalType" : "nothrow @nogc void(AudioUnitEventType type, ComponentInstance ci, int paramIndex)",
+      "parameters" : [
+       {
+        "name" : "type",
+        "deco" : "k"
+       },
+       {
+        "name" : "ci",
+        "deco" : "Pv"
+       },
+       {
+        "name" : "paramIndex",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 2025,
+      "endchar" : 9
+     },
+     {
+      "name" : "beginParamEdit",
+      "kind" : "function",
+      "line" : 2027,
+      "char" : 23,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiZv",
+      "parameters" : [
+       {
+        "name" : "paramIndex",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 2030,
+      "endchar" : 9,
+      "overrides" : [
+       "dplug.client.client.IHostCommand.beginParamEdit"
+      ]
+     },
+     {
+      "name" : "paramAutomate",
+      "kind" : "function",
+      "line" : 2032,
+      "char" : 23,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiifZv",
+      "parameters" : [
+       {
+        "name" : "paramIndex",
+        "deco" : "i"
+       },
+       {
+        "name" : "value",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 2035,
+      "endchar" : 9,
+      "overrides" : [
+       "dplug.client.client.IHostCommand.paramAutomate"
+      ]
+     },
+     {
+      "name" : "endParamEdit",
+      "kind" : "function",
+      "line" : 2037,
+      "char" : 23,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiZv",
+      "parameters" : [
+       {
+        "name" : "paramIndex",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 2040,
+      "endchar" : 9,
+      "overrides" : [
+       "dplug.client.client.IHostCommand.endParamEdit"
+      ]
+     },
+     {
+      "name" : "requestResize",
+      "kind" : "function",
+      "line" : 2042,
+      "char" : 23,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiZb",
+      "parameters" : [
+       {
+        "name" : "width",
+        "deco" : "i"
+       },
+       {
+        "name" : "height",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 2045,
+      "endchar" : 9,
+      "overrides" : [
+       "dplug.client.client.IHostCommand.requestResize"
+      ]
+     },
+     {
+      "name" : "_daw",
+      "kind" : "variable",
+      "line" : 2047,
+      "char" : 13,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "E5dplug6client3daw3DAW",
+      "init" : "cast(DAW)0",
+      "offset" : 352
+     },
+     {
+      "name" : "getDAW",
+      "kind" : "function",
+      "line" : 2049,
+      "char" : 22,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZE5dplug6client3daw3DAW",
+      "endline" : 2052,
+      "endchar" : 9,
+      "overrides" : [
+       "dplug.client.client.IHostCommand.getDAW"
+      ]
+     },
+     {
+      "name" : "getTimeInfo",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 2056,
+      "char" : 20,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiZS5dplug6client6client8TimeInfo",
+      "endline" : 2080,
+      "endchar" : 5
+     },
+     {
+      "name" : "openGUIAndReturnCocoaView",
+      "kind" : "function",
+      "protection" : "package",
+      "line" : 2082,
+      "char" : 19,
+      "deco" : "FNbNiZPv",
+      "endline" : 2093,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 316,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 316,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   },
+   {
+    "name" : "isGlobalScope",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 2100,
+    "char" : 13,
+    "storageClass" : [
+     "static"
+    ],
+    "deco" : "FNaNbNikZb",
+    "originalType" : "pure nothrow @nogc bool(AudioUnitScope scope_)",
+    "parameters" : [
+     {
+      "name" : "scope_",
+      "deco" : "k"
+     }
+    ],
+    "endline" : 2103,
+    "endchar" : 1
+   },
+   {
+    "name" : "isInputScope",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 2105,
+    "char" : 13,
+    "storageClass" : [
+     "static"
+    ],
+    "deco" : "FNaNbNikZb",
+    "originalType" : "pure nothrow @nogc bool(AudioUnitScope scope_)",
+    "parameters" : [
+     {
+      "name" : "scope_",
+      "deco" : "k"
+     }
+    ],
+    "endline" : 2108,
+    "endchar" : 1
+   },
+   {
+    "name" : "isOutputScope",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 2110,
+    "char" : 13,
+    "storageClass" : [
+     "static"
+    ],
+    "deco" : "FNaNbNikZb",
+    "originalType" : "pure nothrow @nogc bool(AudioUnitScope scope_)",
+    "parameters" : [
+     {
+      "name" : "scope_",
+      "deco" : "k"
+     }
+    ],
+    "endline" : 2113,
+    "endchar" : 1
+   },
+   {
+    "name" : "isInputOrGlobalScope",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 2115,
+    "char" : 13,
+    "storageClass" : [
+     "static"
+    ],
+    "deco" : "FNaNbNikZb",
+    "originalType" : "pure nothrow @nogc bool(AudioUnitScope scope_)",
+    "parameters" : [
+     {
+      "name" : "scope_",
+      "deco" : "k"
+     }
+    ],
+    "endline" : 2118,
+    "endchar" : 1
+   },
+   {
+    "name" : "isInputOrOutputScope",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 2120,
+    "char" : 13,
+    "storageClass" : [
+     "static"
+    ],
+    "deco" : "FNaNbNikZb",
+    "originalType" : "pure nothrow @nogc bool(AudioUnitScope scope_)",
+    "parameters" : [
+     {
+      "name" : "scope_",
+      "deco" : "k"
+     }
+    ],
+    "endline" : 2123,
+    "endchar" : 1
+   },
+   {
+    "name" : "callRenderCallback",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 2126,
+    "char" : 24,
+    "storageClass" : [
+     "static"
+    ],
+    "deco" : "FNbNiKS8derelict6carbon9audiounit22AURenderCallbackStructPkPxS8derelict6carbon9coreaudio14AudioTimeStampkkPS8derelict6carbon9coreaudio15AudioBufferListZi",
+    "originalType" : "nothrow @nogc ComponentResult(ref AURenderCallbackStruct pCB, AudioUnitRenderActionFlags* pFlags, const(AudioTimeStamp)* pTimestamp, UInt32 inputBusIdx, UInt32 nFrames, AudioBufferList* pOutBufList)",
+    "parameters" : [
+     {
+      "name" : "pCB",
+      "deco" : "S8derelict6carbon9audiounit22AURenderCallbackStruct",
+      "storageClass" : [
+       "ref"
+      ]
+     },
+     {
+      "name" : "pFlags",
+      "deco" : "Pk"
+     },
+     {
+      "name" : "pTimestamp",
+      "deco" : "PxS8derelict6carbon9coreaudio14AudioTimeStamp"
+     },
+     {
+      "name" : "inputBusIdx",
+      "deco" : "k"
+     },
+     {
+      "name" : "nFrames",
+      "deco" : "k"
+     },
+     {
+      "name" : "pOutBufList",
+      "deco" : "PS8derelict6carbon9coreaudio15AudioBufferList"
+     }
+    ],
+    "endline" : 2130,
+    "endchar" : 1
+   },
+   {
+    "name" : "getParamProc",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 2133,
+    "char" : 27,
+    "deco" : "UNbNiPvkkkPfZi",
+    "originalType" : "nothrow @nogc extern (C) ComponentResult(void* pPlug, AudioUnitParameterID paramID, AudioUnitScope scope_, AudioUnitElement element, AudioUnitParameterValue* pValue)",
+    "parameters" : [
+     {
+      "name" : "pPlug",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "paramID",
+      "deco" : "k"
+     },
+     {
+      "name" : "scope_",
+      "deco" : "k"
+     },
+     {
+      "name" : "element",
+      "deco" : "k"
+     },
+     {
+      "name" : "pValue",
+      "deco" : "Pf"
+     }
+    ],
+    "endline" : 2145,
+    "endchar" : 1
+   },
+   {
+    "name" : "setParamProc",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 2147,
+    "char" : 27,
+    "deco" : "UNbNiPvkkkfkZi",
+    "originalType" : "nothrow @nogc extern (C) ComponentResult(void* pPlug, AudioUnitParameterID paramID, AudioUnitScope scope_, AudioUnitElement element, AudioUnitParameterValue value, UInt32 offsetFrames)",
+    "parameters" : [
+     {
+      "name" : "pPlug",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "paramID",
+      "deco" : "k"
+     },
+     {
+      "name" : "scope_",
+      "deco" : "k"
+     },
+     {
+      "name" : "element",
+      "deco" : "k"
+     },
+     {
+      "name" : "value",
+      "deco" : "f"
+     },
+     {
+      "name" : "offsetFrames",
+      "deco" : "k"
+     }
+    ],
+    "endline" : 2160,
+    "endchar" : 1
+   },
+   {
+    "name" : "renderProc",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 2162,
+    "char" : 27,
+    "deco" : "UNbNiPvPkPxS8derelict6carbon9coreaudio14AudioTimeStampkkPS8derelict6carbon9coreaudio15AudioBufferListZi",
+    "originalType" : "nothrow @nogc extern (C) ComponentResult(void* pPlug, AudioUnitRenderActionFlags* pFlags, const(AudioTimeStamp)* pTimestamp, uint outputBusIdx, uint nFrames, AudioBufferList* pOutBufList)",
+    "parameters" : [
+     {
+      "name" : "pPlug",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "pFlags",
+      "deco" : "Pk"
+     },
+     {
+      "name" : "pTimestamp",
+      "deco" : "PxS8derelict6carbon9coreaudio14AudioTimeStamp"
+     },
+     {
+      "name" : "outputBusIdx",
+      "deco" : "k"
+     },
+     {
+      "name" : "nFrames",
+      "deco" : "k"
+     },
+     {
+      "name" : "pOutBufList",
+      "deco" : "PS8derelict6carbon9coreaudio15AudioBufferList"
+     }
+    ],
+    "endline" : 2171,
+    "endchar" : 1
+   },
+   {
+    "name" : "AudioThreadMessage",
+    "kind" : "struct",
+    "protection" : "private",
+    "line" : 2181,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "Type",
+      "kind" : "enum",
+      "line" : 2183,
+      "char" : 5,
+      "baseDeco" : "i",
+      "members" : [
+       {
+        "name" : "resetState",
+        "kind" : "enum member",
+        "value" : "0",
+        "line" : 2185,
+        "char" : 9
+       },
+       {
+        "name" : "midi",
+        "kind" : "enum member",
+        "value" : "1",
+        "line" : 2186,
+        "char" : 9
+       }
+      ]
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 2189,
+      "char" : 5,
+      "deco" : "xFNaNbNcNiE5dplug2au6client18AudioThreadMessage4TypeifbZxS5dplug2au6client18AudioThreadMessage",
+      "originalType" : "const pure nothrow @nogc ref (Type type_, int maxFrames_, float samplerate_, bool bypassed_)",
+      "parameters" : [
+       {
+        "name" : "type_",
+        "deco" : "E5dplug2au6client18AudioThreadMessage4Type"
+       },
+       {
+        "name" : "maxFrames_",
+        "deco" : "i"
+       },
+       {
+        "name" : "samplerate_",
+        "deco" : "f"
+       },
+       {
+        "name" : "bypassed_",
+        "deco" : "b"
+       }
+      ],
+      "endline" : 2195,
+      "endchar" : 5
+     },
+     {
+      "name" : "type",
+      "kind" : "variable",
+      "line" : 2197,
+      "char" : 10,
+      "deco" : "E5dplug2au6client18AudioThreadMessage4Type",
+      "offset" : 0
+     },
+     {
+      "name" : "maxFrames",
+      "kind" : "variable",
+      "line" : 2198,
+      "char" : 9,
+      "deco" : "i",
+      "offset" : 4
+     },
+     {
+      "name" : "samplerate",
+      "kind" : "variable",
+      "line" : 2199,
+      "char" : 11,
+      "deco" : "f",
+      "offset" : 8
+     },
+     {
+      "name" : "bypassed",
+      "kind" : "variable",
+      "line" : 2200,
+      "char" : 10,
+      "deco" : "b",
+      "offset" : 12
+     },
+     {
+      "name" : "midiMessage",
+      "kind" : "variable",
+      "line" : 2201,
+      "char" : 17,
+      "deco" : "S5dplug6client4midi11MidiMessage",
+      "offset" : 16
+     }
+    ]
+   },
+   {
+    "name" : "makeMidiThreadMessage",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 2204,
+    "char" : 20,
+    "deco" : "FNaNbNiS5dplug6client4midi11MidiMessageZS5dplug2au6client18AudioThreadMessage",
+    "parameters" : [
+     {
+      "name" : "midiMessage",
+      "deco" : "S5dplug6client4midi11MidiMessage"
+     }
+    ],
+    "endline" : 2210,
+    "endchar" : 1
+   },
+   {
+    "name" : "CCONST",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 2213,
+    "char" : 13,
+    "deco" : "FNaNbNiiiiiZi",
+    "parameters" : [
+     {
+      "name" : "a",
+      "deco" : "i"
+     },
+     {
+      "name" : "b",
+      "deco" : "i"
+     },
+     {
+      "name" : "c",
+      "deco" : "i"
+     },
+     {
+      "name" : "d",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 2216,
+    "endchar" : 1
+   },
+   {
+    "name" : "_arraySliceComSliceAssign_k",
+    "kind" : "function",
+    "deco" : "UNaNbNiNeAkxAkZAk",
+    "originalType" : "pure nothrow @nogc @trusted extern (C) uint[](uint[] p1, const const(uint)[] p0)",
+    "parameters" : [
+     {
+      "name" : "p1",
+      "deco" : "Ak"
+     },
+     {
+      "name" : "p0",
+      "deco" : "xAk"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.au.cocoaviewfactory",
+  "kind" : "module",
+  "file" : "..\\..\\..\\au\\dplug\\au\\cocoaviewfactory.d",
+  "members" : [
+   {
+    "name" : "std.string",
+    "kind" : "import",
+    "line" : 19,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.uuid",
+    "kind" : "import",
+    "line" : 20,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "derelict.carbon",
+    "kind" : "import",
+    "line" : 22,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "derelict.cocoa",
+    "kind" : "import",
+    "line" : 23,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.runtime",
+    "kind" : "import",
+    "line" : 25,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.random",
+    "kind" : "import",
+    "line" : 26,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 27,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.au.client",
+    "kind" : "import",
+    "line" : 28,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "core.stdc.stdio",
+    "kind" : "import",
+    "line" : 31,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "registerCocoaViewFactory",
+    "kind" : "function",
+    "line" : 37,
+    "char" : 15,
+    "deco" : "FNbNiZAxa",
+    "endline" : 43,
+    "endchar" : 1
+   },
+   {
+    "name" : "unregisterCocoaViewFactory",
+    "kind" : "function",
+    "line" : 47,
+    "char" : 6,
+    "deco" : "FNbNiZv",
+    "endline" : 51,
+    "endchar" : 1
+   },
+   {
+    "name" : "DPlugCocoaViewFactory",
+    "kind" : "struct",
+    "line" : 54,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "clazz",
+      "kind" : "variable",
+      "line" : 60,
+      "char" : 28,
+      "storageClass" : [
+       "static",
+       "nothrow",
+       "__gshared",
+       "@nogc"
+      ],
+      "deco" : "PS8derelict5cocoa7runtime10objc_class",
+      "originalType" : "Class",
+      "init" : "null"
+     },
+     {
+      "name" : "customClassName",
+      "kind" : "variable",
+      "line" : 63,
+      "char" : 40,
+      "storageClass" : [
+       "static",
+       "nothrow",
+       "__gshared",
+       "@nogc"
+      ],
+      "deco" : "G59a",
+      "originalType" : "char[22 + 36 + 1]"
+     },
+     {
+      "name" : "parent",
+      "kind" : "variable",
+      "line" : 66,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S8derelict5cocoa6appkit6NSView",
+      "offset" : 0
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 70,
+      "char" : 5,
+      "deco" : "FNbNcNiPS8derelict5cocoa7runtime11objc_objectZS5dplug2au16cocoaviewfactory21DPlugCocoaViewFactory",
+      "originalType" : "nothrow @nogc ref (id id_)",
+      "parameters" : [
+       {
+        "name" : "id_",
+        "deco" : "PS8derelict5cocoa7runtime11objc_object"
+       }
+      ],
+      "endline" : 73,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 75,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 77,
+      "endchar" : 5
+     },
+     {
+      "name" : "registerSubclass",
+      "kind" : "function",
+      "line" : 79,
+      "char" : 17,
+      "storageClass" : [
+       "static"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 117,
+      "endchar" : 5
+     },
+     {
+      "name" : "unregisterSubclass",
+      "kind" : "function",
+      "line" : 119,
+      "char" : 17,
+      "storageClass" : [
+       "static"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 122,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 75,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 75,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     },
+     {
+      "name" : "opAssign",
+      "kind" : "generated function",
+      "line" : 54,
+      "char" : 1,
+      "deco" : "FNbNcNiNjS5dplug2au16cocoaviewfactory21DPlugCocoaViewFactoryZS5dplug2au16cocoaviewfactory21DPlugCocoaViewFactory",
+      "parameters" : [
+       {
+        "name" : "p",
+        "deco" : "S5dplug2au16cocoaviewfactory21DPlugCocoaViewFactory"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "getInstance",
+    "kind" : "function",
+    "line" : 125,
+    "char" : 23,
+    "deco" : "FNbNiPS8derelict5cocoa7runtime11objc_objectZS5dplug2au16cocoaviewfactory21DPlugCocoaViewFactory",
+    "originalType" : "nothrow @nogc DPlugCocoaViewFactory(id anId)",
+    "parameters" : [
+     {
+      "name" : "anId",
+      "deco" : "PS8derelict5cocoa7runtime11objc_object"
+     }
+    ],
+    "endline" : 134,
+    "endchar" : 1
+   },
+   {
+    "name" : "description",
+    "kind" : "function",
+    "line" : 141,
+    "char" : 8,
+    "deco" : "UNbNiPS8derelict5cocoa7runtime11objc_objectPaZPS8derelict5cocoa7runtime11objc_object",
+    "originalType" : "nothrow @nogc extern (C) id(id self, SEL selector)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "PS8derelict5cocoa7runtime11objc_object"
+     },
+     {
+      "name" : "selector",
+      "deco" : "Pa"
+     }
+    ],
+    "endline" : 147,
+    "endchar" : 5
+   },
+   {
+    "name" : "interfaceVersion",
+    "kind" : "function",
+    "line" : 149,
+    "char" : 10,
+    "deco" : "UNbNiPS8derelict5cocoa7runtime11objc_objectPaZk",
+    "originalType" : "nothrow @nogc extern (C) uint(id self, SEL selector)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "PS8derelict5cocoa7runtime11objc_object"
+     },
+     {
+      "name" : "selector",
+      "deco" : "Pa"
+     }
+    ],
+    "endline" : 152,
+    "endchar" : 5
+   },
+   {
+    "name" : "uiViewForAudioUnit",
+    "kind" : "function",
+    "line" : 155,
+    "char" : 8,
+    "deco" : "UNbNiPS8derelict5cocoa7runtime11objc_objectPaPvS8derelict5cocoa7runtime6NSSizeZPS8derelict5cocoa7runtime11objc_object",
+    "originalType" : "nothrow @nogc extern (C) id(id self, SEL selector, AudioUnit audioUnit, NSSize preferredSize)",
+    "parameters" : [
+     {
+      "name" : "self",
+      "deco" : "PS8derelict5cocoa7runtime11objc_object"
+     },
+     {
+      "name" : "selector",
+      "deco" : "Pa"
+     },
+     {
+      "name" : "audioUnit",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "preferredSize",
+      "deco" : "S8derelict5cocoa7runtime6NSSize"
+     }
+    ],
+    "endline" : 167,
+    "endchar" : 5
+   }
+  ]
+ },
+ {
+  "name" : "dplug.au.dfxutil",
+  "kind" : "module",
+  "file" : "..\\..\\..\\au\\dplug\\au\\dfxutil.d",
+  "members" : [
+   {
+    "name" : "core.stdc.stdio",
+    "kind" : "import",
+    "line" : 44,
+    "char" : 8,
+    "protection" : "private",
+    "selective" : [
+     "snprintf"
+    ]
+   },
+   {
+    "name" : "std.string",
+    "kind" : "import",
+    "line" : 46,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.exception",
+    "kind" : "import",
+    "line" : 47,
+    "char" : 8,
+    "protection" : "private",
+    "selective" : [
+     "assumeUnique"
+    ]
+   },
+   {
+    "name" : "derelict.carbon",
+    "kind" : "import",
+    "line" : 49,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 51,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "kCFAUPreset_CurrentVersion",
+    "kind" : "variable",
+    "line" : 58,
+    "char" : 13,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "k",
+    "originalType" : "UInt32",
+    "init" : "0u"
+   },
+   {
+    "name" : "CFAUPreset",
+    "kind" : "struct",
+    "line" : 60,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "auPreset",
+      "kind" : "variable",
+      "line" : 62,
+      "char" : 14,
+      "deco" : "S8derelict6carbon9audiounit8AUPreset",
+      "offset" : 0
+     },
+     {
+      "name" : "version_",
+      "kind" : "variable",
+      "line" : 63,
+      "char" : 10,
+      "deco" : "k",
+      "offset" : 8
+     },
+     {
+      "name" : "allocator",
+      "kind" : "variable",
+      "line" : 64,
+      "char" : 20,
+      "deco" : "Pv",
+      "originalType" : "CFAllocatorRef",
+      "offset" : 12
+     },
+     {
+      "name" : "retainCount",
+      "kind" : "variable",
+      "line" : 65,
+      "char" : 13,
+      "deco" : "i",
+      "originalType" : "CFIndex",
+      "offset" : 16
+     }
+    ]
+   },
+   {
+    "name" : "CFAUPresetRef",
+    "kind" : "alias",
+    "line" : 68,
+    "char" : 1,
+    "deco" : "Pv"
+   },
+   {
+    "name" : "CFAUPresetCreate",
+    "kind" : "function",
+    "line" : 72,
+    "char" : 15,
+    "deco" : "FNbNiPviPvZPv",
+    "originalType" : "nothrow @nogc CFAUPresetRef(CFAllocatorRef inAllocator, SInt32 inPresetNumber, CFStringRef inPresetName)",
+    "parameters" : [
+     {
+      "name" : "inAllocator",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "inPresetNumber",
+      "deco" : "i"
+     },
+     {
+      "name" : "inPresetName",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 88,
+    "endchar" : 1
+   },
+   {
+    "name" : "CFAUPresetRetain",
+    "kind" : "function",
+    "line" : 94,
+    "char" : 19,
+    "deco" : "UNbNiPvZPv",
+    "originalType" : "nothrow @nogc extern (C) CFAUPresetRef(void* inPreset)",
+    "parameters" : [
+     {
+      "name" : "inPreset",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 105,
+    "endchar" : 5
+   },
+   {
+    "name" : "CFAUPresetRelease",
+    "kind" : "function",
+    "line" : 109,
+    "char" : 10,
+    "deco" : "UNbNiPvZv",
+    "parameters" : [
+     {
+      "name" : "inPreset",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 131,
+    "endchar" : 5
+   },
+   {
+    "name" : "CFAUPresetArrayRetainCallBack",
+    "kind" : "function",
+    "line" : 136,
+    "char" : 18,
+    "deco" : "UNbNiPvPxvZPxv",
+    "originalType" : "nothrow @nogc extern (C) const(void)*(CFAllocatorRef inAllocator, const(void)* inPreset)",
+    "parameters" : [
+     {
+      "name" : "inAllocator",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "inPreset",
+      "deco" : "Pxv"
+     }
+    ],
+    "endline" : 139,
+    "endchar" : 5
+   },
+   {
+    "name" : "CFAUPresetArrayReleaseCallBack",
+    "kind" : "function",
+    "line" : 145,
+    "char" : 10,
+    "deco" : "UNbNiPvPxvZv",
+    "originalType" : "nothrow @nogc extern (C) void(CFAllocatorRef inAllocator, const(void)* inPreset)",
+    "parameters" : [
+     {
+      "name" : "inAllocator",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "inPreset",
+      "deco" : "Pxv"
+     }
+    ],
+    "endline" : 148,
+    "endchar" : 5
+   },
+   {
+    "name" : "CFAUPresetArrayEqualCallBack",
+    "kind" : "function",
+    "line" : 154,
+    "char" : 13,
+    "deco" : "UNbNiPxvPxvZh",
+    "originalType" : "nothrow @nogc extern (C) Boolean(const(void)* inPreset1, const(void)* inPreset2)",
+    "parameters" : [
+     {
+      "name" : "inPreset1",
+      "deco" : "Pxv"
+     },
+     {
+      "name" : "inPreset2",
+      "deco" : "Pxv"
+     }
+    ],
+    "endline" : 162,
+    "endchar" : 5
+   },
+   {
+    "name" : "CFAUPresetArrayCopyDescriptionCallBack",
+    "kind" : "function",
+    "line" : 170,
+    "char" : 17,
+    "deco" : "UNbPxvZPv",
+    "originalType" : "nothrow extern (C) CFStringRef(const(void)* inPreset)",
+    "parameters" : [
+     {
+      "name" : "inPreset",
+      "deco" : "Pxv"
+     }
+    ],
+    "endline" : 176,
+    "endchar" : 5
+   },
+   {
+    "name" : "getCFAUPresetArrayCallBacks",
+    "kind" : "function",
+    "line" : 179,
+    "char" : 18,
+    "deco" : "FNbNiZS8derelict6carbon14corefoundation16CFArrayCallBacks",
+    "endline" : 191,
+    "endchar" : 1
+   },
+   {
+    "name" : "CFStrLocal",
+    "kind" : "struct",
+    "line" : 196,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "parent",
+      "kind" : "variable",
+      "line" : 201,
+      "char" : 17,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Pv",
+      "originalType" : "CFStringRef",
+      "offset" : 0
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 204,
+      "char" : 14,
+      "storageClass" : [
+       "@disable"
+      ],
+      "deco" : "FNbNcNiZS5dplug2au7dfxutil10CFStrLocal",
+      "originalType" : "nothrow @nogc ref ()"
+     },
+     {
+      "name" : "fromString",
+      "kind" : "function",
+      "line" : 207,
+      "char" : 12,
+      "storageClass" : [
+       "static"
+      ],
+      "deco" : "FNbNiAxaZS5dplug2au7dfxutil10CFStrLocal",
+      "originalType" : "nothrow @nogc (const(char)[] str)",
+      "parameters" : [
+       {
+        "name" : "str",
+        "deco" : "Axa"
+       }
+      ],
+      "endline" : 212,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 214,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 217,
+      "endchar" : 5
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     },
+     {
+      "name" : "__xpostblit",
+      "kind" : "alias"
+     },
+     {
+      "name" : "opAssign",
+      "kind" : "generated function",
+      "line" : 196,
+      "char" : 1,
+      "deco" : "FNbNcNiNjS5dplug2au7dfxutil10CFStrLocalZS5dplug2au7dfxutil10CFStrLocal",
+      "originalType" : "nothrow @nogc ref return CFStrLocal(CFStrLocal p)",
+      "parameters" : [
+       {
+        "name" : "p",
+        "deco" : "S5dplug2au7dfxutil10CFStrLocal"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "convertIntToCFString",
+    "kind" : "function",
+    "line" : 222,
+    "char" : 13,
+    "deco" : "FNbNiiZPv",
+    "originalType" : "nothrow @nogc CFStringRef(int number)",
+    "parameters" : [
+     {
+      "name" : "number",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 227,
+    "endchar" : 1
+   },
+   {
+    "name" : "toCFString",
+    "kind" : "function",
+    "line" : 230,
+    "char" : 13,
+    "deco" : "FNbNiAxaZPv",
+    "originalType" : "nothrow @nogc CFStringRef(const(char)[] str)",
+    "parameters" : [
+     {
+      "name" : "str",
+      "deco" : "Axa"
+     }
+    ],
+    "endline" : 233,
+    "endchar" : 1
+   },
+   {
+    "name" : "mallocStringFromCFString",
+    "kind" : "function",
+    "line" : 238,
+    "char" : 8,
+    "deco" : "FNbNiPvZAya",
+    "originalType" : "nothrow @nogc string(CFStringRef cfStr)",
+    "parameters" : [
+     {
+      "name" : "cfStr",
+      "deco" : "Pv"
+     }
+    ],
+    "endline" : 244,
+    "endchar" : 1
+   },
+   {
+    "name" : "putNumberInDict",
+    "kind" : "function",
+    "line" : 246,
+    "char" : 6,
+    "deco" : "FNbNiPvAxaPviZv",
+    "originalType" : "nothrow @nogc void(CFMutableDictionaryRef pDict, const(char)[] key, void* pNumber, CFNumberType type)",
+    "parameters" : [
+     {
+      "name" : "pDict",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "key",
+      "deco" : "Axa"
+     },
+     {
+      "name" : "pNumber",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "type",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 253,
+    "endchar" : 1
+   },
+   {
+    "name" : "putStrInDict",
+    "kind" : "function",
+    "line" : 255,
+    "char" : 6,
+    "deco" : "FNbNiPvAxaAxaZv",
+    "originalType" : "nothrow @nogc void(CFMutableDictionaryRef pDict, const(char)[] key, const(char)[] value)",
+    "parameters" : [
+     {
+      "name" : "pDict",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "key",
+      "deco" : "Axa"
+     },
+     {
+      "name" : "value",
+      "deco" : "Axa"
+     }
+    ],
+    "endline" : 260,
+    "endchar" : 1
+   },
+   {
+    "name" : "putDataInDict",
+    "kind" : "function",
+    "line" : 262,
+    "char" : 6,
+    "deco" : "FNbNiPvAxaAhZv",
+    "originalType" : "nothrow @nogc void(CFMutableDictionaryRef pDict, const(char)[] key, ubyte[] pChunk)",
+    "parameters" : [
+     {
+      "name" : "pDict",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "key",
+      "deco" : "Axa"
+     },
+     {
+      "name" : "pChunk",
+      "deco" : "Ah"
+     }
+    ],
+    "endline" : 269,
+    "endchar" : 1
+   },
+   {
+    "name" : "getNumberFromDict",
+    "kind" : "function",
+    "line" : 272,
+    "char" : 6,
+    "deco" : "FNbNiPvAxaPviZb",
+    "originalType" : "nothrow @nogc bool(CFDictionaryRef pDict, const(char)[] key, void* pNumber, CFNumberType type)",
+    "parameters" : [
+     {
+      "name" : "pDict",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "key",
+      "deco" : "Axa"
+     },
+     {
+      "name" : "pNumber",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "type",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 283,
+    "endchar" : 1
+   },
+   {
+    "name" : "getStrFromDict",
+    "kind" : "function",
+    "line" : 286,
+    "char" : 6,
+    "deco" : "FNbNiPvAxaJAyaZb",
+    "originalType" : "nothrow @nogc bool(CFDictionaryRef pDict, const(char)[] key, out string value)",
+    "parameters" : [
+     {
+      "name" : "pDict",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "key",
+      "deco" : "Axa"
+     },
+     {
+      "name" : "value",
+      "deco" : "Aya",
+      "storageClass" : [
+       "out"
+      ]
+     }
+    ],
+    "endline" : 297,
+    "endchar" : 1
+   },
+   {
+    "name" : "getDataFromDict",
+    "kind" : "function",
+    "line" : 301,
+    "char" : 6,
+    "deco" : "FNbNiPvAyaJAhZb",
+    "originalType" : "nothrow @nogc bool(CFDictionaryRef pDict, string key, out ubyte[] pChunk)",
+    "parameters" : [
+     {
+      "name" : "pDict",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "key",
+      "deco" : "Aya"
+     },
+     {
+      "name" : "pChunk",
+      "deco" : "Ah",
+      "storageClass" : [
+       "out"
+      ]
+     }
+    ],
+    "endline" : 312,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "dplug.au",
+  "kind" : "module",
+  "file" : "..\\..\\..\\au\\dplug\\au\\package.d",
+  "members" : [
+   {
+    "name" : "dplug.au.client",
+    "kind" : "import",
+    "line" : 6,
+    "char" : 12
+   }
+  ]
+ }
+]

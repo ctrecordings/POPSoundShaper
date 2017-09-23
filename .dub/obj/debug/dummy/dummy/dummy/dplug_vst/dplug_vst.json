@@ -1,0 +1,7043 @@
+[
+ {
+  "name" : "dplug.vst.aeffect",
+  "kind" : "module",
+  "file" : "..\\..\\..\\vst\\dplug\\vst\\aeffect.d",
+  "members" : [
+   {
+    "name" : "core.stdc.string",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "kVstVersion",
+    "kind" : "variable",
+    "line" : 19,
+    "char" : 10,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "i",
+    "init" : "2400"
+   },
+   {
+    "name" : "VstInt16",
+    "kind" : "alias",
+    "line" : 38,
+    "char" : 13,
+    "deco" : "s"
+   },
+   {
+    "name" : "VstInt32",
+    "kind" : "alias",
+    "line" : 39,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "VstInt64",
+    "kind" : "alias",
+    "line" : 40,
+    "char" : 12,
+    "deco" : "l"
+   },
+   {
+    "name" : "VstIntPtr",
+    "kind" : "alias",
+    "line" : 41,
+    "char" : 17,
+    "deco" : "i"
+   },
+   {
+    "name" : "AEffectDispatcherProc",
+    "kind" : "alias",
+    "line" : 43,
+    "char" : 133,
+    "storageClass" : [
+     "nothrow"
+    ],
+    "deco" : "PUNbPS5dplug3vst7aeffect7AEffectiiiPvfZi"
+   },
+   {
+    "name" : "HostCallbackFunction",
+    "kind" : "alias",
+    "line" : 44,
+    "char" : 139,
+    "storageClass" : [
+     "nothrow",
+     "@nogc"
+    ],
+    "deco" : "PUNbNiPS5dplug3vst7aeffect7AEffectiiiPvfZi"
+   },
+   {
+    "name" : "AEffectProcessProc",
+    "kind" : "alias",
+    "line" : 45,
+    "char" : 112,
+    "storageClass" : [
+     "nothrow"
+    ],
+    "deco" : "PUNbPS5dplug3vst7aeffect7AEffectPPfPPfiZv"
+   },
+   {
+    "name" : "AEffectProcessDoubleProc",
+    "kind" : "alias",
+    "line" : 46,
+    "char" : 114,
+    "storageClass" : [
+     "nothrow"
+    ],
+    "deco" : "PUNbPS5dplug3vst7aeffect7AEffectPPdPPdiZv"
+   },
+   {
+    "name" : "AEffectSetParameterProc",
+    "kind" : "alias",
+    "line" : 47,
+    "char" : 89,
+    "storageClass" : [
+     "nothrow"
+    ],
+    "deco" : "PUNbPS5dplug3vst7aeffect7AEffectifZv"
+   },
+   {
+    "name" : "AEffectGetParameterProc",
+    "kind" : "alias",
+    "line" : 48,
+    "char" : 73,
+    "storageClass" : [
+     "nothrow"
+    ],
+    "deco" : "PUNbPS5dplug3vst7aeffect7AEffectiZf"
+   },
+   {
+    "name" : "kEffectMagic",
+    "kind" : "variable",
+    "line" : 51,
+    "char" : 6,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "i",
+    "init" : "1450406992"
+   },
+   {
+    "name" : "AEffect",
+    "kind" : "struct",
+    "line" : 54,
+    "char" : 10,
+    "members" : [
+     {
+      "name" : "magic",
+      "kind" : "variable",
+      "line" : 56,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 0
+     },
+     {
+      "name" : "dispatcher",
+      "kind" : "variable",
+      "line" : 59,
+      "char" : 27,
+      "deco" : "PUNbPS5dplug3vst7aeffect7AEffectiiiPvfZi",
+      "originalType" : "AEffectDispatcherProc",
+      "offset" : 4
+     },
+     {
+      "name" : "DEPRECATED_process",
+      "kind" : "variable",
+      "line" : 62,
+      "char" : 24,
+      "deco" : "PUNbPS5dplug3vst7aeffect7AEffectPPfPPfiZv",
+      "originalType" : "AEffectProcessProc",
+      "offset" : 8
+     },
+     {
+      "name" : "setParameter",
+      "kind" : "variable",
+      "line" : 65,
+      "char" : 29,
+      "deco" : "PUNbPS5dplug3vst7aeffect7AEffectifZv",
+      "originalType" : "AEffectSetParameterProc",
+      "offset" : 12
+     },
+     {
+      "name" : "getParameter",
+      "kind" : "variable",
+      "line" : 68,
+      "char" : 29,
+      "deco" : "PUNbPS5dplug3vst7aeffect7AEffectiZf",
+      "originalType" : "AEffectGetParameterProc",
+      "offset" : 16
+     },
+     {
+      "name" : "numPrograms",
+      "kind" : "variable",
+      "line" : 70,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 20
+     },
+     {
+      "name" : "numParams",
+      "kind" : "variable",
+      "line" : 71,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 24
+     },
+     {
+      "name" : "numInputs",
+      "kind" : "variable",
+      "line" : 72,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 28
+     },
+     {
+      "name" : "numOutputs",
+      "kind" : "variable",
+      "line" : 73,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 32
+     },
+     {
+      "name" : "flags",
+      "kind" : "variable",
+      "line" : 75,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 36
+     },
+     {
+      "name" : "resvd1",
+      "kind" : "variable",
+      "line" : 77,
+      "char" : 15,
+      "deco" : "i",
+      "originalType" : "VstIntPtr",
+      "offset" : 40
+     },
+     {
+      "name" : "resvd2",
+      "kind" : "variable",
+      "line" : 78,
+      "char" : 15,
+      "deco" : "i",
+      "originalType" : "VstIntPtr",
+      "offset" : 44
+     },
+     {
+      "name" : "initialDelay",
+      "kind" : "variable",
+      "line" : 80,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 48
+     },
+     {
+      "name" : "DEPRECATED_realQualities",
+      "kind" : "variable",
+      "line" : 82,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 52
+     },
+     {
+      "name" : "DEPRECATED_offQualities",
+      "kind" : "variable",
+      "line" : 83,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 56
+     },
+     {
+      "name" : "DEPRECATED_ioRatio",
+      "kind" : "variable",
+      "line" : 84,
+      "char" : 14,
+      "deco" : "f",
+      "offset" : 60
+     },
+     {
+      "name" : "object",
+      "kind" : "variable",
+      "line" : 86,
+      "char" : 11,
+      "deco" : "Pv",
+      "offset" : 64
+     },
+     {
+      "name" : "user",
+      "kind" : "variable",
+      "line" : 87,
+      "char" : 11,
+      "deco" : "Pv",
+      "offset" : 68
+     },
+     {
+      "name" : "uniqueID",
+      "kind" : "variable",
+      "line" : 89,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 72
+     },
+     {
+      "name" : "version_",
+      "kind" : "variable",
+      "line" : 90,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 76
+     },
+     {
+      "name" : "processReplacing",
+      "kind" : "variable",
+      "line" : 93,
+      "char" : 24,
+      "deco" : "PUNbPS5dplug3vst7aeffect7AEffectPPfPPfiZv",
+      "originalType" : "AEffectProcessProc",
+      "offset" : 80
+     },
+     {
+      "name" : "processDoubleReplacing",
+      "kind" : "variable",
+      "line" : 98,
+      "char" : 34,
+      "deco" : "PUNbPS5dplug3vst7aeffect7AEffectPPdPPdiZv",
+      "originalType" : "AEffectProcessDoubleProc",
+      "offset" : 84
+     },
+     {
+      "name" : "future",
+      "kind" : "variable",
+      "line" : 100,
+      "char" : 18,
+      "deco" : "G56a",
+      "offset" : 88
+     }
+    ]
+   },
+   {
+    "name" : "VstAEffectFlags",
+    "kind" : "alias",
+    "line" : 109,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "effFlagsHasEditor",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 112,
+    "char" : 5
+   },
+   {
+    "name" : "effFlagsCanReplacing",
+    "kind" : "enum member",
+    "value" : "16",
+    "line" : 113,
+    "char" : 5
+   },
+   {
+    "name" : "effFlagsProgramChunks",
+    "kind" : "enum member",
+    "value" : "32",
+    "line" : 114,
+    "char" : 5
+   },
+   {
+    "name" : "effFlagsIsSynth",
+    "kind" : "enum member",
+    "value" : "256",
+    "line" : 115,
+    "char" : 5
+   },
+   {
+    "name" : "effFlagsNoSoundInStop",
+    "kind" : "enum member",
+    "value" : "512",
+    "line" : 116,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_effFlagsHasClip",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 118,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_effFlagsHasVu",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 119,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_effFlagsCanMono",
+    "kind" : "enum member",
+    "value" : "8",
+    "line" : 120,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_effFlagsExtIsAsync",
+    "kind" : "enum member",
+    "value" : "1024",
+    "line" : 121,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_effFlagsExtHasBuffer",
+    "kind" : "enum member",
+    "value" : "2048",
+    "line" : 122,
+    "char" : 5
+   },
+   {
+    "name" : "effFlagsCanDoubleReplacing",
+    "kind" : "enum member",
+    "value" : "4096",
+    "line" : 129,
+    "char" : 9
+   },
+   {
+    "name" : "AEffectOpcodes",
+    "kind" : "alias",
+    "line" : 135,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "effOpen",
+    "kind" : "enum member",
+    "value" : "0",
+    "line" : 138,
+    "char" : 5
+   },
+   {
+    "name" : "effClose",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 139,
+    "char" : 5
+   },
+   {
+    "name" : "effSetProgram",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 141,
+    "char" : 5
+   },
+   {
+    "name" : "effGetProgram",
+    "kind" : "enum member",
+    "value" : "3",
+    "line" : 142,
+    "char" : 5
+   },
+   {
+    "name" : "effSetProgramName",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 143,
+    "char" : 5
+   },
+   {
+    "name" : "effGetProgramName",
+    "kind" : "enum member",
+    "value" : "5",
+    "line" : 144,
+    "char" : 5
+   },
+   {
+    "name" : "effGetParamLabel",
+    "kind" : "enum member",
+    "value" : "6",
+    "line" : 146,
+    "char" : 5
+   },
+   {
+    "name" : "effGetParamDisplay",
+    "kind" : "enum member",
+    "value" : "7",
+    "line" : 147,
+    "char" : 5
+   },
+   {
+    "name" : "effGetParamName",
+    "kind" : "enum member",
+    "value" : "8",
+    "line" : 148,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_effGetVu",
+    "kind" : "enum member",
+    "value" : "9",
+    "line" : 150,
+    "char" : 5
+   },
+   {
+    "name" : "effSetSampleRate",
+    "kind" : "enum member",
+    "value" : "10",
+    "line" : 152,
+    "char" : 5
+   },
+   {
+    "name" : "effSetBlockSize",
+    "kind" : "enum member",
+    "value" : "11",
+    "line" : 153,
+    "char" : 5
+   },
+   {
+    "name" : "effMainsChanged",
+    "kind" : "enum member",
+    "value" : "12",
+    "line" : 154,
+    "char" : 5
+   },
+   {
+    "name" : "effEditGetRect",
+    "kind" : "enum member",
+    "value" : "13",
+    "line" : 156,
+    "char" : 5
+   },
+   {
+    "name" : "effEditOpen",
+    "kind" : "enum member",
+    "value" : "14",
+    "line" : 157,
+    "char" : 5
+   },
+   {
+    "name" : "effEditClose",
+    "kind" : "enum member",
+    "value" : "15",
+    "line" : 158,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_effEditDraw",
+    "kind" : "enum member",
+    "value" : "16",
+    "line" : 160,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_effEditMouse",
+    "kind" : "enum member",
+    "value" : "17",
+    "line" : 161,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_effEditKey",
+    "kind" : "enum member",
+    "value" : "18",
+    "line" : 162,
+    "char" : 5
+   },
+   {
+    "name" : "effEditIdle",
+    "kind" : "enum member",
+    "value" : "19",
+    "line" : 164,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_effEditTop",
+    "kind" : "enum member",
+    "value" : "20",
+    "line" : 166,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_effEditSleep",
+    "kind" : "enum member",
+    "value" : "21",
+    "line" : 167,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_effIdentify",
+    "kind" : "enum member",
+    "value" : "22",
+    "line" : 168,
+    "char" : 5
+   },
+   {
+    "name" : "effGetChunk",
+    "kind" : "enum member",
+    "value" : "23",
+    "line" : 170,
+    "char" : 5
+   },
+   {
+    "name" : "effSetChunk",
+    "kind" : "enum member",
+    "value" : "24",
+    "line" : 171,
+    "char" : 5
+   },
+   {
+    "name" : "effNumOpcodes",
+    "kind" : "enum member",
+    "value" : "25",
+    "line" : 173,
+    "char" : 5
+   },
+   {
+    "name" : "AudioMasterOpcodes",
+    "kind" : "alias",
+    "line" : 177,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "audioMasterAutomate",
+    "kind" : "enum member",
+    "value" : "0",
+    "line" : 180,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterVersion",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 181,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterCurrentId",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 182,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterIdle",
+    "kind" : "enum member",
+    "value" : "3",
+    "line" : 183,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterPinConnected",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 184,
+    "char" : 5
+   },
+   {
+    "name" : "VstStringConstants",
+    "kind" : "enum",
+    "line" : 188,
+    "char" : 1,
+    "baseDeco" : "i",
+    "members" : [
+     {
+      "name" : "kVstMaxProgNameLen",
+      "kind" : "enum member",
+      "value" : "24",
+      "line" : 190,
+      "char" : 5
+     },
+     {
+      "name" : "kVstMaxParamStrLen",
+      "kind" : "enum member",
+      "value" : "8",
+      "line" : 191,
+      "char" : 5
+     },
+     {
+      "name" : "kVstMaxVendorStrLen",
+      "kind" : "enum member",
+      "value" : "64",
+      "line" : 192,
+      "char" : 5
+     },
+     {
+      "name" : "kVstMaxProductStrLen",
+      "kind" : "enum member",
+      "value" : "64",
+      "line" : 193,
+      "char" : 5
+     },
+     {
+      "name" : "kVstMaxEffectNameLen",
+      "kind" : "enum member",
+      "value" : "32",
+      "line" : 194,
+      "char" : 5
+     }
+    ]
+   },
+   {
+    "name" : "vst_strncpy",
+    "kind" : "function",
+    "line" : 199,
+    "char" : 7,
+    "deco" : "FPaxPakZPa",
+    "originalType" : "char*(char* dst, const char* src, size_t maxLen)",
+    "parameters" : [
+     {
+      "name" : "dst",
+      "deco" : "Pa"
+     },
+     {
+      "name" : "src",
+      "deco" : "xPa"
+     },
+     {
+      "name" : "maxLen",
+      "deco" : "k"
+     }
+    ],
+    "endline" : 204,
+    "endchar" : 1
+   },
+   {
+    "name" : "vst_strncat",
+    "kind" : "function",
+    "line" : 209,
+    "char" : 7,
+    "deco" : "FPaxPakZPa",
+    "originalType" : "char*(char* dst, const char* src, size_t maxLen)",
+    "parameters" : [
+     {
+      "name" : "dst",
+      "deco" : "Pa"
+     },
+     {
+      "name" : "src",
+      "deco" : "xPa"
+     },
+     {
+      "name" : "maxLen",
+      "deco" : "k"
+     }
+    ],
+    "endline" : 214,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "line" : 219,
+    "char" : 4,
+    "name" : "FromVstPtr",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "FromVstPtr",
+      "kind" : "function",
+      "line" : 219,
+      "char" : 4,
+      "type" : "T*(VstIntPtr arg)",
+      "parameters" : [
+       {
+        "name" : "arg",
+        "type" : "VstIntPtr"
+       }
+      ],
+      "endline" : 223,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 228,
+    "char" : 11,
+    "name" : "ToVstPtr",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "ToVstPtr",
+      "kind" : "function",
+      "line" : 228,
+      "char" : 11,
+      "type" : "VstIntPtr(T* ptr)",
+      "parameters" : [
+       {
+        "name" : "ptr",
+        "type" : "T*"
+       }
+      ],
+      "endline" : 232,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "ERect",
+    "kind" : "struct",
+    "line" : 235,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "top",
+      "kind" : "variable",
+      "line" : 237,
+      "char" : 14,
+      "deco" : "s",
+      "originalType" : "VstInt16",
+      "offset" : 0
+     },
+     {
+      "name" : "left",
+      "kind" : "variable",
+      "line" : 238,
+      "char" : 14,
+      "deco" : "s",
+      "originalType" : "VstInt16",
+      "offset" : 2
+     },
+     {
+      "name" : "bottom",
+      "kind" : "variable",
+      "line" : 239,
+      "char" : 14,
+      "deco" : "s",
+      "originalType" : "VstInt16",
+      "offset" : 4
+     },
+     {
+      "name" : "right",
+      "kind" : "variable",
+      "line" : 240,
+      "char" : 14,
+      "deco" : "s",
+      "originalType" : "VstInt16",
+      "offset" : 6
+     }
+    ]
+   },
+   {
+    "name" : "CCONST",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 244,
+    "char" : 13,
+    "deco" : "FNaNbiiiiZi",
+    "parameters" : [
+     {
+      "name" : "a",
+      "deco" : "i"
+     },
+     {
+      "name" : "b",
+      "deco" : "i"
+     },
+     {
+      "name" : "c",
+      "deco" : "i"
+     },
+     {
+      "name" : "d",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 247,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "dplug.vst.aeffectx",
+  "kind" : "module",
+  "file" : "..\\..\\..\\vst\\dplug\\vst\\aeffectx.d",
+  "members" : [
+   {
+    "name" : "dplug.vst.aeffect",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "Vst2StringConstants",
+    "kind" : "alias",
+    "line" : 13,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstMaxNameLen",
+    "kind" : "enum member",
+    "value" : "64",
+    "line" : 16,
+    "char" : 5
+   },
+   {
+    "name" : "kVstMaxLabelLen",
+    "kind" : "enum member",
+    "value" : "64",
+    "line" : 17,
+    "char" : 5
+   },
+   {
+    "name" : "kVstMaxShortLabelLen",
+    "kind" : "enum member",
+    "value" : "8",
+    "line" : 18,
+    "char" : 5
+   },
+   {
+    "name" : "kVstMaxCategLabelLen",
+    "kind" : "enum member",
+    "value" : "24",
+    "line" : 19,
+    "char" : 5
+   },
+   {
+    "name" : "kVstMaxFileNameLen",
+    "kind" : "enum member",
+    "value" : "100",
+    "line" : 20,
+    "char" : 5
+   },
+   {
+    "name" : "VstEvent",
+    "kind" : "struct",
+    "line" : 24,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "type",
+      "kind" : "variable",
+      "line" : 26,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 0
+     },
+     {
+      "name" : "byteSize",
+      "kind" : "variable",
+      "line" : 27,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 4
+     },
+     {
+      "name" : "deltaFrames",
+      "kind" : "variable",
+      "line" : 28,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 8
+     },
+     {
+      "name" : "flags",
+      "kind" : "variable",
+      "line" : 29,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 12
+     },
+     {
+      "name" : "data",
+      "kind" : "variable",
+      "line" : 31,
+      "char" : 14,
+      "deco" : "G16a",
+      "offset" : 16
+     }
+    ]
+   },
+   {
+    "name" : "VstEventTypes",
+    "kind" : "alias",
+    "line" : 35,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstMidiType",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 38,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_kVstAudioType",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 39,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_kVstVideoType",
+    "kind" : "enum member",
+    "value" : "3",
+    "line" : 40,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_kVstParameterType",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 41,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_kVstTriggerType",
+    "kind" : "enum member",
+    "value" : "5",
+    "line" : 42,
+    "char" : 5
+   },
+   {
+    "name" : "kVstSysExType",
+    "kind" : "enum member",
+    "value" : "6",
+    "line" : 43,
+    "char" : 5
+   },
+   {
+    "name" : "VstEvents",
+    "kind" : "struct",
+    "line" : 47,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "numEvents",
+      "kind" : "variable",
+      "line" : 49,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 0
+     },
+     {
+      "name" : "reserved",
+      "kind" : "variable",
+      "line" : 50,
+      "char" : 15,
+      "deco" : "i",
+      "originalType" : "VstIntPtr",
+      "offset" : 4
+     },
+     {
+      "name" : "events",
+      "kind" : "variable",
+      "line" : 51,
+      "char" : 18,
+      "deco" : "G2PS5dplug3vst8aeffectx8VstEvent",
+      "offset" : 8
+     }
+    ]
+   },
+   {
+    "name" : "VstMidiEvent",
+    "kind" : "struct",
+    "line" : 55,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "type",
+      "kind" : "variable",
+      "line" : 57,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 0
+     },
+     {
+      "name" : "byteSize",
+      "kind" : "variable",
+      "line" : 58,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 4
+     },
+     {
+      "name" : "deltaFrames",
+      "kind" : "variable",
+      "line" : 59,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 8
+     },
+     {
+      "name" : "flags",
+      "kind" : "variable",
+      "line" : 60,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 12
+     },
+     {
+      "name" : "noteLength",
+      "kind" : "variable",
+      "line" : 61,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 16
+     },
+     {
+      "name" : "noteOffset",
+      "kind" : "variable",
+      "line" : 62,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 20
+     },
+     {
+      "name" : "midiData",
+      "kind" : "variable",
+      "line" : 63,
+      "char" : 13,
+      "deco" : "G4a",
+      "offset" : 24
+     },
+     {
+      "name" : "detune",
+      "kind" : "variable",
+      "line" : 64,
+      "char" : 10,
+      "deco" : "a",
+      "offset" : 28
+     },
+     {
+      "name" : "noteOffVelocity",
+      "kind" : "variable",
+      "line" : 65,
+      "char" : 10,
+      "deco" : "a",
+      "offset" : 29
+     },
+     {
+      "name" : "reserved1",
+      "kind" : "variable",
+      "line" : 66,
+      "char" : 10,
+      "deco" : "a",
+      "offset" : 30
+     },
+     {
+      "name" : "reserved2",
+      "kind" : "variable",
+      "line" : 67,
+      "char" : 10,
+      "deco" : "a",
+      "offset" : 31
+     }
+    ]
+   },
+   {
+    "name" : "VstMidiEventFlags",
+    "kind" : "alias",
+    "line" : 71,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstMidiEventIsRealtime",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 74,
+    "char" : 5
+   },
+   {
+    "name" : "VstMidiSysexEvent",
+    "kind" : "struct",
+    "line" : 78,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "type",
+      "kind" : "variable",
+      "line" : 80,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 0
+     },
+     {
+      "name" : "byteSize",
+      "kind" : "variable",
+      "line" : 81,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 4
+     },
+     {
+      "name" : "deltaFrames",
+      "kind" : "variable",
+      "line" : 82,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 8
+     },
+     {
+      "name" : "flags",
+      "kind" : "variable",
+      "line" : 83,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 12
+     },
+     {
+      "name" : "dumpBytes",
+      "kind" : "variable",
+      "line" : 84,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 16
+     },
+     {
+      "name" : "resvd1",
+      "kind" : "variable",
+      "line" : 85,
+      "char" : 15,
+      "deco" : "i",
+      "originalType" : "VstIntPtr",
+      "offset" : 20
+     },
+     {
+      "name" : "sysexDump",
+      "kind" : "variable",
+      "line" : 86,
+      "char" : 11,
+      "deco" : "Pa",
+      "offset" : 24
+     },
+     {
+      "name" : "resvd2",
+      "kind" : "variable",
+      "line" : 87,
+      "char" : 15,
+      "deco" : "i",
+      "originalType" : "VstIntPtr",
+      "offset" : 28
+     }
+    ]
+   },
+   {
+    "name" : "VstTimeInfo",
+    "kind" : "struct",
+    "line" : 103,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "samplePos",
+      "kind" : "variable",
+      "line" : 105,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 0
+     },
+     {
+      "name" : "sampleRate",
+      "kind" : "variable",
+      "line" : 106,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 8
+     },
+     {
+      "name" : "nanoSeconds",
+      "kind" : "variable",
+      "line" : 107,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 16
+     },
+     {
+      "name" : "ppqPos",
+      "kind" : "variable",
+      "line" : 108,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 24
+     },
+     {
+      "name" : "tempo",
+      "kind" : "variable",
+      "line" : 109,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 32
+     },
+     {
+      "name" : "barStartPos",
+      "kind" : "variable",
+      "line" : 110,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 40
+     },
+     {
+      "name" : "cycleStartPos",
+      "kind" : "variable",
+      "line" : 111,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 48
+     },
+     {
+      "name" : "cycleEndPos",
+      "kind" : "variable",
+      "line" : 112,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 56
+     },
+     {
+      "name" : "timeSigNumerator",
+      "kind" : "variable",
+      "line" : 113,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 64
+     },
+     {
+      "name" : "timeSigDenominator",
+      "kind" : "variable",
+      "line" : 114,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 68
+     },
+     {
+      "name" : "smpteOffset",
+      "kind" : "variable",
+      "line" : 115,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 72
+     },
+     {
+      "name" : "smpteFrameRate",
+      "kind" : "variable",
+      "line" : 116,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 76
+     },
+     {
+      "name" : "samplesToNextClock",
+      "kind" : "variable",
+      "line" : 117,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 80
+     },
+     {
+      "name" : "flags",
+      "kind" : "variable",
+      "line" : 118,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 84
+     }
+    ]
+   },
+   {
+    "name" : "VstTimeInfoFlags",
+    "kind" : "alias",
+    "line" : 122,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstTransportChanged",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 125,
+    "char" : 5
+   },
+   {
+    "name" : "kVstTransportPlaying",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 126,
+    "char" : 5
+   },
+   {
+    "name" : "kVstTransportCycleActive",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 127,
+    "char" : 5
+   },
+   {
+    "name" : "kVstTransportRecording",
+    "kind" : "enum member",
+    "value" : "8",
+    "line" : 128,
+    "char" : 5
+   },
+   {
+    "name" : "kVstAutomationWriting",
+    "kind" : "enum member",
+    "value" : "64",
+    "line" : 129,
+    "char" : 5
+   },
+   {
+    "name" : "kVstAutomationReading",
+    "kind" : "enum member",
+    "value" : "128",
+    "line" : 130,
+    "char" : 5
+   },
+   {
+    "name" : "kVstNanosValid",
+    "kind" : "enum member",
+    "value" : "256",
+    "line" : 131,
+    "char" : 5
+   },
+   {
+    "name" : "kVstPpqPosValid",
+    "kind" : "enum member",
+    "value" : "512",
+    "line" : 132,
+    "char" : 5
+   },
+   {
+    "name" : "kVstTempoValid",
+    "kind" : "enum member",
+    "value" : "1024",
+    "line" : 133,
+    "char" : 5
+   },
+   {
+    "name" : "kVstBarsValid",
+    "kind" : "enum member",
+    "value" : "2048",
+    "line" : 134,
+    "char" : 5
+   },
+   {
+    "name" : "kVstCyclePosValid",
+    "kind" : "enum member",
+    "value" : "4096",
+    "line" : 135,
+    "char" : 5
+   },
+   {
+    "name" : "kVstTimeSigValid",
+    "kind" : "enum member",
+    "value" : "8192",
+    "line" : 136,
+    "char" : 5
+   },
+   {
+    "name" : "kVstSmpteValid",
+    "kind" : "enum member",
+    "value" : "16384",
+    "line" : 137,
+    "char" : 5
+   },
+   {
+    "name" : "kVstClockValid",
+    "kind" : "enum member",
+    "value" : "32768",
+    "line" : 138,
+    "char" : 5
+   },
+   {
+    "name" : "VstSmpteFrameRate",
+    "kind" : "alias",
+    "line" : 144,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstSmpte24fps",
+    "kind" : "enum member",
+    "value" : "0",
+    "line" : 148,
+    "char" : 5
+   },
+   {
+    "name" : "kVstSmpte25fps",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 149,
+    "char" : 5
+   },
+   {
+    "name" : "kVstSmpte2997fps",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 150,
+    "char" : 5
+   },
+   {
+    "name" : "kVstSmpte30fps",
+    "kind" : "enum member",
+    "value" : "3",
+    "line" : 151,
+    "char" : 5
+   },
+   {
+    "name" : "kVstSmpte2997dfps",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 152,
+    "char" : 5
+   },
+   {
+    "name" : "kVstSmpte30dfps",
+    "kind" : "enum member",
+    "value" : "5",
+    "line" : 153,
+    "char" : 5
+   },
+   {
+    "name" : "kVstSmpteFilm16mm",
+    "kind" : "enum member",
+    "value" : "6",
+    "line" : 155,
+    "char" : 5
+   },
+   {
+    "name" : "kVstSmpteFilm35mm",
+    "kind" : "enum member",
+    "value" : "7",
+    "line" : 156,
+    "char" : 5
+   },
+   {
+    "name" : "kVstSmpte239fps",
+    "kind" : "enum member",
+    "value" : "10",
+    "line" : 157,
+    "char" : 5
+   },
+   {
+    "name" : "kVstSmpte249fps",
+    "kind" : "enum member",
+    "value" : "11",
+    "line" : 158,
+    "char" : 5
+   },
+   {
+    "name" : "kVstSmpte599fps",
+    "kind" : "enum member",
+    "value" : "12",
+    "line" : 159,
+    "char" : 5
+   },
+   {
+    "name" : "kVstSmpte60fps",
+    "kind" : "enum member",
+    "value" : "13",
+    "line" : 160,
+    "char" : 5
+   },
+   {
+    "name" : "VstVariableIo",
+    "kind" : "struct",
+    "line" : 167,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "inputs",
+      "kind" : "variable",
+      "line" : 170,
+      "char" : 13,
+      "deco" : "PPf",
+      "offset" : 0
+     },
+     {
+      "name" : "outputs",
+      "kind" : "variable",
+      "line" : 171,
+      "char" : 13,
+      "deco" : "PPf",
+      "offset" : 4
+     },
+     {
+      "name" : "numSamplesInput",
+      "kind" : "variable",
+      "line" : 172,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 8
+     },
+     {
+      "name" : "numSamplesOutput",
+      "kind" : "variable",
+      "line" : 173,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 12
+     },
+     {
+      "name" : "numSamplesInputProcessed",
+      "kind" : "variable",
+      "line" : 174,
+      "char" : 15,
+      "deco" : "Pi",
+      "originalType" : "VstInt32*",
+      "offset" : 16
+     },
+     {
+      "name" : "numSamplesOutputProcessed",
+      "kind" : "variable",
+      "line" : 175,
+      "char" : 15,
+      "deco" : "Pi",
+      "originalType" : "VstInt32*",
+      "offset" : 20
+     }
+    ]
+   },
+   {
+    "name" : "VstHostLanguage",
+    "kind" : "alias",
+    "line" : 182,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstLangEnglish",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 186,
+    "char" : 5
+   },
+   {
+    "name" : "kVstLangGerman",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 187,
+    "char" : 5
+   },
+   {
+    "name" : "kVstLangFrench",
+    "kind" : "enum member",
+    "value" : "3",
+    "line" : 188,
+    "char" : 5
+   },
+   {
+    "name" : "kVstLangItalian",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 189,
+    "char" : 5
+   },
+   {
+    "name" : "kVstLangSpanish",
+    "kind" : "enum member",
+    "value" : "5",
+    "line" : 190,
+    "char" : 5
+   },
+   {
+    "name" : "kVstLangJapanese",
+    "kind" : "enum member",
+    "value" : "6",
+    "line" : 191,
+    "char" : 5
+   },
+   {
+    "name" : "AudioMasterOpcodesX",
+    "kind" : "alias",
+    "line" : 199,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "DEPRECATED_audioMasterWantMidi",
+    "kind" : "enum member",
+    "value" : "6",
+    "line" : 203,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterGetTime",
+    "kind" : "enum member",
+    "value" : "7",
+    "line" : 205,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterProcessEvents",
+    "kind" : "enum member",
+    "value" : "8",
+    "line" : 206,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterSetTime",
+    "kind" : "enum member",
+    "value" : "9",
+    "line" : 208,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterTempoAt",
+    "kind" : "enum member",
+    "value" : "10",
+    "line" : 209,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterGetNumAutomatableParameters",
+    "kind" : "enum member",
+    "value" : "11",
+    "line" : 210,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterGetParameterQuantization",
+    "kind" : "enum member",
+    "value" : "12",
+    "line" : 211,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterIOChanged",
+    "kind" : "enum member",
+    "value" : "13",
+    "line" : 213,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterNeedIdle",
+    "kind" : "enum member",
+    "value" : "14",
+    "line" : 215,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterSizeWindow",
+    "kind" : "enum member",
+    "value" : "15",
+    "line" : 217,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterGetSampleRate",
+    "kind" : "enum member",
+    "value" : "16",
+    "line" : 218,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterGetBlockSize",
+    "kind" : "enum member",
+    "value" : "17",
+    "line" : 219,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterGetInputLatency",
+    "kind" : "enum member",
+    "value" : "18",
+    "line" : 220,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterGetOutputLatency",
+    "kind" : "enum member",
+    "value" : "19",
+    "line" : 221,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterGetPreviousPlug",
+    "kind" : "enum member",
+    "value" : "20",
+    "line" : 223,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterGetNextPlug",
+    "kind" : "enum member",
+    "value" : "21",
+    "line" : 224,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterWillReplaceOrAccumulate",
+    "kind" : "enum member",
+    "value" : "22",
+    "line" : 225,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterGetCurrentProcessLevel",
+    "kind" : "enum member",
+    "value" : "23",
+    "line" : 227,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterGetAutomationState",
+    "kind" : "enum member",
+    "value" : "24",
+    "line" : 228,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterOfflineStart",
+    "kind" : "enum member",
+    "value" : "25",
+    "line" : 230,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterOfflineRead",
+    "kind" : "enum member",
+    "value" : "26",
+    "line" : 231,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterOfflineWrite",
+    "kind" : "enum member",
+    "value" : "27",
+    "line" : 232,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterOfflineGetCurrentPass",
+    "kind" : "enum member",
+    "value" : "28",
+    "line" : 233,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterOfflineGetCurrentMetaPass",
+    "kind" : "enum member",
+    "value" : "29",
+    "line" : 234,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterSetOutputSampleRate",
+    "kind" : "enum member",
+    "value" : "30",
+    "line" : 236,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterGetOutputSpeakerArrangement",
+    "kind" : "enum member",
+    "value" : "31",
+    "line" : 237,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterGetVendorString",
+    "kind" : "enum member",
+    "value" : "32",
+    "line" : 239,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterGetProductString",
+    "kind" : "enum member",
+    "value" : "33",
+    "line" : 240,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterGetVendorVersion",
+    "kind" : "enum member",
+    "value" : "34",
+    "line" : 241,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterVendorSpecific",
+    "kind" : "enum member",
+    "value" : "35",
+    "line" : 242,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterSetIcon",
+    "kind" : "enum member",
+    "value" : "36",
+    "line" : 244,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterCanDo",
+    "kind" : "enum member",
+    "value" : "37",
+    "line" : 246,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterGetLanguage",
+    "kind" : "enum member",
+    "value" : "38",
+    "line" : 247,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterOpenWindow",
+    "kind" : "enum member",
+    "value" : "39",
+    "line" : 249,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterCloseWindow",
+    "kind" : "enum member",
+    "value" : "40",
+    "line" : 250,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterGetDirectory",
+    "kind" : "enum member",
+    "value" : "41",
+    "line" : 252,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterUpdateDisplay",
+    "kind" : "enum member",
+    "value" : "42",
+    "line" : 253,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterBeginEdit",
+    "kind" : "enum member",
+    "value" : "43",
+    "line" : 254,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterEndEdit",
+    "kind" : "enum member",
+    "value" : "44",
+    "line" : 255,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterOpenFileSelector",
+    "kind" : "enum member",
+    "value" : "45",
+    "line" : 256,
+    "char" : 5
+   },
+   {
+    "name" : "audioMasterCloseFileSelector",
+    "kind" : "enum member",
+    "value" : "46",
+    "line" : 257,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterEditFile",
+    "kind" : "enum member",
+    "value" : "47",
+    "line" : 259,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterGetChunkFile",
+    "kind" : "enum member",
+    "value" : "48",
+    "line" : 261,
+    "char" : 5
+   },
+   {
+    "name" : "DEPRECATED_audioMasterGetInputSpeakerArrangement",
+    "kind" : "enum member",
+    "value" : "49",
+    "line" : 263,
+    "char" : 5
+   },
+   {
+    "name" : "AEffectXOpcodes",
+    "kind" : "alias",
+    "line" : 269,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "effProcessEvents",
+    "kind" : "enum member",
+    "value" : "25",
+    "line" : 273,
+    "char" : 5
+   },
+   {
+    "name" : "effCanBeAutomated",
+    "kind" : "enum member",
+    "value" : "26",
+    "line" : 275,
+    "char" : 7
+   },
+   {
+    "name" : "effString2Parameter",
+    "kind" : "enum member",
+    "value" : "27",
+    "line" : 276,
+    "char" : 7
+   },
+   {
+    "name" : "DEPRECATED_effGetNumProgramCategories",
+    "kind" : "enum member",
+    "value" : "28",
+    "line" : 278,
+    "char" : 7
+   },
+   {
+    "name" : "effGetProgramNameIndexed",
+    "kind" : "enum member",
+    "value" : "29",
+    "line" : 280,
+    "char" : 7
+   },
+   {
+    "name" : "DEPRECATED_effCopyProgram",
+    "kind" : "enum member",
+    "value" : "30",
+    "line" : 282,
+    "char" : 7
+   },
+   {
+    "name" : "DEPRECATED_effConnectInput",
+    "kind" : "enum member",
+    "value" : "31",
+    "line" : 283,
+    "char" : 7
+   },
+   {
+    "name" : "DEPRECATED_effConnectOutput",
+    "kind" : "enum member",
+    "value" : "32",
+    "line" : 284,
+    "char" : 7
+   },
+   {
+    "name" : "effGetInputProperties",
+    "kind" : "enum member",
+    "value" : "33",
+    "line" : 286,
+    "char" : 7
+   },
+   {
+    "name" : "effGetOutputProperties",
+    "kind" : "enum member",
+    "value" : "34",
+    "line" : 287,
+    "char" : 7
+   },
+   {
+    "name" : "effGetPlugCategory",
+    "kind" : "enum member",
+    "value" : "35",
+    "line" : 288,
+    "char" : 7
+   },
+   {
+    "name" : "DEPRECATED_effGetCurrentPosition",
+    "kind" : "enum member",
+    "value" : "36",
+    "line" : 290,
+    "char" : 7
+   },
+   {
+    "name" : "DEPRECATED_effGetDestinationBuffer",
+    "kind" : "enum member",
+    "value" : "37",
+    "line" : 291,
+    "char" : 7
+   },
+   {
+    "name" : "effOfflineNotify",
+    "kind" : "enum member",
+    "value" : "38",
+    "line" : 293,
+    "char" : 7
+   },
+   {
+    "name" : "effOfflinePrepare",
+    "kind" : "enum member",
+    "value" : "39",
+    "line" : 294,
+    "char" : 7
+   },
+   {
+    "name" : "effOfflineRun",
+    "kind" : "enum member",
+    "value" : "40",
+    "line" : 295,
+    "char" : 7
+   },
+   {
+    "name" : "effProcessVarIo",
+    "kind" : "enum member",
+    "value" : "41",
+    "line" : 297,
+    "char" : 7
+   },
+   {
+    "name" : "effSetSpeakerArrangement",
+    "kind" : "enum member",
+    "value" : "42",
+    "line" : 298,
+    "char" : 7
+   },
+   {
+    "name" : "DEPRECATED_effSetBlockSizeAndSampleRate",
+    "kind" : "enum member",
+    "value" : "43",
+    "line" : 300,
+    "char" : 7
+   },
+   {
+    "name" : "effSetBypass",
+    "kind" : "enum member",
+    "value" : "44",
+    "line" : 302,
+    "char" : 7
+   },
+   {
+    "name" : "effGetEffectName",
+    "kind" : "enum member",
+    "value" : "45",
+    "line" : 303,
+    "char" : 7
+   },
+   {
+    "name" : "DEPRECATED_effGetErrorText",
+    "kind" : "enum member",
+    "value" : "46",
+    "line" : 305,
+    "char" : 7
+   },
+   {
+    "name" : "effGetVendorString",
+    "kind" : "enum member",
+    "value" : "47",
+    "line" : 307,
+    "char" : 7
+   },
+   {
+    "name" : "effGetProductString",
+    "kind" : "enum member",
+    "value" : "48",
+    "line" : 308,
+    "char" : 7
+   },
+   {
+    "name" : "effGetVendorVersion",
+    "kind" : "enum member",
+    "value" : "49",
+    "line" : 309,
+    "char" : 7
+   },
+   {
+    "name" : "effVendorSpecific",
+    "kind" : "enum member",
+    "value" : "50",
+    "line" : 310,
+    "char" : 7
+   },
+   {
+    "name" : "effCanDo",
+    "kind" : "enum member",
+    "value" : "51",
+    "line" : 311,
+    "char" : 7
+   },
+   {
+    "name" : "effGetTailSize",
+    "kind" : "enum member",
+    "value" : "52",
+    "line" : 312,
+    "char" : 7
+   },
+   {
+    "name" : "DEPRECATED_effIdle",
+    "kind" : "enum member",
+    "value" : "53",
+    "line" : 314,
+    "char" : 7
+   },
+   {
+    "name" : "DEPRECATED_effGetIcon",
+    "kind" : "enum member",
+    "value" : "54",
+    "line" : 315,
+    "char" : 7
+   },
+   {
+    "name" : "DEPRECATED_effSetViewPosition",
+    "kind" : "enum member",
+    "value" : "55",
+    "line" : 316,
+    "char" : 7
+   },
+   {
+    "name" : "effGetParameterProperties",
+    "kind" : "enum member",
+    "value" : "56",
+    "line" : 318,
+    "char" : 7
+   },
+   {
+    "name" : "DEPRECATED_effKeysRequired",
+    "kind" : "enum member",
+    "value" : "57",
+    "line" : 320,
+    "char" : 7
+   },
+   {
+    "name" : "effGetVstVersion",
+    "kind" : "enum member",
+    "value" : "58",
+    "line" : 322,
+    "char" : 7
+   },
+   {
+    "name" : "effEditKeyDown",
+    "kind" : "enum member",
+    "value" : "59",
+    "line" : 325,
+    "char" : 7
+   },
+   {
+    "name" : "effEditKeyUp",
+    "kind" : "enum member",
+    "value" : "60",
+    "line" : 326,
+    "char" : 7
+   },
+   {
+    "name" : "effSetEditKnobMode",
+    "kind" : "enum member",
+    "value" : "61",
+    "line" : 327,
+    "char" : 7
+   },
+   {
+    "name" : "effGetMidiProgramName",
+    "kind" : "enum member",
+    "value" : "62",
+    "line" : 329,
+    "char" : 7
+   },
+   {
+    "name" : "effGetCurrentMidiProgram",
+    "kind" : "enum member",
+    "value" : "63",
+    "line" : 330,
+    "char" : 7
+   },
+   {
+    "name" : "effGetMidiProgramCategory",
+    "kind" : "enum member",
+    "value" : "64",
+    "line" : 331,
+    "char" : 7
+   },
+   {
+    "name" : "effHasMidiProgramsChanged",
+    "kind" : "enum member",
+    "value" : "65",
+    "line" : 332,
+    "char" : 7
+   },
+   {
+    "name" : "effGetMidiKeyName",
+    "kind" : "enum member",
+    "value" : "66",
+    "line" : 333,
+    "char" : 7
+   },
+   {
+    "name" : "effBeginSetProgram",
+    "kind" : "enum member",
+    "value" : "67",
+    "line" : 335,
+    "char" : 7
+   },
+   {
+    "name" : "effEndSetProgram",
+    "kind" : "enum member",
+    "value" : "68",
+    "line" : 336,
+    "char" : 7
+   },
+   {
+    "name" : "effGetSpeakerArrangement",
+    "kind" : "enum member",
+    "value" : "69",
+    "line" : 339,
+    "char" : 7
+   },
+   {
+    "name" : "effShellGetNextPlugin",
+    "kind" : "enum member",
+    "value" : "70",
+    "line" : 340,
+    "char" : 7
+   },
+   {
+    "name" : "effStartProcess",
+    "kind" : "enum member",
+    "value" : "71",
+    "line" : 342,
+    "char" : 7
+   },
+   {
+    "name" : "effStopProcess",
+    "kind" : "enum member",
+    "value" : "72",
+    "line" : 343,
+    "char" : 7
+   },
+   {
+    "name" : "effSetTotalSampleToProcess",
+    "kind" : "enum member",
+    "value" : "73",
+    "line" : 344,
+    "char" : 7
+   },
+   {
+    "name" : "effSetPanLaw",
+    "kind" : "enum member",
+    "value" : "74",
+    "line" : 345,
+    "char" : 7
+   },
+   {
+    "name" : "effBeginLoadBank",
+    "kind" : "enum member",
+    "value" : "75",
+    "line" : 347,
+    "char" : 7
+   },
+   {
+    "name" : "effBeginLoadProgram",
+    "kind" : "enum member",
+    "value" : "76",
+    "line" : 348,
+    "char" : 7
+   },
+   {
+    "name" : "effSetProcessPrecision",
+    "kind" : "enum member",
+    "value" : "77",
+    "line" : 351,
+    "char" : 7
+   },
+   {
+    "name" : "effGetNumMidiInputChannels",
+    "kind" : "enum member",
+    "value" : "78",
+    "line" : 352,
+    "char" : 7
+   },
+   {
+    "name" : "effGetNumMidiOutputChannels",
+    "kind" : "enum member",
+    "value" : "79",
+    "line" : 353,
+    "char" : 7
+   },
+   {
+    "name" : "VstProcessPrecision",
+    "kind" : "alias",
+    "line" : 359,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstProcessPrecision32",
+    "kind" : "enum member",
+    "value" : "0",
+    "line" : 362,
+    "char" : 5
+   },
+   {
+    "name" : "kVstProcessPrecision64",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 363,
+    "char" : 5
+   },
+   {
+    "name" : "VstParameterProperties",
+    "kind" : "struct",
+    "line" : 369,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "stepFloat",
+      "kind" : "variable",
+      "line" : 372,
+      "char" : 11,
+      "deco" : "f",
+      "offset" : 0
+     },
+     {
+      "name" : "smallStepFloat",
+      "kind" : "variable",
+      "line" : 373,
+      "char" : 11,
+      "deco" : "f",
+      "offset" : 4
+     },
+     {
+      "name" : "largeStepFloat",
+      "kind" : "variable",
+      "line" : 374,
+      "char" : 11,
+      "deco" : "f",
+      "offset" : 8
+     },
+     {
+      "name" : "label",
+      "kind" : "variable",
+      "line" : 375,
+      "char" : 27,
+      "deco" : "G64a",
+      "originalType" : "char[kVstMaxLabelLen]",
+      "offset" : 12
+     },
+     {
+      "name" : "flags",
+      "kind" : "variable",
+      "line" : 376,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 76
+     },
+     {
+      "name" : "minInteger",
+      "kind" : "variable",
+      "line" : 377,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 80
+     },
+     {
+      "name" : "maxInteger",
+      "kind" : "variable",
+      "line" : 378,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 84
+     },
+     {
+      "name" : "stepInteger",
+      "kind" : "variable",
+      "line" : 379,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 88
+     },
+     {
+      "name" : "largeStepInteger",
+      "kind" : "variable",
+      "line" : 380,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 92
+     },
+     {
+      "name" : "shortLabel",
+      "kind" : "variable",
+      "line" : 381,
+      "char" : 32,
+      "deco" : "G8a",
+      "originalType" : "char[kVstMaxShortLabelLen]",
+      "offset" : 96
+     },
+     {
+      "name" : "displayIndex",
+      "kind" : "variable",
+      "line" : 388,
+      "char" : 14,
+      "deco" : "s",
+      "originalType" : "VstInt16",
+      "offset" : 104
+     },
+     {
+      "name" : "category",
+      "kind" : "variable",
+      "line" : 397,
+      "char" : 14,
+      "deco" : "s",
+      "originalType" : "VstInt16",
+      "offset" : 106
+     },
+     {
+      "name" : "numParametersInCategory",
+      "kind" : "variable",
+      "line" : 398,
+      "char" : 14,
+      "deco" : "s",
+      "originalType" : "VstInt16",
+      "offset" : 108
+     },
+     {
+      "name" : "reserved",
+      "kind" : "variable",
+      "line" : 399,
+      "char" : 14,
+      "deco" : "s",
+      "originalType" : "VstInt16",
+      "offset" : 110
+     },
+     {
+      "name" : "categoryLabel",
+      "kind" : "variable",
+      "line" : 400,
+      "char" : 32,
+      "deco" : "G24a",
+      "originalType" : "char[kVstMaxCategLabelLen]",
+      "offset" : 112
+     },
+     {
+      "name" : "future",
+      "kind" : "variable",
+      "line" : 402,
+      "char" : 14,
+      "deco" : "G16a",
+      "offset" : 136
+     }
+    ]
+   },
+   {
+    "name" : "VstParameterFlags",
+    "kind" : "alias",
+    "line" : 409,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstParameterIsSwitch",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 413,
+    "char" : 5
+   },
+   {
+    "name" : "kVstParameterUsesIntegerMinMax",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 414,
+    "char" : 5
+   },
+   {
+    "name" : "kVstParameterUsesFloatStep",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 415,
+    "char" : 5
+   },
+   {
+    "name" : "kVstParameterUsesIntStep",
+    "kind" : "enum member",
+    "value" : "8",
+    "line" : 416,
+    "char" : 5
+   },
+   {
+    "name" : "kVstParameterSupportsDisplayIndex",
+    "kind" : "enum member",
+    "value" : "16",
+    "line" : 417,
+    "char" : 5
+   },
+   {
+    "name" : "kVstParameterSupportsDisplayCategory",
+    "kind" : "enum member",
+    "value" : "32",
+    "line" : 418,
+    "char" : 5
+   },
+   {
+    "name" : "kVstParameterCanRamp",
+    "kind" : "enum member",
+    "value" : "64",
+    "line" : 419,
+    "char" : 5
+   },
+   {
+    "name" : "VstPinProperties",
+    "kind" : "struct",
+    "line" : 426,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "label",
+      "kind" : "variable",
+      "line" : 429,
+      "char" : 27,
+      "deco" : "G64a",
+      "originalType" : "char[kVstMaxLabelLen]",
+      "offset" : 0
+     },
+     {
+      "name" : "flags",
+      "kind" : "variable",
+      "line" : 430,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 64
+     },
+     {
+      "name" : "arrangementType",
+      "kind" : "variable",
+      "line" : 431,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 68
+     },
+     {
+      "name" : "shortLabel",
+      "kind" : "variable",
+      "line" : 432,
+      "char" : 32,
+      "deco" : "G8a",
+      "originalType" : "char[kVstMaxShortLabelLen]",
+      "offset" : 72
+     },
+     {
+      "name" : "future",
+      "kind" : "variable",
+      "line" : 434,
+      "char" : 14,
+      "deco" : "G48a",
+      "offset" : 80
+     }
+    ]
+   },
+   {
+    "name" : "VstPinPropertiesFlags",
+    "kind" : "alias",
+    "line" : 441,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstPinIsActive",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 445,
+    "char" : 5
+   },
+   {
+    "name" : "kVstPinIsStereo",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 446,
+    "char" : 5
+   },
+   {
+    "name" : "kVstPinUseSpeaker",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 447,
+    "char" : 5
+   },
+   {
+    "name" : "VstPlugCategory",
+    "kind" : "alias",
+    "line" : 454,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kPlugCategUnknown",
+    "kind" : "enum member",
+    "value" : "0",
+    "line" : 458,
+    "char" : 5
+   },
+   {
+    "name" : "kPlugCategEffect",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 459,
+    "char" : 5
+   },
+   {
+    "name" : "kPlugCategSynth",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 460,
+    "char" : 5
+   },
+   {
+    "name" : "kPlugCategAnalysis",
+    "kind" : "enum member",
+    "value" : "3",
+    "line" : 461,
+    "char" : 5
+   },
+   {
+    "name" : "kPlugCategMastering",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 462,
+    "char" : 5
+   },
+   {
+    "name" : "kPlugCategSpacializer",
+    "kind" : "enum member",
+    "value" : "5",
+    "line" : 463,
+    "char" : 5
+   },
+   {
+    "name" : "kPlugCategRoomFx",
+    "kind" : "enum member",
+    "value" : "6",
+    "line" : 464,
+    "char" : 5
+   },
+   {
+    "name" : "kPlugSurroundFx",
+    "kind" : "enum member",
+    "value" : "7",
+    "line" : 465,
+    "char" : 5
+   },
+   {
+    "name" : "kPlugCategRestoration",
+    "kind" : "enum member",
+    "value" : "8",
+    "line" : 466,
+    "char" : 5
+   },
+   {
+    "name" : "kPlugCategOfflineProcess",
+    "kind" : "enum member",
+    "value" : "9",
+    "line" : 467,
+    "char" : 5
+   },
+   {
+    "name" : "kPlugCategShell",
+    "kind" : "enum member",
+    "value" : "10",
+    "line" : 468,
+    "char" : 5
+   },
+   {
+    "name" : "kPlugCategGenerator",
+    "kind" : "enum member",
+    "value" : "11",
+    "line" : 469,
+    "char" : 5
+   },
+   {
+    "name" : "kPlugCategMaxCount",
+    "kind" : "enum member",
+    "value" : "12",
+    "line" : 471,
+    "char" : 5
+   },
+   {
+    "name" : "MidiProgramName",
+    "kind" : "struct",
+    "line" : 481,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "thisProgramIndex",
+      "kind" : "variable",
+      "line" : 484,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 0
+     },
+     {
+      "name" : "name",
+      "kind" : "variable",
+      "line" : 485,
+      "char" : 26,
+      "deco" : "G64a",
+      "originalType" : "char[kVstMaxNameLen]",
+      "offset" : 4
+     },
+     {
+      "name" : "midiProgram",
+      "kind" : "variable",
+      "line" : 486,
+      "char" : 10,
+      "deco" : "a",
+      "offset" : 68
+     },
+     {
+      "name" : "midiBankMsb",
+      "kind" : "variable",
+      "line" : 487,
+      "char" : 10,
+      "deco" : "a",
+      "offset" : 69
+     },
+     {
+      "name" : "midiBankLsb",
+      "kind" : "variable",
+      "line" : 488,
+      "char" : 10,
+      "deco" : "a",
+      "offset" : 70
+     },
+     {
+      "name" : "reserved",
+      "kind" : "variable",
+      "line" : 489,
+      "char" : 10,
+      "deco" : "a",
+      "offset" : 71
+     },
+     {
+      "name" : "parentCategoryIndex",
+      "kind" : "variable",
+      "line" : 490,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 72
+     },
+     {
+      "name" : "flags",
+      "kind" : "variable",
+      "line" : 491,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 76
+     }
+    ]
+   },
+   {
+    "name" : "VstMidiProgramNameFlags",
+    "kind" : "alias",
+    "line" : 498,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kMidiIsOmni",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 502,
+    "char" : 5
+   },
+   {
+    "name" : "MidiProgramCategory",
+    "kind" : "struct",
+    "line" : 509,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "thisCategoryIndex",
+      "kind" : "variable",
+      "line" : 512,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 0
+     },
+     {
+      "name" : "name",
+      "kind" : "variable",
+      "line" : 513,
+      "char" : 26,
+      "deco" : "G64a",
+      "originalType" : "char[kVstMaxNameLen]",
+      "offset" : 4
+     },
+     {
+      "name" : "parentCategoryIndex",
+      "kind" : "variable",
+      "line" : 514,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 68
+     },
+     {
+      "name" : "flags",
+      "kind" : "variable",
+      "line" : 515,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 72
+     }
+    ]
+   },
+   {
+    "name" : "MidiKeyName",
+    "kind" : "struct",
+    "line" : 522,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "thisProgramIndex",
+      "kind" : "variable",
+      "line" : 525,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 0
+     },
+     {
+      "name" : "thisKeyNumber",
+      "kind" : "variable",
+      "line" : 526,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 4
+     },
+     {
+      "name" : "keyName",
+      "kind" : "variable",
+      "line" : 527,
+      "char" : 26,
+      "deco" : "G64a",
+      "originalType" : "char[kVstMaxNameLen]",
+      "offset" : 8
+     },
+     {
+      "name" : "reserved",
+      "kind" : "variable",
+      "line" : 528,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 72
+     },
+     {
+      "name" : "flags",
+      "kind" : "variable",
+      "line" : 529,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 76
+     }
+    ]
+   },
+   {
+    "name" : "VstSpeakerProperties",
+    "kind" : "struct",
+    "line" : 546,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "azimuth",
+      "kind" : "variable",
+      "line" : 549,
+      "char" : 11,
+      "deco" : "f",
+      "offset" : 0
+     },
+     {
+      "name" : "elevation",
+      "kind" : "variable",
+      "line" : 550,
+      "char" : 11,
+      "deco" : "f",
+      "offset" : 4
+     },
+     {
+      "name" : "radius",
+      "kind" : "variable",
+      "line" : 551,
+      "char" : 11,
+      "deco" : "f",
+      "offset" : 8
+     },
+     {
+      "name" : "reserved",
+      "kind" : "variable",
+      "line" : 552,
+      "char" : 11,
+      "deco" : "f",
+      "offset" : 12
+     },
+     {
+      "name" : "name",
+      "kind" : "variable",
+      "line" : 553,
+      "char" : 26,
+      "deco" : "G64a",
+      "originalType" : "char[kVstMaxNameLen]",
+      "offset" : 16
+     },
+     {
+      "name" : "type",
+      "kind" : "variable",
+      "line" : 554,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 80
+     },
+     {
+      "name" : "future",
+      "kind" : "variable",
+      "line" : 556,
+      "char" : 14,
+      "deco" : "G28a",
+      "offset" : 84
+     }
+    ]
+   },
+   {
+    "name" : "VstSpeakerArrangement",
+    "kind" : "struct",
+    "line" : 563,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "type",
+      "kind" : "variable",
+      "line" : 566,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 0
+     },
+     {
+      "name" : "numChannels",
+      "kind" : "variable",
+      "line" : 567,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 4
+     },
+     {
+      "name" : "speakers",
+      "kind" : "variable",
+      "line" : 568,
+      "char" : 29,
+      "deco" : "G8S5dplug3vst8aeffectx20VstSpeakerProperties",
+      "offset" : 8,
+      "align" : 8
+     }
+    ]
+   },
+   {
+    "name" : "VstSpeakerType",
+    "kind" : "alias",
+    "line" : 575,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kSpeakerUndefined",
+    "kind" : "enum member",
+    "value" : "2147483647",
+    "line" : 579,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerM",
+    "kind" : "enum member",
+    "value" : "0",
+    "line" : 580,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerL",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 581,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerR",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 582,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerC",
+    "kind" : "enum member",
+    "value" : "3",
+    "line" : 583,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerLfe",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 584,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerLs",
+    "kind" : "enum member",
+    "value" : "5",
+    "line" : 585,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerRs",
+    "kind" : "enum member",
+    "value" : "6",
+    "line" : 586,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerLc",
+    "kind" : "enum member",
+    "value" : "7",
+    "line" : 587,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerRc",
+    "kind" : "enum member",
+    "value" : "8",
+    "line" : 588,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerS",
+    "kind" : "enum member",
+    "value" : "9",
+    "line" : 589,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerCs",
+    "kind" : "enum member",
+    "value" : "9",
+    "line" : 590,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerSl",
+    "kind" : "enum member",
+    "value" : "10",
+    "line" : 591,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerSr",
+    "kind" : "enum member",
+    "value" : "11",
+    "line" : 592,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerTm",
+    "kind" : "enum member",
+    "value" : "12",
+    "line" : 593,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerTfl",
+    "kind" : "enum member",
+    "value" : "13",
+    "line" : 594,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerTfc",
+    "kind" : "enum member",
+    "value" : "14",
+    "line" : 595,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerTfr",
+    "kind" : "enum member",
+    "value" : "15",
+    "line" : 596,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerTrl",
+    "kind" : "enum member",
+    "value" : "16",
+    "line" : 597,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerTrc",
+    "kind" : "enum member",
+    "value" : "17",
+    "line" : 598,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerTrr",
+    "kind" : "enum member",
+    "value" : "18",
+    "line" : 599,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerLfe2",
+    "kind" : "enum member",
+    "value" : "19",
+    "line" : 600,
+    "char" : 5
+   },
+   {
+    "name" : "VstUserSpeakerType",
+    "kind" : "alias",
+    "line" : 609,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kSpeakerU32",
+    "kind" : "enum member",
+    "value" : "-32",
+    "line" : 613,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU31",
+    "kind" : "enum member",
+    "value" : "-31",
+    "line" : 614,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU30",
+    "kind" : "enum member",
+    "value" : "-30",
+    "line" : 615,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU29",
+    "kind" : "enum member",
+    "value" : "-29",
+    "line" : 616,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU28",
+    "kind" : "enum member",
+    "value" : "-28",
+    "line" : 617,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU27",
+    "kind" : "enum member",
+    "value" : "-27",
+    "line" : 618,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU26",
+    "kind" : "enum member",
+    "value" : "-26",
+    "line" : 619,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU25",
+    "kind" : "enum member",
+    "value" : "-25",
+    "line" : 620,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU24",
+    "kind" : "enum member",
+    "value" : "-24",
+    "line" : 621,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU23",
+    "kind" : "enum member",
+    "value" : "-23",
+    "line" : 622,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU22",
+    "kind" : "enum member",
+    "value" : "-22",
+    "line" : 623,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU21",
+    "kind" : "enum member",
+    "value" : "-21",
+    "line" : 624,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU20",
+    "kind" : "enum member",
+    "value" : "-20",
+    "line" : 625,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU19",
+    "kind" : "enum member",
+    "value" : "-19",
+    "line" : 626,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU18",
+    "kind" : "enum member",
+    "value" : "-18",
+    "line" : 627,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU17",
+    "kind" : "enum member",
+    "value" : "-17",
+    "line" : 628,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU16",
+    "kind" : "enum member",
+    "value" : "-16",
+    "line" : 629,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU15",
+    "kind" : "enum member",
+    "value" : "-15",
+    "line" : 630,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU14",
+    "kind" : "enum member",
+    "value" : "-14",
+    "line" : 631,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU13",
+    "kind" : "enum member",
+    "value" : "-13",
+    "line" : 632,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU12",
+    "kind" : "enum member",
+    "value" : "-12",
+    "line" : 633,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU11",
+    "kind" : "enum member",
+    "value" : "-11",
+    "line" : 634,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU10",
+    "kind" : "enum member",
+    "value" : "-10",
+    "line" : 635,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU9",
+    "kind" : "enum member",
+    "value" : "-9",
+    "line" : 636,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU8",
+    "kind" : "enum member",
+    "value" : "-8",
+    "line" : 637,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU7",
+    "kind" : "enum member",
+    "value" : "-7",
+    "line" : 638,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU6",
+    "kind" : "enum member",
+    "value" : "-6",
+    "line" : 639,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU5",
+    "kind" : "enum member",
+    "value" : "-5",
+    "line" : 640,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU4",
+    "kind" : "enum member",
+    "value" : "-4",
+    "line" : 641,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU3",
+    "kind" : "enum member",
+    "value" : "-3",
+    "line" : 642,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU2",
+    "kind" : "enum member",
+    "value" : "-2",
+    "line" : 643,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerU1",
+    "kind" : "enum member",
+    "value" : "-1",
+    "line" : 644,
+    "char" : 5
+   },
+   {
+    "name" : "VstSpeakerArrangementType",
+    "kind" : "alias",
+    "line" : 651,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kSpeakerArrUserDefined",
+    "kind" : "enum member",
+    "value" : "-2",
+    "line" : 655,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArrEmpty",
+    "kind" : "enum member",
+    "value" : "-1",
+    "line" : 656,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArrMono",
+    "kind" : "enum member",
+    "value" : "0",
+    "line" : 657,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArrStereo",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 658,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArrStereoSurround",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 659,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArrStereoCenter",
+    "kind" : "enum member",
+    "value" : "3",
+    "line" : 660,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArrStereoSide",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 661,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArrStereoCLfe",
+    "kind" : "enum member",
+    "value" : "5",
+    "line" : 662,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr30Cine",
+    "kind" : "enum member",
+    "value" : "6",
+    "line" : 663,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr30Music",
+    "kind" : "enum member",
+    "value" : "7",
+    "line" : 664,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr31Cine",
+    "kind" : "enum member",
+    "value" : "8",
+    "line" : 665,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr31Music",
+    "kind" : "enum member",
+    "value" : "9",
+    "line" : 666,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr40Cine",
+    "kind" : "enum member",
+    "value" : "10",
+    "line" : 667,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr40Music",
+    "kind" : "enum member",
+    "value" : "11",
+    "line" : 668,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr41Cine",
+    "kind" : "enum member",
+    "value" : "12",
+    "line" : 669,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr41Music",
+    "kind" : "enum member",
+    "value" : "13",
+    "line" : 670,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr50",
+    "kind" : "enum member",
+    "value" : "14",
+    "line" : 671,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr51",
+    "kind" : "enum member",
+    "value" : "15",
+    "line" : 672,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr60Cine",
+    "kind" : "enum member",
+    "value" : "16",
+    "line" : 673,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr60Music",
+    "kind" : "enum member",
+    "value" : "17",
+    "line" : 674,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr61Cine",
+    "kind" : "enum member",
+    "value" : "18",
+    "line" : 675,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr61Music",
+    "kind" : "enum member",
+    "value" : "19",
+    "line" : 676,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr70Cine",
+    "kind" : "enum member",
+    "value" : "20",
+    "line" : 677,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr70Music",
+    "kind" : "enum member",
+    "value" : "21",
+    "line" : 678,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr71Cine",
+    "kind" : "enum member",
+    "value" : "22",
+    "line" : 679,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr71Music",
+    "kind" : "enum member",
+    "value" : "23",
+    "line" : 680,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr80Cine",
+    "kind" : "enum member",
+    "value" : "24",
+    "line" : 681,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr80Music",
+    "kind" : "enum member",
+    "value" : "25",
+    "line" : 682,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr81Cine",
+    "kind" : "enum member",
+    "value" : "26",
+    "line" : 683,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr81Music",
+    "kind" : "enum member",
+    "value" : "27",
+    "line" : 684,
+    "char" : 5
+   },
+   {
+    "name" : "kSpeakerArr102",
+    "kind" : "enum member",
+    "value" : "28",
+    "line" : 685,
+    "char" : 5
+   },
+   {
+    "name" : "kNumSpeakerArr",
+    "kind" : "enum member",
+    "value" : "29",
+    "line" : 686,
+    "char" : 5
+   },
+   {
+    "name" : "VstOfflineTask",
+    "kind" : "struct",
+    "line" : 696,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "processName",
+      "kind" : "variable",
+      "line" : 699,
+      "char" : 14,
+      "deco" : "G96a",
+      "offset" : 0
+     },
+     {
+      "name" : "readPosition",
+      "kind" : "variable",
+      "line" : 702,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 96
+     },
+     {
+      "name" : "writePosition",
+      "kind" : "variable",
+      "line" : 703,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 104
+     },
+     {
+      "name" : "readCount",
+      "kind" : "variable",
+      "line" : 704,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 112
+     },
+     {
+      "name" : "writeCount",
+      "kind" : "variable",
+      "line" : 705,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 116
+     },
+     {
+      "name" : "sizeInputBuffer",
+      "kind" : "variable",
+      "line" : 706,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 120
+     },
+     {
+      "name" : "sizeOutputBuffer",
+      "kind" : "variable",
+      "line" : 707,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 124
+     },
+     {
+      "name" : "inputBuffer",
+      "kind" : "variable",
+      "line" : 708,
+      "char" : 11,
+      "deco" : "Pv",
+      "offset" : 128
+     },
+     {
+      "name" : "outputBuffer",
+      "kind" : "variable",
+      "line" : 709,
+      "char" : 11,
+      "deco" : "Pv",
+      "offset" : 132
+     },
+     {
+      "name" : "positionToProcessFrom",
+      "kind" : "variable",
+      "line" : 710,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 136
+     },
+     {
+      "name" : "numFramesToProcess",
+      "kind" : "variable",
+      "line" : 711,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 144
+     },
+     {
+      "name" : "maxFramesToWrite",
+      "kind" : "variable",
+      "line" : 712,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 152
+     },
+     {
+      "name" : "extraBuffer",
+      "kind" : "variable",
+      "line" : 715,
+      "char" : 11,
+      "deco" : "Pv",
+      "offset" : 160
+     },
+     {
+      "name" : "value",
+      "kind" : "variable",
+      "line" : 716,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 164
+     },
+     {
+      "name" : "index",
+      "kind" : "variable",
+      "line" : 717,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 168
+     },
+     {
+      "name" : "numFramesInSourceFile",
+      "kind" : "variable",
+      "line" : 720,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 176
+     },
+     {
+      "name" : "sourceSampleRate",
+      "kind" : "variable",
+      "line" : 721,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 184
+     },
+     {
+      "name" : "destinationSampleRate",
+      "kind" : "variable",
+      "line" : 722,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 192
+     },
+     {
+      "name" : "numSourceChannels",
+      "kind" : "variable",
+      "line" : 723,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 200
+     },
+     {
+      "name" : "numDestinationChannels",
+      "kind" : "variable",
+      "line" : 724,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 204
+     },
+     {
+      "name" : "sourceFormat",
+      "kind" : "variable",
+      "line" : 725,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 208
+     },
+     {
+      "name" : "destinationFormat",
+      "kind" : "variable",
+      "line" : 726,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 212
+     },
+     {
+      "name" : "outputText",
+      "kind" : "variable",
+      "line" : 727,
+      "char" : 15,
+      "deco" : "G512a",
+      "offset" : 216
+     },
+     {
+      "name" : "progress",
+      "kind" : "variable",
+      "line" : 730,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 728
+     },
+     {
+      "name" : "progressMode",
+      "kind" : "variable",
+      "line" : 731,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 736
+     },
+     {
+      "name" : "progressText",
+      "kind" : "variable",
+      "line" : 732,
+      "char" : 15,
+      "deco" : "G100a",
+      "offset" : 740
+     },
+     {
+      "name" : "flags",
+      "kind" : "variable",
+      "line" : 734,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 840
+     },
+     {
+      "name" : "returnValue",
+      "kind" : "variable",
+      "line" : 735,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 844
+     },
+     {
+      "name" : "hostOwned",
+      "kind" : "variable",
+      "line" : 736,
+      "char" : 11,
+      "deco" : "Pv",
+      "offset" : 848
+     },
+     {
+      "name" : "plugOwned",
+      "kind" : "variable",
+      "line" : 737,
+      "char" : 11,
+      "deco" : "Pv",
+      "offset" : 852
+     },
+     {
+      "name" : "future",
+      "kind" : "variable",
+      "line" : 739,
+      "char" : 16,
+      "deco" : "G1024a",
+      "offset" : 856
+     }
+    ]
+   },
+   {
+    "name" : "VstOfflineTaskFlags",
+    "kind" : "alias",
+    "line" : 746,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstOfflineUnvalidParameter",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 750,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineNewFile",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 751,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflinePlugError",
+    "kind" : "enum member",
+    "value" : "1024",
+    "line" : 753,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineInterleavedAudio",
+    "kind" : "enum member",
+    "value" : "2048",
+    "line" : 754,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineTempOutputFile",
+    "kind" : "enum member",
+    "value" : "4096",
+    "line" : 755,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineFloatOutputFile",
+    "kind" : "enum member",
+    "value" : "8192",
+    "line" : 756,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineRandomWrite",
+    "kind" : "enum member",
+    "value" : "16384",
+    "line" : 757,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineStretch",
+    "kind" : "enum member",
+    "value" : "32768",
+    "line" : 758,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineNoThread",
+    "kind" : "enum member",
+    "value" : "65536",
+    "line" : 759,
+    "char" : 5
+   },
+   {
+    "name" : "VstOfflineOption",
+    "kind" : "alias",
+    "line" : 766,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstOfflineAudio",
+    "kind" : "enum member",
+    "value" : "0",
+    "line" : 770,
+    "char" : 4
+   },
+   {
+    "name" : "kVstOfflinePeaks",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 771,
+    "char" : 4
+   },
+   {
+    "name" : "kVstOfflineParameter",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 772,
+    "char" : 4
+   },
+   {
+    "name" : "kVstOfflineMarker",
+    "kind" : "enum member",
+    "value" : "3",
+    "line" : 773,
+    "char" : 4
+   },
+   {
+    "name" : "kVstOfflineCursor",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 774,
+    "char" : 4
+   },
+   {
+    "name" : "kVstOfflineSelection",
+    "kind" : "enum member",
+    "value" : "5",
+    "line" : 775,
+    "char" : 4
+   },
+   {
+    "name" : "kVstOfflineQueryFiles",
+    "kind" : "enum member",
+    "value" : "6",
+    "line" : 776,
+    "char" : 4
+   },
+   {
+    "name" : "VstAudioFile",
+    "kind" : "struct",
+    "line" : 783,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "flags",
+      "kind" : "variable",
+      "line" : 786,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 0
+     },
+     {
+      "name" : "hostOwned",
+      "kind" : "variable",
+      "line" : 787,
+      "char" : 11,
+      "deco" : "Pv",
+      "offset" : 4
+     },
+     {
+      "name" : "plugOwned",
+      "kind" : "variable",
+      "line" : 788,
+      "char" : 11,
+      "deco" : "Pv",
+      "offset" : 8
+     },
+     {
+      "name" : "name",
+      "kind" : "variable",
+      "line" : 789,
+      "char" : 30,
+      "deco" : "G100a",
+      "originalType" : "char[kVstMaxFileNameLen]",
+      "offset" : 12
+     },
+     {
+      "name" : "uniqueId",
+      "kind" : "variable",
+      "line" : 790,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 112
+     },
+     {
+      "name" : "sampleRate",
+      "kind" : "variable",
+      "line" : 791,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 120
+     },
+     {
+      "name" : "numChannels",
+      "kind" : "variable",
+      "line" : 792,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 128
+     },
+     {
+      "name" : "numFrames",
+      "kind" : "variable",
+      "line" : 793,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 136
+     },
+     {
+      "name" : "format",
+      "kind" : "variable",
+      "line" : 794,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 144
+     },
+     {
+      "name" : "editCursorPosition",
+      "kind" : "variable",
+      "line" : 795,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 152
+     },
+     {
+      "name" : "selectionStart",
+      "kind" : "variable",
+      "line" : 796,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 160
+     },
+     {
+      "name" : "selectionSize",
+      "kind" : "variable",
+      "line" : 797,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 168
+     },
+     {
+      "name" : "selectedChannelsMask",
+      "kind" : "variable",
+      "line" : 798,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 176
+     },
+     {
+      "name" : "numMarkers",
+      "kind" : "variable",
+      "line" : 799,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 180
+     },
+     {
+      "name" : "timeRulerUnit",
+      "kind" : "variable",
+      "line" : 800,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 184
+     },
+     {
+      "name" : "timeRulerOffset",
+      "kind" : "variable",
+      "line" : 801,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 192
+     },
+     {
+      "name" : "tempo",
+      "kind" : "variable",
+      "line" : 802,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 200
+     },
+     {
+      "name" : "timeSigNumerator",
+      "kind" : "variable",
+      "line" : 803,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 208
+     },
+     {
+      "name" : "timeSigDenominator",
+      "kind" : "variable",
+      "line" : 804,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 212
+     },
+     {
+      "name" : "ticksPerBlackNote",
+      "kind" : "variable",
+      "line" : 805,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 216
+     },
+     {
+      "name" : "smpteFrameRate",
+      "kind" : "variable",
+      "line" : 806,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 220
+     },
+     {
+      "name" : "future",
+      "kind" : "variable",
+      "line" : 808,
+      "char" : 14,
+      "deco" : "G64a",
+      "offset" : 224
+     }
+    ]
+   },
+   {
+    "name" : "VstAudioFileFlags",
+    "kind" : "alias",
+    "line" : 815,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstOfflineReadOnly",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 819,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineNoRateConversion",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 820,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineNoChannelChange",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 821,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineCanProcessSelection",
+    "kind" : "enum member",
+    "value" : "1024",
+    "line" : 823,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineNoCrossfade",
+    "kind" : "enum member",
+    "value" : "2048",
+    "line" : 824,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineWantRead",
+    "kind" : "enum member",
+    "value" : "4096",
+    "line" : 825,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineWantWrite",
+    "kind" : "enum member",
+    "value" : "8192",
+    "line" : 826,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineWantWriteMarker",
+    "kind" : "enum member",
+    "value" : "16384",
+    "line" : 827,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineWantMoveCursor",
+    "kind" : "enum member",
+    "value" : "32768",
+    "line" : 828,
+    "char" : 5
+   },
+   {
+    "name" : "kVstOfflineWantSelect",
+    "kind" : "enum member",
+    "value" : "65536",
+    "line" : 829,
+    "char" : 5
+   },
+   {
+    "name" : "VstAudioFileMarker",
+    "kind" : "struct",
+    "line" : 836,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "position",
+      "kind" : "variable",
+      "line" : 839,
+      "char" : 12,
+      "deco" : "d",
+      "offset" : 0
+     },
+     {
+      "name" : "name",
+      "kind" : "variable",
+      "line" : 840,
+      "char" : 14,
+      "deco" : "G32a",
+      "offset" : 8
+     },
+     {
+      "name" : "type",
+      "kind" : "variable",
+      "line" : 841,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 40
+     },
+     {
+      "name" : "id",
+      "kind" : "variable",
+      "line" : 842,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 44
+     },
+     {
+      "name" : "reserved",
+      "kind" : "variable",
+      "line" : 843,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 48
+     }
+    ]
+   },
+   {
+    "name" : "DEPRECATED_VstWindow",
+    "kind" : "struct",
+    "line" : 854,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "title",
+      "kind" : "variable",
+      "line" : 857,
+      "char" : 15,
+      "deco" : "G128a",
+      "offset" : 0
+     },
+     {
+      "name" : "xPos",
+      "kind" : "variable",
+      "line" : 858,
+      "char" : 14,
+      "deco" : "s",
+      "originalType" : "VstInt16",
+      "offset" : 128
+     },
+     {
+      "name" : "yPos",
+      "kind" : "variable",
+      "line" : 859,
+      "char" : 14,
+      "deco" : "s",
+      "originalType" : "VstInt16",
+      "offset" : 130
+     },
+     {
+      "name" : "width",
+      "kind" : "variable",
+      "line" : 860,
+      "char" : 14,
+      "deco" : "s",
+      "originalType" : "VstInt16",
+      "offset" : 132
+     },
+     {
+      "name" : "height",
+      "kind" : "variable",
+      "line" : 861,
+      "char" : 14,
+      "deco" : "s",
+      "originalType" : "VstInt16",
+      "offset" : 134
+     },
+     {
+      "name" : "style",
+      "kind" : "variable",
+      "line" : 862,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 136
+     },
+     {
+      "name" : "parent",
+      "kind" : "variable",
+      "line" : 863,
+      "char" : 11,
+      "deco" : "Pv",
+      "offset" : 140
+     },
+     {
+      "name" : "userHandle",
+      "kind" : "variable",
+      "line" : 864,
+      "char" : 11,
+      "deco" : "Pv",
+      "offset" : 144
+     },
+     {
+      "name" : "winHandle",
+      "kind" : "variable",
+      "line" : 865,
+      "char" : 11,
+      "deco" : "Pv",
+      "offset" : 148
+     },
+     {
+      "name" : "future",
+      "kind" : "variable",
+      "line" : 867,
+      "char" : 15,
+      "deco" : "G104a",
+      "offset" : 152
+     }
+    ]
+   },
+   {
+    "name" : "VstKeyCode",
+    "kind" : "struct",
+    "line" : 874,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "character",
+      "kind" : "variable",
+      "line" : 877,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 0
+     },
+     {
+      "name" : "virt",
+      "kind" : "variable",
+      "line" : 878,
+      "char" : 11,
+      "deco" : "h",
+      "offset" : 4
+     },
+     {
+      "name" : "modifier",
+      "kind" : "variable",
+      "line" : 879,
+      "char" : 11,
+      "deco" : "h",
+      "offset" : 5
+     }
+    ]
+   },
+   {
+    "name" : "VstVirtualKey",
+    "kind" : "alias",
+    "line" : 886,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "VKEY_BACK",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 890,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_TAB",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 891,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_CLEAR",
+    "kind" : "enum member",
+    "value" : "3",
+    "line" : 892,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_RETURN",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 893,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_PAUSE",
+    "kind" : "enum member",
+    "value" : "5",
+    "line" : 894,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_ESCAPE",
+    "kind" : "enum member",
+    "value" : "6",
+    "line" : 895,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_SPACE",
+    "kind" : "enum member",
+    "value" : "7",
+    "line" : 896,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_NEXT",
+    "kind" : "enum member",
+    "value" : "8",
+    "line" : 897,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_END",
+    "kind" : "enum member",
+    "value" : "9",
+    "line" : 898,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_HOME",
+    "kind" : "enum member",
+    "value" : "10",
+    "line" : 899,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_LEFT",
+    "kind" : "enum member",
+    "value" : "11",
+    "line" : 900,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_UP",
+    "kind" : "enum member",
+    "value" : "12",
+    "line" : 901,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_RIGHT",
+    "kind" : "enum member",
+    "value" : "13",
+    "line" : 902,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_DOWN",
+    "kind" : "enum member",
+    "value" : "14",
+    "line" : 903,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_PAGEUP",
+    "kind" : "enum member",
+    "value" : "15",
+    "line" : 904,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_PAGEDOWN",
+    "kind" : "enum member",
+    "value" : "16",
+    "line" : 905,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_SELECT",
+    "kind" : "enum member",
+    "value" : "17",
+    "line" : 906,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_PRINT",
+    "kind" : "enum member",
+    "value" : "18",
+    "line" : 907,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_ENTER",
+    "kind" : "enum member",
+    "value" : "19",
+    "line" : 908,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_SNAPSHOT",
+    "kind" : "enum member",
+    "value" : "20",
+    "line" : 909,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_INSERT",
+    "kind" : "enum member",
+    "value" : "21",
+    "line" : 910,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_DELETE",
+    "kind" : "enum member",
+    "value" : "22",
+    "line" : 911,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_HELP",
+    "kind" : "enum member",
+    "value" : "23",
+    "line" : 912,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_NUMPAD0",
+    "kind" : "enum member",
+    "value" : "24",
+    "line" : 913,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_NUMPAD1",
+    "kind" : "enum member",
+    "value" : "25",
+    "line" : 914,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_NUMPAD2",
+    "kind" : "enum member",
+    "value" : "26",
+    "line" : 915,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_NUMPAD3",
+    "kind" : "enum member",
+    "value" : "27",
+    "line" : 916,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_NUMPAD4",
+    "kind" : "enum member",
+    "value" : "28",
+    "line" : 917,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_NUMPAD5",
+    "kind" : "enum member",
+    "value" : "29",
+    "line" : 918,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_NUMPAD6",
+    "kind" : "enum member",
+    "value" : "30",
+    "line" : 919,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_NUMPAD7",
+    "kind" : "enum member",
+    "value" : "31",
+    "line" : 920,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_NUMPAD8",
+    "kind" : "enum member",
+    "value" : "32",
+    "line" : 921,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_NUMPAD9",
+    "kind" : "enum member",
+    "value" : "33",
+    "line" : 922,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_MULTIPLY",
+    "kind" : "enum member",
+    "value" : "34",
+    "line" : 923,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_ADD",
+    "kind" : "enum member",
+    "value" : "35",
+    "line" : 924,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_SEPARATOR",
+    "kind" : "enum member",
+    "value" : "36",
+    "line" : 925,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_SUBTRACT",
+    "kind" : "enum member",
+    "value" : "37",
+    "line" : 926,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_DECIMAL",
+    "kind" : "enum member",
+    "value" : "38",
+    "line" : 927,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_DIVIDE",
+    "kind" : "enum member",
+    "value" : "39",
+    "line" : 928,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_F1",
+    "kind" : "enum member",
+    "value" : "40",
+    "line" : 929,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_F2",
+    "kind" : "enum member",
+    "value" : "41",
+    "line" : 930,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_F3",
+    "kind" : "enum member",
+    "value" : "42",
+    "line" : 931,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_F4",
+    "kind" : "enum member",
+    "value" : "43",
+    "line" : 932,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_F5",
+    "kind" : "enum member",
+    "value" : "44",
+    "line" : 933,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_F6",
+    "kind" : "enum member",
+    "value" : "45",
+    "line" : 934,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_F7",
+    "kind" : "enum member",
+    "value" : "46",
+    "line" : 935,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_F8",
+    "kind" : "enum member",
+    "value" : "47",
+    "line" : 936,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_F9",
+    "kind" : "enum member",
+    "value" : "48",
+    "line" : 937,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_F10",
+    "kind" : "enum member",
+    "value" : "49",
+    "line" : 938,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_F11",
+    "kind" : "enum member",
+    "value" : "50",
+    "line" : 939,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_F12",
+    "kind" : "enum member",
+    "value" : "51",
+    "line" : 940,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_NUMLOCK",
+    "kind" : "enum member",
+    "value" : "52",
+    "line" : 941,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_SCROLL",
+    "kind" : "enum member",
+    "value" : "53",
+    "line" : 942,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_SHIFT",
+    "kind" : "enum member",
+    "value" : "54",
+    "line" : 943,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_CONTROL",
+    "kind" : "enum member",
+    "value" : "55",
+    "line" : 944,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_ALT",
+    "kind" : "enum member",
+    "value" : "56",
+    "line" : 945,
+    "char" : 5
+   },
+   {
+    "name" : "VKEY_EQUALS",
+    "kind" : "enum member",
+    "value" : "57",
+    "line" : 946,
+    "char" : 5
+   },
+   {
+    "name" : "VstModifierKey",
+    "kind" : "alias",
+    "line" : 953,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "MODIFIER_SHIFT",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 957,
+    "char" : 5
+   },
+   {
+    "name" : "MODIFIER_ALTERNATE",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 958,
+    "char" : 5
+   },
+   {
+    "name" : "MODIFIER_COMMAND",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 959,
+    "char" : 5
+   },
+   {
+    "name" : "MODIFIER_CONTROL",
+    "kind" : "enum member",
+    "value" : "8",
+    "line" : 960,
+    "char" : 5
+   },
+   {
+    "name" : "VstFileType",
+    "kind" : "struct",
+    "line" : 967,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "name",
+      "kind" : "variable",
+      "line" : 970,
+      "char" : 15,
+      "deco" : "G128a",
+      "offset" : 0
+     },
+     {
+      "name" : "macType",
+      "kind" : "variable",
+      "line" : 971,
+      "char" : 13,
+      "deco" : "G8a",
+      "offset" : 128
+     },
+     {
+      "name" : "dosType",
+      "kind" : "variable",
+      "line" : 972,
+      "char" : 13,
+      "deco" : "G8a",
+      "offset" : 136
+     },
+     {
+      "name" : "unixType",
+      "kind" : "variable",
+      "line" : 973,
+      "char" : 13,
+      "deco" : "G8a",
+      "offset" : 144
+     },
+     {
+      "name" : "mimeType1",
+      "kind" : "variable",
+      "line" : 974,
+      "char" : 15,
+      "deco" : "G128a",
+      "offset" : 152
+     },
+     {
+      "name" : "mimeType2",
+      "kind" : "variable",
+      "line" : 975,
+      "char" : 15,
+      "deco" : "G128a",
+      "offset" : 280
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 977,
+      "char" : 5,
+      "deco" : "FNcxPaxPaxPaxPaxPaxPaZS5dplug3vst8aeffectx11VstFileType",
+      "originalType" : "ref (const char* _name, const char* _macType, const char* _dosType, const char* _unixType, const char* _mimeType1, const char* _mimeType2)",
+      "parameters" : [
+       {
+        "name" : "_name",
+        "deco" : "xPa"
+       },
+       {
+        "name" : "_macType",
+        "deco" : "xPa"
+       },
+       {
+        "name" : "_dosType",
+        "deco" : "xPa"
+       },
+       {
+        "name" : "_unixType",
+        "deco" : "xPa"
+       },
+       {
+        "name" : "_mimeType1",
+        "deco" : "xPa"
+       },
+       {
+        "name" : "_mimeType2",
+        "deco" : "xPa"
+       }
+      ],
+      "endline" : 986,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "name" : "VstFileSelect",
+    "kind" : "struct",
+    "line" : 993,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "command",
+      "kind" : "variable",
+      "line" : 996,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 0
+     },
+     {
+      "name" : "type",
+      "kind" : "variable",
+      "line" : 997,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 4
+     },
+     {
+      "name" : "macCreator",
+      "kind" : "variable",
+      "line" : 998,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 8
+     },
+     {
+      "name" : "nbFileTypes",
+      "kind" : "variable",
+      "line" : 999,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 12
+     },
+     {
+      "name" : "fileTypes",
+      "kind" : "variable",
+      "line" : 1000,
+      "char" : 18,
+      "deco" : "PS5dplug3vst8aeffectx11VstFileType",
+      "offset" : 16
+     },
+     {
+      "name" : "title",
+      "kind" : "variable",
+      "line" : 1001,
+      "char" : 16,
+      "deco" : "G1024a",
+      "offset" : 20
+     },
+     {
+      "name" : "initialPath",
+      "kind" : "variable",
+      "line" : 1002,
+      "char" : 11,
+      "deco" : "Pa",
+      "offset" : 1044
+     },
+     {
+      "name" : "returnPath",
+      "kind" : "variable",
+      "line" : 1003,
+      "char" : 11,
+      "deco" : "Pa",
+      "offset" : 1048
+     },
+     {
+      "name" : "sizeReturnPath",
+      "kind" : "variable",
+      "line" : 1004,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 1052
+     },
+     {
+      "name" : "returnMultiplePaths",
+      "kind" : "variable",
+      "line" : 1005,
+      "char" : 12,
+      "deco" : "PPa",
+      "offset" : 1056
+     },
+     {
+      "name" : "nbReturnPath",
+      "kind" : "variable",
+      "line" : 1006,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 1060
+     },
+     {
+      "name" : "reserved",
+      "kind" : "variable",
+      "line" : 1007,
+      "char" : 15,
+      "deco" : "i",
+      "originalType" : "VstIntPtr",
+      "offset" : 1064
+     },
+     {
+      "name" : "future",
+      "kind" : "variable",
+      "line" : 1009,
+      "char" : 15,
+      "deco" : "G116a",
+      "offset" : 1068
+     }
+    ]
+   },
+   {
+    "name" : "VstFileSelectCommand",
+    "kind" : "alias",
+    "line" : 1016,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstFileLoad",
+    "kind" : "enum member",
+    "value" : "0",
+    "line" : 1020,
+    "char" : 5
+   },
+   {
+    "name" : "kVstFileSave",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 1021,
+    "char" : 5
+   },
+   {
+    "name" : "kVstMultipleFilesLoad",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 1022,
+    "char" : 5
+   },
+   {
+    "name" : "kVstDirectorySelect",
+    "kind" : "enum member",
+    "value" : "3",
+    "line" : 1023,
+    "char" : 5
+   },
+   {
+    "name" : "VstFileSelectType",
+    "kind" : "alias",
+    "line" : 1030,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstFileType",
+    "kind" : "enum member",
+    "value" : "0",
+    "line" : 1034,
+    "char" : 5
+   },
+   {
+    "name" : "VstPatchChunkInfo",
+    "kind" : "struct",
+    "line" : 1041,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "version_",
+      "kind" : "variable",
+      "line" : 1044,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 0
+     },
+     {
+      "name" : "pluginUniqueID",
+      "kind" : "variable",
+      "line" : 1045,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 4
+     },
+     {
+      "name" : "pluginVersion",
+      "kind" : "variable",
+      "line" : 1046,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 8
+     },
+     {
+      "name" : "numElements",
+      "kind" : "variable",
+      "line" : 1047,
+      "char" : 14,
+      "deco" : "i",
+      "originalType" : "VstInt32",
+      "offset" : 12
+     },
+     {
+      "name" : "future",
+      "kind" : "variable",
+      "line" : 1049,
+      "char" : 14,
+      "deco" : "G48a",
+      "offset" : 16
+     }
+    ]
+   },
+   {
+    "name" : "VstPanLawType",
+    "kind" : "alias",
+    "line" : 1056,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kLinearPanLaw",
+    "kind" : "enum member",
+    "value" : "0",
+    "line" : 1060,
+    "char" : 5
+   },
+   {
+    "name" : "kEqualPowerPanLaw",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 1061,
+    "char" : 5
+   },
+   {
+    "name" : "VstProcessLevels",
+    "kind" : "alias",
+    "line" : 1068,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstProcessLevelUnknown",
+    "kind" : "enum member",
+    "value" : "0",
+    "line" : 1072,
+    "char" : 5
+   },
+   {
+    "name" : "kVstProcessLevelUser",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 1073,
+    "char" : 5
+   },
+   {
+    "name" : "kVstProcessLevelRealtime",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 1074,
+    "char" : 5
+   },
+   {
+    "name" : "kVstProcessLevelPrefetch",
+    "kind" : "enum member",
+    "value" : "3",
+    "line" : 1075,
+    "char" : 5
+   },
+   {
+    "name" : "kVstProcessLevelOffline",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 1076,
+    "char" : 5
+   },
+   {
+    "name" : "VstAutomationStates",
+    "kind" : "alias",
+    "line" : 1083,
+    "char" : 11,
+    "deco" : "i"
+   },
+   {
+    "name" : "kVstAutomationUnsupported",
+    "kind" : "enum member",
+    "value" : "0",
+    "line" : 1087,
+    "char" : 5
+   },
+   {
+    "name" : "kVstAutomationOff",
+    "kind" : "enum member",
+    "value" : "1",
+    "line" : 1088,
+    "char" : 5
+   },
+   {
+    "name" : "kVstAutomationRead",
+    "kind" : "enum member",
+    "value" : "2",
+    "line" : 1089,
+    "char" : 5
+   },
+   {
+    "name" : "kVstAutomationWrite",
+    "kind" : "enum member",
+    "value" : "3",
+    "line" : 1090,
+    "char" : 5
+   },
+   {
+    "name" : "kVstAutomationReadWrite",
+    "kind" : "enum member",
+    "value" : "4",
+    "line" : 1091,
+    "char" : 5
+   }
+  ]
+ },
+ {
+  "name" : "dplug.vst.client",
+  "kind" : "module",
+  "file" : "..\\..\\..\\vst\\dplug\\vst\\client.d",
+  "members" : [
+   {
+    "name" : "std.string",
+    "kind" : "import",
+    "line" : 19,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "core.stdc.stdlib",
+    "kind" : "import",
+    "line" : 21,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "core.stdc.string",
+    "kind" : "import",
+    "line" : 22,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "core.stdc.stdio",
+    "kind" : "import",
+    "line" : 23,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.algorithm.comparison",
+    "kind" : "import",
+    "line" : 25,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.alignedbuffer",
+    "kind" : "import",
+    "line" : 27,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 28,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 29,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.lockedqueue",
+    "kind" : "import",
+    "line" : 30,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.runtime",
+    "kind" : "import",
+    "line" : 31,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.fpcontrol",
+    "kind" : "import",
+    "line" : 32,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.thread",
+    "kind" : "import",
+    "line" : 33,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.sync",
+    "kind" : "import",
+    "line" : 34,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.client",
+    "kind" : "import",
+    "line" : 36,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.daw",
+    "kind" : "import",
+    "line" : 37,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.preset",
+    "kind" : "import",
+    "line" : 38,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.graphics",
+    "kind" : "import",
+    "line" : 39,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.midi",
+    "kind" : "import",
+    "line" : 40,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.vst.aeffect",
+    "kind" : "import",
+    "line" : 42,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.vst.aeffectx",
+    "kind" : "import",
+    "line" : 43,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 45,
+    "char" : 1,
+    "name" : "VSTEntryPoint",
+    "parameters" : [
+     {
+      "name" : "ClientClass",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "entry_VSTPluginMain",
+      "kind" : "variable",
+      "line" : 47,
+      "char" : 10,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "\"export extern(C) nothrow AEffect* VSTPluginMain(HostCallbackFunction hostCallback) \" ~ \"{\" ~ \"    return myVSTEntryPoint!\" ~ ClientClass.stringof ~ \"(hostCallback);\" ~ \"}\\x0a\""
+     },
+     {
+      "name" : "entry_main",
+      "kind" : "variable",
+      "line" : 52,
+      "char" : 10,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "\"export extern(C) nothrow AEffect* main(HostCallbackFunction hostCallback) \" ~ \"{\" ~ \"    return myVSTEntryPoint!\" ~ ClientClass.stringof ~ \"(hostCallback);\" ~ \"}\\x0a\""
+     },
+     {
+      "name" : "entry_main_macho",
+      "kind" : "variable",
+      "line" : 57,
+      "char" : 10,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "\"extern(C) nothrow AEffect* main_macho(HostCallbackFunction hostCallback) \" ~ \"{\" ~ \"    return myVSTEntryPoint!\" ~ ClientClass.stringof ~ \"(hostCallback);\" ~ \"}\\x0a\""
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "line" : 83,
+    "char" : 18,
+    "name" : "myVSTEntryPoint",
+    "parameters" : [
+     {
+      "name" : "ClientClass",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "myVSTEntryPoint",
+      "kind" : "function",
+      "line" : 83,
+      "char" : 18,
+      "type" : "nothrow AEffect*(HostCallbackFunction hostCallback)",
+      "parameters" : [
+       {
+        "name" : "hostCallback",
+        "type" : "HostCallbackFunction"
+       }
+      ],
+      "endline" : 95,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "VSTClient",
+    "kind" : "class",
+    "line" : 103,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "_effect",
+      "kind" : "variable",
+      "line" : 109,
+      "char" : 13,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug3vst7aeffect7AEffect",
+      "offset" : 8,
+      "align" : 8
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 111,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug6client6client6ClientPUNbNiPS5dplug3vst7aeffect7AEffectiiiPvfZiZC5dplug3vst6client9VSTClient",
+      "originalType" : "nothrow @nogc (Client client, HostCallbackFunction hostCallback)",
+      "parameters" : [
+       {
+        "name" : "client",
+        "deco" : "C5dplug6client6client6Client"
+       },
+       {
+        "name" : "hostCallback",
+        "deco" : "PUNbNiPS5dplug3vst7aeffect7AEffectiiiPvfZi"
+       }
+      ],
+      "endline" : 195,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 197,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 218,
+      "endchar" : 5
+     },
+     {
+      "name" : "_host",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 222,
+      "char" : 26,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug3vst6client20VSTHostFromClientPOV",
+      "originalType" : "VSTHostFromClientPOV",
+      "offset" : 152
+     },
+     {
+      "name" : "_client",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 223,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug6client6client6Client",
+      "originalType" : "Client",
+      "offset" : 156
+     },
+     {
+      "name" : "_sampleRate",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 225,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 160
+     },
+     {
+      "name" : "_maxFrames",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 226,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 164
+     },
+     {
+      "name" : "_maxFramesInProcess",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 227,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 168
+     },
+     {
+      "name" : "_maxInputs",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 228,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 172
+     },
+     {
+      "name" : "_maxOutputs",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 229,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 176
+     },
+     {
+      "name" : "_maxParams",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 230,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 180
+     },
+     {
+      "name" : "_hostIOFromOpcodeThread",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 233,
+      "char" : 8,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug3vst6client2IO",
+      "offset" : 184
+     },
+     {
+      "name" : "_processingIOFromOpcodeThread",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 238,
+      "char" : 8,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug3vst6client2IO",
+      "offset" : 192
+     },
+     {
+      "name" : "chooseIOArrangement",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 241,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiiZv",
+      "parameters" : [
+       {
+        "name" : "numInputs",
+        "deco" : "i"
+       },
+       {
+        "name" : "numOutputs",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 277,
+      "endchar" : 5
+     },
+     {
+      "name" : "_hostIOFromAudioThread",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 280,
+      "char" : 8,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug3vst6client2IO",
+      "offset" : 200
+     },
+     {
+      "name" : "_processingIOFromAudioThread",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 281,
+      "char" : 8,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug3vst6client2IO",
+      "offset" : 208
+     },
+     {
+      "name" : "_samplesAlreadyProcessed",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 283,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "l",
+      "offset" : 216
+     },
+     {
+      "name" : "_editRect",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 285,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug3vst7aeffect5ERect",
+      "offset" : 224
+     },
+     {
+      "name" : "_inputScratchBuffer",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 287,
+      "char" : 17,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "AS5dplug4core13alignedbuffer10__T3VecTfZ3Vec",
+      "offset" : 232
+     },
+     {
+      "name" : "_outputScratchBuffer",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 288,
+      "char" : 17,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "AS5dplug4core13alignedbuffer10__T3VecTfZ3Vec",
+      "offset" : 240
+     },
+     {
+      "name" : "_zeroesBuffer",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 289,
+      "char" : 17,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer10__T3VecTfZ3Vec",
+      "offset" : 248
+     },
+     {
+      "name" : "_inputPointers",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 290,
+      "char" : 14,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "APf",
+      "offset" : 264
+     },
+     {
+      "name" : "_outputPointers",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 291,
+      "char" : 14,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "APf",
+      "offset" : 272
+     },
+     {
+      "name" : "_lastPresetChunk",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 294,
+      "char" : 13,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Ah",
+      "init" : "null",
+      "offset" : 280
+     },
+     {
+      "name" : "_lastBankChunk",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 295,
+      "char" : 13,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Ah",
+      "init" : "null",
+      "offset" : 288
+     },
+     {
+      "name" : "_messageQueue",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 298,
+      "char" : 36,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core11lockedqueue56__T11LockedQueueTS5dplug3vst6client18AudioThreadMessageZ11LockedQueue",
+      "originalType" : "LockedQueue!AudioThreadMessage",
+      "offset" : 296
+     },
+     {
+      "name" : "_graphicsMutex",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 300,
+      "char" : 20,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core4sync14UncheckedMutex",
+      "offset" : 384
+     },
+     {
+      "name" : "isValidParamIndex",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 302,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiiZb",
+      "parameters" : [
+       {
+        "name" : "i",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 305,
+      "endchar" : 5
+     },
+     {
+      "name" : "isValidInputIndex",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 307,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiiZb",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 310,
+      "endchar" : 5
+     },
+     {
+      "name" : "isValidOutputIndex",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 312,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiiZb",
+      "parameters" : [
+       {
+        "name" : "index",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 315,
+      "endchar" : 5
+     },
+     {
+      "name" : "sendResetMessage",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 317,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 325,
+      "endchar" : 5
+     },
+     {
+      "name" : "dispatcher",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 328,
+      "char" : 21,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiiiPvfZi",
+      "originalType" : "nothrow @nogc VstIntPtr(int opcode, int index, ptrdiff_t value, void* ptr, float opt)",
+      "parameters" : [
+       {
+        "name" : "opcode",
+        "deco" : "i"
+       },
+       {
+        "name" : "index",
+        "deco" : "i"
+       },
+       {
+        "name" : "value",
+        "deco" : "i"
+       },
+       {
+        "name" : "ptr",
+        "deco" : "Pv"
+       },
+       {
+        "name" : "opt",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 782,
+      "endchar" : 5
+     },
+     {
+      "name" : "resizeScratchBuffers",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 789,
+      "char" : 10,
+      "deco" : "FNbNiiZv",
+      "parameters" : [
+       {
+        "name" : "nFrames",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 799,
+      "endchar" : 5
+     },
+     {
+      "name" : "processMessages",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 802,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 836,
+      "endchar" : 5
+     },
+     {
+      "name" : "process",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 838,
+      "char" : 10,
+      "deco" : "FNbNiPPfPPfiZv",
+      "parameters" : [
+       {
+        "name" : "inputs",
+        "deco" : "PPf"
+       },
+       {
+        "name" : "outputs",
+        "deco" : "PPf"
+       },
+       {
+        "name" : "sampleFrames",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 874,
+      "endchar" : 5
+     },
+     {
+      "name" : "processReplacing",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 876,
+      "char" : 10,
+      "deco" : "FNbNiPPfPPfiZv",
+      "parameters" : [
+       {
+        "name" : "inputs",
+        "deco" : "PPf"
+       },
+       {
+        "name" : "outputs",
+        "deco" : "PPf"
+       },
+       {
+        "name" : "sampleFrames",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 924,
+      "endchar" : 5
+     },
+     {
+      "name" : "processDoubleReplacing",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 926,
+      "char" : 10,
+      "deco" : "FNbNiPPdPPdiZv",
+      "parameters" : [
+       {
+        "name" : "inputs",
+        "deco" : "PPd"
+       },
+       {
+        "name" : "outputs",
+        "deco" : "PPd"
+       },
+       {
+        "name" : "sampleFrames",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 978,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 197,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 197,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   },
+   {
+    "name" : "opcodeShouldReturn0Immediately",
+    "kind" : "variable",
+    "protection" : "private",
+    "line" : 982,
+    "char" : 36,
+    "storageClass" : [
+     "static",
+     "immutable"
+    ],
+    "deco" : "yG64h",
+    "originalType" : "ubyte[64]",
+    "init" : "[cast(ubyte)1u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)1u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)0u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)0u, cast(ubyte)1u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)0u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)0u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u, cast(ubyte)1u]"
+   },
+   {
+    "name" : "dispatcherCallback",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 997,
+    "char" : 15,
+    "deco" : "UNbNiPS5dplug3vst7aeffect7AEffectiiiPvfZi",
+    "originalType" : "nothrow @nogc extern (C) VstIntPtr(AEffect* effect, int opcode, int index, ptrdiff_t value, void* ptr, float opt)",
+    "parameters" : [
+     {
+      "name" : "effect",
+      "deco" : "PS5dplug3vst7aeffect7AEffect"
+     },
+     {
+      "name" : "opcode",
+      "deco" : "i"
+     },
+     {
+      "name" : "index",
+      "deco" : "i"
+     },
+     {
+      "name" : "value",
+      "deco" : "i"
+     },
+     {
+      "name" : "ptr",
+      "deco" : "Pv"
+     },
+     {
+      "name" : "opt",
+      "deco" : "f"
+     }
+    ],
+    "endline" : 1020,
+    "endchar" : 5
+   },
+   {
+    "name" : "processCallback",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 1023,
+    "char" : 10,
+    "deco" : "UNbNiPS5dplug3vst7aeffect7AEffectPPfPPfiZv",
+    "parameters" : [
+     {
+      "name" : "effect",
+      "deco" : "PS5dplug3vst7aeffect7AEffect"
+     },
+     {
+      "name" : "inputs",
+      "deco" : "PPf"
+     },
+     {
+      "name" : "outputs",
+      "deco" : "PPf"
+     },
+     {
+      "name" : "sampleFrames",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 1030,
+    "endchar" : 5
+   },
+   {
+    "name" : "processReplacingCallback",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 1033,
+    "char" : 10,
+    "deco" : "UNbNiPS5dplug3vst7aeffect7AEffectPPfPPfiZv",
+    "parameters" : [
+     {
+      "name" : "effect",
+      "deco" : "PS5dplug3vst7aeffect7AEffect"
+     },
+     {
+      "name" : "inputs",
+      "deco" : "PPf"
+     },
+     {
+      "name" : "outputs",
+      "deco" : "PPf"
+     },
+     {
+      "name" : "sampleFrames",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 1040,
+    "endchar" : 5
+   },
+   {
+    "name" : "processDoubleReplacingCallback",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 1043,
+    "char" : 10,
+    "deco" : "UNbNiPS5dplug3vst7aeffect7AEffectPPdPPdiZv",
+    "parameters" : [
+     {
+      "name" : "effect",
+      "deco" : "PS5dplug3vst7aeffect7AEffect"
+     },
+     {
+      "name" : "inputs",
+      "deco" : "PPd"
+     },
+     {
+      "name" : "outputs",
+      "deco" : "PPd"
+     },
+     {
+      "name" : "sampleFrames",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 1050,
+    "endchar" : 5
+   },
+   {
+    "name" : "setParameterCallback",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 1053,
+    "char" : 10,
+    "deco" : "UNbNiPS5dplug3vst7aeffect7AEffectifZv",
+    "parameters" : [
+     {
+      "name" : "effect",
+      "deco" : "PS5dplug3vst7aeffect7AEffect"
+     },
+     {
+      "name" : "index",
+      "deco" : "i"
+     },
+     {
+      "name" : "parameter",
+      "deco" : "f"
+     }
+    ],
+    "endline" : 1065,
+    "endchar" : 5
+   },
+   {
+    "name" : "getParameterCallback",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 1068,
+    "char" : 11,
+    "deco" : "UNbNiPS5dplug3vst7aeffect7AEffectiZf",
+    "parameters" : [
+     {
+      "name" : "effect",
+      "deco" : "PS5dplug3vst7aeffect7AEffect"
+     },
+     {
+      "name" : "index",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 1082,
+    "endchar" : 5
+   },
+   {
+    "name" : "VSTHostFromClientPOV",
+    "kind" : "class",
+    "line" : 1087,
+    "char" : 1,
+    "interfaces" : [
+     "dplug.client.client.IHostCommand"
+    ],
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 1093,
+      "char" : 5,
+      "deco" : "FNbNiPUNbNiPS5dplug3vst7aeffect7AEffectiiiPvfZiPS5dplug3vst7aeffect7AEffectZC5dplug3vst6client20VSTHostFromClientPOV",
+      "originalType" : "nothrow @nogc (HostCallbackFunction hostCallback, AEffect* effect)",
+      "parameters" : [
+       {
+        "name" : "hostCallback",
+        "deco" : "PUNbNiPS5dplug3vst7aeffect7AEffectiiiPvfZi"
+       },
+       {
+        "name" : "effect",
+        "deco" : "PS5dplug3vst7aeffect7AEffect"
+       }
+      ],
+      "endline" : 1097,
+      "endchar" : 5
+     },
+     {
+      "name" : "wantEvents",
+      "kind" : "function",
+      "line" : 1103,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 1106,
+      "endchar" : 5
+     },
+     {
+      "name" : "requestResize",
+      "kind" : "function",
+      "line" : 1109,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiZb",
+      "parameters" : [
+       {
+        "name" : "width",
+        "deco" : "i"
+       },
+       {
+        "name" : "height",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 1112,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.client.IHostCommand.requestResize"
+      ]
+     },
+     {
+      "name" : "beginParamEdit",
+      "kind" : "function",
+      "line" : 1114,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiZv",
+      "parameters" : [
+       {
+        "name" : "paramIndex",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 1117,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.client.IHostCommand.beginParamEdit"
+      ]
+     },
+     {
+      "name" : "paramAutomate",
+      "kind" : "function",
+      "line" : 1119,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiifZv",
+      "parameters" : [
+       {
+        "name" : "paramIndex",
+        "deco" : "i"
+       },
+       {
+        "name" : "value",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 1122,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.client.IHostCommand.paramAutomate"
+      ]
+     },
+     {
+      "name" : "endParamEdit",
+      "kind" : "function",
+      "line" : 1124,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiZv",
+      "parameters" : [
+       {
+        "name" : "paramIndex",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 1127,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.client.IHostCommand.endParamEdit"
+      ]
+     },
+     {
+      "name" : "getDAW",
+      "kind" : "function",
+      "line" : 1129,
+      "char" : 18,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZE5dplug6client3daw3DAW",
+      "endline" : 1132,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.client.IHostCommand.getDAW"
+      ]
+     },
+     {
+      "name" : "vendorString",
+      "kind" : "function",
+      "line" : 1134,
+      "char" : 18,
+      "deco" : "FNbNiZPxa",
+      "endline" : 1143,
+      "endchar" : 5
+     },
+     {
+      "name" : "productString",
+      "kind" : "function",
+      "line" : 1145,
+      "char" : 18,
+      "deco" : "FNbNiZPxa",
+      "endline" : 1154,
+      "endchar" : 5
+     },
+     {
+      "name" : "getVSTTimeInfo",
+      "kind" : "function",
+      "line" : 1157,
+      "char" : 14,
+      "deco" : "FNbNilZS5dplug6client6client8TimeInfo",
+      "parameters" : [
+       {
+        "name" : "fallbackTimeInSamples",
+        "deco" : "l"
+       }
+      ],
+      "endline" : 1175,
+      "endchar" : 5
+     },
+     {
+      "name" : "HostCaps",
+      "kind" : "enum",
+      "line" : 1179,
+      "char" : 5,
+      "baseDeco" : "i",
+      "members" : [
+       {
+        "name" : "SEND_VST_EVENTS",
+        "kind" : "enum member",
+        "value" : "0",
+        "line" : 1181,
+        "char" : 9
+       },
+       {
+        "name" : "SEND_VST_MIDI_EVENTS",
+        "kind" : "enum member",
+        "value" : "1",
+        "line" : 1182,
+        "char" : 9
+       },
+       {
+        "name" : "SEND_VST_TIME_INFO",
+        "kind" : "enum member",
+        "value" : "2",
+        "line" : 1183,
+        "char" : 9
+       },
+       {
+        "name" : "RECEIVE_VST_EVENTS",
+        "kind" : "enum member",
+        "value" : "3",
+        "line" : 1184,
+        "char" : 9
+       },
+       {
+        "name" : "RECEIVE_VST_MIDI_EVENTS",
+        "kind" : "enum member",
+        "value" : "4",
+        "line" : 1185,
+        "char" : 9
+       },
+       {
+        "name" : "REPORT_CONNECTION_CHANGES",
+        "kind" : "enum member",
+        "value" : "5",
+        "line" : 1186,
+        "char" : 9
+       },
+       {
+        "name" : "ACCEPT_IO_CHANGES",
+        "kind" : "enum member",
+        "value" : "6",
+        "line" : 1187,
+        "char" : 9
+       },
+       {
+        "name" : "SIZE_WINDOW",
+        "kind" : "enum member",
+        "value" : "7",
+        "line" : 1188,
+        "char" : 9
+       },
+       {
+        "name" : "OFFLINE",
+        "kind" : "enum member",
+        "value" : "8",
+        "line" : 1189,
+        "char" : 9
+       },
+       {
+        "name" : "OPEN_FILE_SELECTOR",
+        "kind" : "enum member",
+        "value" : "9",
+        "line" : 1190,
+        "char" : 9
+       },
+       {
+        "name" : "CLOSE_FILE_SELECTOR",
+        "kind" : "enum member",
+        "value" : "10",
+        "line" : 1191,
+        "char" : 9
+       },
+       {
+        "name" : "START_STOP_PROCESS",
+        "kind" : "enum member",
+        "value" : "11",
+        "line" : 1192,
+        "char" : 9
+       },
+       {
+        "name" : "SHELL_CATEGORY",
+        "kind" : "enum member",
+        "value" : "12",
+        "line" : 1193,
+        "char" : 9
+       },
+       {
+        "name" : "SEND_VST_MIDI_EVENT_FLAG_IS_REALTIME",
+        "kind" : "enum member",
+        "value" : "13",
+        "line" : 1194,
+        "char" : 9
+       },
+       {
+        "name" : "SUPPLY_IDLE",
+        "kind" : "enum member",
+        "value" : "14",
+        "line" : 1195,
+        "char" : 9
+       }
+      ]
+     },
+     {
+      "name" : "canDo",
+      "kind" : "function",
+      "line" : 1198,
+      "char" : 10,
+      "deco" : "FNbNiE5dplug3vst6client20VSTHostFromClientPOV8HostCapsZb",
+      "parameters" : [
+       {
+        "name" : "caps",
+        "deco" : "E5dplug3vst6client20VSTHostFromClientPOV8HostCaps"
+       }
+      ],
+      "endline" : 1205,
+      "endchar" : 5
+     },
+     {
+      "name" : "_effect",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 1209,
+      "char" : 14,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "PS5dplug3vst7aeffect7AEffect",
+      "offset" : 12
+     },
+     {
+      "name" : "_hostCallback",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 1210,
+      "char" : 26,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "PUNbNiPS5dplug3vst7aeffect7AEffectiiiPvfZi",
+      "originalType" : "HostCallbackFunction",
+      "offset" : 16
+     },
+     {
+      "name" : "_vendorStringBuf",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 1211,
+      "char" : 14,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "G65a",
+      "offset" : 20
+     },
+     {
+      "name" : "_productStringBuf",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 1212,
+      "char" : 14,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "G96a",
+      "offset" : 85
+     },
+     {
+      "name" : "_vendorVersion",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 1213,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "offset" : 184
+     },
+     {
+      "name" : "callback",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 1215,
+      "char" : 15,
+      "deco" : "FNbNiiiiPvfZi",
+      "originalType" : "nothrow @nogc VstIntPtr(VstInt32 opcode, VstInt32 index, VstIntPtr value, void* ptr, float opt)",
+      "parameters" : [
+       {
+        "name" : "opcode",
+        "deco" : "i"
+       },
+       {
+        "name" : "index",
+        "deco" : "i"
+       },
+       {
+        "name" : "value",
+        "deco" : "i"
+       },
+       {
+        "name" : "ptr",
+        "deco" : "Pv"
+       },
+       {
+        "name" : "opt",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 1221,
+      "endchar" : 5
+     },
+     {
+      "name" : "hostCapsString",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 1223,
+      "char" : 25,
+      "storageClass" : [
+       "static"
+      ],
+      "deco" : "FNaNbNiE5dplug3vst6client20VSTHostFromClientPOV8HostCapsZPxa",
+      "parameters" : [
+       {
+        "name" : "caps",
+        "deco" : "E5dplug3vst6client20VSTHostFromClientPOV8HostCaps"
+       }
+      ],
+      "endline" : 1245,
+      "endchar" : 5
+     }
+    ]
+   },
+   {
+    "name" : "CCONST",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 1250,
+    "char" : 13,
+    "deco" : "FNaNbNiiiiiZi",
+    "parameters" : [
+     {
+      "name" : "a",
+      "deco" : "i"
+     },
+     {
+      "name" : "b",
+      "deco" : "i"
+     },
+     {
+      "name" : "c",
+      "deco" : "i"
+     },
+     {
+      "name" : "d",
+      "deco" : "i"
+     }
+    ],
+    "endline" : 1253,
+    "endchar" : 1
+   },
+   {
+    "name" : "IO",
+    "kind" : "struct",
+    "line" : 1255,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "inputs",
+      "kind" : "variable",
+      "line" : 1257,
+      "char" : 9,
+      "deco" : "i",
+      "offset" : 0
+     },
+     {
+      "name" : "outputs",
+      "kind" : "variable",
+      "line" : 1258,
+      "char" : 9,
+      "deco" : "i",
+      "offset" : 4
+     }
+    ]
+   },
+   {
+    "name" : "AudioThreadMessage",
+    "kind" : "struct",
+    "protection" : "private",
+    "line" : 1269,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "Type",
+      "kind" : "enum",
+      "line" : 1271,
+      "char" : 5,
+      "baseDeco" : "i",
+      "members" : [
+       {
+        "name" : "resetState",
+        "kind" : "enum member",
+        "value" : "0",
+        "line" : 1273,
+        "char" : 9
+       },
+       {
+        "name" : "midi",
+        "kind" : "enum member",
+        "value" : "1",
+        "line" : 1274,
+        "char" : 9
+       }
+      ]
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 1277,
+      "char" : 5,
+      "deco" : "xFNaNbNcNiE5dplug3vst6client18AudioThreadMessage4TypeifS5dplug3vst6client2IOS5dplug3vst6client2IOZxS5dplug3vst6client18AudioThreadMessage",
+      "originalType" : "const pure nothrow @nogc ref (Type type_, int maxFrames_, float samplerate_, IO hostIO_, IO processingIO_)",
+      "parameters" : [
+       {
+        "name" : "type_",
+        "deco" : "E5dplug3vst6client18AudioThreadMessage4Type"
+       },
+       {
+        "name" : "maxFrames_",
+        "deco" : "i"
+       },
+       {
+        "name" : "samplerate_",
+        "deco" : "f"
+       },
+       {
+        "name" : "hostIO_",
+        "deco" : "S5dplug3vst6client2IO"
+       },
+       {
+        "name" : "processingIO_",
+        "deco" : "S5dplug3vst6client2IO"
+       }
+      ],
+      "endline" : 1284,
+      "endchar" : 5
+     },
+     {
+      "name" : "type",
+      "kind" : "variable",
+      "line" : 1286,
+      "char" : 10,
+      "deco" : "E5dplug3vst6client18AudioThreadMessage4Type",
+      "offset" : 0
+     },
+     {
+      "name" : "maxFrames",
+      "kind" : "variable",
+      "line" : 1287,
+      "char" : 9,
+      "deco" : "i",
+      "offset" : 4
+     },
+     {
+      "name" : "samplerate",
+      "kind" : "variable",
+      "line" : 1288,
+      "char" : 11,
+      "deco" : "f",
+      "offset" : 8
+     },
+     {
+      "name" : "hostIO",
+      "kind" : "variable",
+      "line" : 1289,
+      "char" : 8,
+      "deco" : "S5dplug3vst6client2IO",
+      "offset" : 12
+     },
+     {
+      "name" : "processingIO",
+      "kind" : "variable",
+      "line" : 1290,
+      "char" : 8,
+      "deco" : "S5dplug3vst6client2IO",
+      "offset" : 20
+     },
+     {
+      "name" : "midiMessage",
+      "kind" : "variable",
+      "line" : 1291,
+      "char" : 17,
+      "deco" : "S5dplug6client4midi11MidiMessage",
+      "offset" : 28
+     }
+    ]
+   },
+   {
+    "name" : "makeMIDIMessage",
+    "kind" : "function",
+    "protection" : "private",
+    "line" : 1294,
+    "char" : 20,
+    "deco" : "FNaNbNiS5dplug6client4midi11MidiMessageZS5dplug3vst6client18AudioThreadMessage",
+    "parameters" : [
+     {
+      "name" : "midiMessage",
+      "deco" : "S5dplug6client4midi11MidiMessage"
+     }
+    ],
+    "endline" : 1300,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "dplug.vst",
+  "kind" : "module",
+  "file" : "..\\..\\..\\vst\\dplug\\vst\\package.d",
+  "members" : [
+   {
+    "name" : "dplug.vst.aeffect",
+    "kind" : "import",
+    "line" : 6,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.vst.aeffectx",
+    "kind" : "import",
+    "line" : 7,
+    "char" : 12
+   },
+   {
+    "name" : "dplug.vst.client",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 12
+   }
+  ]
+ }
+]

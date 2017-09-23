@@ -1,0 +1,4231 @@
+[
+ {
+  "name" : "dplug.pbrwidgets.bargraph",
+  "kind" : "module",
+  "file" : "..\\..\\..\\pbrwidgets\\dplug\\pbrwidgets\\bargraph.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.element",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.sync",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.algorithm.comparison",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 8,
+    "protection" : "private",
+    "selective" : [
+     "clamp"
+    ]
+   },
+   {
+    "name" : "UIBargraph",
+    "kind" : "class",
+    "line" : 16,
+    "char" : 1,
+    "base" : "dplug.gui.element.UIElement",
+    "members" : [
+     {
+      "name" : "LED",
+      "kind" : "struct",
+      "line" : 22,
+      "char" : 5,
+      "members" : [
+       {
+        "name" : "diffuse",
+        "kind" : "variable",
+        "line" : 24,
+        "char" : 14,
+        "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+        "originalType" : "RGBA",
+        "offset" : 0
+       }
+      ]
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 29,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug3gui7context9UIContextiffiiiiZC5dplug10pbrwidgets8bargraph10UIBargraph",
+      "originalType" : "nothrow @nogc (UIContext context, int numChannels, float minValue, float maxValue, int redLeds = 0, int orangeLeds = 3, int yellowLeds = 0, int magentaLeds = 9)",
+      "parameters" : [
+       {
+        "name" : "context",
+        "deco" : "C5dplug3gui7context9UIContext"
+       },
+       {
+        "name" : "numChannels",
+        "deco" : "i"
+       },
+       {
+        "name" : "minValue",
+        "deco" : "f"
+       },
+       {
+        "name" : "maxValue",
+        "deco" : "f"
+       },
+       {
+        "name" : "redLeds",
+        "deco" : "i",
+        "default" : "0"
+       },
+       {
+        "name" : "orangeLeds",
+        "deco" : "i",
+        "default" : "3"
+       },
+       {
+        "name" : "yellowLeds",
+        "deco" : "i",
+        "default" : "0"
+       },
+       {
+        "name" : "magentaLeds",
+        "deco" : "i",
+        "default" : "9"
+       }
+      ],
+      "endline" : 55,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 57,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 60,
+      "endchar" : 5
+     },
+     {
+      "name" : "onDraw",
+      "kind" : "function",
+      "line" : 63,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefAS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, box2i[] dirtyRects)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "dirtyRects",
+        "deco" : "AS3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 106,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onDraw"
+      ]
+     },
+     {
+      "name" : "setValues",
+      "kind" : "function",
+      "line" : 108,
+      "char" : 10,
+      "deco" : "FNbNiAxfZv",
+      "parameters" : [
+       {
+        "name" : "values",
+        "deco" : "Axf"
+       }
+      ],
+      "endline" : 123,
+      "endchar" : 5
+     },
+     {
+      "name" : "getValue",
+      "kind" : "function",
+      "line" : 125,
+      "char" : 11,
+      "deco" : "FNbNiiZf",
+      "parameters" : [
+       {
+        "name" : "channel",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 132,
+      "endchar" : 5
+     },
+     {
+      "name" : "_leds",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 136,
+      "char" : 13,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core13alignedbuffer53__T3VecTS5dplug10pbrwidgets8bargraph10UIBargraph3LEDZ3Vec",
+      "originalType" : "Vec!LED",
+      "offset" : 92
+     },
+     {
+      "name" : "_valueMutex",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 138,
+      "char" : 20,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug4core4sync14UncheckedMutex",
+      "offset" : 112
+     },
+     {
+      "name" : "_values",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 139,
+      "char" : 13,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Af",
+      "offset" : 144
+     },
+     {
+      "name" : "_minValue",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 140,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 152
+     },
+     {
+      "name" : "_maxValue",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 141,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 156
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 57,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 57,
+      "char" : 5,
+      "deco" : "FNbNiZv"
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   },
+   {
+    "name" : "_arraySliceComSliceAssign_k",
+    "kind" : "function",
+    "deco" : "UNaNbNiNeAkxAkZAk",
+    "originalType" : "pure nothrow @nogc @trusted extern (C) uint[](uint[] p1, const const(uint)[] p0)",
+    "parameters" : [
+     {
+      "name" : "p1",
+      "deco" : "Ak"
+     },
+     {
+      "name" : "p0",
+      "deco" : "xAk"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.pbrwidgets.knob",
+  "kind" : "module",
+  "file" : "..\\..\\..\\pbrwidgets\\dplug\\pbrwidgets\\knob.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.algorithm.comparison",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.drawex",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.element",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.params",
+    "kind" : "import",
+    "line" : 16,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "KnobStyle",
+    "kind" : "enum",
+    "line" : 18,
+    "char" : 1,
+    "baseDeco" : "i",
+    "members" : [
+     {
+      "name" : "thumb",
+      "kind" : "enum member",
+      "value" : "0",
+      "line" : 20,
+      "char" : 5
+     },
+     {
+      "name" : "cylinder",
+      "kind" : "enum member",
+      "value" : "1",
+      "line" : 21,
+      "char" : 5
+     },
+     {
+      "name" : "cone",
+      "kind" : "enum member",
+      "value" : "2",
+      "line" : 22,
+      "char" : 5
+     },
+     {
+      "name" : "ball",
+      "kind" : "enum member",
+      "value" : "3",
+      "line" : 23,
+      "char" : 5
+     }
+    ]
+   },
+   {
+    "name" : "UIKnob",
+    "kind" : "class",
+    "line" : 26,
+    "char" : 1,
+    "base" : "dplug.gui.element.UIElement",
+    "interfaces" : [
+     "dplug.client.params.IParameterListener"
+    ],
+    "members" : [
+     {
+      "name" : "defaultSensivity",
+      "kind" : "variable",
+      "line" : 34,
+      "char" : 10,
+      "storageClass" : [
+       "enum",
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.25F"
+     },
+     {
+      "name" : "knobRadius",
+      "kind" : "variable",
+      "line" : 39,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.75F",
+      "offset" : 96
+     },
+     {
+      "name" : "knobDiffuse",
+      "kind" : "variable",
+      "line" : 40,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)233u, cast(ubyte)235u, cast(ubyte)236u, cast(ubyte)0u)",
+      "offset" : 100
+     },
+     {
+      "name" : "knobMaterial",
+      "kind" : "variable",
+      "line" : 41,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)0u, cast(ubyte)255u, cast(ubyte)128u, cast(ubyte)255u)",
+      "offset" : 104
+     },
+     {
+      "name" : "style",
+      "kind" : "variable",
+      "line" : 42,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "E5dplug10pbrwidgets4knob9KnobStyle",
+      "init" : "cast(KnobStyle)0",
+      "offset" : 108
+     },
+     {
+      "name" : "numLEDs",
+      "kind" : "variable",
+      "line" : 45,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "i",
+      "init" : "7",
+      "offset" : 112
+     },
+     {
+      "name" : "LEDRadiusMin",
+      "kind" : "variable",
+      "line" : 46,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.127F",
+      "offset" : 116
+     },
+     {
+      "name" : "LEDRadiusMax",
+      "kind" : "variable",
+      "line" : 47,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.127F",
+      "offset" : 120
+     },
+     {
+      "name" : "LEDDiffuseLit",
+      "kind" : "variable",
+      "line" : 48,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)255u, cast(ubyte)140u, cast(ubyte)220u, cast(ubyte)215u)",
+      "offset" : 124
+     },
+     {
+      "name" : "LEDDiffuseUnlit",
+      "kind" : "variable",
+      "line" : 49,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)255u, cast(ubyte)140u, cast(ubyte)220u, cast(ubyte)40u)",
+      "offset" : 128
+     },
+     {
+      "name" : "LEDDistanceFromCenter",
+      "kind" : "variable",
+      "line" : 50,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.8F",
+      "offset" : 132
+     },
+     {
+      "name" : "LEDDistanceFromCenterDragged",
+      "kind" : "variable",
+      "line" : 51,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.7F",
+      "offset" : 136
+     },
+     {
+      "name" : "LEDDepth",
+      "kind" : "variable",
+      "line" : 52,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "t",
+      "init" : "cast(ushort)65000u",
+      "offset" : 140
+     },
+     {
+      "name" : "litTrailDiffuse",
+      "kind" : "variable",
+      "line" : 55,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)230u, cast(ubyte)80u, cast(ubyte)43u, cast(ubyte)192u)",
+      "offset" : 142
+     },
+     {
+      "name" : "unlitTrailDiffuse",
+      "kind" : "variable",
+      "line" : 56,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)150u, cast(ubyte)40u, cast(ubyte)20u, cast(ubyte)8u)",
+      "offset" : 146
+     },
+     {
+      "name" : "trailRadiusMin",
+      "kind" : "variable",
+      "line" : 57,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.85F",
+      "offset" : 152
+     },
+     {
+      "name" : "trailRadiusMax",
+      "kind" : "variable",
+      "line" : 58,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.97F",
+      "offset" : 156
+     },
+     {
+      "name" : "trailOffsetX",
+      "kind" : "variable",
+      "line" : 59,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.000000F",
+      "offset" : 160
+     },
+     {
+      "name" : "trailOffsetY",
+      "kind" : "variable",
+      "line" : 60,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.000000F",
+      "offset" : 164
+     },
+     {
+      "name" : "trailMinAngle",
+      "kind" : "variable",
+      "line" : 62,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "-2.35619F",
+      "offset" : 168
+     },
+     {
+      "name" : "trailBaseAngle",
+      "kind" : "variable",
+      "line" : 63,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "-2.35619F",
+      "offset" : 172
+     },
+     {
+      "name" : "trailMaxAngle",
+      "kind" : "variable",
+      "line" : 64,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "2.35619F",
+      "offset" : 176
+     },
+     {
+      "name" : "litTrailDiffuseAlt",
+      "kind" : "variable",
+      "line" : 69,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)43u, cast(ubyte)80u, cast(ubyte)230u, cast(ubyte)192u)",
+      "offset" : 180
+     },
+     {
+      "name" : "hasAlternateTrail",
+      "kind" : "variable",
+      "line" : 70,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "b",
+      "init" : "false",
+      "offset" : 184
+     },
+     {
+      "name" : "animationTimeConstant",
+      "kind" : "variable",
+      "line" : 73,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "40.0000F",
+      "offset" : 188
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 77,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug3gui7context9UIContextC5dplug6client6params14FloatParameterZC5dplug10pbrwidgets4knob6UIKnob",
+      "originalType" : "nothrow @nogc (UIContext context, FloatParameter param)",
+      "parameters" : [
+       {
+        "name" : "context",
+        "deco" : "C5dplug3gui7context9UIContext"
+       },
+       {
+        "name" : "param",
+        "deco" : "C5dplug6client6params14FloatParameter"
+       }
+      ],
+      "endline" : 85,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 87,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 90,
+      "endchar" : 5
+     },
+     {
+      "name" : "onAnimate",
+      "kind" : "function",
+      "line" : 92,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiddZv",
+      "parameters" : [
+       {
+        "name" : "dt",
+        "deco" : "d"
+       },
+       {
+        "name" : "time",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 103,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onAnimate"
+      ]
+     },
+     {
+      "name" : "sensivity",
+      "kind" : "function",
+      "line" : 106,
+      "char" : 11,
+      "deco" : "FNbNiZf",
+      "endline" : 109,
+      "endchar" : 5
+     },
+     {
+      "name" : "sensivity",
+      "kind" : "function",
+      "line" : 112,
+      "char" : 11,
+      "deco" : "FNbNifZf",
+      "parameters" : [
+       {
+        "name" : "sensivity",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 115,
+      "endchar" : 5
+     },
+     {
+      "name" : "onDraw",
+      "kind" : "function",
+      "line" : 117,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefAS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, box2i[] dirtyRects)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "dirtyRects",
+        "deco" : "AS3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 121,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onDraw"
+      ]
+     },
+     {
+      "name" : "drawTrail",
+      "kind" : "function",
+      "line" : 123,
+      "char" : 10,
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefAS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, box2i[] dirtyRects)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "dirtyRects",
+        "deco" : "AS3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 167,
+      "endchar" : 5
+     },
+     {
+      "name" : "drawKnob",
+      "kind" : "function",
+      "line" : 169,
+      "char" : 10,
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefAS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, box2i[] dirtyRects)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "dirtyRects",
+        "deco" : "AS3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 253,
+      "endchar" : 5
+     },
+     {
+      "name" : "onMouseClick",
+      "kind" : "function",
+      "line" : 257,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiibS5dplug6window6window10MouseStateZb",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "button",
+        "deco" : "i"
+       },
+       {
+        "name" : "isDoubleClick",
+        "deco" : "b"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 271,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseClick"
+      ]
+     },
+     {
+      "name" : "onMouseDrag",
+      "kind" : "function",
+      "line" : 274,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiiiS5dplug6window6window10MouseStateZv",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "dx",
+        "deco" : "i"
+       },
+       {
+        "name" : "dy",
+        "deco" : "i"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 310,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseDrag"
+      ]
+     },
+     {
+      "name" : "onBeginDrag",
+      "kind" : "function",
+      "line" : 313,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 317,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onBeginDrag"
+      ]
+     },
+     {
+      "name" : "onStopDrag",
+      "kind" : "function",
+      "line" : 319,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 324,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onStopDrag"
+      ]
+     },
+     {
+      "name" : "onMouseMove",
+      "kind" : "function",
+      "line" : 326,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiiiS5dplug6window6window10MouseStateZv",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "dx",
+        "deco" : "i"
+       },
+       {
+        "name" : "dy",
+        "deco" : "i"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 330,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseMove"
+      ]
+     },
+     {
+      "name" : "onMouseExit",
+      "kind" : "function",
+      "line" : 332,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 336,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseExit"
+      ]
+     },
+     {
+      "name" : "onParameterChanged",
+      "kind" : "function",
+      "line" : 338,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 341,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onParameterChanged"
+      ]
+     },
+     {
+      "name" : "onBeginParameterEdit",
+      "kind" : "function",
+      "line" : 343,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 345,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onBeginParameterEdit"
+      ]
+     },
+     {
+      "name" : "onEndParameterEdit",
+      "kind" : "function",
+      "line" : 347,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 349,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onEndParameterEdit"
+      ]
+     },
+     {
+      "name" : "_param",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 354,
+      "char" : 20,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug6client6params14FloatParameter",
+      "originalType" : "FloatParameter",
+      "offset" : 192
+     },
+     {
+      "name" : "_pushedAnimation",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 356,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 196
+     },
+     {
+      "name" : "_sensivity",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 360,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 200
+     },
+     {
+      "name" : "_shouldBeHighlighted",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 362,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "b",
+      "init" : "false",
+      "offset" : 204
+     },
+     {
+      "name" : "_mousePosOnLast0Cross",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 364,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 208
+     },
+     {
+      "name" : "_mousePosOnLast1Cross",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 365,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 212
+     },
+     {
+      "name" : "angleConvert",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 369,
+      "char" : 18,
+      "storageClass" : [
+       "static"
+      ],
+      "deco" : "FNaNbNifZf",
+      "parameters" : [
+       {
+        "name" : "angle",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 372,
+      "endchar" : 5
+     },
+     {
+      "name" : "getMinAngle",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 375,
+      "char" : 11,
+      "deco" : "xFNaNbNiZf",
+      "endline" : 378,
+      "endchar" : 5
+     },
+     {
+      "name" : "getMaxAngle",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 381,
+      "char" : 11,
+      "deco" : "xFNaNbNiZf",
+      "endline" : 384,
+      "endchar" : 5
+     },
+     {
+      "name" : "getBaseAngle",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 387,
+      "char" : 11,
+      "deco" : "xFNaNbNiZf",
+      "endline" : 390,
+      "endchar" : 5
+     },
+     {
+      "name" : "getValueAngle",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 393,
+      "char" : 11,
+      "deco" : "FNbNiZf",
+      "endline" : 396,
+      "endchar" : 5
+     },
+     {
+      "name" : "clearCrosspoints",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 398,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 402,
+      "endchar" : 5
+     },
+     {
+      "name" : "containsPoint",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 404,
+      "char" : 16,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "FNbNiiiZb",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 408,
+      "endchar" : 5
+     },
+     {
+      "name" : "getSubsquare",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 411,
+      "char" : 17,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZS3gfm4math3box14__T3BoxTiVii2Z3Box",
+      "originalType" : "const pure nothrow @nogc box2i()",
+      "endline" : 428,
+      "endchar" : 5
+     },
+     {
+      "name" : "getRadius",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 430,
+      "char" : 17,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZf",
+      "endline" : 434,
+      "endchar" : 5
+     },
+     {
+      "name" : "getCenter",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 436,
+      "char" : 17,
+      "storageClass" : [
+       "final"
+      ],
+      "deco" : "xFNaNbNiZS3gfm4math6vector17__T6VectorTfVii2Z6Vector",
+      "originalType" : "const pure nothrow @nogc vec2f()",
+      "endline" : 442,
+      "endchar" : 5
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.pbrwidgets.label",
+  "kind" : "module",
+  "file" : "..\\..\\..\\pbrwidgets\\dplug\\pbrwidgets\\label.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.element",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.params",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "UILabel",
+    "kind" : "class",
+    "line" : 13,
+    "char" : 1,
+    "base" : "dplug.gui.element.UIElement",
+    "members" : [
+     {
+      "name" : "clickable",
+      "kind" : "variable",
+      "line" : 20,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "b",
+      "init" : "false",
+      "offset" : 92
+     },
+     {
+      "name" : "targetURL",
+      "kind" : "variable",
+      "line" : 21,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Aya",
+      "init" : "\"http://example.com\"",
+      "offset" : 96
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 23,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug3gui7context9UIContextC5dplug8graphics4font4FontAyaZC5dplug10pbrwidgets5label7UILabel",
+      "originalType" : "nothrow @nogc (UIContext context, Font font, string text = \"\")",
+      "parameters" : [
+       {
+        "name" : "context",
+        "deco" : "C5dplug3gui7context9UIContext"
+       },
+       {
+        "name" : "font",
+        "deco" : "C5dplug8graphics4font4Font"
+       },
+       {
+        "name" : "text",
+        "deco" : "Aya",
+        "default" : "\"\""
+       }
+      ],
+      "endline" : 28,
+      "endchar" : 5
+     },
+     {
+      "name" : "font",
+      "kind" : "function",
+      "line" : 31,
+      "char" : 10,
+      "deco" : "FNbNiZC5dplug8graphics4font4Font",
+      "endline" : 34,
+      "endchar" : 5
+     },
+     {
+      "name" : "font",
+      "kind" : "function",
+      "line" : 37,
+      "char" : 10,
+      "deco" : "FNbNiC5dplug8graphics4font4FontZC5dplug8graphics4font4Font",
+      "parameters" : [
+       {
+        "name" : "font_",
+        "deco" : "C5dplug8graphics4font4Font"
+       }
+      ],
+      "endline" : 41,
+      "endchar" : 5
+     },
+     {
+      "name" : "text",
+      "kind" : "function",
+      "line" : 44,
+      "char" : 12,
+      "deco" : "FNbNiZAya",
+      "endline" : 47,
+      "endchar" : 5
+     },
+     {
+      "name" : "text",
+      "kind" : "function",
+      "line" : 50,
+      "char" : 12,
+      "deco" : "FNbNiAyaZAya",
+      "parameters" : [
+       {
+        "name" : "text_",
+        "deco" : "Aya"
+       }
+      ],
+      "endline" : 54,
+      "endchar" : 5
+     },
+     {
+      "name" : "textSize",
+      "kind" : "function",
+      "line" : 57,
+      "char" : 11,
+      "deco" : "FNbNiZf",
+      "endline" : 60,
+      "endchar" : 5
+     },
+     {
+      "name" : "textSize",
+      "kind" : "function",
+      "line" : 63,
+      "char" : 11,
+      "deco" : "FNbNifZf",
+      "parameters" : [
+       {
+        "name" : "textSize_",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 67,
+      "endchar" : 5
+     },
+     {
+      "name" : "letterSpacing",
+      "kind" : "function",
+      "line" : 69,
+      "char" : 11,
+      "deco" : "FNbNiZf",
+      "endline" : 72,
+      "endchar" : 5
+     },
+     {
+      "name" : "letterSpacing",
+      "kind" : "function",
+      "line" : 74,
+      "char" : 11,
+      "deco" : "FNbNifZf",
+      "parameters" : [
+       {
+        "name" : "letterSpacing_",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 78,
+      "endchar" : 5
+     },
+     {
+      "name" : "textColor",
+      "kind" : "function",
+      "line" : 81,
+      "char" : 10,
+      "deco" : "FNbNiZS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "nothrow @nogc RGBA()",
+      "endline" : 84,
+      "endchar" : 5
+     },
+     {
+      "name" : "textColor",
+      "kind" : "function",
+      "line" : 87,
+      "char" : 10,
+      "deco" : "FNbNiS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "nothrow @nogc RGBA(RGBA textColor_)",
+      "parameters" : [
+       {
+        "name" : "textColor_",
+        "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color"
+       }
+      ],
+      "endline" : 91,
+      "endchar" : 5
+     },
+     {
+      "name" : "onBeginDrag",
+      "kind" : "function",
+      "line" : 93,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 97,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onBeginDrag"
+      ]
+     },
+     {
+      "name" : "onStopDrag",
+      "kind" : "function",
+      "line" : 99,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 103,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onStopDrag"
+      ]
+     },
+     {
+      "name" : "onMouseEnter",
+      "kind" : "function",
+      "line" : 105,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 109,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseEnter"
+      ]
+     },
+     {
+      "name" : "onMouseExit",
+      "kind" : "function",
+      "line" : 111,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 115,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseExit"
+      ]
+     },
+     {
+      "name" : "onMouseClick",
+      "kind" : "function",
+      "line" : 117,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiibS5dplug6window6window10MouseStateZb",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "button",
+        "deco" : "i"
+       },
+       {
+        "name" : "isDoubleClick",
+        "deco" : "b"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 125,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseClick"
+      ]
+     },
+     {
+      "name" : "onDraw",
+      "kind" : "function",
+      "line" : 127,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefAS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, box2i[] dirtyRects)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "dirtyRects",
+        "deco" : "AS3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 159,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onDraw"
+      ]
+     },
+     {
+      "name" : "setCenterAndResize",
+      "kind" : "function",
+      "line" : 162,
+      "char" : 10,
+      "deco" : "FNbNiiiZv",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       }
+      ],
+      "endline" : 170,
+      "endchar" : 5
+     },
+     {
+      "name" : "_font",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 175,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics4font4Font",
+      "originalType" : "Font",
+      "offset" : 104
+     },
+     {
+      "name" : "_text",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 178,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Aya",
+      "offset" : 108
+     },
+     {
+      "name" : "_textSize",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 181,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "16.0000F",
+      "offset" : 116
+     },
+     {
+      "name" : "_letterSpacing",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 184,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.000000F",
+      "offset" : 120
+     },
+     {
+      "name" : "_textColor",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 187,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u, cast(ubyte)0u)",
+      "offset" : 124
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.pbrwidgets.logo",
+  "kind" : "module",
+  "file" : "..\\..\\..\\pbrwidgets\\dplug\\pbrwidgets\\logo.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.element",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "UILogo",
+    "kind" : "class",
+    "line" : 12,
+    "char" : 1,
+    "base" : "dplug.gui.element.UIElement",
+    "members" : [
+     {
+      "name" : "targetURL",
+      "kind" : "variable",
+      "line" : 19,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Aya",
+      "init" : "\"http://example.com\"",
+      "offset" : 92
+     },
+     {
+      "name" : "animationTimeConstant",
+      "kind" : "variable",
+      "line" : 20,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "30.0000F",
+      "offset" : 100
+     },
+     {
+      "name" : "defaultEmissive",
+      "kind" : "variable",
+      "line" : 21,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "h",
+      "init" : "cast(ubyte)0u",
+      "offset" : 104
+     },
+     {
+      "name" : "emissiveOn",
+      "kind" : "variable",
+      "line" : 24,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "h",
+      "init" : "cast(ubyte)40u",
+      "offset" : 105
+     },
+     {
+      "name" : "emissiveOff",
+      "kind" : "variable",
+      "line" : 25,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "h",
+      "init" : "cast(ubyte)0u",
+      "offset" : 106
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 28,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug3gui7context9UIContextC5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImageZC5dplug10pbrwidgets4logo6UILogo",
+      "originalType" : "nothrow @nogc (UIContext context, OwnedImage!RGBA diffuseImage)",
+      "parameters" : [
+       {
+        "name" : "context",
+        "deco" : "C5dplug3gui7context9UIContext"
+       },
+       {
+        "name" : "diffuseImage",
+        "deco" : "C5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImage"
+       }
+      ],
+      "endline" : 33,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 35,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 38,
+      "endchar" : 5
+     },
+     {
+      "name" : "onAnimate",
+      "kind" : "function",
+      "line" : 40,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiddZv",
+      "parameters" : [
+       {
+        "name" : "dt",
+        "deco" : "d"
+       },
+       {
+        "name" : "time",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 51,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onAnimate"
+      ]
+     },
+     {
+      "name" : "onDraw",
+      "kind" : "function",
+      "line" : 53,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefAS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, box2i[] dirtyRects)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "dirtyRects",
+        "deco" : "AS3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 81,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onDraw"
+      ]
+     },
+     {
+      "name" : "onMouseClick",
+      "kind" : "function",
+      "line" : 83,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiibS5dplug6window6window10MouseStateZb",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "button",
+        "deco" : "i"
+       },
+       {
+        "name" : "isDoubleClick",
+        "deco" : "b"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 87,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseClick"
+      ]
+     },
+     {
+      "name" : "_animation",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 90,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 108
+     },
+     {
+      "name" : "_diffuseImage",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 91,
+      "char" : 21,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics6drawex95__T10OwnedImageTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ10OwnedImage",
+      "originalType" : "OwnedImage!RGBA",
+      "offset" : 112
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.pbrwidgets.onoffswitch",
+  "kind" : "module",
+  "file" : "..\\..\\..\\pbrwidgets\\dplug\\pbrwidgets\\onoffswitch.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.drawex",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.element",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.params",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "UIOnOffSwitch",
+    "kind" : "class",
+    "line" : 14,
+    "char" : 1,
+    "base" : "dplug.gui.element.UIElement",
+    "interfaces" : [
+     "dplug.client.params.IParameterListener"
+    ],
+    "members" : [
+     {
+      "name" : "Orientation",
+      "kind" : "enum",
+      "line" : 20,
+      "char" : 5,
+      "baseDeco" : "i",
+      "members" : [
+       {
+        "name" : "vertical",
+        "kind" : "enum member",
+        "value" : "0",
+        "line" : 22,
+        "char" : 9
+       },
+       {
+        "name" : "horizontal",
+        "kind" : "enum member",
+        "value" : "1",
+        "line" : 23,
+        "char" : 9
+       }
+      ]
+     },
+     {
+      "name" : "diffuseOff",
+      "kind" : "variable",
+      "line" : 26,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)230u, cast(ubyte)80u, cast(ubyte)43u, cast(ubyte)0u)",
+      "offset" : 96
+     },
+     {
+      "name" : "diffuseOn",
+      "kind" : "variable",
+      "line" : 27,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)230u, cast(ubyte)80u, cast(ubyte)43u, cast(ubyte)200u)",
+      "offset" : 100
+     },
+     {
+      "name" : "material",
+      "kind" : "variable",
+      "line" : 28,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)192u, cast(ubyte)10u, cast(ubyte)128u, cast(ubyte)255u)",
+      "offset" : 104
+     },
+     {
+      "name" : "animationTimeConstant",
+      "kind" : "variable",
+      "line" : 29,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "10.0000F",
+      "offset" : 108
+     },
+     {
+      "name" : "depthLow",
+      "kind" : "variable",
+      "line" : 30,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "t",
+      "init" : "cast(ushort)0u",
+      "offset" : 112
+     },
+     {
+      "name" : "depthHigh",
+      "kind" : "variable",
+      "line" : 31,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "t",
+      "init" : "cast(ushort)30000u",
+      "offset" : 114
+     },
+     {
+      "name" : "holeDepth",
+      "kind" : "variable",
+      "line" : 32,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "t",
+      "init" : "cast(ushort)0u",
+      "offset" : 116
+     },
+     {
+      "name" : "orientation",
+      "kind" : "variable",
+      "line" : 34,
+      "char" : 17,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "E5dplug10pbrwidgets11onoffswitch13UIOnOffSwitch11Orientation",
+      "init" : "cast(Orientation)0",
+      "offset" : 120
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 36,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug3gui7context9UIContextC5dplug6client6params13BoolParameterZC5dplug10pbrwidgets11onoffswitch13UIOnOffSwitch",
+      "originalType" : "nothrow @nogc (UIContext context, BoolParameter param)",
+      "parameters" : [
+       {
+        "name" : "context",
+        "deco" : "C5dplug3gui7context9UIContext"
+       },
+       {
+        "name" : "param",
+        "deco" : "C5dplug6client6params13BoolParameter"
+       }
+      ],
+      "endline" : 42,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 44,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 47,
+      "endchar" : 5
+     },
+     {
+      "name" : "onAnimate",
+      "kind" : "function",
+      "line" : 49,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiddZv",
+      "parameters" : [
+       {
+        "name" : "dt",
+        "deco" : "d"
+       },
+       {
+        "name" : "time",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 60,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onAnimate"
+      ]
+     },
+     {
+      "name" : "onDraw",
+      "kind" : "function",
+      "line" : 62,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefAS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, box2i[] dirtyRects)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "dirtyRects",
+        "deco" : "AS3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 100,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onDraw"
+      ]
+     },
+     {
+      "name" : "onMouseClick",
+      "kind" : "function",
+      "line" : 102,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiibS5dplug6window6window10MouseStateZb",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "button",
+        "deco" : "i"
+       },
+       {
+        "name" : "isDoubleClick",
+        "deco" : "b"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 109,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseClick"
+      ]
+     },
+     {
+      "name" : "onMouseEnter",
+      "kind" : "function",
+      "line" : 111,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 114,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseEnter"
+      ]
+     },
+     {
+      "name" : "onMouseExit",
+      "kind" : "function",
+      "line" : 116,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 119,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseExit"
+      ]
+     },
+     {
+      "name" : "onParameterChanged",
+      "kind" : "function",
+      "line" : 121,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 124,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onParameterChanged"
+      ]
+     },
+     {
+      "name" : "onBeginParameterEdit",
+      "kind" : "function",
+      "line" : 126,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 128,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onBeginParameterEdit"
+      ]
+     },
+     {
+      "name" : "onEndParameterEdit",
+      "kind" : "function",
+      "line" : 130,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 132,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onEndParameterEdit"
+      ]
+     },
+     {
+      "name" : "_param",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 137,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug6client6params13BoolParameter",
+      "originalType" : "BoolParameter",
+      "offset" : 124
+     },
+     {
+      "name" : "_animation",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 140,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 128
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.pbrwidgets",
+  "kind" : "module",
+  "file" : "..\\..\\..\\pbrwidgets\\dplug\\pbrwidgets\\package.d",
+  "members" : [
+   {
+    "name" : "dplug.gui.element",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.pbrwidgets.knob",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.pbrwidgets.label",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.pbrwidgets.panel",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.pbrwidgets.onoffswitch",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.pbrwidgets.slider",
+    "kind" : "import",
+    "line" : 15,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.pbrwidgets.logo",
+    "kind" : "import",
+    "line" : 16,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.pbrwidgets.bargraph",
+    "kind" : "import",
+    "line" : 17,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.pbrwidgets.paramhint",
+    "kind" : "import",
+    "line" : 18,
+    "char" : 15
+   },
+   {
+    "name" : "dplug.pbrwidgets.pbrbackgroundgui",
+    "kind" : "import",
+    "line" : 19,
+    "char" : 15
+   }
+  ]
+ },
+ {
+  "name" : "dplug.pbrwidgets.panel",
+  "kind" : "module",
+  "file" : "..\\..\\..\\pbrwidgets\\dplug\\pbrwidgets\\panel.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.element",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.params",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "UIPanel",
+    "kind" : "class",
+    "line" : 13,
+    "char" : 1,
+    "base" : "dplug.gui.element.UIElement",
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 19,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug3gui7context9UIContextS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZC5dplug10pbrwidgets5panel7UIPanel",
+      "originalType" : "nothrow @nogc (UIContext context, RGBA diffuse, RGBA material, L16 depth)",
+      "parameters" : [
+       {
+        "name" : "context",
+        "deco" : "C5dplug3gui7context9UIContext"
+       },
+       {
+        "name" : "diffuse",
+        "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color"
+       },
+       {
+        "name" : "material",
+        "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color"
+       },
+       {
+        "name" : "depth",
+        "deco" : "S5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5Color"
+       }
+      ],
+      "endline" : 25,
+      "endchar" : 5
+     },
+     {
+      "name" : "onDraw",
+      "kind" : "function",
+      "line" : 27,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefAS3gfm4math3box14__T3BoxTiVii2Z3BoxZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, box2i[] dirtyRects)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "dirtyRects",
+        "deco" : "AS3gfm4math3box14__T3BoxTiVii2Z3Box"
+       }
+      ],
+      "endline" : 40,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onDraw"
+      ]
+     },
+     {
+      "name" : "_depth",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 43,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5Color",
+      "originalType" : "L16",
+      "offset" : 92
+     },
+     {
+      "name" : "_diffuse",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 44,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "offset" : 94
+     },
+     {
+      "name" : "_material",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 45,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "offset" : 98
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.pbrwidgets.paramhint",
+  "kind" : "module",
+  "file" : "..\\..\\..\\pbrwidgets\\dplug\\pbrwidgets\\paramhint.d",
+  "members" : [
+   {
+    "name" : "core.stdc.string",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "core.atomic",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.conv",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.algorithm",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core",
+    "kind" : "import",
+    "line" : 15,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.element",
+    "kind" : "import",
+    "line" : 16,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.bufferedelement",
+    "kind" : "import",
+    "line" : 17,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.params",
+    "kind" : "import",
+    "line" : 18,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "UIParamHint",
+    "kind" : "class",
+    "line" : 23,
+    "char" : 1,
+    "base" : "dplug.gui.bufferedelement.UIBufferedElement",
+    "interfaces" : [
+     "dplug.client.params.IParameterListener"
+    ],
+    "members" : [
+     {
+      "name" : "fadeinDuration",
+      "kind" : "variable",
+      "line" : 29,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "d",
+      "init" : "0.15",
+      "offset" : 128
+     },
+     {
+      "name" : "fadeoutDuration",
+      "kind" : "variable",
+      "line" : 30,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "d",
+      "init" : "0.3",
+      "offset" : 136
+     },
+     {
+      "name" : "holdDuration",
+      "kind" : "variable",
+      "line" : 31,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "d",
+      "init" : "0.85",
+      "offset" : 144
+     },
+     {
+      "name" : "textSizePx",
+      "kind" : "variable",
+      "line" : 33,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "9.5F",
+      "offset" : 152
+     },
+     {
+      "name" : "holeDiffuse",
+      "kind" : "variable",
+      "line" : 34,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)90u, cast(ubyte)90u, cast(ubyte)90u, cast(ubyte)0u)",
+      "offset" : 156
+     },
+     {
+      "name" : "textDiffuseLow",
+      "kind" : "variable",
+      "line" : 36,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)90u, cast(ubyte)90u, cast(ubyte)90u, cast(ubyte)0u)",
+      "offset" : 160
+     },
+     {
+      "name" : "textDiffuseHigh",
+      "kind" : "variable",
+      "line" : 37,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)42u, cast(ubyte)42u, cast(ubyte)42u, cast(ubyte)0u)",
+      "offset" : 164
+     },
+     {
+      "name" : "diffuseLow",
+      "kind" : "variable",
+      "line" : 39,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)90u, cast(ubyte)90u, cast(ubyte)90u, cast(ubyte)0u)",
+      "offset" : 168
+     },
+     {
+      "name" : "diffuseHigh",
+      "kind" : "variable",
+      "line" : 40,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)245u, cast(ubyte)245u, cast(ubyte)245u, cast(ubyte)30u)",
+      "offset" : 172
+     },
+     {
+      "name" : "material",
+      "kind" : "variable",
+      "line" : 41,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)0u, cast(ubyte)255u, cast(ubyte)192u, cast(ubyte)255u)",
+      "offset" : 176
+     },
+     {
+      "name" : "plasticMaterial",
+      "kind" : "variable",
+      "line" : 43,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)155u, cast(ubyte)240u, cast(ubyte)69u, cast(ubyte)255u)",
+      "offset" : 180
+     },
+     {
+      "name" : "plasticAlpha",
+      "kind" : "variable",
+      "line" : 44,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.05F",
+      "offset" : 184
+     },
+     {
+      "name" : "depthLow",
+      "kind" : "variable",
+      "line" : 46,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "t",
+      "init" : "cast(ushort)0u",
+      "offset" : 188
+     },
+     {
+      "name" : "depthHigh",
+      "kind" : "variable",
+      "line" : 47,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "t",
+      "init" : "cast(ushort)50000u",
+      "offset" : 190
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 49,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug3gui7context9UIContextC5dplug6client6params9ParameterC5dplug8graphics4font4FontZC5dplug10pbrwidgets9paramhint11UIParamHint",
+      "originalType" : "nothrow @nogc (UIContext context, Parameter param, Font font)",
+      "parameters" : [
+       {
+        "name" : "context",
+        "deco" : "C5dplug3gui7context9UIContext"
+       },
+       {
+        "name" : "param",
+        "deco" : "C5dplug6client6params9Parameter"
+       },
+       {
+        "name" : "font",
+        "deco" : "C5dplug8graphics4font4Font"
+       }
+      ],
+      "endline" : 55,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 57,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 60,
+      "endchar" : 5
+     },
+     {
+      "name" : "paramString",
+      "kind" : "function",
+      "line" : 62,
+      "char" : 19,
+      "deco" : "FNbNiZAxa",
+      "endline" : 72,
+      "endchar" : 5
+     },
+     {
+      "name" : "onDrawBuffered",
+      "kind" : "function",
+      "line" : 74,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRefZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, ImageRef!L8 diffuseOpacity, ImageRef!L8 depthOpacity, ImageRef!L8 materialOpacity)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "diffuseOpacity",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthOpacity",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialOpacity",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRef"
+       }
+      ],
+      "endline" : 158,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.bufferedelement.UIBufferedElement.onDrawBuffered"
+      ]
+     },
+     {
+      "name" : "onAnimate",
+      "kind" : "function",
+      "line" : 160,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiddZv",
+      "parameters" : [
+       {
+        "name" : "dt",
+        "deco" : "d"
+       },
+       {
+        "name" : "time",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 199,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onAnimate"
+      ]
+     },
+     {
+      "name" : "onParameterChanged",
+      "kind" : "function",
+      "line" : 201,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 204,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onParameterChanged"
+      ]
+     },
+     {
+      "name" : "onBeginParameterEdit",
+      "kind" : "function",
+      "line" : 206,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 210,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onBeginParameterEdit"
+      ]
+     },
+     {
+      "name" : "onEndParameterEdit",
+      "kind" : "function",
+      "line" : 212,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 215,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onEndParameterEdit"
+      ]
+     },
+     {
+      "name" : "_param",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 218,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug6client6params9Parameter",
+      "originalType" : "Parameter",
+      "offset" : 192
+     },
+     {
+      "name" : "_parameterIsEdited",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 220,
+      "char" : 18,
+      "storageClass" : [
+       "shared",
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Ob",
+      "init" : "false",
+      "offset" : 196
+     },
+     {
+      "name" : "_parameterChanged",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 221,
+      "char" : 18,
+      "storageClass" : [
+       "shared",
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Ob",
+      "init" : "false",
+      "offset" : 197
+     },
+     {
+      "name" : "_upAnimation",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 223,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.000000F",
+      "offset" : 200
+     },
+     {
+      "name" : "_timeSinceEdit",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 225,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "d",
+      "init" : "inf",
+      "offset" : 208
+     },
+     {
+      "name" : "_lastParamString",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 227,
+      "char" : 19,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "Axa",
+      "offset" : 216
+     },
+     {
+      "name" : "_font",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 229,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug8graphics4font4Font",
+      "originalType" : "Font",
+      "offset" : 224
+     },
+     {
+      "name" : "_pParamStringBuffer",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 231,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "G256a",
+      "offset" : 228
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.pbrwidgets.pbrbackgroundgui",
+  "kind" : "module",
+  "file" : "..\\..\\..\\pbrwidgets\\dplug\\pbrwidgets\\pbrbackgroundgui.d",
+  "members" : [
+   {
+    "name" : "gfm.math.box",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.nogc",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.file",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.color",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.image",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.view",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.drawex",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.window.window",
+    "kind" : "import",
+    "line" : 17,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.graphics",
+    "kind" : "import",
+    "line" : 19,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "line" : 26,
+    "char" : 1,
+    "name" : "PBRBackgroundGUI",
+    "parameters" : [
+     {
+      "name" : "baseColorPath",
+      "kind" : "value",
+      "deco" : "Aya"
+     },
+     {
+      "name" : "emissivePath",
+      "kind" : "value",
+      "deco" : "Aya"
+     },
+     {
+      "name" : "materialPath",
+      "kind" : "value",
+      "deco" : "Aya"
+     },
+     {
+      "name" : "physicalPath",
+      "kind" : "value",
+      "deco" : "Aya"
+     },
+     {
+      "name" : "depthPath",
+      "kind" : "value",
+      "deco" : "Aya"
+     },
+     {
+      "name" : "skyboxPath",
+      "kind" : "value",
+      "deco" : "Aya"
+     },
+     {
+      "name" : "absoluteGfxDirectory",
+      "kind" : "value",
+      "deco" : "Aya"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "PBRBackgroundGUI",
+      "kind" : "class",
+      "line" : 26,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "this",
+        "kind" : "constructor",
+        "line" : 39,
+        "char" : 5,
+        "type" : "(int width, int height)",
+        "parameters" : [
+         {
+          "name" : "width",
+          "deco" : "i"
+         },
+         {
+          "name" : "height",
+          "deco" : "i"
+         }
+        ],
+        "endline" : 49,
+        "endchar" : 5
+       },
+       {
+        "name" : "~this",
+        "kind" : "destructor",
+        "line" : 51,
+        "char" : 5,
+        "endline" : 54,
+        "endchar" : 5
+       },
+       {
+        "name" : "reflow",
+        "kind" : "function",
+        "line" : 75,
+        "char" : 19,
+        "storageClass" : [
+         "override"
+        ],
+        "type" : "void(box2i availableSpace)",
+        "parameters" : [
+         {
+          "name" : "availableSpace",
+          "type" : "box2i"
+         }
+        ],
+        "endline" : 78,
+        "endchar" : 5
+       },
+       {
+        "name" : "onDraw",
+        "kind" : "function",
+        "line" : 80,
+        "char" : 19,
+        "storageClass" : [
+         "override"
+        ],
+        "type" : "void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, box2i[] dirtyRects)",
+        "parameters" : [
+         {
+          "name" : "diffuseMap",
+          "type" : "ImageRef!RGBA"
+         },
+         {
+          "name" : "depthMap",
+          "type" : "ImageRef!L16"
+         },
+         {
+          "name" : "materialMap",
+          "type" : "ImageRef!RGBA"
+         },
+         {
+          "name" : "dirtyRects",
+          "type" : "box2i[]"
+         }
+        ],
+        "endline" : 98,
+        "endchar" : 5
+       },
+       {
+        "name" : "baseColorPathAbs",
+        "kind" : "variable",
+        "line" : 103,
+        "char" : 29,
+        "storageClass" : [
+         "static",
+         "immutable"
+        ],
+        "type" : "string",
+        "init" : "absoluteGfxDirectory ~ baseColorPath"
+       },
+       {
+        "name" : "emissivePathAbs",
+        "kind" : "variable",
+        "line" : 104,
+        "char" : 29,
+        "storageClass" : [
+         "static",
+         "immutable"
+        ],
+        "type" : "string",
+        "init" : "absoluteGfxDirectory ~ emissivePath"
+       },
+       {
+        "name" : "materialPathAbs",
+        "kind" : "variable",
+        "line" : 105,
+        "char" : 29,
+        "storageClass" : [
+         "static",
+         "immutable"
+        ],
+        "type" : "string",
+        "init" : "absoluteGfxDirectory ~ materialPath"
+       },
+       {
+        "name" : "physicalPathAbs",
+        "kind" : "variable",
+        "line" : 106,
+        "char" : 29,
+        "storageClass" : [
+         "static",
+         "immutable"
+        ],
+        "type" : "string",
+        "init" : "absoluteGfxDirectory ~ physicalPath"
+       },
+       {
+        "name" : "depthPathAbs",
+        "kind" : "variable",
+        "line" : 107,
+        "char" : 29,
+        "storageClass" : [
+         "static",
+         "immutable"
+        ],
+        "type" : "string",
+        "init" : "absoluteGfxDirectory ~ depthPath"
+       },
+       {
+        "name" : "skyboxPathAbs",
+        "kind" : "variable",
+        "line" : 108,
+        "char" : 29,
+        "storageClass" : [
+         "static",
+         "immutable"
+        ],
+        "type" : "string",
+        "init" : "absoluteGfxDirectory ~ skyboxPath"
+       },
+       {
+        "name" : "_diffuse",
+        "kind" : "variable",
+        "line" : 111,
+        "char" : 21,
+        "type" : "OwnedImage!RGBA"
+       },
+       {
+        "name" : "_material",
+        "kind" : "variable",
+        "line" : 112,
+        "char" : 21,
+        "type" : "OwnedImage!RGBA"
+       },
+       {
+        "name" : "_depth",
+        "kind" : "variable",
+        "line" : 113,
+        "char" : 20,
+        "type" : "OwnedImage!L16"
+       },
+       {
+        "name" : "freeImages",
+        "kind" : "function",
+        "line" : 115,
+        "char" : 10,
+        "type" : "void()",
+        "endline" : 123,
+        "endchar" : 5
+       },
+       {
+        "name" : "reloadImagesAtRuntime",
+        "kind" : "function",
+        "line" : 127,
+        "char" : 10,
+        "type" : "void()",
+        "endline" : 154,
+        "endchar" : 5
+       },
+       {
+        "name" : "loadImages",
+        "kind" : "function",
+        "line" : 156,
+        "char" : 10,
+        "type" : "void(ubyte[] basecolorData, ubyte[] emissiveData, ubyte[] materialData, ubyte[] physicalData, ubyte[] depthData, ubyte[] skyboxData)",
+        "parameters" : [
+         {
+          "name" : "basecolorData",
+          "type" : "ubyte[]"
+         },
+         {
+          "name" : "emissiveData",
+          "type" : "ubyte[]"
+         },
+         {
+          "name" : "materialData",
+          "type" : "ubyte[]"
+         },
+         {
+          "name" : "physicalData",
+          "type" : "ubyte[]"
+         },
+         {
+          "name" : "depthData",
+          "type" : "ubyte[]"
+         },
+         {
+          "name" : "skyboxData",
+          "type" : "ubyte[]"
+         }
+        ],
+        "endline" : 190,
+        "endchar" : 5
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "dplug.pbrwidgets.slider",
+  "kind" : "module",
+  "file" : "..\\..\\..\\pbrwidgets\\dplug\\pbrwidgets\\slider.d",
+  "members" : [
+   {
+    "name" : "std.math",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.algorithm.comparison",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.core.math",
+    "kind" : "import",
+    "line" : 11,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.graphics.drawex",
+    "kind" : "import",
+    "line" : 12,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.gui.bufferedelement",
+    "kind" : "import",
+    "line" : 13,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "dplug.client.params",
+    "kind" : "import",
+    "line" : 14,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "HandleStyle",
+    "kind" : "enum",
+    "line" : 17,
+    "char" : 1,
+    "baseDeco" : "i",
+    "members" : [
+     {
+      "name" : "shapeW",
+      "kind" : "enum member",
+      "value" : "0",
+      "line" : 19,
+      "char" : 5
+     },
+     {
+      "name" : "shapeV",
+      "kind" : "enum member",
+      "value" : "1",
+      "line" : 20,
+      "char" : 5
+     },
+     {
+      "name" : "shapeA",
+      "kind" : "enum member",
+      "value" : "2",
+      "line" : 21,
+      "char" : 5
+     },
+     {
+      "name" : "shapeBlock",
+      "kind" : "enum member",
+      "value" : "3",
+      "line" : 22,
+      "char" : 5
+     }
+    ]
+   },
+   {
+    "name" : "UISlider",
+    "kind" : "class",
+    "line" : 25,
+    "char" : 1,
+    "base" : "dplug.gui.bufferedelement.UIBufferedElement",
+    "interfaces" : [
+     "dplug.client.params.IParameterListener"
+    ],
+    "members" : [
+     {
+      "name" : "trailDepth",
+      "kind" : "variable",
+      "line" : 32,
+      "char" : 9,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5Color",
+      "originalType" : "L16",
+      "init" : "Color(cast(ushort)30000u)",
+      "offset" : 124
+     },
+     {
+      "name" : "unlitTrailDiffuse",
+      "kind" : "variable",
+      "line" : 33,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)130u, cast(ubyte)90u, cast(ubyte)45u, cast(ubyte)5u)",
+      "offset" : 126
+     },
+     {
+      "name" : "litTrailDiffuse",
+      "kind" : "variable",
+      "line" : 34,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)240u, cast(ubyte)165u, cast(ubyte)102u, cast(ubyte)130u)",
+      "offset" : 130
+     },
+     {
+      "name" : "trailWidth",
+      "kind" : "variable",
+      "line" : 35,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.2F",
+      "offset" : 136
+     },
+     {
+      "name" : "litTrailDiffuseAlt",
+      "kind" : "variable",
+      "line" : 37,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)240u, cast(ubyte)165u, cast(ubyte)102u, cast(ubyte)130u)",
+      "offset" : 140
+     },
+     {
+      "name" : "hasAlternateTrail",
+      "kind" : "variable",
+      "line" : 38,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "b",
+      "init" : "false",
+      "offset" : 144
+     },
+     {
+      "name" : "trailBase",
+      "kind" : "variable",
+      "line" : 39,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.000000F",
+      "offset" : 148
+     },
+     {
+      "name" : "handleStyle",
+      "kind" : "variable",
+      "line" : 42,
+      "char" : 17,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "E5dplug10pbrwidgets6slider11HandleStyle",
+      "init" : "cast(HandleStyle)0",
+      "offset" : 152
+     },
+     {
+      "name" : "handleHeightRatio",
+      "kind" : "variable",
+      "line" : 43,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.25F",
+      "offset" : 156
+     },
+     {
+      "name" : "handleWidthRatio",
+      "kind" : "variable",
+      "line" : 44,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.7F",
+      "offset" : 160
+     },
+     {
+      "name" : "handleDiffuse",
+      "kind" : "variable",
+      "line" : 45,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)248u, cast(ubyte)245u, cast(ubyte)233u, cast(ubyte)16u)",
+      "offset" : 164
+     },
+     {
+      "name" : "handleMaterial",
+      "kind" : "variable",
+      "line" : 46,
+      "char" : 10,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "S5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5Color",
+      "originalType" : "RGBA",
+      "init" : "Color(cast(ubyte)0u, cast(ubyte)255u, cast(ubyte)128u, cast(ubyte)255u)",
+      "offset" : 168
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "line" : 48,
+      "char" : 5,
+      "deco" : "FNbNiC5dplug3gui7context9UIContextC5dplug6client6params9ParameterZC5dplug10pbrwidgets6slider8UISlider",
+      "originalType" : "nothrow @nogc (UIContext context, Parameter param)",
+      "parameters" : [
+       {
+        "name" : "context",
+        "deco" : "C5dplug3gui7context9UIContext"
+       },
+       {
+        "name" : "param",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 56,
+      "endchar" : 5
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "line" : 58,
+      "char" : 5,
+      "deco" : "FNbNiZv",
+      "endline" : 61,
+      "endchar" : 5
+     },
+     {
+      "name" : "sensivity",
+      "kind" : "function",
+      "line" : 64,
+      "char" : 11,
+      "deco" : "FNbNiZf",
+      "endline" : 67,
+      "endchar" : 5
+     },
+     {
+      "name" : "sensivity",
+      "kind" : "function",
+      "line" : 70,
+      "char" : 11,
+      "deco" : "FNbNifZf",
+      "parameters" : [
+       {
+        "name" : "sensivity",
+        "deco" : "f"
+       }
+      ],
+      "endline" : 73,
+      "endchar" : 5
+     },
+     {
+      "name" : "onAnimate",
+      "kind" : "function",
+      "line" : 75,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiddZv",
+      "parameters" : [
+       {
+        "name" : "dt",
+        "deco" : "d"
+       },
+       {
+        "name" : "time",
+        "deco" : "d"
+       }
+      ],
+      "endline" : 84,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onAnimate"
+      ]
+     },
+     {
+      "name" : "onDrawBuffered",
+      "kind" : "function",
+      "line" : 86,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRefS5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRefZv",
+      "originalType" : "nothrow @nogc void(ImageRef!RGBA diffuseMap, ImageRef!L16 depthMap, ImageRef!RGBA materialMap, ImageRef!L8 diffuseOpacity, ImageRef!L8 depthOpacity, ImageRef!L8 materialOpacity)",
+      "parameters" : [
+       {
+        "name" : "diffuseMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthMap",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorTtVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialMap",
+        "deco" : "S5dplug8graphics5image92__T8ImageRefTS5dplug8graphics5color48__T5ColorThVAyaa1_72VAyaa1_67VAyaa1_62VAyaa1_61Z5ColorZ8ImageRef"
+       },
+       {
+        "name" : "diffuseOpacity",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "depthOpacity",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRef"
+       },
+       {
+        "name" : "materialOpacity",
+        "deco" : "S5dplug8graphics5image65__T8ImageRefTS5dplug8graphics5color21__T5ColorThVAyaa1_6cZ5ColorZ8ImageRef"
+       }
+      ],
+      "endline" : 226,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.bufferedelement.UIBufferedElement.onDrawBuffered"
+      ]
+     },
+     {
+      "name" : "onMouseClick",
+      "kind" : "function",
+      "line" : 228,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiibS5dplug6window6window10MouseStateZb",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "button",
+        "deco" : "i"
+       },
+       {
+        "name" : "isDoubleClick",
+        "deco" : "b"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 250,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseClick"
+      ]
+     },
+     {
+      "name" : "onMouseDrag",
+      "kind" : "function",
+      "line" : 253,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiiiiiS5dplug6window6window10MouseStateZv",
+      "parameters" : [
+       {
+        "name" : "x",
+        "deco" : "i"
+       },
+       {
+        "name" : "y",
+        "deco" : "i"
+       },
+       {
+        "name" : "dx",
+        "deco" : "i"
+       },
+       {
+        "name" : "dy",
+        "deco" : "i"
+       },
+       {
+        "name" : "mstate",
+        "deco" : "S5dplug6window6window10MouseState"
+       }
+      ],
+      "endline" : 301,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseDrag"
+      ]
+     },
+     {
+      "name" : "onBeginDrag",
+      "kind" : "function",
+      "line" : 304,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 308,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onBeginDrag"
+      ]
+     },
+     {
+      "name" : "onStopDrag",
+      "kind" : "function",
+      "line" : 310,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 315,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onStopDrag"
+      ]
+     },
+     {
+      "name" : "onMouseEnter",
+      "kind" : "function",
+      "line" : 317,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 320,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseEnter"
+      ]
+     },
+     {
+      "name" : "onMouseExit",
+      "kind" : "function",
+      "line" : 322,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiZv",
+      "endline" : 325,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.gui.element.UIElement.onMouseExit"
+      ]
+     },
+     {
+      "name" : "onParameterChanged",
+      "kind" : "function",
+      "line" : 327,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 330,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onParameterChanged"
+      ]
+     },
+     {
+      "name" : "onBeginParameterEdit",
+      "kind" : "function",
+      "line" : 332,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 334,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onBeginParameterEdit"
+      ]
+     },
+     {
+      "name" : "onEndParameterEdit",
+      "kind" : "function",
+      "line" : 336,
+      "char" : 19,
+      "storageClass" : [
+       "override"
+      ],
+      "deco" : "FNbNiC5dplug6client6params9ParameterZv",
+      "parameters" : [
+       {
+        "name" : "sender",
+        "deco" : "C5dplug6client6params9Parameter"
+       }
+      ],
+      "endline" : 338,
+      "endchar" : 5,
+      "overrides" : [
+       "dplug.client.params.IParameterListener.onEndParameterEdit"
+      ]
+     },
+     {
+      "name" : "_param",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 343,
+      "char" : 15,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "C5dplug6client6params9Parameter",
+      "originalType" : "Parameter",
+      "offset" : 172
+     },
+     {
+      "name" : "_sensivity",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 347,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 176
+     },
+     {
+      "name" : "_pushedAnimation",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 349,
+      "char" : 12,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 180
+     },
+     {
+      "name" : "_mousePosOnLast0Cross",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 351,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 184
+     },
+     {
+      "name" : "_mousePosOnLast1Cross",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 352,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "offset" : 188
+     },
+     {
+      "name" : "_draggingDebt",
+      "kind" : "variable",
+      "protection" : "protected",
+      "line" : 356,
+      "char" : 11,
+      "storageClass" : [
+       "nothrow",
+       "@nogc"
+      ],
+      "deco" : "f",
+      "init" : "0.000000F",
+      "offset" : 192
+     },
+     {
+      "name" : "clearCrosspoints",
+      "kind" : "function",
+      "protection" : "protected",
+      "line" : 358,
+      "char" : 10,
+      "deco" : "FNbNiZv",
+      "endline" : 362,
+      "endchar" : 5
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias"
+     }
+    ]
+   }
+  ]
+ }
+]

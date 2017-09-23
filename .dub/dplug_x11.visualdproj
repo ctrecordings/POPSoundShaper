@@ -1,5 +1,5 @@
 <DProject>
-  <ProjectGuid>{BD4BDF60-26BE-4AEC-BE1A-FCFD85CCB759}</ProjectGuid>
+  <ProjectGuid>{1B7AE0C0-11DD-4664-BB95-343ADF76A97E}</ProjectGuid>
   <Config name="debug" platform="Win32">
     <symdebug>1</symdebug>
     <optimize>0</optimize>
@@ -18,7 +18,7 @@
     <subsystem>0</subsystem>
     <multiobj>0</multiobj>
     <singleFileCompilation>2</singleFileCompilation>
-    <oneobj>0</oneobj>
+    <mscoff>0</mscoff>    <oneobj>0</oneobj>
     <trace>0</trace>
     <quiet>0</quiet>
     <verbose>0</verbose>

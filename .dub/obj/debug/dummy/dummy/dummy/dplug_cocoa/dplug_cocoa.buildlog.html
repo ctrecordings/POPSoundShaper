@@ -1,0 +1,48 @@
+<html><head><META HTTP-EQUIV="Content-Type" content="text/html">
+</head><body><pre>
+<table width=100% bgcolor=#CFCFE5><tr><td>
+	<font face=arial size=+3>Build Log</font>
+</table>
+<table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Building lib\dplug_cocoa.lib
+</font></table>
+<table width=100% bgcolor=#EFEFE5><tr><td><font face=arial size=+1>
+Command Line
+</font></table>
+set PATH=.\bin;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE;C:\Program Files (x86)\Windows Kits\8.1\bin\x86;.\windows\bin;%PATH%
+
+echo ..\..\..\cocoa\derelict\cocoa\appkit.d &gt;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.rsp
+echo ..\..\..\cocoa\derelict\cocoa\cocoa.d &gt;&gt;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.rsp
+echo ..\..\..\cocoa\derelict\cocoa\coregraphics.d &gt;&gt;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.rsp
+echo ..\..\..\cocoa\derelict\cocoa\coreimage.d &gt;&gt;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.rsp
+echo ..\..\..\cocoa\derelict\cocoa\foundation.d &gt;&gt;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.rsp
+echo ..\..\..\cocoa\derelict\cocoa\package.d &gt;&gt;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.rsp
+echo ..\..\..\cocoa\derelict\cocoa\runtime.d &gt;&gt;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.rsp
+
+dmd -g -debug -w -op -X -Xf&quot;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.json&quot; -I&quot;..\..\..\cocoa&quot; -I&quot;..\..\..\core&quot; -version=VST -version=Have_dplug_cocoa -version=Have_dplug_core -deps=&quot;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.dep&quot; -c -odobj/debug/dummy/dummy/dummy/dplug_cocoa @obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.rsp
+if errorlevel 1 goto reportError
+
+
+echo obj/debug/dummy/dummy/dummy/dplug_cocoa\..\..\..\cocoa\derelict\cocoa\appkit.obj &gt;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dplug_cocoa\..\..\..\cocoa\derelict\cocoa\cocoa.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dplug_cocoa\..\..\..\cocoa\derelict\cocoa\coregraphics.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dplug_cocoa\..\..\..\cocoa\derelict\cocoa\coreimage.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dplug_cocoa\..\..\..\cocoa\derelict\cocoa\foundation.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dplug_cocoa\..\..\..\cocoa\derelict\cocoa\package.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dplug_cocoa\..\..\..\cocoa\derelict\cocoa\runtime.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.lnkarg
+
+&quot;C:\Program Files (x86)\VisualD\pipedmd.exe&quot; dmd -g -debug -w -lib -op -I&quot;..\..\..\cocoa&quot; -I&quot;..\..\..\core&quot; -version=VST -version=Have_dplug_cocoa -version=Have_dplug_core -oflib\dplug_cocoa.lib -map &quot;obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.map&quot; -L/NOMAP @obj\debug\dummy\dummy\dummy\dplug_cocoa\dplug_cocoa.build.lnkarg
+if errorlevel 1 goto reportError
+if not exist lib\dplug_cocoa.lib (echo lib\dplug_cocoa.lib not created! &amp;&amp; goto reportError)
+
+goto noError
+
+:reportError
+echo Building lib\dplug_cocoa.lib failed!
+
+:noError
+<table width=100% bgcolor=#EFEFE5><tr><td><font face=arial size=+1>
+Output
+</font></table>
+
+</body></html>

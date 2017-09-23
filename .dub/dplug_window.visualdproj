@@ -1,5 +1,5 @@
 <DProject>
-  <ProjectGuid>{6F44E4CD-1C11-4F1C-B880-A8B4721B4B73}</ProjectGuid>
+  <ProjectGuid>{9CE7CC52-37F7-4893-A9A4-9768C6F04F82}</ProjectGuid>
   <Config name="debug" platform="Win32">
     <symdebug>1</symdebug>
     <optimize>0</optimize>
@@ -7,7 +7,7 @@
     <release>0</release>
     <lib>1</lib>
     <exefile>lib\dplug_window.lib</exefile>
-    <imppath>"..\..\..\window" "..\..\..\carbon" "..\..\..\core" "..\..\..\cocoa" "..\..\..\graphics" "C:\Users\Reker\AppData\Roaming\dub\packages\gfm-6.2.10\gfm\math" "..\..\..\x11"</imppath>
+    <imppath>"..\..\..\window" "..\..\..\carbon" "..\..\..\core" "..\..\..\cocoa" "..\..\..\graphics" "..\..\..\..\..\..\AppData\Roaming\dub\packages\gfm-6.2.10\gfm\math" "..\..\..\x11"</imppath>
     <fileImppath></fileImppath>
     <program>$(DMDInstallDir)windows\bin\dmd.exe</program>
     <additionalOptions></additionalOptions>
@@ -18,7 +18,7 @@
     <subsystem>0</subsystem>
     <multiobj>0</multiobj>
     <singleFileCompilation>2</singleFileCompilation>
-    <oneobj>0</oneobj>
+    <mscoff>0</mscoff>    <oneobj>0</oneobj>
     <trace>0</trace>
     <quiet>0</quiet>
     <verbose>0</verbose>

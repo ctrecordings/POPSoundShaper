@@ -1,0 +1,76 @@
+<html><head><META HTTP-EQUIV="Content-Type" content="text/html">
+</head><body><pre>
+<table width=100% bgcolor=#CFCFE5><tr><td>
+	<font face=arial size=+3>Build Log</font>
+</table>
+<table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Building lib\ddsp.lib
+</font></table>
+<table width=100% bgcolor=#EFEFE5><tr><td><font face=arial size=+1>
+Command Line
+</font></table>
+set PATH=.\bin;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE;C:\Program Files (x86)\Windows Kits\8.1\bin\x86;.\windows\bin;%PATH%
+
+echo ..\..\..\..\Ddsp\effect\ddsp\effect\aeffect.d &gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\effect\ddsp\effect\compressor.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\effect\ddsp\effect\digitaldelay.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\effect\ddsp\effect\dynamics.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\effect\ddsp\effect\expander.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\effect\ddsp\effect\package.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\filter\ddsp\filter\allpass.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\filter\ddsp\filter\biquad.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\filter\ddsp\filter\highpass.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\filter\ddsp\filter\lowpass.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\filter\ddsp\filter\package.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\filter\ddsp\filter\shelf.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\osc\ddsp\osc\cfoscillator.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\osc\ddsp\osc\wtoscillator.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\util\ddsp\util\buffer.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\util\ddsp\util\envelope.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\util\ddsp\util\functions.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\util\ddsp\util\package.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\util\ddsp\util\scale.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\util\ddsp\util\time.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+echo ..\..\..\..\Ddsp\util\ddsp\util\wave.d &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+
+dmd -g -debug -w -op -X -Xf&quot;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.json&quot; -I&quot;..\..\..\..\Ddsp\util&quot; -I&quot;..\..\..\..\Ddsp\effect&quot; -I&quot;..\..\..\..\Ddsp\filter&quot; -I&quot;..\..\..\..\Ddsp\osc&quot; -I&quot;..\..\..\core&quot; -version=VST -version=Have_ddsp -version=Have_dplug_core -deps=&quot;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.dep&quot; -c -odobj/debug/dummy/dummy/dummy/dummy/ddsp @obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.rsp
+if errorlevel 1 goto reportError
+
+
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\effect\ddsp\effect\aeffect.obj &gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\effect\ddsp\effect\compressor.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\effect\ddsp\effect\digitaldelay.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\effect\ddsp\effect\dynamics.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\effect\ddsp\effect\expander.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\effect\ddsp\effect\package.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\filter\ddsp\filter\allpass.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\filter\ddsp\filter\biquad.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\filter\ddsp\filter\highpass.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\filter\ddsp\filter\lowpass.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\filter\ddsp\filter\package.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\filter\ddsp\filter\shelf.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\osc\ddsp\osc\cfoscillator.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\osc\ddsp\osc\wtoscillator.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\util\ddsp\util\buffer.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\util\ddsp\util\envelope.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\util\ddsp\util\functions.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\util\ddsp\util\package.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\util\ddsp\util\scale.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\util\ddsp\util\time.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+echo obj/debug/dummy/dummy/dummy/dummy/ddsp\..\..\..\..\Ddsp\util\ddsp\util\wave.obj &gt;&gt;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+
+&quot;C:\Program Files (x86)\VisualD\pipedmd.exe&quot; dmd -g -debug -w -lib -op -I&quot;..\..\..\..\Ddsp\util&quot; -I&quot;..\..\..\..\Ddsp\effect&quot; -I&quot;..\..\..\..\Ddsp\filter&quot; -I&quot;..\..\..\..\Ddsp\osc&quot; -I&quot;..\..\..\core&quot; -version=VST -version=Have_ddsp -version=Have_dplug_core -oflib\ddsp.lib -map &quot;obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.map&quot; -L/NOMAP @obj\debug\dummy\dummy\dummy\dummy\ddsp\ddsp.build.lnkarg
+if errorlevel 1 goto reportError
+if not exist lib\ddsp.lib (echo lib\ddsp.lib not created! &amp;&amp; goto reportError)
+
+goto noError
+
+:reportError
+echo Building lib\ddsp.lib failed!
+
+:noError
+<table width=100% bgcolor=#EFEFE5><tr><td><font face=arial size=+1>
+Output
+</font></table>
+
+</body></html>

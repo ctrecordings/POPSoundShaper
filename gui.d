@@ -83,7 +83,7 @@ nothrow:
         UIFilmstripKnob clipKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramClip), knobImage, 128);
         addChild(clipKnob);
 
-        UIFilmstripKnob sustainKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramSustain), knobImage, 128);
+        UIFilmstripKnob sustainKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramThump), knobImage, 128);
         addChild(sustainKnob);
         UIFilmstripKnob airKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramAir), knobImage, 128);
         addChild(airKnob);

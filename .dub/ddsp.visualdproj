@@ -1,5 +1,5 @@
 <DProject>
-  <ProjectGuid>{2063C962-F70E-4102-922C-A954A32E3765}</ProjectGuid>
+  <ProjectGuid>{7246CC84-F5CA-4573-85DE-EBFEE2F9C762}</ProjectGuid>
   <Config name="debug" platform="Win32">
     <symdebug>1</symdebug>
     <optimize>0</optimize>
@@ -7,18 +7,18 @@
     <release>0</release>
     <lib>1</lib>
     <exefile>lib\ddsp.lib</exefile>
-    <imppath>"..\..\..\..\Ddsp\util" "..\..\..\..\Ddsp\effect" "..\..\..\..\Ddsp\filter" "..\..\..\..\Ddsp\osc" "..\..\..\core" "..\..\..\dsp" "C:\Users\Reker\AppData\Roaming\dub\packages\gfm-6.2.10\gfm\math" "C:\Users\Reker\AppData\Roaming\dub\packages\pfft-1.0.3\pfft"</imppath>
+    <imppath>"..\..\..\..\Ddsp\util" "..\..\..\..\Ddsp\effect" "..\..\..\..\Ddsp\filter" "..\..\..\..\Ddsp\osc" "..\..\..\core"</imppath>
     <fileImppath></fileImppath>
     <program>$(DMDInstallDir)windows\bin\dmd.exe</program>
     <additionalOptions></additionalOptions>
-    <versionids>VST Have_ddsp Have_dplug_core Have_dplug_dsp Have_gfm_math Have_pfft</versionids>
+    <versionids>VST Have_ddsp Have_dplug_core</versionids>
     <useUnitTests>0</useUnitTests>
     <obj>0</obj>
     <link>0</link>
     <subsystem>0</subsystem>
     <multiobj>0</multiobj>
     <singleFileCompilation>2</singleFileCompilation>
-    <oneobj>0</oneobj>
+    <mscoff>0</mscoff>    <oneobj>0</oneobj>
     <trace>0</trace>
     <quiet>0</quiet>
     <verbose>0</verbose>
@@ -98,7 +98,10 @@
     <Folder name="ddsp">
     <Folder name="effect">
       <File path="..\..\..\..\Ddsp\effect\ddsp\effect\aeffect.d" />
+      <File path="..\..\..\..\Ddsp\effect\ddsp\effect\compressor.d" />
       <File path="..\..\..\..\Ddsp\effect\ddsp\effect\digitaldelay.d" />
+      <File path="..\..\..\..\Ddsp\effect\ddsp\effect\dynamics.d" />
+      <File path="..\..\..\..\Ddsp\effect\ddsp\effect\expander.d" />
       <File path="..\..\..\..\Ddsp\effect\ddsp\effect\package.d" />
     </Folder>
     </Folder>
@@ -111,6 +114,7 @@
       <File path="..\..\..\..\Ddsp\filter\ddsp\filter\highpass.d" />
       <File path="..\..\..\..\Ddsp\filter\ddsp\filter\lowpass.d" />
       <File path="..\..\..\..\Ddsp\filter\ddsp\filter\package.d" />
+      <File path="..\..\..\..\Ddsp\filter\ddsp\filter\shelf.d" />
     </Folder>
     </Folder>
     </Folder>

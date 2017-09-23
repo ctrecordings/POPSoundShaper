@@ -19,7 +19,7 @@ import ddsp.util.functions;
 import ddsp.util.envelope;
 import ddsp.filter.lowpass;
 import ddsp.filter.highpass;
-import ddsp.filter.shelf;
+import ddsp.filter.peak;
 import ddsp.effect.compressor;
 
 mixin(DLLEntryPoint!());
@@ -42,7 +42,7 @@ enum : int
     paramPop,
     paramThreshold,
     paramClip,
-    paramSustain,
+    paramThump,
     paramAir,
     paramMix,
     paramGainOut
@@ -63,7 +63,7 @@ nothrow:
 
         _lowpass = makeVec!LinkwitzRileyLP;
         _highpass = makeVec!LinkwitzRileyHP;
-        _lowshelf = makeVec!LowShelf;
+        _bandShelfLow = makeVec!BandShelf;
 
         _popComp = makeVec!Compressor;
         _sustainer = makeVec!Compressor;
@@ -75,7 +75,7 @@ nothrow:
 
             _lowpass.pushBack(mallocNew!LinkwitzRileyLP);
             _highpass.pushBack(mallocNew!LinkwitzRileyHP());
-            _lowshelf.pushBack(mallocNew!LowShelf());
+            _bandShelfLow.pushBack(mallocNew!BandShelf);
 
             _popComp.pushBack(mallocNew!Compressor());
             _sustainer.pushBack(mallocNew!Compressor());
@@ -96,7 +96,7 @@ nothrow:
         params.pushBack( mallocNew!LinearFloatParameter(paramPop, "amount", "%", 0.0f, 100.0f, 0.0f));
         params.pushBack( mallocNew!LinearFloatParameter(paramThreshold, "threshold", "dB", -96.0f, 0.0f, 0.0f));
         params.pushBack( mallocNew!LinearFloatParameter(paramClip, "clip", "%", 0.0f, 100.0f, 0.0f));
-        params.pushBack( mallocNew!LinearFloatParameter(paramSustain, "sustain", "%", 0.0f, 100.0f, 0.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramThump, "thump", "%", 0.0f, 100.0f, 0.0f));
         params.pushBack( mallocNew!LinearFloatParameter(paramAir, "air", "%", 0.0f, 100.0f, 0.0f));
         params.pushBack( mallocNew!LinearFloatParameter(paramMix, "mix", "%", 0.0f, 100.0f, 100.0f));
         params.pushBack( mallocNew!LinearFloatParameter(paramGainOut, "output gain", "dB", -12.0f, 12.0f, 0.0f));
@@ -136,8 +136,8 @@ nothrow:
             _lowpass[channel].setFrequency(300);
             _highpass[channel].setSampleRate(sampleRate);
             _highpass[channel].setFrequency(300);
-            _lowshelf[channel].setSampleRate(sampleRate);
-            _lowshelf[channel].setFrequency(150);
+            _bandShelfLow[channel].setSampleRate(sampleRate);
+            _bandShelfLow[channel].setFrequency(150.0f);
             _popComp[channel].setSampleRate(sampleRate);
             _sustainer[channel].setSampleRate(sampleRate);
         }
@@ -164,16 +164,16 @@ nothrow:
         float air = clamp(readFloatParamValue(paramAir) / 100.0f, 0, 0.99);
         float k = 2 * air / (1 - air);
 
-        float sustain = readFloatParamValue(paramSustain) / 16.0f;
-
+        //Convert to range of 0-12db
+        float thump = readFloatParamValue(paramThump) / 8.333f;
 
         foreach(channel; 0..2)
         {
-            _inputDetector[channel].setEnvelope(5, 20);
-            _outputDetector[channel].setEnvelope(5,20);
+            _inputDetector[channel].setEnvelope(5.0f, 20.0f);
+            _outputDetector[channel].setEnvelope(5.5f,20.0f);
+            _bandShelfLow[channel].setGain(thump);
             _popComp[channel].setParams(100.0f, 200.0f, threshold, popAmount, 1.0f);
-            _sustainer[channel].setParams(0.1f, 400.0f, threshold, sustain, 1.0f);
-            _lowshelf[channel].setGain(sustain);
+            
         }
 
         bool enabled = true;
@@ -198,7 +198,7 @@ nothrow:
                         outputSample = clipInv * atan( outputSample * clipAmount);
 
                     /// apply low boost
-                    outputSample = _lowshelf[chan].getNextSample(outputSample);
+                    outputSample = _bandShelfLow[chan].getNextSample(outputSample);
 
                     /// Split the signal into two bands
                     //float lowband = _lowpass[chan].getNextSample(outputSample);
@@ -265,7 +265,7 @@ private:
 
     Vec!LinkwitzRileyLP _lowpass;
     Vec!LinkwitzRileyHP _highpass;
-    Vec!LowShelf _lowshelf;
+    Vec!BandShelf _bandShelfLow;
 
     Vec!Compressor _popComp;
     Vec!Compressor _sustainer;

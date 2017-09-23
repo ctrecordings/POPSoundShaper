@@ -1,0 +1,190 @@
+[
+ {
+  "name" : "derelict.x11.extensions.damagewire",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\extensions\\damagewire.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.extensions.randr",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\extensions\\randr.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.extensions.render",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\extensions\\render.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.extensions.Xcomposite",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\extensions\\Xcomposite.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.extensions.Xdamage",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\extensions\\Xdamage.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.extensions.Xfixes",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\extensions\\Xfixes.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.extensions.Xge",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\extensions\\Xge.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.extensions.XI",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\extensions\\XI.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.extensions.XI2",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\extensions\\XI2.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.extensions.Xinerama",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\extensions\\Xinerama.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.extensions.XInput",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\extensions\\XInput.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.extensions.XInput2",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\extensions\\XInput2.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.extensions.Xrandr",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\extensions\\Xrandr.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.extensions.Xrender",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\extensions\\Xrender.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.keysym",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\keysym.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.keysymdef",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\keysymdef.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.X",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\X.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.Xatom",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\Xatom.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.Xlib",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\Xlib.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.XlibConf",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\XlibConf.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.Xlibint",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\Xlibint.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.Xlib_xcb",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\Xlib_xcb.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.Xmd",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\Xmd.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.Xproto",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\Xproto.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.Xprotostr",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\Xprotostr.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.Xproto_undef",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\Xproto_undef.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.Xregion",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\Xregion.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.Xresource",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\Xresource.d",
+  "members" : [
+   {
+    "name" : "derelict.x11.Xlib",
+    "kind" : "import",
+    "line" : 2,
+    "char" : 8,
+    "protection" : "private"
+   }
+  ]
+ },
+ {
+  "name" : "derelict.x11.Xtos",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\Xtos.d",
+  "members" : []
+ },
+ {
+  "name" : "derelict.x11.Xutil",
+  "kind" : "module",
+  "file" : "..\\..\\..\\x11\\derelict\\x11\\Xutil.d",
+  "members" : []
+ }
+]

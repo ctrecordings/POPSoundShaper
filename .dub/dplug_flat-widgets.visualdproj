@@ -1,5 +1,5 @@
 <DProject>
-  <ProjectGuid>{35C08068-20DF-4D19-9555-21010F41A55B}</ProjectGuid>
+  <ProjectGuid>{C11BD6B2-41DA-496D-B834-E871869B57F5}</ProjectGuid>
   <Config name="debug" platform="Win32">
     <symdebug>1</symdebug>
     <optimize>0</optimize>
@@ -7,7 +7,7 @@
     <release>0</release>
     <lib>1</lib>
     <exefile>lib\dplug_flat-widgets.lib</exefile>
-    <imppath>"..\..\..\flatwidgets" "..\..\..\client" "..\..\..\core" "..\..\..\graphics" "C:\Users\Reker\AppData\Roaming\dub\packages\gfm-6.2.10\gfm\math" "..\..\..\gui" "..\..\..\window" "..\..\..\carbon" "..\..\..\cocoa" "..\..\..\x11"</imppath>
+    <imppath>"..\..\..\flatwidgets" "..\..\..\client" "..\..\..\core" "..\..\..\graphics" "..\..\..\..\..\..\AppData\Roaming\dub\packages\gfm-6.2.10\gfm\math" "..\..\..\gui" "..\..\..\window" "..\..\..\carbon" "..\..\..\cocoa" "..\..\..\x11"</imppath>
     <fileImppath></fileImppath>
     <program>$(DMDInstallDir)windows\bin\dmd.exe</program>
     <additionalOptions></additionalOptions>
@@ -18,7 +18,7 @@
     <subsystem>0</subsystem>
     <multiobj>0</multiobj>
     <singleFileCompilation>2</singleFileCompilation>
-    <oneobj>0</oneobj>
+    <mscoff>0</mscoff>    <oneobj>0</oneobj>
     <trace>0</trace>
     <quiet>0</quiet>
     <verbose>0</verbose>
