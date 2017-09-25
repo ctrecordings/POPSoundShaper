@@ -1,5 +1,0 @@
-<child>
-	<type>UIKnob</type>
-	<name>driveKnob</name>
-	<args>"context(), cast(FloatParamter) _client.param(paramDrive)"</args>
-</child

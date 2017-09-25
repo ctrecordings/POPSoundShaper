@@ -1,5 +1,7 @@
 .dub
 .vs
+dub.selections.json
 *.o
 *.lib
 *.a
+dub
