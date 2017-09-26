@@ -17,7 +17,7 @@ import gui;
 import ddsp.util.functions;
 //import ddsp.effect.comp;
 import ddsp.util.envelope;
-//import ddsp.filter.peak;
+import ddsp.filter.peak;
 import ddsp.effect.compressor;
 
 mixin(DLLEntryPoint!());
@@ -57,7 +57,7 @@ nothrow:
     this()
     {
         _inputDetector = makeVec!EnvelopeDetector;
-        _outputDetector = makeVec!EnvelopeDetecor;
+        _outputDetector = makeVec!EnvelopeDetector;
 
         _bandShelfLow = makeVec!BandShelf;
         _bandShelfHigh = makeVec!BandShelf;

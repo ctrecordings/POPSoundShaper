@@ -4,8 +4,8 @@
     "name": "popss",
 
     "license": "Proprietery",
-    "importPaths": [ "." ],
-    "sourcePaths": [ "." ],
+    "importPaths": [ ".", "../../../dplug-staticUI" ],
+    "sourcePaths": [ ".", "../../../dplug-staticUI" ],
     "stringImportPaths": ["gfx", "fonts", "."],
 
     "copyright": "none",
@@ -24,7 +24,8 @@
         "dplug:gui": { "path": "../.." },
         "dplug:pbr-widgets": { "path": "../.." },
         "dplug:flat-widgets": {"path": "../.."},
-        "ddsp": {"path": "../../../Ddsp"}
+        "ddsp": {"path": "../../../Ddsp"},
+        "ctrgui": {"path": "../../../dplug-staticUI"}
     },
 
     "configurations": [
