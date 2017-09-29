@@ -71,17 +71,24 @@ class PopMeter : UIBufferedElement
         }
     }
     
-    void pushBackValues(float input, float output) nothrow @nogc
+    void pushBackValues(float input, float output, float sampleRate) nothrow @nogc
     {
-        if(++writeIndex >= _size)
+        float samplesPerSec = sampleRate / 1000;
+        ++counter;
+        if(counter >= samplesPerSec / speed)
         {
-            writeIndex = 0;
+            if(++writeIndex >= _size)
+            {
+                writeIndex = 0;
+            }
+            float inConv = clamp(input, 0.0f, 1.0f);
+            float outConv = clamp(output, 0.0f, 1.0f);
+            inBars[writeIndex] = scale.convert(inConv);
+            outBars[writeIndex] = scale.convert(outConv);
+            setDirtyWhole();
+            counter = 0;
         }
-        float inConv = clamp(input, 0.0f, 1.0f);
-        float outConv = clamp(output, 0.0f, 1.0f);
-        inBars[writeIndex] = scale.convert(inConv);
-        outBars[writeIndex] = scale.convert(outConv);
-        setDirtyWhole();
+    
     }
     
 private:
@@ -96,4 +103,8 @@ private:
     uint _windowSize;
 
     LogToLinearScale scale = new LogToLinearScale();
+
+    float _sampleRate;
+    int counter;
+    float speed = 40;
 }

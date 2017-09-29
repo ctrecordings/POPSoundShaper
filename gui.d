@@ -72,7 +72,7 @@ nothrow:
         int knobY2 = 298;
         int paramWidth = 50;
         int paramHeight = 50;
-        int paramOffset = 10;
+        int paramOffset = 12;
 
         OwnedImage!RGBA knobImage = loadOwnedImage(cast(ubyte[])(import("knobOrange.png")));
         OwnedImage!RGBA bipolarKnobImage = loadOwnedImage(cast(ubyte[])(import("bipolar.png")));

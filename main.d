@@ -121,6 +121,7 @@ nothrow:
     override void reset(double sampleRate, int maxFrames, int numInputs, int numOutputs) nothrow @nogc
     {
         // Clear here any state and delay buffers you might have.
+        _sampleRate = sampleRate;
 
         assert(maxFrames <= 512); // guaranteed by audio buffer splitting
 
@@ -242,8 +243,8 @@ nothrow:
         // disappear under your feet
         if (PopGUI gui = cast(PopGUI) graphicsAcquire())
         {
-            gui.meterLeft.pushBackValues(_inputDetector[0].getEnvelope(), _outputDetector[0].getEnvelope());
-            gui.meterRight.pushBackValues(_inputDetector[1].getEnvelope(), _outputDetector[1].getEnvelope());
+            gui.meterLeft.pushBackValues(_inputDetector[0].getEnvelope(), _outputDetector[0].getEnvelope(), _sampleRate);
+            gui.meterRight.pushBackValues(_inputDetector[1].getEnvelope(), _outputDetector[1].getEnvelope(), _sampleRate);
             graphicsRelease();
         }
     }
@@ -263,6 +264,8 @@ private:
 
     Vec!Compressor _popComp;
     Vec!Compressor _sustainer;
+
+    float _sampleRate;
 
 }
 
