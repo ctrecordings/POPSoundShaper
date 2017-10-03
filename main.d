@@ -198,10 +198,12 @@ nothrow:
                         outputSample = clipInv * atan( outputSample * clipAmount);
 
                     /// apply low boost
-                    outputSample = _bandShelfLow[chan].getNextSample(outputSample);
+                    if(thump > 0)
+                        outputSample = _bandShelfLow[chan].getNextSample(outputSample);
 
                     /// apply high boost
-                    outputSample = _bandShelfHigh[chan].getNextSample(outputSample);
+                    if(air > 0)
+                        outputSample = _bandShelfHigh[chan].getNextSample(outputSample);
 
                     /// apply distortion to high band
                     ///highband = (1 + k) * highband / ( 1 + k * abs(highband));
