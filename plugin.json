@@ -5,8 +5,8 @@
     "vendorUniqueID": "CTRe",
     "pluginName": "Pop",
     "pluginUniqueID": "PoPs",
-    "publicVersion": "2.2.0",
-    "CFBundleIdentifierPrefix": "com.ctrecordingsentropy",
+    "publicVersion": "1.2.0",
+    "CFBundleIdentifierPrefix": "com.ctrecordingspopss",
     "hasGUI": true,
     "isSynth": false,
     "receivesMIDI": false

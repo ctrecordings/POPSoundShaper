@@ -16,6 +16,7 @@ import main;
 import popmeter;
 
 import ctrgui.paramlabel;
+import ctrgui.bitmap;
 
 // Plugin GUI, based on PBRBackgroundGUI.
 // If you don't want to use PBR, you not inherit from it.
@@ -132,6 +133,10 @@ nothrow:
         UIParamLabel gainOutLabel = mallocNew!UIParamLabel(context(), cast(FloatParameter) _client.param(paramGainOut), _font,  paramTextColor);
         addChild(gainOutLabel);
 
+        OwnedImage!RGBA overlayImage = loadOwnedImage(cast(ubyte[])(import("overlay.png")));
+        UIBitmap overlay = mallocNew!UIBitmap(context(), overlayImage);
+        addChild(overlay);
+
         /// knob positions
         gainInKnob.position = box2i(knobX1, knobY1, knobX1 + knobWidth, knobY1 + knobHeight);
         amountKnob.position = box2i(knobX2, knobY1, knobX2 + knobWidth, knobY1 + knobHeight);
@@ -153,6 +158,8 @@ nothrow:
         airLabel.position = box2i(knobX2 + paramOffset, knobY2 + paramOffset, knobX2 + paramWidth + paramOffset, knobY2 + paramHeight + paramOffset);
         mixLabel.position = box2i(knobX3 + paramOffset, knobY2 + paramOffset, knobX3 + paramWidth + paramOffset, knobY2 + paramHeight + paramOffset);
         gainOutLabel.position = box2i(knobX4 + paramOffset, knobY2 + paramOffset, knobX4 + paramWidth + paramOffset, knobY2 + paramHeight + paramOffset);
+
+        overlay.position = box2i(0, 0, 526, 399);
     }
 
     ~this()
