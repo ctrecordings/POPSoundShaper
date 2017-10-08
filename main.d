@@ -89,7 +89,7 @@ nothrow:
     {
         auto params = makeVec!Parameter();
         params.pushBack( mallocNew!LinearFloatParameter(paramGainIn, "input gain", "dB", -12.0f, 12.0f, 0.0f));
-        params.pushBack( mallocNew!LinearFloatParameter(paramPop, "amount", "%", 0.0f, 100.0f, 0.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramPop, "amount", "%", 0.0f, 100.0f, 25.0f));
         params.pushBack( mallocNew!LinearFloatParameter(paramThreshold, "threshold", "dB", -96.0f, 0.0f, 0.0f));
         params.pushBack( mallocNew!LinearFloatParameter(paramClip, "clip", "%", 0.0f, 100.0f, 0.0f));
         params.pushBack( mallocNew!LinearFloatParameter(paramThump, "thump", "%", 0.0f, 100.0f, 0.0f));

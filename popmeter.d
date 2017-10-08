@@ -3,14 +3,15 @@ module popmeter;
 import dplug.graphics;
 import dplug.gui;
 import dplug.core.nogc;
+import dplug.client.params;
 
 import ddsp.util.scale;
 
 import std.algorithm;
 
-class PopMeter : UIBufferedElement
+class PopMeter : UIBufferedElement, IParameterListener
 {
-    this(UIContext context, RGBA inColor, RGBA outColor, uint size, uint windowSize) nothrow @nogc
+    this(UIContext context, RGBA inColor, RGBA outColor, uint size, uint windowSize, FloatParameter thresholdParam) nothrow @nogc
     {
         super(context);
         _inColor = inColor;
@@ -25,8 +26,14 @@ class PopMeter : UIBufferedElement
             inBars[index] = 0.005;
             outBars[index] = 0.005;
         }
-
+        _param = thresholdParam;
+        _param.addListener(this);
         scale.initialize(RealRange(0.00001f, 1.0f), RealRange(0.00001f, 1.0f));
+    }
+    
+    ~this()
+    {
+        _param.removeListener(this);
     }
     
     override void onDrawBuffered(ImageRef!RGBA diffuseMap, 
@@ -50,6 +57,8 @@ class PopMeter : UIBufferedElement
                 float inBarHeight = inBars[index];
                 float outBarHeight = outBars[index];
                 
+                int thresholdY = cast(int)(diffuseMap.h * (1 - _param.getNormalized()));
+                thresholdY = clamp(thresholdY, 0, diffuseMap.h - 1);
                 int inY = cast(int)(diffuseMap.h * (1 - inBarHeight));
                 int outY = cast(int)(diffuseMap.h * (1 - outBarHeight));
                 RGBA blended = RGBA(0, 0, 0,255);
@@ -62,6 +71,8 @@ class PopMeter : UIBufferedElement
                 {
                     blended = RGBA.op!q{.blend(a, b, c)} (_outColor, blended, cast(ubyte)(alpha/2));
                 }
+                if(j == thresholdY)
+                    blended = RGBA(120, 120, 120, 255);
                 output[i] = blended;
             }
         }
@@ -90,6 +101,19 @@ class PopMeter : UIBufferedElement
         }
     
     }
+
+    override void onParameterChanged(Parameter sender) nothrow @nogc
+    {
+        setDirtyWhole();
+    }
+
+    override void onBeginParameterEdit(Parameter sender)
+    {
+    }
+
+    override void onEndParameterEdit(Parameter sender)
+    {
+    }
     
 private:
     RGBA _inColor;
@@ -107,4 +131,6 @@ private:
     float _sampleRate;
     int counter;
     float speed = 40;
+
+    FloatParameter _param;
 }

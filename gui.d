@@ -54,11 +54,11 @@ nothrow:
         // Meanwhile, we hardcode each position.
         RGBA colorMeterIn = RGBA(130, 0, 0, 255);
         RGBA colorMeterOut = RGBA(0, 0, 168, 255);
-        meterLeft = mallocNew!PopMeter(context(), colorMeterIn, colorMeterOut, 527, 1000);
+        meterLeft = mallocNew!PopMeter(context(), colorMeterIn, colorMeterOut, 527, 1000, cast(FloatParameter)_client.param(paramThreshold));
         addChild(meterLeft);
         meterLeft.position = box2i(0, 162, 527, 225);
        
-        meterRight = mallocNew!PopMeter(context(), colorMeterIn, colorMeterOut, 527, 1000);
+        meterRight = mallocNew!PopMeter(context(), colorMeterIn, colorMeterOut, 527, 1000, cast(FloatParameter)_client.param(paramThreshold));
         addChild(meterRight);
         meterRight.position = box2i(0, 225, 527, 288);
 
@@ -105,15 +105,19 @@ nothrow:
         /// Param labels
         RGBA paramTextColor = RGBA(200, 200, 200, 255);
         UIParamLabel gainInLabel = mallocNew!UIParamLabel(context(), cast(FloatParameter) _client.param(paramGainIn), _font, paramTextColor);
+        gainInLabel.setZOrder(1);
         addChild(gainInLabel);
 
         UIParamLabel popLabel = mallocNew!UIParamLabel(context(), cast(FloatParameter) _client.param(paramPop), _font,  paramTextColor);
+        popLabel.setZOrder(1);
         addChild(popLabel);
 
         UIParamLabel thresholdLabel = mallocNew!UIParamLabel(context(), cast(FloatParameter) _client.param(paramThreshold), _font,  paramTextColor);
+        thresholdLabel.setZOrder(1);
         addChild(thresholdLabel);
 
         UIParamLabel clipLabel = mallocNew!UIParamLabel(context(), cast(FloatParameter) _client.param(paramClip), _font,  paramTextColor);
+        clipLabel.setZOrder(1);
         addChild(clipLabel);
 
         UIParamLabel thumpLabel = mallocNew!UIParamLabel(context(), cast(FloatParameter) _client.param(paramThump), _font,  paramTextColor);
