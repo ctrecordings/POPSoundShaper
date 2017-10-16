@@ -16,9 +16,11 @@ import gui;
 
 import ddsp.util.functions;
 //import ddsp.effect.comp;
-import ddsp.util.envelope;
+//import ddsp.util.envelope;
 import ddsp.filter.peak;
 import ddsp.effect.compressor;
+
+import betterenvelope;
 
 mixin(DLLEntryPoint!());
 
@@ -151,8 +153,8 @@ nothrow:
 
         int minChan = numInputs > numOutputs ? numOutputs : numInputs;
 
-        float inputGain = dedibelToFloat(readFloatParamValue(paramGainIn));
-        float outputGain = dedibelToFloat(readFloatParamValue(paramGainOut));
+        float inputGain = decibelToFloat(readFloatParamValue(paramGainIn));
+        float outputGain = decibelToFloat(readFloatParamValue(paramGainOut));
         float popAmount = (readFloatParamValue(paramPop) / 10.0f) + 1;
         float mix = readFloatParamValue(paramMix) / 100.0f;
         float threshold = readFloatParamValue(paramThreshold);
@@ -188,7 +190,7 @@ nothrow:
                 {
                     /// Apply input gain
                     float inputSample = inputGain * inputs[chan][f];
-                    _inputDetector[chan].detect(inputSample);
+                    _inputDetector[chan].detect(inputSample * outputGain);
 
                     /// Apply first compressor for pop
                     float outputSample = _popComp[chan].getNextSample(inputSample);
@@ -214,7 +216,7 @@ nothrow:
 
                     /// apply output gain
                     outputSample *= outputGain;
-                    outputs[chan][f] =  outputSample;
+                    outputs[chan][f] =  clamp(outputSample, -1 , 1);
 
                     /// Feed the output RMS computation
                     _outputDetector[chan].detect(outputSample);

@@ -6,6 +6,7 @@ import dplug.core.nogc;
 import dplug.client.params;
 
 import ddsp.util.scale;
+import ddsp.util.functions;
 
 import std.algorithm;
 
@@ -57,11 +58,12 @@ class PopMeter : UIBufferedElement, IParameterListener
                 float inBarHeight = inBars[index];
                 float outBarHeight = outBars[index];
                 
-                int thresholdY = cast(int)(diffuseMap.h * (1 - _param.getNormalized()));
-                thresholdY = clamp(thresholdY, 0, diffuseMap.h - 1);
+                float threshold = interpInput(xVals, yVals, 7, decibelToFloat(_param.value()));
+                int thresholdY = cast(int)(diffuseMap.h * (1 - threshold));
+                //thresholdY = clamp(thresholdY, 0, diffuseMap.h - 1);
                 int inY = cast(int)(diffuseMap.h * (1 - inBarHeight));
                 int outY = cast(int)(diffuseMap.h * (1 - outBarHeight));
-                RGBA blended = RGBA(0, 0, 0,255);
+                RGBA blended = RGBA(25, 25, 25,255);
                 ubyte alpha = 255;
                 if(j >= inY)
                 {
@@ -92,10 +94,10 @@ class PopMeter : UIBufferedElement, IParameterListener
             {
                 writeIndex = 0;
             }
-            float inConv = clamp(input, 0.0f, 1.0f);
-            float outConv = clamp(output, 0.0f, 1.0f);
-            inBars[writeIndex] = scale.convert(inConv);
-            outBars[writeIndex] = scale.convert(outConv);
+            float inConv = interpInput(xVals, yVals, 7, input);
+            float outConv = interpInput(xVals, yVals, 7, output);
+            inBars[writeIndex] = inConv;
+            outBars[writeIndex] = outConv;
             setDirtyWhole();
             counter = 0;
         }
@@ -133,4 +135,20 @@ private:
     float speed = 40;
 
     FloatParameter _param;
+
+    float[] xVals = [1, 0.7079457844, 0.5011872336, 0.2511886432, 0.0630957344, 0.0039810717, 0.0000158489];
+    float[] yVals = [1, 0.833333333, 0.666666666, 0.5, 0.333333333, 0.166666666, 0];
+}
+
+float interpInput(float[] xVals, float[] yVals, int order, float input) nothrow @nogc
+{
+    float interp = 0;
+    for(int i = order - 1; i > 0; --i)
+    {
+        if(xVals[i - 1] >= input && xVals[i] < input)
+        {
+            interp = linearInterp(xVals[i -1], xVals[i], yVals[i - 1], yVals[i], input);
+        }
+    }
+    return interp;
 }

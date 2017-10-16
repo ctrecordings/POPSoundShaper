@@ -55,13 +55,13 @@ nothrow:
         // Meanwhile, we hardcode each position.
         RGBA colorMeterIn = RGBA(130, 0, 0, 255);
         RGBA colorMeterOut = RGBA(0, 0, 168, 255);
-        meterLeft = mallocNew!PopMeter(context(), colorMeterIn, colorMeterOut, 527, 1000, cast(FloatParameter)_client.param(paramThreshold));
+        meterLeft = mallocNew!PopMeter(context(), colorMeterIn, colorMeterOut, 262, 1000, cast(FloatParameter)_client.param(paramThreshold));
         addChild(meterLeft);
-        meterLeft.position = box2i(0, 162, 527, 225);
+        meterLeft.position = box2i(0, 162, 263, 288);
        
-        meterRight = mallocNew!PopMeter(context(), colorMeterIn, colorMeterOut, 527, 1000, cast(FloatParameter)_client.param(paramThreshold));
+        meterRight = mallocNew!PopMeter(context(), colorMeterIn, colorMeterOut, 262, 1000, cast(FloatParameter)_client.param(paramThreshold));
         addChild(meterRight);
-        meterRight.position = box2i(0, 225, 527, 288);
+        meterRight.position = box2i(264, 162, 527, 288);
 
         int knobWidth = 72;
         int knobHeight = 72;
