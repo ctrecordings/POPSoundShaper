@@ -73,8 +73,8 @@ class PopMeter : UIBufferedElement, IParameterListener
                 {
                     blended = RGBA.op!q{.blend(a, b, c)} (_outColor, blended, cast(ubyte)(alpha/2));
                 }
-                if(j == thresholdY)
-                    blended = RGBA(120, 120, 120, 255);
+                //if(j == thresholdY)
+                //    blended = RGBA(120, 120, 120, 255);
                 output[i] = blended;
             }
         }
