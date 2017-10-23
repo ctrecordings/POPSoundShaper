@@ -5,7 +5,7 @@
     "vendorUniqueID": "CTRe",
     "pluginName": "Pop",
     "pluginUniqueID": "PoPs",
-    "publicVersion": "1.4.0",
+    "publicVersion": "1.4.1",
     "CFBundleIdentifierPrefix": "com.ctrecordingspopss",
     "hasGUI": true,
     "isSynth": false,

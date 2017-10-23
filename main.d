@@ -174,7 +174,7 @@ nothrow:
             _outputDetector[channel].setEnvelope(5.5f,20.0f);
             _bandShelfLow[channel].setGain(thump);
             _bandShelfHigh[channel].setGain(air);
-            _popComp[channel].setParams(80.0f, 30.0f, threshold, popAmount, 1.0f);
+            _popComp[channel].setParams(100.0f, 10.0f, threshold, popAmount, 1.0f);
             
         }
 
