@@ -46,6 +46,10 @@ class PopMeter : UIBufferedElement, IParameterListener
     {
         assert(_size <= diffuseMap.w);
         
+        float threshold = interpInput(xVals, yVals, 7, decibelToFloat(_param.value()));
+        int thresholdY = cast(int)(diffuseMap.h * (1 - threshold));
+        thresholdY = clamp(thresholdY, 0, diffuseMap.h - 1);
+
         for(int j = 0; j < diffuseMap.h; ++j)
         {
             auto output = diffuseMap.scanline(j);
@@ -58,9 +62,6 @@ class PopMeter : UIBufferedElement, IParameterListener
                 float inBarHeight = inBars[index];
                 float outBarHeight = outBars[index];
                 
-                float threshold = interpInput(xVals, yVals, 7, decibelToFloat(_param.value()));
-                int thresholdY = cast(int)(diffuseMap.h * (1 - threshold));
-                //thresholdY = clamp(thresholdY, 0, diffuseMap.h - 1);
                 int inY = cast(int)(diffuseMap.h * (1 - inBarHeight));
                 int outY = cast(int)(diffuseMap.h * (1 - outBarHeight));
                 RGBA blended = RGBA(25, 25, 25,255);
@@ -73,8 +74,8 @@ class PopMeter : UIBufferedElement, IParameterListener
                 {
                     blended = RGBA.op!q{.blend(a, b, c)} (_outColor, blended, cast(ubyte)(alpha/2));
                 }
-                //if(j == thresholdY)
-                //    blended = RGBA(120, 120, 120, 255);
+                if(j == thresholdY)
+                    blended = RGBA(120, 120, 120, 255);
                 output[i] = blended;
             }
         }
@@ -86,7 +87,7 @@ class PopMeter : UIBufferedElement, IParameterListener
     
     void pushBackValues(float input, float output, float sampleRate) nothrow @nogc
     {
-        float samplesPerSec = sampleRate / 1000;
+        float samplesPerSec = sampleRate / 2000;
         ++counter;
         if(counter >= samplesPerSec / speed)
         {
@@ -98,9 +99,14 @@ class PopMeter : UIBufferedElement, IParameterListener
             float outConv = interpInput(xVals, yVals, 7, output);
             inBars[writeIndex] = inConv;
             outBars[writeIndex] = outConv;
+            //inBars[writeIndex] = input;
+            //outBars[writeIndex] = output;
             setDirtyWhole();
             counter = 0;
         }
+        //inBars[writeIndex] = input;
+        //outBars[writeIndex] = output;
+        //setDirtyWhole();
     
     }
 
