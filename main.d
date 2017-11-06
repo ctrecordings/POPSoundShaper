@@ -65,7 +65,6 @@ nothrow:
         _bandShelfHigh = makeVec!BandShelf;
 
         _popComp = makeVec!Compressor;
-        _sustainer = makeVec!Compressor;
 
         foreach(channel; 0..2)
         {
@@ -76,7 +75,6 @@ nothrow:
             _bandShelfHigh.pushBack(mallocNew!BandShelf);
 
             _popComp.pushBack(mallocNew!Compressor());
-            _sustainer.pushBack(mallocNew!Compressor());
         }
     }
 
@@ -139,7 +137,6 @@ nothrow:
             _bandShelfHigh[channel].setFrequency(8000.0f);
 
             _popComp[channel].setSampleRate(sampleRate);
-            _sustainer[channel].setSampleRate(sampleRate);
         }
     }
 
@@ -267,7 +264,6 @@ private:
     Vec!BandShelf _bandShelfHigh;
 
     Vec!Compressor _popComp;
-    Vec!Compressor _sustainer;
 
     float _sampleRate;
 
