@@ -7,7 +7,6 @@ module gui;
 
 import std.math;
 
-import gfm.math;
 import dplug.gui;
 import dplug.flatwidgets;
 import dplug.client;
@@ -37,12 +36,12 @@ nothrow:
     {
         _client = client;
         super(527, 400); // size
-
+        
 
         // Sets the number of pixels recomputed around dirtied controls.
         // This is a tradeoff between Emissive light accuracy and speed.
         // A typical value is between 15 and 30 pixels.
-        setUpdateMargin(30);
+        setUpdateMargin(0);
 
         // All resources are bundled as a string import.
         // You can avoid resource compilers that way.
@@ -75,11 +74,13 @@ nothrow:
         int paramHeight = 50;
         int paramOffset = 12;
 
+
+        //OwnedImage!RGBA biKnobImage = loadOwnedImage(cast(ubyte[])(import("knobBi.png")));
         OwnedImage!RGBA knobImage = loadOwnedImage(cast(ubyte[])(import("knobOrange.png")));
-        OwnedImage!RGBA bipolarKnobImage = loadOwnedImage(cast(ubyte[])(import("bipolar.png")));
+        
         
         ///Knob creation
-        UIFilmstripKnob gainInKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramGainIn), bipolarKnobImage, 128);
+        UIFilmstripKnob gainInKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramGainIn), knobImage, 128);
         addChild(gainInKnob);
 
         UIFilmstripKnob amountKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramPop), knobImage, 128);
@@ -100,25 +101,25 @@ nothrow:
         UIFilmstripKnob mixKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramMix), knobImage, 128);
         addChild(mixKnob);
         
-        UIFilmstripKnob gainOutKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramGainOut), bipolarKnobImage, 128);
+        UIFilmstripKnob gainOutKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramGainOut), knobImage, 128);
         addChild(gainOutKnob);
 
         /// Param labels
         RGBA paramTextColor = RGBA(200, 200, 200, 255);
         UIParamLabel gainInLabel = mallocNew!UIParamLabel(context(), cast(FloatParameter) _client.param(paramGainIn), _font, paramTextColor);
-        gainInLabel.setZOrder(1);
+        //gainInLabel.setZOrder(1);
         addChild(gainInLabel);
 
         UIParamLabel popLabel = mallocNew!UIParamLabel(context(), cast(FloatParameter) _client.param(paramPop), _font,  paramTextColor);
-        popLabel.setZOrder(1);
+        //popLabel.setZOrder(1);
         addChild(popLabel);
 
         UIParamLabel thresholdLabel = mallocNew!UIParamLabel(context(), cast(FloatParameter) _client.param(paramThreshold), _font,  paramTextColor);
-        thresholdLabel.setZOrder(1);
+        //thresholdLabel.setZOrder(1);
         addChild(thresholdLabel);
 
         UIParamLabel clipLabel = mallocNew!UIParamLabel(context(), cast(FloatParameter) _client.param(paramClip), _font,  paramTextColor);
-        clipLabel.setZOrder(1);
+        //clipLabel.setZOrder(1);
         addChild(clipLabel);
 
         UIParamLabel thumpLabel = mallocNew!UIParamLabel(context(), cast(FloatParameter) _client.param(paramThump), _font,  paramTextColor);
@@ -133,9 +134,9 @@ nothrow:
         UIParamLabel gainOutLabel = mallocNew!UIParamLabel(context(), cast(FloatParameter) _client.param(paramGainOut), _font,  paramTextColor);
         addChild(gainOutLabel);
 
-        OwnedImage!RGBA overlayImage = loadOwnedImage(cast(ubyte[])(import("overlay.png")));
-        UIBitmap overlay = mallocNew!UIBitmap(context(), overlayImage);
-        addChild(overlay);
+        //OwnedImage!RGBA overlayImage = loadOwnedImage(cast(ubyte[])(import("overlay.png")));
+        //UIBitmap overlay = mallocNew!UIBitmap(context(), overlayImage);
+        //addChild(overlay);
 
         /// knob positions
         gainInKnob.position = box2i(knobX1, knobY1, knobX1 + knobWidth, knobY1 + knobHeight);
@@ -158,8 +159,8 @@ nothrow:
         airLabel.position = box2i(knobX2 + paramOffset, knobY2 + paramOffset, knobX2 + paramWidth + paramOffset, knobY2 + paramHeight + paramOffset);
         mixLabel.position = box2i(knobX3 + paramOffset, knobY2 + paramOffset, knobX3 + paramWidth + paramOffset, knobY2 + paramHeight + paramOffset);
         gainOutLabel.position = box2i(knobX4 + paramOffset, knobY2 + paramOffset, knobX4 + paramWidth + paramOffset, knobY2 + paramHeight + paramOffset);
-
-        overlay.position = box2i(0, 0, 526, 399);
+        
+        //overlay.position = box2i(0, 0, 526, 399);
     }
 
     ~this()
