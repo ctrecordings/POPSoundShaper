@@ -75,12 +75,12 @@ nothrow:
         int paramOffset = 12;
 
 
-        //OwnedImage!RGBA biKnobImage = loadOwnedImage(cast(ubyte[])(import("knobBi.png")));
+        OwnedImage!RGBA biKnobImage = loadOwnedImage(cast(ubyte[])(import("knobBi.png")));
         OwnedImage!RGBA knobImage = loadOwnedImage(cast(ubyte[])(import("knobOrange.png")));
         
         
         ///Knob creation
-        UIFilmstripKnob gainInKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramGainIn), knobImage, 128);
+        UIFilmstripKnob gainInKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramGainIn), biKnobImage, 128);
         addChild(gainInKnob);
 
         UIFilmstripKnob amountKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramPop), knobImage, 128);
@@ -101,7 +101,7 @@ nothrow:
         UIFilmstripKnob mixKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramMix), knobImage, 128);
         addChild(mixKnob);
         
-        UIFilmstripKnob gainOutKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramGainOut), knobImage, 128);
+        UIFilmstripKnob gainOutKnob = mallocNew!UIFilmstripKnob(context(), cast(FloatParameter) _client.param(paramGainOut), biKnobImage, 128);
         addChild(gainOutKnob);
 
         /// Param labels
