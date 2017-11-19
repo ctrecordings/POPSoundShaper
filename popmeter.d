@@ -64,7 +64,7 @@ class PopMeter : UIBufferedElement, IParameterListener
                 
                 int inY = cast(int)(diffuseMap.h * (1 - inBarHeight));
                 int outY = cast(int)(diffuseMap.h * (1 - outBarHeight));
-                RGBA blended = RGBA(25, 25, 25,255);
+                RGBA blended = RGBA(50, 50, 50,255);
                 ubyte alpha = 255;
                 if(j >= inY)
                 {
@@ -97,8 +97,8 @@ class PopMeter : UIBufferedElement, IParameterListener
             }
             float inConv = interpInput(xVals, yVals, 7, input);
             float outConv = interpInput(xVals, yVals, 7, output);
-            inBars[writeIndex] = inConv;
-            outBars[writeIndex] = outConv;
+            inBars[writeIndex] = clamp(inConv, 0, 1);
+            outBars[writeIndex] = clamp(outConv, 0, 1);
             //inBars[writeIndex] = input;
             //outBars[writeIndex] = output;
             setDirtyWhole();

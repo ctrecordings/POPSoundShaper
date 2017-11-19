@@ -90,7 +90,7 @@ nothrow:
         auto params = makeVec!Parameter();
         params.pushBack( mallocNew!LinearFloatParameter(paramGainIn, "input gain", "dB", -12.0f, 12.0f, 0.0f));
         params.pushBack( mallocNew!LinearFloatParameter(paramPop, "amount", "%", 0.0f, 100.0f, 25.0f));
-        params.pushBack( mallocNew!LinearFloatParameter(paramThreshold, "threshold", "dB", -96.0f, 0.0f, 0.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramThreshold, "threshold", "dB", -60.0f, 0.0f, 0.0f));
         params.pushBack( mallocNew!LinearFloatParameter(paramClip, "clip", "%", 0.0f, 100.0f, 0.0f));
         params.pushBack( mallocNew!LinearFloatParameter(paramThump, "thump", "%", 0.0f, 100.0f, 0.0f));
         params.pushBack( mallocNew!LinearFloatParameter(paramAir, "air", "%", 0.0f, 100.0f, 0.0f));
@@ -167,11 +167,11 @@ nothrow:
 
         foreach(channel; 0..2)
         {
-            _inputDetector[channel].setEnvelope(5.0f, 20.0f);
-            _outputDetector[channel].setEnvelope(5.5f,20.0f);
+            _inputDetector[channel].setEnvelope(0.0f, 20.0f);
+            _outputDetector[channel].setEnvelope(0.0f,20.0f);
             _bandShelfLow[channel].setGain(thump);
             _bandShelfHigh[channel].setGain(air);
-            _popComp[channel].setParams(100.0f, 10.0f, threshold, popAmount, 1.0f);
+            _popComp[channel].setParams(10.0f, 100.0f, threshold, popAmount, 0.2f);
             
         }
 
