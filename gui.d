@@ -53,7 +53,7 @@ nothrow:
         // to move into a reflow() override.
         // Meanwhile, we hardcode each position.
         RGBA colorMeterIn = RGBA(130, 0, 0, 255);
-        RGBA colorMeterOut = RGBA(0, 0, 168, 255);
+        RGBA colorMeterOut = RGBA(0, 43, 186, 255);
         meterLeft = mallocNew!PopMeter(context(), colorMeterIn, colorMeterOut, 262, 1000, cast(FloatParameter)_client.param(paramThreshold));
         addChild(meterLeft);
         meterLeft.position = box2i(0, 162, 263, 288);
@@ -134,9 +134,9 @@ nothrow:
         UIParamLabel gainOutLabel = mallocNew!UIParamLabel(context(), cast(FloatParameter) _client.param(paramGainOut), _font,  paramTextColor);
         addChild(gainOutLabel);
 
-        //OwnedImage!RGBA overlayImage = loadOwnedImage(cast(ubyte[])(import("overlay.png")));
-        //UIBitmap overlay = mallocNew!UIBitmap(context(), overlayImage);
-        //addChild(overlay);
+        OwnedImage!RGBA overlayImage = loadOwnedImage(cast(ubyte[])(import("overlay.png")));
+        UIBitmap overlay = mallocNew!UIBitmap(context(), overlayImage);
+        addChild(overlay);
 
         /// knob positions
         gainInKnob.position = box2i(knobX1, knobY1, knobX1 + knobWidth, knobY1 + knobHeight);
@@ -160,7 +160,7 @@ nothrow:
         mixLabel.position = box2i(knobX3 + paramOffset, knobY2 + paramOffset, knobX3 + paramWidth + paramOffset, knobY2 + paramHeight + paramOffset);
         gainOutLabel.position = box2i(knobX4 + paramOffset, knobY2 + paramOffset, knobX4 + paramWidth + paramOffset, knobY2 + paramHeight + paramOffset);
         
-        //overlay.position = box2i(0, 0, 526, 399);
+        overlay.position = box2i(0, 0, 526, 399);
     }
 
     ~this()

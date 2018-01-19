@@ -4,8 +4,8 @@
     "name": "popss",
 
     "license": "Proprietery",
-    "importPaths": [ ".", "../../../ctrgui" ],
-    "sourcePaths": [ ".", "../../../ctrgui" ],
+    "importPaths": [ "."],
+    "sourcePaths": [ "."],
     "stringImportPaths": ["gfx", "fonts", "."],
 
     "copyright": "none",
@@ -18,14 +18,14 @@
 
     "dependencies":
     {
-        "dplug:dsp": { "path": "../.." },
-        "dplug:vst": { "path": "../.." },
-        "dplug:au": { "path": "../.." },
-        "dplug:gui": { "path": "../.." },
-        "dplug:pbr-widgets": { "path": "../.." },
-        "dplug:flat-widgets": {"path": "../.."},
-        "ddsp": {"path": "../../../Ddsp"},
-        "ctrgui": {"path": "../../../ctrgui"}
+        "dplug:dsp": { "path": "../dplug-master" },
+        "dplug:vst": { "path": "../dplug-master" },
+        "dplug:au": { "path": "../dplug-master" },
+        "dplug:gui": { "path": "../dplug-master" },
+        "dplug:pbr-widgets": { "path": "../dplug-master" },
+        "dplug:flat-widgets": {"path": "../dplug-master"},
+        "ddsp": {"path": "../Ddsp"},
+        "ctrgui": {"path": "../ctrgui"}
     },
 
     "configurations": [

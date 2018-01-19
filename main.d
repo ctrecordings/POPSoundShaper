@@ -45,7 +45,9 @@ enum : int
     paramThump,
     paramAir,
     paramMix,
-    paramGainOut
+    paramGainOut,
+    paramAttack,
+    paramRelease
 }
 
 
@@ -88,14 +90,16 @@ nothrow:
     override Parameter[] buildParameters()
     {
         auto params = makeVec!Parameter();
-        params.pushBack( mallocNew!LinearFloatParameter(paramGainIn, "input gain", "dB", -12.0f, 12.0f, 0.0f));
-        params.pushBack( mallocNew!LinearFloatParameter(paramPop, "amount", "%", 0.0f, 100.0f, 25.0f));
-        params.pushBack( mallocNew!LinearFloatParameter(paramThreshold, "threshold", "dB", -60.0f, 0.0f, 0.0f));
-        params.pushBack( mallocNew!LinearFloatParameter(paramClip, "clip", "%", 0.0f, 100.0f, 0.0f));
-        params.pushBack( mallocNew!LinearFloatParameter(paramThump, "thump", "%", 0.0f, 100.0f, 0.0f));
-        params.pushBack( mallocNew!LinearFloatParameter(paramAir, "air", "%", 0.0f, 100.0f, 0.0f));
-        params.pushBack( mallocNew!LinearFloatParameter(paramMix, "mix", "%", 0.0f, 100.0f, 100.0f));
-        params.pushBack( mallocNew!LinearFloatParameter(paramGainOut, "output gain", "dB", -12.0f, 12.0f, 0.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramGainIn, "Gain In", "dB", -12.0f, 12.0f, 0.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramPop, "Amount", "%", 0.0f, 100.0f, 25.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramThreshold, "Threshold", "dB", -60.0f, 0.0f, 0.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramClip, "Clip", "%", 0.0f, 100.0f, 0.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramThump, "Thump", "%", 0.0f, 100.0f, 0.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramAir, "Air", "%", 0.0f, 100.0f, 0.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramMix, "Mix", "%", 0.0f, 100.0f, 100.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramGainOut, "Output gain", "dB", -12.0f, 12.0f, 0.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramAttack, "Attack", "ms", 1.0f, 200f, 20.0f));
+        params.pushBack( mallocNew!LinearFloatParameter(paramRelease, "Release", "ms", 1.0f, 1000f, 15f));
         return params.releaseData();
     }
 
@@ -165,13 +169,16 @@ nothrow:
         //Convert to range of 0-12db
         float thump = readFloatParamValue(paramThump) / 8.333f;
 
+        float attack = readFloatParamValue(paramAttack);
+        float release = readFloatParamValue(paramRelease);
+
         foreach(channel; 0..2)
         {
             _inputDetector[channel].setEnvelope(0.0f, 20.0f);
             _outputDetector[channel].setEnvelope(0.0f,20.0f);
             _bandShelfLow[channel].setGain(thump);
             _bandShelfHigh[channel].setGain(air);
-            _popComp[channel].setParams(10.0f, 100.0f, threshold, popAmount, 0.2f);
+            _popComp[channel].setParams(attack, release, threshold, popAmount, 0.2f);
             
         }
 
