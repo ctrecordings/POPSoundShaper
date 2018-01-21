@@ -5,13 +5,13 @@
         <key>CFBundleDevelopmentRegion</key>
         <string>English</string>
         <key>CFBundleGetInfoString</key>
-        <string>1.5.5, Copyright Cut Through Recordings, 2017</string>
+        <string>1.6.6, Copyright Cut Through Recordings, 2018</string>
         <key>CFBundleIdentifier</key>
         <string>com.ctrecordingspopss.vst.Pop</string>
         <key>CFBundleVersion</key>
-        <string>1.5.5</string>
+        <string>1.6.6</string>
         <key>CFBundleShortVersionString</key>
-        <string>1.5.5</string>
+        <string>1.6.6</string>
         <key>CFBundleInfoDictionaryVersion</key>
         <string>6.0</string>
         <key>CFBundlePackageType</key>
