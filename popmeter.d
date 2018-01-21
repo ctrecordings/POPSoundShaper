@@ -64,7 +64,7 @@ class PopMeter : UIBufferedElement, IParameterListener
                 
                 int inY = cast(int)(diffuseMap.h * (1 - inBarHeight));
                 int outY = cast(int)(diffuseMap.h * (1 - outBarHeight));
-                RGBA blended = RGBA(20, 20, 20,255);
+                RGBA blended = RGBA(0, 0, 0,255);
                 ubyte alpha = 255;
                 if(j >= inY)
                 {
@@ -72,7 +72,14 @@ class PopMeter : UIBufferedElement, IParameterListener
                 }
                 if(j >= outY)
                 {
-                    blended = RGBA.op!q{.blend(a, b, c)} (_outColor, blended, cast(ubyte)(alpha/2));
+                    if(j < inY)
+                    {
+                        blended = RGBA(0, 0,255,255);
+                    }
+                    else
+                    {
+                        blended = RGBA.op!q{.blend(a, b, c)} (_outColor, blended, cast(ubyte)(alpha/2));
+                    }
                 }
                 if(j == thresholdY)
                     blended = RGBA(120, 120, 120, 255);

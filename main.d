@@ -159,7 +159,7 @@ nothrow:
         float popAmount = (readFloatParamValue(paramPop) / 10.0f) + 1;
         float mix = readFloatParamValue(paramMix) / 100.0f;
         float threshold = readFloatParamValue(paramThreshold);
-        float clipAmount = readFloatParamValue(paramClip) / 3;
+        float clipAmount = readFloatParamValue(paramClip) / 6;
         float clipInv = 1 / clipAmount;
 
         //float air = clamp(readFloatParamValue(paramAir) / 100.0f, 0, 0.99);
