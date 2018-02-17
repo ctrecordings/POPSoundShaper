@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>CFBundleDevelopmentRegion</key>
+        <string>English</string>
+        <key>CFBundleGetInfoString</key>
+        <string>1.6.6, Copyright Cut Through Recordings, 2018</string>
+        <key>CFBundleIdentifier</key>
+        <string>com.ctrecordingspopss.audiounit.Pop</string>
+        <key>CFBundleVersion</key>
+        <string>1.6.6</string>
+        <key>CFBundleShortVersionString</key>
+        <string>1.6.6</string>
+        <key>CFBundleExecutable</key>
+        <string>Cut Through Recordings Pop</string>
+        <key>CFBundleInfoDictionaryVersion</key>
+        <string>6.0</string>
+        <key>CFBundlePackageType</key>
+        <string>BNDL</string>
+        <key>CFBundleSignature</key>
+        <string>PoPs</string>
+        <key>LSMinimumSystemVersion</key>
+        <string>10.7.0</string>
+    </dict>
+</plist>
