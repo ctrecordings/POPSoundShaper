@@ -24,7 +24,7 @@
         "dplug:gui": { "path": "../dplug-master" },
         "dplug:pbr-widgets": { "path": "../dplug-master" },
         "dplug:flat-widgets": {"path": "../dplug-master"},
-        "ddsp": {"path": "../ddsp"},
+        "ddsp": "~>1.3.0",
         "ctrgui": {"path": "../ctrgui"}
     },
 
