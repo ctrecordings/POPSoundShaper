@@ -18,13 +18,13 @@
 
     "dependencies":
     {
-        "dplug:dsp": { "path": "../dplug-master" },
-        "dplug:vst": { "path": "../dplug-master" },
-        "dplug:au": { "path": "../dplug-master" },
-        "dplug:gui": { "path": "../dplug-master" },
-        "dplug:pbr-widgets": { "path": "../dplug-master" },
-        "dplug:flat-widgets": {"path": "../dplug-master"},
-        "ddsp": "~>1.3.0",
+        "dplug:dsp": "~>7.0.12",
+        "dplug:vst": "~>7.0.12",
+        "dplug:au": "~>7.0.12",
+        "dplug:gui": "~>7.0.12",
+        "dplug:pbr-widgets": "~>7.0.12",
+        "dplug:flat-widgets": "~>7.0.12",
+        "ddsp": "~>1.7.0",
         "ctrgui": {"path": "../ctrgui"}
     },
 
