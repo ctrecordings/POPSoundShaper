@@ -10,11 +10,11 @@ import ddsp.util.functions;
 
 import std.algorithm;
 
-class PopMeter : UIBufferedElement, IParameterListener
+class PopMeter : UIBufferedElementRaw, IParameterListener
 {
     this(UIContext context, RGBA inColor, RGBA outColor, uint size, uint windowSize, FloatParameter thresholdParam) nothrow @nogc
     {
-        super(context);
+        super(context, flagRaw);
         _inColor = inColor;
         _outColor = outColor;
         _size = size;
@@ -37,23 +37,18 @@ class PopMeter : UIBufferedElement, IParameterListener
         _param.removeListener(this);
     }
     
-    override void onDrawBuffered(ImageRef!RGBA diffuseMap, 
-                                 ImageRef!L16 depthMap, 
-                                 ImageRef!RGBA materialMap, 
-                                 ImageRef!L8 diffuseOpacity,
-                                 ImageRef!L8 depthOpacity,
-                                 ImageRef!L8 materialOpacity) nothrow @nogc
+    override void onDrawBufferedRaw(ImageRef!RGBA rawMap, ImageRef!L8 opacity) nothrow @nogc
     {
-        assert(_size <= diffuseMap.w);
+        assert(_size <= rawMap.w);
         
         float threshold = interpInput(xVals, yVals, 7, decibelToFloat(_param.value()));
-        int thresholdY = cast(int)(diffuseMap.h * (1 - threshold));
-        thresholdY = clamp(thresholdY, 0, diffuseMap.h - 1);
+        int thresholdY = cast(int)(rawMap.h * (1 - threshold));
+        thresholdY = clamp(thresholdY, 0, rawMap.h - 1);
 
-        for(int j = 0; j < diffuseMap.h; ++j)
+        for(int j = 0; j < rawMap.h; ++j)
         {
-            auto output = diffuseMap.scanline(j);
-            for(int i = 0; i < diffuseMap.w; ++i)
+            auto output = rawMap.scanline(j);
+            for(int i = 0; i < rawMap.w; ++i)
             {
                 //Starts from the most recently added value and then moves along the buffers based on i
                 //This way the the meter should seem to move. Each time the index increments, all of the data
@@ -62,8 +57,8 @@ class PopMeter : UIBufferedElement, IParameterListener
                 float inBarHeight = inBars[index];
                 float outBarHeight = outBars[index];
                 
-                int inY = cast(int)(diffuseMap.h * (1 - inBarHeight));
-                int outY = cast(int)(diffuseMap.h * (1 - outBarHeight));
+                int inY = cast(int)(rawMap.h * (1 - inBarHeight));
+                int outY = cast(int)(rawMap.h * (1 - outBarHeight));
                 RGBA blended = RGBA(0, 0, 0,255);
                 ubyte alpha = 255;
                 if(j >= inY)
@@ -85,10 +80,6 @@ class PopMeter : UIBufferedElement, IParameterListener
                     blended = RGBA(120, 120, 120, 255);
                 output[i] = blended;
             }
-        }
-        
-        {
-            diffuseOpacity.fillAll(L8(255));
         }
     }
     

@@ -18,14 +18,9 @@
 
     "dependencies":
     {
-        "dplug:dsp": "~>7.0.12",
-        "dplug:vst": "~>7.0.12",
-        "dplug:au": "~>7.0.12",
-        "dplug:gui": "~>7.0.12",
-        "dplug:pbr-widgets": "~>7.0.12",
-        "dplug:flat-widgets": "~>7.0.12",
+        "dplug": {"path": "../dplug-abaga129"},
         "ddsp": "~>1.7.0",
-        "ctrgui": {"path": "../ctrgui"}
+        "ctrgui": "~master"
     },
 
     "configurations": [

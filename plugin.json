@@ -5,7 +5,7 @@
     "vendorUniqueID": "CTRe",
     "pluginName": "POP Sound Shaper",
     "pluginUniqueID": "PoPs",
-    "publicVersion": "1.6.0",
+    "publicVersion": "1.6.1",
     "CFBundleIdentifierPrefix": "com.ctrecordingspopss",
     "hasGUI": true,
     "isSynth": false,
