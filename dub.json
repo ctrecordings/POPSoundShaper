@@ -18,8 +18,8 @@
 
     "dependencies":
     {
-        "dplug": {"path": "../dplug-abaga129"},
-        "ddsp": "~>1.7.0",
+        "dplug": "~>8.2.4",
+        "ddsp": "~>1.8.0",
         "ctrgui": "~master"
     },
 
