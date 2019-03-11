@@ -36,6 +36,18 @@ version(AU)
     mixin(AUEntryPoint!PopClient);
 }
 
+version(VST3)
+{
+    import dplug.vst3;
+    mixin(VST3EntryPoint!PopClient);
+}
+
+version(LV2)
+{
+    import dplug.lv2;
+    mixin(LV2EntryPoint!PopClient);
+}
+
 enum : int
 {
     paramGainIn,
