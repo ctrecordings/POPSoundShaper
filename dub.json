@@ -20,7 +20,7 @@
     {
         "dplug": "~>8.2.4",
         "ddsp": "~>1.8.0",
-        "ctrgui": "~master"
+        "ctrgui": {"path": "../ctrgui"}
     },
 
     "configurations": [
