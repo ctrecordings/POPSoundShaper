@@ -18,10 +18,12 @@
 
     "dependencies":
     {
-        "dplug": "~>8.2.4",
-        "ddsp": "~>1.8.0",
+        "dplug": "8.2.10",
+        "ddsp": "1.8.0",
         "ctrgui": {"path": "../ctrgui"}
     },
+
+    "dflags-osx-ldc": ["-static"],
 
     "configurations": [
         {
