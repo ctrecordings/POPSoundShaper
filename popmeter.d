@@ -40,6 +40,10 @@ class PopMeter : UIBufferedElementRaw, IParameterListener
     override void onDrawBufferedRaw(ImageRef!RGBA rawMap, ImageRef!L8 opacity) nothrow @nogc
     {
         assert(_size <= rawMap.w);
+
+        {
+            opacity.fillAll(L8(255));
+        }
         
         float threshold = interpInput(xVals, yVals, 7, decibelToFloat(_param.value()));
         int thresholdY = cast(int)(rawMap.h * (1 - threshold));
