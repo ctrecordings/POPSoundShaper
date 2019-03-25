@@ -18,16 +18,19 @@
 
     "dependencies":
     {
-        "dplug": "~>8.2.4",
-        "ddsp": "~>1.8.0",
+        "dplug": "8.3.2",
+        "ddsp": "1.8.0",
         "ctrgui": {"path": "../ctrgui"}
     },
+
+    "dflags-osx-ldc": ["-static"],
 
     "configurations": [
         {
             "name": "VST",
             "versions": ["VST"],
-            "targetType": "dynamicLibrary"
+            "targetType": "dynamicLibrary",
+            "lflags-osx-ldc": [ "-exported_symbols_list", "module-vst.lst", "-dead_strip" ]
         },
         {
             "name": "VST3",
@@ -38,7 +41,8 @@
         {
             "name": "AU",
             "versions": ["AU"],
-            "targetType": "dynamicLibrary"
+            "targetType": "dynamicLibrary",
+            "lflags-osx-ldc": [ "-exported_symbols_list", "module-au.lst", "-dead_strip" ]
         },
         {
             "name": "LV2",
