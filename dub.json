@@ -18,7 +18,7 @@
 
     "dependencies":
     {
-        "dplug": "8.3.2",
+        "dplug": "8.3.4",
         "ddsp": "1.8.0",
         "ctrgui": {"path": "../ctrgui"}
     },
