@@ -24,29 +24,7 @@ import betterenvelope;
 
 mixin(DLLEntryPoint!());
 
-version(VST)
-{
-    import dplug.vst;
-    mixin(VSTEntryPoint!PopClient);
-}
-
-version(AU)
-{
-    import dplug.au;
-    mixin(AUEntryPoint!PopClient);
-}
-
-version(VST3)
-{
-    import dplug.vst3;
-    mixin(VST3EntryPoint!PopClient);
-}
-
-version(LV2)
-{
-    import dplug.lv2;
-    mixin(LV2EntryPoint!PopClient);
-}
+mixin(pluginEntryPoints!PopClient);
 
 enum : int
 {

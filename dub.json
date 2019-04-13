@@ -10,6 +10,8 @@
 
     "copyright": "none",
 
+    "dflags-linux-dmd": ["-defaultlib=libphobos2.a"],
+
     "lflags-windows-ldc": [
         "libcmt.lib",
         "/nodefaultlib:msvcrt.lib",
@@ -18,7 +20,7 @@
 
     "dependencies":
     {
-        "dplug": "~>8.2.4",
+        "dplug": "8.3.6",
         "ddsp": "~>1.8.0",
         "ctrgui": {"path": "../ctrgui"}
     },
