@@ -1,8 +1,16 @@
 /**
+* Copyright: Cut Through Recordings 2019
+* License:   GPL v3
+* Authors:   Ethan Reker
+*/
+
+/++ Some code was borrowed from dplug param hints.  Hence the following license header +/
+/**
 * Copyright: Copyright Auburn Sounds 2015 and later.
 * License:   BSL-1.0.
 * Authors:   Guillaume Piolat
 */
+
 module paramlabel;
 
 import core.stdc.string;

@@ -3,6 +3,7 @@
 * License:   GPL v3
 * Authors:   Ethan Reker
 */
+
 module gui;
 
 import std.math;
