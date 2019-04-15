@@ -5,7 +5,7 @@
 
     "license": "Proprietery",
     "importPaths": [ "."],
-    "sourcePaths": [ "."],
+    "sourcePaths": [ "src"],
     "stringImportPaths": ["gfx", "fonts", "."],
 
     "copyright": "none",
@@ -21,8 +21,7 @@
     "dependencies":
     {
         "dplug": "8.3.6",
-        "ddsp": "~>1.8.0",
-        "ctrgui": {"path": "../ctrgui"}
+        "ddsp": "~>1.8.0"
     },
 
     "configurations": [

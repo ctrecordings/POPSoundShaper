@@ -1,3 +1,9 @@
+/**
+* Copyright: Cut Through Recordings 2019
+* License:   GPL v3
+* Authors:   Ethan Reker
+*/
+
 module popmeter;
 
 import dplug.graphics;

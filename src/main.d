@@ -1,6 +1,6 @@
 /**
-* Copyright: Cut Through Recordings 2017
-* License:   Proprietery
+* Copyright: Cut Through Recordings 2019
+* License:   GPL v3
 * Authors:   Ethan Reker
 */
 module main;
@@ -15,8 +15,6 @@ import dplug.core,
 import gui;
 
 import ddsp.util.functions;
-//import ddsp.effect.comp;
-//import ddsp.util.envelope;
 import ddsp.filter.peak;
 import ddsp.effect.compressor;
 

@@ -1,7 +1,7 @@
 /**
-* Copyright: Copyright Auburn Sounds 2015-2017
-* License:   $(LINK2 http://www.boost.org/LICENSE_1_0.txt, Boost License 1.0)
-* Authors:   Guillaume Piolat
+* Copyright: Cut Through Recordings 2019
+* License:   GPL v3
+* Authors:   Ethan Reker
 */
 module gui;
 
@@ -12,10 +12,11 @@ import dplug.flatwidgets;
 import dplug.client;
 
 import main;
-import popmeter;
 
-import ctrgui.paramlabel;
-import ctrgui.bitmap;
+// import gui controls
+import popmeter;
+import paramlabel;
+import bitmap;
 
 // Plugin GUI, based on PBRBackgroundGUI.
 // If you don't want to use PBR, you not inherit from it.
