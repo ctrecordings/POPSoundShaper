@@ -10,5 +10,7 @@
     "hasGUI": true,
     "isSynth": false,
     "receivesMIDI": false,
-    "category": "effectDynamics"
+    "category": "effectDynamics",
+    "licensePath": "./license.md",
+    "developerIdentity-osx": "2B2GF9C358"
 }

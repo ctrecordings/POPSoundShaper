@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<installer-gui-script minSpecVersion="1">
+<title>Cut Through Recordings POP Sound Shaper v1.7.1</title>
+<license file="license.html" mime-type="text/html"/>
+<pkg-ref id="0"/>
+<pkg-ref id="1"/>
+<pkg-ref id="2"/>
+<options customize="always" require-scripts="false"/>
+<choices-outline>
+    <line choice="default">
+        <line choice="0"/>
+        <line choice="1"/>
+        <line choice="2"/>
+    </line>
+</choices-outline>
+<choice id="default" title="Cut Through Recordings POP Sound Shaper v1.7.1"/>
+<choice id="0" visible="true" title="VST plug-in">
+    <pkg-ref id="0"/>
+</choice>
+<pkg-ref id="0" version="1.7.1">POP-Sound-Shaper-vst.pkg</pkg-ref>
+<choice id="1" visible="true" title="VST3 plug-in">
+    <pkg-ref id="1"/>
+</choice>
+<pkg-ref id="1" version="1.7.1">POP-Sound-Shaper-vst3.pkg</pkg-ref>
+<choice id="2" visible="true" title="AU plug-in">
+    <pkg-ref id="2"/>
+</choice>
+<pkg-ref id="2" version="1.7.1">POP-Sound-Shaper-au.pkg</pkg-ref>
+</installer-gui-script>
