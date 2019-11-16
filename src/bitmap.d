@@ -43,7 +43,7 @@ public:
 
 				for(int i = 0; i < w; ++i){
                     ubyte alpha = input[i].a;
-                    RGBA blended = RGBA.op!q{.blend(a, b, c)} (input[i], output[i], alpha);
+                    RGBA blended = blendColor(input[i], output[i], alpha);
                     output[i] = blended;
 				}
 			}

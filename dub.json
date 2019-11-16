@@ -20,8 +20,8 @@
 
     "dependencies":
     {
-        "dplug": "8.3.6",
-        "ddsp": "~>1.8.0"
+        "dplug": "9.0.13",
+        "ddsp": "~>2"
     },
 
     "dflags-osx-ldc": ["-static"],
